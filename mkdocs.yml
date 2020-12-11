@@ -1,0 +1,19 @@
+site_name: PVME Guides
+
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/logo.ico
+  features:
+  - navigation.instant
+  palette:
+    scheme: slate
+
+markdown_extensions:
+- pymdownx.keys
+
+extra_css:
+- css/extra.css
+
+# section below reserved for automatically generated nav !
+# ========================================================

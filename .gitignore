@@ -1,0 +1,23 @@
+# PyCharm
+.idea
+
+# Python
+*.pyc
+__pycache__
+
+# google docs api
+credentials.json
+
+# tox
+.tox
+.coverage
+
+# mkdocs
+site
+docs/pvme-guides
+
+# pvme-guides repo
+pvme-guides
+
+# env file
+.env

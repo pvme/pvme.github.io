@@ -1,0 +1,9 @@
+[requires]
+python_version = "3.8"
+
+[packages]
+gspread = "*"
+mkdocs = "*"
+mkdocs-material = "*"
+requests = "*"
+"ruamel.yaml" = "*"

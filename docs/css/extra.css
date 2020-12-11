@@ -1,0 +1,33 @@
+.emoji {
+    width: 1.375em;
+    height: 1.375em !important;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.media {
+    max-width: 560px !important;
+    max-height: 400px; !important;
+    display:block;  /* ensures images on a new page */
+}
+
+.media img {
+    width: auto;
+    height: auto;
+}
+
+
+.md-grid {
+    max-width: initial;
+    /*max-width: 96%;*/
+}
+
+/*
+html {
+    font-size: 122%
+}
+*/
+
+/*
+.data a, .data span, .data tr, .data td { white-space: pre; }
+*/
