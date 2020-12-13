@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 
 from gspread.utils import a1_to_rowcol
 
-import util
+import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'DiscordMarkdownHTML', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
            'CodeBlock', 'PVMESpreadSheet']
@@ -42,7 +42,7 @@ class PVMEBotCommand(MKDocs):
         elif message.bot_command.startswith((".img:", ".file:")):
             # todo: temporary parsing to get a general idea
             link = message.bot_command.split(':', 1)
-            message.bot_command = util.generate_embed(link[1])
+            message.bot_command = formatter.util.generate_embed(link[1])
 
 
 class Section(MKDocs):
@@ -167,7 +167,7 @@ class PVMESpreadSheet(MKDocs):
     def format_mkdocs_md(message):
         matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, message.content)]
         for match in reversed(matches):
-            worksheet_data = util.obtain_pvme_spreadsheet_data(match.group(1))
+            worksheet_data = formatter.util.obtain_pvme_spreadsheet_data(match.group(1))
             row, column = a1_to_rowcol(match.group(2))
             if worksheet_data:
                 price_formatted = "{}".format(worksheet_data[row-1][column-1])
