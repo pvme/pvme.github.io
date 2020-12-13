@@ -159,4 +159,6 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
 
 if __name__ == '__main__':
-    generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
+    # for debugging
+    # generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
+    pass

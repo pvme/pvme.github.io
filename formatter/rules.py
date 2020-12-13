@@ -119,7 +119,7 @@ class EmbedLink(MKDocs):
             message.content = message.content[:match.start()] + url_formatted + message.content[match.end():]
 
         for match in matches:
-            embed = util.generate_embed(match.group(1))
+            embed = formatter.util.generate_embed(match.group(1))
             if embed:
                 message.embeds.append(embed)
 
