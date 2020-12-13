@@ -17,3 +17,74 @@ extra_css:
 
 # section below reserved for automatically generated nav !
 # ========================================================
+nav:
+- index.md
+- Information:
+  - pvme-guides/information/contribution-quick-start.md
+  - pvme-guides/information/mastery-system-reqs.md
+- Getting started:
+  - pvme-guides/getting-started/bossing-path.md
+  - pvme-guides/getting-started/interface-guide.md
+  - pvme-guides/getting-started/perk-info.md
+  - pvme-guides/getting-started/perks.md
+  - pvme-guides/getting-started/quick-start.md
+  - pvme-guides/getting-started/revo-to-full-manual.md
+- Upgrading info:
+  - pvme-guides/upgrading-info/abilities.md
+  - pvme-guides/upgrading-info/armour-and-weapons.md
+  - pvme-guides/upgrading-info/consumables.md
+  - pvme-guides/upgrading-info/permanent-unlocks.md
+  - pvme-guides/upgrading-info/upgrade-order.md
+- Miscellaneous information:
+  - pvme-guides/miscellaneous-information/ability-information.md
+  - pvme-guides/miscellaneous-information/mechanics.md
+- Dpm advice:
+  - pvme-guides/dpm-advice/dpm-advice-faq.md
+  - pvme-guides/dpm-advice/dpm-advice-mage.md
+  - pvme-guides/dpm-advice/dpm-advice-melee.md
+  - pvme-guides/dpm-advice/dpm-advice-range.md
+- Low tier pvm:
+  - pvme-guides/low-tier-pvm/barrows.md
+  - pvme-guides/low-tier-pvm/chaos-elemental.md
+  - pvme-guides/low-tier-pvm/dagannoth-kings.md
+  - pvme-guides/low-tier-pvm/giant-mole.md
+  - pvme-guides/low-tier-pvm/gwd1.md
+  - pvme-guides/low-tier-pvm/kalphite-queen.md
+  - pvme-guides/low-tier-pvm/king-black-dragon.md
+- Mid tier pvm:
+  - pvme-guides/mid-tier-pvm/corporeal-beast.md
+  - pvme-guides/mid-tier-pvm/dragonkin-laboratory.md
+  - pvme-guides/mid-tier-pvm/fight-kiln.md
+  - pvme-guides/mid-tier-pvm/gregorovic.md
+  - pvme-guides/mid-tier-pvm/helwyr.md
+  - pvme-guides/mid-tier-pvm/kalphite-king.md
+  - pvme-guides/mid-tier-pvm/legiones.md
+  - pvme-guides/mid-tier-pvm/nex-duo.md
+  - pvme-guides/mid-tier-pvm/nex-solo.md
+  - pvme-guides/mid-tier-pvm/queen-black-dragon.md
+  - pvme-guides/mid-tier-pvm/temple-of-aminishi.md
+  - pvme-guides/mid-tier-pvm/the-shadow-reef.md
+  - pvme-guides/mid-tier-pvm/twin-furies.md
+  - pvme-guides/mid-tier-pvm/vindicta.md
+- High tier pvm:
+  - pvme-guides/high-tier-pvm/aod.md
+  - pvme-guides/high-tier-pvm/araxxor-melee.md
+  - pvme-guides/high-tier-pvm/araxxor-range.md
+  - pvme-guides/high-tier-pvm/beastmaster-durzag.md
+  - pvme-guides/high-tier-pvm/magister.md
+  - pvme-guides/high-tier-pvm/raksha.md
+  - pvme-guides/high-tier-pvm/rots.md
+  - pvme-guides/high-tier-pvm/solak-7s.md
+  - pvme-guides/high-tier-pvm/solak-duo.md
+  - pvme-guides/high-tier-pvm/telos-0-999.md
+  - pvme-guides/high-tier-pvm/telos-1k-plus-magic.md
+  - pvme-guides/high-tier-pvm/telos-1k-plus-melee.md
+  - pvme-guides/high-tier-pvm/telos-1k-plus-ranged.md
+  - pvme-guides/high-tier-pvm/telos-stun-guide.md
+  - pvme-guides/high-tier-pvm/vorago-duo-hm.md
+  - pvme-guides/high-tier-pvm/vorago-duo.md
+  - pvme-guides/high-tier-pvm/vorago-hardmode.md
+  - pvme-guides/high-tier-pvm/vorago-tips-and-tricks.md
+  - pvme-guides/high-tier-pvm/vorago-trio-hm.md
+  - pvme-guides/high-tier-pvm/vorago.md
+  - pvme-guides/high-tier-pvm/yakamaru.md
