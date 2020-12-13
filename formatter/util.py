@@ -32,18 +32,16 @@ def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
             'client_email': GS_CLIENT_EMAIL,
             'token_uri': GS_TOKEN_URI},
             scopes=gspread.auth.READONLY_SCOPES)
-        print("cred done")
+
         # authenticate + obtain the pvme-guides spreadsheet URL
         gc = gspread.client.Client(auth=credentials)
-        print("client done")
         sh = gc.open_by_url(GS_URL)
-        print("url done")
+
         worksheet = sh.worksheet(worksheet)
-        print("worksheet")
     except ValueError as e:
         print("ValueError: {}".format(e))
-    except gspread.exceptions.APIError as e:
-        print("APIError: {}".format(e))
+    except gspread.exceptions.GSpreadException as e:
+        print("GSpreadException: {}".format(e))
     except Exception as e:
         print("Exception: {}".format(e))
     else:

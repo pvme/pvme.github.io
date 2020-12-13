@@ -25,7 +25,7 @@ jobs:
       - name: Generate sources
         run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
         env:
-          GS_URL: ${{secrets.GS_PRIVATE_KEY}}
+          GS_URL: ${{secrets.GS_URL}}
           GS_PRIVATE_KEY: ${{secrets.GS_PRIVATE_KEY}}
           GS_CLIENT_EMAIL: ${{secrets.GS_CLIENT_EMAIL}}
           GS_TOKEN_URI: ${{secrets.GS_TOKEN_URI}}
