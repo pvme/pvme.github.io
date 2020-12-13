@@ -39,6 +39,7 @@ def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
         sh = gc.open_by_url(GS_URL)
         print("url done")
         worksheet = sh.worksheet(worksheet)
+        print("worksheet")
     except ValueError as e:
         print("ValueError: {}".format(e))
     except gspread.exceptions.APIError as e:
