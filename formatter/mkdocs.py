@@ -140,7 +140,7 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
         category_channels = list()
 
         # iterate channels (dpm-advice.dpm-advice-faq.txt etc)
-        for channel_file in os.listdir(category_dir):
+        for channel_file in sorted(os.listdir(category_dir)):
             channel_dir = '{}/{}'.format(category_dir, channel_file)
             channel_name, ext = os.path.splitext(channel_file)
 
