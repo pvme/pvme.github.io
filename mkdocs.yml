@@ -5,15 +5,19 @@ theme:
   custom_dir: overrides
   favicon: assets/logo.ico
   features:
-  - navigation.instant
+    - navigation.instant
   palette:
     scheme: slate
 
+plugins:
+  - git-revision-date-localized
+
 markdown_extensions:
-- pymdownx.keys
+  - pymdownx.keys
+  - pymdownx.caret
 
 extra_css:
-- css/extra.css
+  - css/extra.css
 
 # section below reserved for automatically generated nav !
 # ========================================================

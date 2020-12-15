@@ -7,27 +7,20 @@
 
 .media {
     max-width: 560px !important;
-    max-height: 400px; !important;
+    max-height: 400px;
     display:block;  /* ensures images on a new page */
 }
 
-.media img {
-    width: auto;
-    height: auto;
-}
-
-
 .md-grid {
     max-width: initial;
-    /*max-width: 96%;*/
 }
 
-/*
 html {
-    font-size: 122%
+    font-size: 128%;
 }
-*/
 
-/*
-.data a, .data span, .data tr, .data td { white-space: pre; }
-*/
+@media (max-width: 600px) {
+    .media {
+        max-width: 100% !important;
+    }
+}

@@ -8,7 +8,7 @@ from gspread.utils import a1_to_rowcol
 
 import formatter.util
 
-__all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'DiscordMarkdownHTML', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
+__all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
            'CodeBlock', 'PVMESpreadSheet']
 
 
@@ -78,23 +78,12 @@ class Emoji(MKDocs):
                 message.content = message.content[:match.start()] + emoji_formatted + message.content[match.end():]
 
 
-class DiscordMarkdownHTML(MKDocs):
-    MKDOCS_PATTERNS = [(re.compile(r"__"), "<u>", "</u>")]
+class Insert(MKDocs):
+    PATTERN = re.compile(r"__")
 
     @staticmethod
     def format_mkdocs_md(message):
-        for pattern, start_symbol, end_symbol in DiscordMarkdownHTML.MKDOCS_PATTERNS:
-            matches = [match for match in re.finditer(pattern, message.content)]
-
-            # remove any unclosed elements (to avoid "<u>text" without a closing "</u>")
-            if len(matches) % 2 == 1:
-                matches = matches[:-1]
-
-            for index, match in enumerate(reversed(matches)):
-                # set <u> or </u> based on if the match is even or uneven
-                symbol = start_symbol if index % 2 else end_symbol
-
-                message.content = message.content[:match.start()] + symbol + message.content[match.end():]
+        message.content = re.sub(Insert.PATTERN, '^^', message.content)
 
 
 class EmbedLink(MKDocs):

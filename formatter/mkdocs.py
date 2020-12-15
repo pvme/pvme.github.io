@@ -32,7 +32,7 @@ DEFAULT_FORMAT_SEQUENCE = [
     LineBreak,
     EmbedLink,
     Emoji,
-    DiscordMarkdownHTML,
+    Insert,
     DiscordWhiteSpace,
     CodeBlock,
     PVMESpreadSheet
@@ -160,5 +160,5 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
 if __name__ == '__main__':
     # for debugging
-    # generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
+    generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
     pass
