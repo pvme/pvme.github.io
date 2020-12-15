@@ -4,6 +4,8 @@ Welcome to the PVME Guides documentation!
 
 This site is automatically generated from the [pvme-guides repository](https://github.com/pvme/pvme-guides) and is therefore always up to date with the [PVME Discord](https://discord.gg/6djqFVN).
 
+Checkout the [pvme.github.io](https://github.com/pvme/pvme.github.io) for an up-to-date Todo list.
+
 ## Navigation tips
 **General**
 
