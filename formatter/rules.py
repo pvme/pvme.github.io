@@ -106,7 +106,7 @@ class EmbedLink(MKDocs):
         matches = [match for match in re.finditer(EmbedLink.PATTERN, message.content)]
         for match in reversed(matches):
             url_formatted = "<{}>".format(match.group(1))
-            message.content = message.content[:match.start()] + url_formatted + message.content[match.end():]
+            message.content = message.content[:match.start() + 1] + url_formatted + message.content[match.end():]
 
         for match in matches:
             embed = formatter.util.generate_embed(match.group(1))
@@ -190,14 +190,26 @@ class DiscordChannelID(MKDocs):
 
 
 class DiscordUserID(MKDocs):
+    """Format '<@213693069764198401>' to '#Piegood'."""
+    PATTERN = re.compile(r"<@!?([0-9]{18})>")
+    USER_LOOKUP = formatter.util.parse_user_id_file()
 
     @staticmethod
     def format_mkdocs_md(message):
-        pass
+        matches = [match for match in re.finditer(DiscordUserID.PATTERN, message.content)]
+        for index, match in enumerate(reversed(matches)):
+            user = f"#{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
+            message.content = message.content[:match.start()] + user + message.content[match.end():]
 
 
 class DiscordRoleID(MKDocs):
+    """Format '<@&645851931842969611>' to '@Araxxor Initiate'."""
+    PATTERN = re.compile(r"<@&([0-9]{18})>")
+    ROLE_LOOKUP = formatter.util.parse_role_id_file()
 
     @staticmethod
     def format_mkdocs_md(message):
-        pass
+        matches = [match for match in re.finditer(DiscordRoleID.PATTERN, message.content)]
+        for index, match in enumerate(reversed(matches)):
+            user = f"`@{DiscordRoleID.ROLE_LOOKUP.get(match.group(1), 'Unknown role')}`"
+            message.content = message.content[:match.start()] + user + message.content[match.end():]

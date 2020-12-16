@@ -9,13 +9,15 @@ theme:
   palette:
     scheme: slate
 
+
 plugins:
 - search
-#- git-revision-date-localized
+- git-revision-date-localized
 
 markdown_extensions:
 - pymdownx.keys
 - pymdownx.caret
+- pymdownx.saneheaders
 
 extra_css:
 - css/extra.css

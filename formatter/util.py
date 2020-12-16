@@ -5,6 +5,7 @@ import os
 import functools
 import re
 import pathlib
+import json
 
 import gspread
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
@@ -42,11 +43,11 @@ def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
 
         worksheet = sh.worksheet(worksheet)
     except ValueError as e:
-        print("PVME-spreadsheet ValueError: {}".format(e))
+        print(f"PVME-spreadsheet ValueError: {e}")
     except gspread.exceptions.GSpreadException as e:
-        print("PVME-spreadsheet GSpreadException: {}".format(e))
+        print(f"PVME-spreadsheet GSpreadException: {e}")
     except Exception as e:
-        print("PVME-spreadsheet Exception: {}".format(e))
+        print(f"PVME-spreadsheet Exception: {e}")
     else:
         return worksheet.get_all_values()
 
@@ -139,3 +140,36 @@ def parse_channel_id_file() -> dict:
         channel_lookup = dict()
 
     return channel_lookup
+
+
+def parse_user_id_file() -> dict:
+    """Generate a lookup table (dict) with the following content: {user_id: user name}.
+
+    :return: lookup table (dict), when no file is discovered, an empty dict is returned
+    """
+    user_id_file = f"{MODULE_PATH}/discord_users.txt"
+    if os.path.exists(user_id_file):
+        with open(user_id_file, 'r') as file:
+            # create dict from regex list of tuples containing group(user_id), group(user_name)
+            # note: parsed as regex since it's not a default json format and I don't want to modify the file.
+            user_lookup = dict(re.findall(r"id: '([0-9]{18})', username: '([^']+)'", file.read()))
+    else:
+        user_lookup = dict()
+
+    return user_lookup
+
+
+def parse_role_id_file() -> dict:
+    """Generate a lookup table (dict) with the following content: {role_id: channel_name}.
+
+    :return: lookup table (dict), when no file is discovered, an empty dict is returned
+    """
+    role_id_file = f"{MODULE_PATH}/discord_roles.txt"
+    if os.path.exists(role_id_file):
+        with open(role_id_file, 'r') as file:
+            # create dict from regex list of tuples containing group(role_id), group(role_name)
+            role_lookup = dict(re.findall(r"([0-9]{18})\|([^|]+)\|", file.read()))
+    else:
+        role_lookup = dict()
+
+    return role_lookup
