@@ -3,13 +3,14 @@ Collection of all message formatting rules.
 """
 import re
 from abc import ABC, abstractmethod
+import os
 
 from gspread.utils import a1_to_rowcol
 
 import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
-           'CodeBlock', 'PVMESpreadSheet']
+           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID']
 
 
 class Sphinx(ABC):
@@ -164,3 +165,39 @@ class PVMESpreadSheet(MKDocs):
                 price_formatted = "N/A"
 
             message.content = message.content[:match.start()] + price_formatted + message.content[match.end():]
+
+
+class DiscordChannelID(MKDocs):
+    """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
+    PATTERN = re.compile(r"<#([0-9]{18})>")
+    CHANNEL_LOOKUP = formatter.util.parse_channel_id_file()
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        matches = [match for match in re.finditer(DiscordChannelID.PATTERN, message.content)]
+        for index, match in enumerate(reversed(matches)):
+            path = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
+            if path:
+                relative_file = f"../{path}.md"
+                # name = os.path.basename(path).replace('-', ' ').capitalize()  # 'Araxxor melee'
+                name = f"#{os.path.basename(path)}"
+                link = f"[{name}]({relative_file})"
+            else:
+                # link = "[Unknown channel]()"
+                link = "[#unknown-channel]()"
+
+            message.content = message.content[:match.start()] + link + message.content[match.end():]
+
+
+class DiscordUserID(MKDocs):
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        pass
+
+
+class DiscordRoleID(MKDocs):
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        pass

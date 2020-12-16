@@ -12,19 +12,19 @@ The site is generated using the [Material for Mkdocs theme](https://squidfunk.gi
 
 :white_check_mark:done
 
-| **Task**                            | **Status**     |
-| ----------------------------------- | -------------- |
-| Embed: open graph for unknown links | :red_circle:   |
-| Embed: open graph for all links (*) | :red_circle:   |
-| Embed: wiki links                   | :construction: |
-| Embed: google docs                  | :construction: |
-| Discord user mentions               | :red_circle:   |
-| Discord channels (**)               | :red_circle:   |
-| Discord message links (***)         | :red_circle:   |
+| **Task**                            | **Status**         |
+| ----------------------------------- | ------------------ |
+| Embed: open graph for unknown links | :red_circle:       |
+| Embed: open graph for all links (*) | :red_circle:       |
+| Embed: wiki links                   | :construction:     |
+| Embed: google docs                  | :construction:     |
+| Discord user mentions               | :red_circle:       |
+| Discord channels (**)               | :white_check_mark: |
+| Discord message links (***)         | :red_circle:       |
 
 *Most likely won't be supported since it massively slows down building the site.
 
-**Requires a bot with access to PVME discord so won't be supported.
+**Through work-around where `formatter/discord_channels.txt` of channels has to be updated whenever new types of channel links are added.
 
 ***Requires a bot with access to PVME discord so won't be supported.
 

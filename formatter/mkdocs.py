@@ -35,7 +35,10 @@ DEFAULT_FORMAT_SEQUENCE = [
     Insert,
     DiscordWhiteSpace,
     CodeBlock,
-    PVMESpreadSheet
+    PVMESpreadSheet,
+    DiscordChannelID,
+    DiscordUserID,
+    DiscordRoleID
 ]
 
 

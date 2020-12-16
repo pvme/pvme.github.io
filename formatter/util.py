@@ -4,6 +4,7 @@ Utility functions that are only really in a separate module to clean up rules.py
 import os
 import functools
 import re
+import pathlib
 
 import gspread
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
@@ -15,6 +16,8 @@ GS_CLIENT_EMAIL = os.environ.get('GS_CLIENT_EMAIL')
 GS_TOKEN_URI = os.environ.get('GS_TOKEN_URI')
 
 BASE_DOMAIN = "pvme.github.io"
+
+MODULE_PATH = pathlib.Path(__file__).parent.absolute()
 
 
 @functools.lru_cache(maxsize=None)
@@ -39,11 +42,11 @@ def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
 
         worksheet = sh.worksheet(worksheet)
     except ValueError as e:
-        print("ValueError: {}".format(e))
+        print("PVME-spreadsheet ValueError: {}".format(e))
     except gspread.exceptions.GSpreadException as e:
-        print("GSpreadException: {}".format(e))
+        print("PVME-spreadsheet GSpreadException: {}".format(e))
     except Exception as e:
-        print("Exception: {}".format(e))
+        print("PVME-spreadsheet Exception: {}".format(e))
     else:
         return worksheet.get_all_values()
 
@@ -119,3 +122,20 @@ def generate_embed(url: str) -> str:
                 embed = None
 
     return embed
+
+
+def parse_channel_id_file() -> dict:
+    """Generate a lookup table (dict) with the following content: {channel_id: path_to_channel}.
+    The path ignores the '.txt' extension and it does not add a custom extension as this depends on Sphinx/Mkdocs.
+
+    :return: lookup table (dict), when no file is discovered, an empty dict is returned
+    """
+    channel_id_file = f"{MODULE_PATH}/discord_channels.txt"
+    if os.path.exists(channel_id_file):
+        with open(channel_id_file, 'r') as file:
+            # create dict from regex list of tuples containing group(channel_id), group(path_to_channel)
+            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-z/0-9]+)\.txt", file.read()))
+    else:
+        channel_lookup = dict()
+
+    return channel_lookup
