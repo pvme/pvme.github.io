@@ -15,6 +15,7 @@
 ### December 17, 2020
 
 - added support for ~~strike-through~~ text
+- added changelog
 
 ### December 16, 2020
 

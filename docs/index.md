@@ -18,6 +18,6 @@ This site is automatically generated from the [pvme-guides repository](https://g
 
 ## Updates/Bugs
 
-Checkout the [Changelog](https://github.com/pvme/pvme.github.io/Changelog.md) for planned updates and release notes.
+Checkout the [Changelog](https://github.com/pvme/pvme.github.io/blob/master/Changelog.md) for planned updates and release notes.
 
 For bugs or feature requests, message me on discord (#Pleb0025) or create an issue in the [pvme.github.io repository](https://github.com/pvme/pvme.github.io)
