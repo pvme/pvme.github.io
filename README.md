@@ -4,26 +4,9 @@ PVME-Docs ([pvme.github.io](pvme.github.io)) is a static site that is generated 
 
 The site is generated using the [Material for Mkdocs theme](https://squidfunk.github.io/mkdocs-material/).
 
-## TODO
+## Changelog
 
-:red_circle:TODO or won't be implemented
-
-:construction: ongoing
-
-:white_check_mark:done
-
-| **Task**                             | **Status**         |
-| ------------------------------------ | ------------------ |
-| Embed: open graph for unknown links  | :red_circle:       |
-| Embed: open graph for all links (*)  | :red_circle:       |
-| Embed: wiki links                    | :construction:     |
-| Embed: google docs                   | :construction:     |
-| Discord user mentions (*)            | :white_check_mark: |
-| Discord channels (*)                 | :white_check_mark: |
-| Discord roles (*)                    | :white_check_mark: |
-| Embed: include character before link | :white_check_mark: |
-
-*Through work-around where the conversion is stored in a `.txt` file which is manually has to be updated whenever new types of channel links are added.
+[Changelog](https://github.com/pvme/pvme.github.io/Changelog.md)
 
 ## Requirements
 
