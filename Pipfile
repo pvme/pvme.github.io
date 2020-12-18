@@ -6,4 +6,5 @@ gspread = "*"
 mkdocs-material = "*"
 requests = "*"
 "ruamel.yaml" = "*"
-mkdocs-git-revision-date-localized-plugin = "*"
+mkdocs-macros-plugin = "*"
+

@@ -6,12 +6,7 @@ This site is automatically generated from the [pvme-guides repository](https://g
 
 ## Navigation tips
 
-**General**
-
 * ++f++ , ++s++ , ++slash++ : open search dialog
-
-**Search**
-
 * ++arrow-down++ , ++arrow-up++ : select next / previous result
 * ++enter++ : follow selected result
 * ++esc++ , ++tab++ : close search dialog
@@ -20,4 +15,6 @@ This site is automatically generated from the [pvme-guides repository](https://g
 
 Checkout the [Changelog](https://github.com/pvme/pvme.github.io/blob/master/Changelog.md) for planned updates and release notes.
 
-For bugs or feature requests, message me on discord (#Pleb0025) or create an issue in the [pvme.github.io repository](https://github.com/pvme/pvme.github.io)
+For bugs or feature requests, message me on discord (Pleb#0025) or create an issue in the [pvme.github.io repository](https://github.com/pvme/pvme.github.io)
+
+Last updated: {{ now().strftime("%b %d, %Y %H:%M:%S") }}

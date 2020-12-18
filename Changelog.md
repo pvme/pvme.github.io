@@ -8,9 +8,12 @@
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
 - Colored roles
-- Fix git-revision-date (date shown at the bottom of the page) for unversioned files
 
 ## Release notes
+
+### December 18, 2020
+
+- "last updated on" only on "Home" page (since the page is updated daily)
 
 ### December 17, 2020
 

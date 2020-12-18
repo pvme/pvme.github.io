@@ -12,7 +12,8 @@ theme:
 
 plugins:
 - search
-- git-revision-date-localized
+#- git-revision-date-localized
+- macros
 
 markdown_extensions:
 - pymdownx.keys
