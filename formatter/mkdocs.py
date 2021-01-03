@@ -11,10 +11,15 @@ Short overview of formatting:
 """
 import os
 import shutil
+import logging
 
 import ruamel.yaml
 
 from formatter.rules import *
+
+
+logger = logging.getLogger('formatter.mkdocs')
+logger.level = logging.WARN
 
 CATEGORY_SEQUENCE = [
     'information',
@@ -150,6 +155,7 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
             if ext != '.txt':
                 continue
 
+            logger.debug(f"formatting {category_name}/{channel_name}.md")
             generate_channel_source(channel_dir, source_dir, category_name, channel_name)
 
             category_channels.append('pvme-guides/{}/{}.md'.format(category_name, channel_name))
@@ -163,5 +169,10 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
 if __name__ == '__main__':
     # for debugging
+    logging.basicConfig()
+    logging.getLogger('formatter.mkdocs').level = logging.DEBUG
+    logging.getLogger('formatter.rules').level = logging.DEBUG
+    logging.getLogger('formatter.util').level = logging.DEBUG
+
     generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
     pass

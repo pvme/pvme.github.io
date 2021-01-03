@@ -4,6 +4,7 @@ Collection of all message formatting rules.
 import re
 from abc import ABC, abstractmethod
 import os
+import logging
 
 from gspread.utils import a1_to_rowcol
 
@@ -11,6 +12,9 @@ import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
            'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID']
+
+logger = logging.getLogger('formatter.rules')
+logger.level = logging.WARN
 
 
 class Sphinx(ABC):
@@ -185,6 +189,7 @@ class DiscordChannelID(MKDocs):
             else:
                 # link = "[Unknown channel]()"
                 link = "[#unknown-channel]()"
+                logger.warning(f"unknown channel {match.group(1)}")
 
             message.content = message.content[:match.start()] + link + message.content[match.end():]
 
@@ -199,6 +204,8 @@ class DiscordUserID(MKDocs):
         matches = [match for match in re.finditer(DiscordUserID.PATTERN, message.content)]
         for index, match in enumerate(reversed(matches)):
             user = f"#{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
+            if user == '#Unknown user':
+                logger.warning(f"unknown user {match.group(1)}")
             message.content = message.content[:match.start()] + user + message.content[match.end():]
 
 
@@ -211,5 +218,7 @@ class DiscordRoleID(MKDocs):
     def format_mkdocs_md(message):
         matches = [match for match in re.finditer(DiscordRoleID.PATTERN, message.content)]
         for index, match in enumerate(reversed(matches)):
-            user = f"`@{DiscordRoleID.ROLE_LOOKUP.get(match.group(1), 'Unknown role')}`"
-            message.content = message.content[:match.start()] + user + message.content[match.end():]
+            role = f"`@{DiscordRoleID.ROLE_LOOKUP.get(match.group(1), 'Unknown role')}`"
+            if role == '`@Unknown role`':
+                logger.warning(f"unknown role {match.group(1)}")
+            message.content = message.content[:match.start()] + role + message.content[match.end():]

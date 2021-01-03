@@ -5,11 +5,14 @@ import os
 import functools
 import re
 import pathlib
-import json
+import logging
 
 import gspread
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
 import requests
+
+logger = logging.getLogger('formatter.util')
+logger.level = logging.WARN
 
 GS_URL = os.environ.get('GS_URL')
 GS_PRIVATE_KEY = os.environ.get('GS_PRIVATE_KEY')
@@ -43,11 +46,11 @@ def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
 
         worksheet = sh.worksheet(worksheet)
     except ValueError as e:
-        print(f"PVME-spreadsheet ValueError: {e}")
+        logger.warning(f"PVME-spreadsheet ValueError: {e}")
     except gspread.exceptions.GSpreadException as e:
-        print(f"PVME-spreadsheet GSpreadException: {e}")
+        logger.warning(f"PVME-spreadsheet GSpreadException: {e}")
     except Exception as e:
-        print(f"PVME-spreadsheet Exception: {e}")
+        logger.warning(f"PVME-spreadsheet Exception: {e}")
     else:
         return worksheet.get_all_values()
 
