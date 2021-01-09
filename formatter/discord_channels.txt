@@ -60,3 +60,9 @@
 | 578752803090989056 | high-tier-pvm/telos-1k-plus-magic.txt             |
 | 785004327567097916 | high-tier-pvm/raksha.txt                          |
 | 785145548046860319 | high-tier-pvm/telos-1k-plus-ranged.txt            |
+| 796067533924204595 | slayer/ripper-demon.txt                           |
+| 796067591013662741 | slayer/moss-golems.txt                            |
+| 796067569735041046 | slayer/ed2-hydrix.txt                             |
+| 796067712836567120 | slayer/nightmare-creatures.txt                    |
+| 796067645627170846 | slayer/soul-devourers.txt                         |
+| 796067681890467850 | slayer/raptor-mobs.txt                            |

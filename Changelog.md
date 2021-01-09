@@ -7,9 +7,19 @@
 - Embed: wiki links
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
-- Colored roles
+
 
 ## Release notes
+
+### January 9, 2021
+
+- Added colored roles
+- Updated missing Discord links
+- Added WiP Slayer Category
+
+### January 4, 2021
+
+- Added, and enabled by default, debug logging to quickly check missing Discord links (check daily build log)
 
 ### December 18, 2020
 

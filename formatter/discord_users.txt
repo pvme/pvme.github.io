@@ -73,4 +73,20 @@
   { id: '576229066907320340', username: 'ipwnzu' },
   { id: '593106625955495947', username: 'Glaucon' },
   { id: '593106625955495947', username: 'Glaucon' },
-  { id: '76883062381621248', username: 'chi' }
+  { id: '76883062381621248', username: 'chi' },
+  { id: '362345892784635905', username: 'Lunafreya' },
+  { id: '193792418003419139', username: 'zappy' },
+  { id: '198553571552264192', username: 'Venusaurz' },
+  { id: '197736922725089280', username: 'geherman' },
+  { id: '646361605310906409', username: 'Rin' },
+  { id: '269513930949263363', username: 'Akva' },
+  { id: '248814669408501761', username: 'Grime' },
+  { id: '307365834366517248', username: 'Nyriki' },
+  { id: '401918445429587969', username: 'Pernix' },
+  { id: '299233903053504512', username: 'Mouth Hugs' },
+  { id: '280354687474073602', username: 'Haxxz' },
+  { id: '249183968820199425', username: 'gurran' },
+  { id: '274611146558930945', username: 'eidolon psi' },
+  { id: '160462420693745664', username: 'Track and XC' },
+  { id: '239465986825256971', username: 'Malevolence' }
+

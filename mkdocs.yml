@@ -46,6 +46,7 @@ nav:
   - pvme-guides/upgrading-info/upgrade-order.md
 - Miscellaneous information:
   - pvme-guides/miscellaneous-information/ability-information.md
+  - pvme-guides/miscellaneous-information/eof-specs.md
   - pvme-guides/miscellaneous-information/mechanics.md
 - Dpm advice:
   - pvme-guides/dpm-advice/dpm-advice-faq.md
@@ -98,3 +99,13 @@ nav:
   - pvme-guides/high-tier-pvm/vorago-trio-hm.md
   - pvme-guides/high-tier-pvm/vorago.md
   - pvme-guides/high-tier-pvm/yakamaru.md
+- Slayer:
+  - pvme-guides/slayer/ed2-hydrix.md
+  - pvme-guides/slayer/moss-golems.md
+  - pvme-guides/slayer/nightmare-creatures.md
+  - pvme-guides/slayer/optimal_block_prefer_lists.md
+  - pvme-guides/slayer/overview-of-slayer.md
+  - pvme-guides/slayer/raptor-mobs.md
+  - pvme-guides/slayer/ripper-demon.md
+  - pvme-guides/slayer/slaying-to-120-for-xp.md
+  - pvme-guides/slayer/soul-devourers.md

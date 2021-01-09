@@ -218,7 +218,8 @@ class DiscordRoleID(MKDocs):
     def format_mkdocs_md(message):
         matches = [match for match in re.finditer(DiscordRoleID.PATTERN, message.content)]
         for index, match in enumerate(reversed(matches)):
-            role = f"`@{DiscordRoleID.ROLE_LOOKUP.get(match.group(1), 'Unknown role')}`"
-            if role == '`@Unknown role`':
+            role = DiscordRoleID.ROLE_LOOKUP.get(match.group(1), ('Unknown role', None))
+            if role[0] == 'Unknown role':
                 logger.warning(f"unknown role {match.group(1)}")
-            message.content = message.content[:match.start()] + role + message.content[match.end():]
+            role_formatted = f"<code style=\"{role[1]}\">@{role[0]}</code>"
+            message.content = message.content[:match.start()] + role_formatted + message.content[match.end():]

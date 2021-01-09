@@ -29,7 +29,8 @@ CATEGORY_SEQUENCE = [
     'dpm-advice',
     'low-tier-pvm',
     'mid-tier-pvm',
-    'high-tier-pvm'
+    'high-tier-pvm',
+    'slayer'
 ]
 
 DEFAULT_FORMAT_SEQUENCE = [
