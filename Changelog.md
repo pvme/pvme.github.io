@@ -7,6 +7,7 @@
 - Embed: wiki links
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
+- Use the same channel structure as the pvme discord
 
 
 ## Release notes
