@@ -1,5 +1,9 @@
 site_name: PVME Guides
 
+google_analytics:
+- G-Z5B43L9EGL
+- auto
+  
 theme:
   name: material
   custom_dir: overrides
