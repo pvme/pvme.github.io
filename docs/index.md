@@ -1,10 +1,8 @@
 # Home
 
 !!! info
-    Hey all, @NA EDUCATION is conducting a survey related to high level pvm and we'd love if y'all took a second to fill it out:
-    [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdef81MxutPeUFPhMaoEyj_9zkcxuu_ay1bB3Z1Unk_rL8ahg/formResponse)
-
-    
+    Friendly reminder that we’re looking for your feedback! We’ll be closing this survey in a week:
+    [Google Form](https://forms.gle/7Vc9dfGrZL724cuq6)
    
 Welcome to the PVME Guides documentation!
 
