@@ -28,10 +28,14 @@
 
 ### December 17, 2020
 
-- added support for ~~strike-through~~ text
-- added changelog
+- Added support for ~~strike-through~~ text
+- Added changelog
 
 ### December 16, 2020
 
 - Initial release
 
+### March 15, 2021
+
+- updated missing roles/channels/users
+- Added Note for survey

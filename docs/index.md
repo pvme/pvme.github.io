@@ -1,5 +1,11 @@
 # Home
 
+!!! info
+    Hey all, @NA EDUCATION is conducting a survey related to high level pvm and we'd love if y'all took a second to fill it out:
+    [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdef81MxutPeUFPhMaoEyj_9zkcxuu_ay1bB3Z1Unk_rL8ahg/formResponse)
+
+    
+   
 Welcome to the PVME Guides documentation!
 
 This site is automatically generated from the [pvme-guides repository](https://github.com/pvme/pvme-guides) and is therefore always up to date with the [PVME Discord](https://discord.gg/6djqFVN).

@@ -31,7 +31,7 @@
 536406300653912064|Solak Master|color: rgb(218, 165, 32); background-color: rgba(218, 165, 32, 0.1);|
 536406282157031424|Telos Master|color: rgb(218, 165, 32); background-color: rgba(218, 165, 32, 0.1);|
 536399965728014336|Vorago Master|color: rgb(218, 165, 32); background-color: rgba(218, 165, 32, 0.1);|
-712100522387308634|1 Tick Pony|color: rgb(0, 255, 255); background-color: rgba(0, 255, 255, 0.1);|
+712100522387308634|RNG Manipulator|color: rgb(0, 255, 255); background-color: rgba(0, 255, 255, 0.1);|
 576608397038845954|Messiah of Mazcab|color: rgb(218, 165, 32); background-color: rgba(218, 165, 32, 0.1);|
 712100225946484779|Erethdor's Bane|color: rgb(52, 152, 219); background-color: rgba(52, 152, 219, 0.1);|
 576608533630681099|Master of Omens|color: rgb(57, 9, 199); background-color: rgba(57, 9, 199, 0.1);|

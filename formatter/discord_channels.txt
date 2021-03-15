@@ -8,7 +8,7 @@
 | 534571389487808534 | high-tier-pvm/telos-0-999.txt                     |
 | 534533734435913740 | mid-tier-pvm/vindicta.txt                         |
 | 534514820830068757 | mid-tier-pvm/corporeal-beast.txt                  |
-| 534573688113070082 | mid-tier-pvm/temple-of-aminishi.txt               |
+| 534573688113070082 | mid-tier-pvm/temple-of-aminishi-melee.txt         |
 | 534514775120412692 | high-tier-pvm/araxxor-melee.txt                   |
 | 689236456698675263 | upgrading-info/abilities.txt                      |
 | 689206023675838471 | miscellaneous-information/mechanics.txt           |
@@ -19,7 +19,7 @@
 | 566738213004115968 | information/mastery-system-reqs.txt               |
 | 534550564609064971 | mid-tier-pvm/kalphite-king.txt                    |
 | 534612632959713301 | mid-tier-pvm/nex-solo.txt                         |
-| 534573708438667275 | mid-tier-pvm/dragonkin-laboratory.txt             |
+| 534573708438667275 | mid-tier-pvm/dragonkin-laboratory-magic.txt       |
 | 711468605358866463 | guide-writing/style-guide.txt                     |
 | 534612663523737619 | mid-tier-pvm/nex-duo.txt                          |
 | 549658668241518603 | mid-tier-pvm/the-shadow-reef.txt                  |
@@ -66,3 +66,10 @@
 | 796067712836567120 | slayer/nightmare-creatures.txt                    |
 | 796067645627170846 | slayer/soul-devourers.txt                         |
 | 796067681890467850 | slayer/raptor-mobs.txt                            |
+| 798986473646325770 | mid-tier-pvm/temple-of-aminishi-ranged.txt        |
+| 799309058799829073 | mid-tier-pvm/dragonkin-laboratory-ranged.txt      |
+| 799000490045210644 | mid-tier-pvm/the-shadow-reef-melee.txt            |
+| 799000454754205726 | mid-tier-pvm/the-shadow-reef-magic.txt            |
+| 796067367725432833 | slayer/overview-of-slayer.txt                     |
+| 797160458980950029 | miscellaneous-information/eof-specs.txt           |
+| 549405396826193931 | high-tier-pvm/vorago-tips-and-tricks.txt          |

@@ -3,7 +3,7 @@ site_name: PVME Guides
 google_analytics:
 - UA-189398108-1
 - auto
-  
+
 theme:
   name: material
   custom_dir: overrides
@@ -24,6 +24,7 @@ markdown_extensions:
 - pymdownx.caret
 - pymdownx.saneheaders
 - pymdownx.tilde
+- admonition
 
 extra_css:
 - css/extra.css
@@ -67,7 +68,8 @@ nav:
   - pvme-guides/low-tier-pvm/king-black-dragon.md
 - Mid tier pvm:
   - pvme-guides/mid-tier-pvm/corporeal-beast.md
-  - pvme-guides/mid-tier-pvm/dragonkin-laboratory.md
+  - pvme-guides/mid-tier-pvm/dragonkin-laboratory-magic.md
+  - pvme-guides/mid-tier-pvm/dragonkin-laboratory-ranged.md
   - pvme-guides/mid-tier-pvm/fight-kiln.md
   - pvme-guides/mid-tier-pvm/gregorovic.md
   - pvme-guides/mid-tier-pvm/helwyr.md
@@ -76,7 +78,10 @@ nav:
   - pvme-guides/mid-tier-pvm/nex-duo.md
   - pvme-guides/mid-tier-pvm/nex-solo.md
   - pvme-guides/mid-tier-pvm/queen-black-dragon.md
-  - pvme-guides/mid-tier-pvm/temple-of-aminishi.md
+  - pvme-guides/mid-tier-pvm/temple-of-aminishi-melee.md
+  - pvme-guides/mid-tier-pvm/temple-of-aminishi-ranged.md
+  - pvme-guides/mid-tier-pvm/the-shadow-reef-magic.md
+  - pvme-guides/mid-tier-pvm/the-shadow-reef-melee.md
   - pvme-guides/mid-tier-pvm/the-shadow-reef.md
   - pvme-guides/mid-tier-pvm/twin-furies.md
   - pvme-guides/mid-tier-pvm/vindicta.md
@@ -93,8 +98,8 @@ nav:
   - pvme-guides/high-tier-pvm/solak-rotations.md
   - pvme-guides/high-tier-pvm/telos-0-999.md
   - pvme-guides/high-tier-pvm/telos-1k-plus-magic.md
-  - pvme-guides/high-tier-pvm/telos-1k-plus-melee.md
   - pvme-guides/high-tier-pvm/telos-1k-plus-ranged.md
+  - pvme-guides/high-tier-pvm/telos-melee.md
   - pvme-guides/high-tier-pvm/telos-stun-guide.md
   - pvme-guides/high-tier-pvm/vorago-duo-hm.md
   - pvme-guides/high-tier-pvm/vorago-duo.md
@@ -107,9 +112,10 @@ nav:
   - pvme-guides/slayer/ed2-hydrix.md
   - pvme-guides/slayer/moss-golems.md
   - pvme-guides/slayer/nightmare-creatures.md
-  - pvme-guides/slayer/optimal_block_prefer_lists.md
+  - pvme-guides/slayer/optimal-block-prefer-lists.md
   - pvme-guides/slayer/overview-of-slayer.md
   - pvme-guides/slayer/raptor-mobs.md
   - pvme-guides/slayer/ripper-demon.md
+  - pvme-guides/slayer/shattered-worlds-slayer.md
   - pvme-guides/slayer/slaying-to-120-for-xp.md
   - pvme-guides/slayer/soul-devourers.md
