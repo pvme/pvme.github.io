@@ -37,5 +37,11 @@
 
 ### March 15, 2021
 
-- updated missing roles/channels/users
-- Added Note for survey
+- Updated missing roles/channels/users
+- Added note for survey
+
+### March 22, 2021
+
+- Added support for emojis (standard discord emojis)
+- Updated missing roles/channels/users
+- Removed note for survey

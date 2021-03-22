@@ -18,7 +18,7 @@
 | 645460937473785886 | high-tier-pvm/vorago-duo.txt                      |
 | 566738213004115968 | information/mastery-system-reqs.txt               |
 | 534550564609064971 | mid-tier-pvm/kalphite-king.txt                    |
-| 534612632959713301 | mid-tier-pvm/nex-solo.txt                         |
+| 534612632959713301 | mid-tier-pvm/nex-solo-ranged.txt                  |
 | 534573708438667275 | mid-tier-pvm/dragonkin-laboratory-magic.txt       |
 | 711468605358866463 | guide-writing/style-guide.txt                     |
 | 534612663523737619 | mid-tier-pvm/nex-duo.txt                          |

@@ -24,6 +24,7 @@ markdown_extensions:
 - pymdownx.caret
 - pymdownx.saneheaders
 - pymdownx.tilde
+- pymdownx.emoji
 - admonition
 
 extra_css:
@@ -76,7 +77,8 @@ nav:
   - pvme-guides/mid-tier-pvm/kalphite-king.md
   - pvme-guides/mid-tier-pvm/legiones.md
   - pvme-guides/mid-tier-pvm/nex-duo.md
-  - pvme-guides/mid-tier-pvm/nex-solo.md
+  - pvme-guides/mid-tier-pvm/nex-melee.md
+  - pvme-guides/mid-tier-pvm/nex-solo-ranged.md
   - pvme-guides/mid-tier-pvm/queen-black-dragon.md
   - pvme-guides/mid-tier-pvm/temple-of-aminishi-melee.md
   - pvme-guides/mid-tier-pvm/temple-of-aminishi-ranged.md

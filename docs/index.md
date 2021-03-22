@@ -1,9 +1,5 @@
 # Home
 
-!!! info
-    Friendly reminder that we’re looking for your feedback! We’ll be closing this survey in a week:
-    [Google Form](https://forms.gle/7Vc9dfGrZL724cuq6)
-   
 Welcome to the PVME Guides documentation!
 
 This site is automatically generated from the [pvme-guides repository](https://github.com/pvme/pvme-guides) and is therefore always up to date with the [PVME Discord](https://discord.gg/6djqFVN).

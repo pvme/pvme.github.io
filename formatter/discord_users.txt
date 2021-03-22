@@ -135,6 +135,8 @@
   { id: '155560956850733056', username: 'NovaMew' },
   { id: '168667605647753216', username: 'Pup' },
   { id: '236290942103977984', username: 'KonanaBanana' },
+  { id: '259011909976719360', username: 'Rocket' },
+  { id: '341854550627713025', username: 'João Azevedo' },
 
 
 
