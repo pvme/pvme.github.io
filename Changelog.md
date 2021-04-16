@@ -45,3 +45,7 @@
 - Added support for emojis (standard discord emojis)
 - Updated missing roles/channels/users
 - Removed note for survey
+
+### April 16, 2021
+
+- Added new categories (same structure as PVME Discord)
