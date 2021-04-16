@@ -30,6 +30,10 @@ CATEGORY_SEQUENCE = [
     'low-tier-pvm',
     'mid-tier-pvm',
     'high-tier-pvm',
+    'nex-aod',
+    'elite-dungeons',
+    'vorago',
+    'telos',
     'slayer'
 ]
 
