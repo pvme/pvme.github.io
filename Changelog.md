@@ -56,3 +56,4 @@
 - fixed broken channel links
 - updated missing roles/channels/users
 - bugfix imgur links
+- light/dark mode switch
