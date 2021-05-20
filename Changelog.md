@@ -49,3 +49,7 @@
 ### April 16, 2021
 
 - Added new categories (same structure as PVME Discord)
+
+### May 20, 2021
+
+- fixed broken channel links
