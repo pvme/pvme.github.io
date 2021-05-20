@@ -45,10 +45,10 @@ nav:
   - pvme-guides/getting-started/quick-start.md
   - pvme-guides/getting-started/revo-to-full-manual.md
 - Upgrading info:
-  - pvme-guides/upgrading-info/abilities.md
   - pvme-guides/upgrading-info/armour-and-weapons.md
   - pvme-guides/upgrading-info/consumables.md
   - pvme-guides/upgrading-info/permanent-unlocks.md
+  - pvme-guides/upgrading-info/unlockable-abilities.md
   - pvme-guides/upgrading-info/upgrade-order.md
 - Miscellaneous information:
   - pvme-guides/miscellaneous-information/ability-information.md
@@ -69,47 +69,52 @@ nav:
   - pvme-guides/low-tier-pvm/king-black-dragon.md
 - Mid tier pvm:
   - pvme-guides/mid-tier-pvm/corporeal-beast.md
-  - pvme-guides/mid-tier-pvm/dragonkin-laboratory-magic.md
-  - pvme-guides/mid-tier-pvm/dragonkin-laboratory-ranged.md
   - pvme-guides/mid-tier-pvm/fight-kiln.md
   - pvme-guides/mid-tier-pvm/gregorovic.md
   - pvme-guides/mid-tier-pvm/helwyr.md
   - pvme-guides/mid-tier-pvm/kalphite-king.md
   - pvme-guides/mid-tier-pvm/legiones.md
-  - pvme-guides/mid-tier-pvm/nex-duo.md
-  - pvme-guides/mid-tier-pvm/nex-melee.md
-  - pvme-guides/mid-tier-pvm/nex-solo-ranged.md
   - pvme-guides/mid-tier-pvm/queen-black-dragon.md
-  - pvme-guides/mid-tier-pvm/temple-of-aminishi-melee.md
-  - pvme-guides/mid-tier-pvm/temple-of-aminishi-ranged.md
-  - pvme-guides/mid-tier-pvm/the-shadow-reef-magic.md
-  - pvme-guides/mid-tier-pvm/the-shadow-reef-melee.md
-  - pvme-guides/mid-tier-pvm/the-shadow-reef.md
+  - pvme-guides/mid-tier-pvm/rex-matriarchs.md
   - pvme-guides/mid-tier-pvm/twin-furies.md
   - pvme-guides/mid-tier-pvm/vindicta.md
 - High tier pvm:
-  - pvme-guides/high-tier-pvm/aod.md
   - pvme-guides/high-tier-pvm/araxxor-melee.md
   - pvme-guides/high-tier-pvm/araxxor-range.md
   - pvme-guides/high-tier-pvm/beastmaster-durzag.md
   - pvme-guides/high-tier-pvm/magister.md
   - pvme-guides/high-tier-pvm/raksha.md
   - pvme-guides/high-tier-pvm/rots.md
-  - pvme-guides/high-tier-pvm/solak-7s.md
-  - pvme-guides/high-tier-pvm/solak-duo.md
+  - pvme-guides/high-tier-pvm/solak-mechanics.md
   - pvme-guides/high-tier-pvm/solak-rotations.md
-  - pvme-guides/high-tier-pvm/telos-0-999.md
-  - pvme-guides/high-tier-pvm/telos-1k-plus-magic.md
-  - pvme-guides/high-tier-pvm/telos-1k-plus-ranged.md
-  - pvme-guides/high-tier-pvm/telos-melee.md
-  - pvme-guides/high-tier-pvm/telos-stun-guide.md
-  - pvme-guides/high-tier-pvm/vorago-duo-hm.md
-  - pvme-guides/high-tier-pvm/vorago-duo.md
-  - pvme-guides/high-tier-pvm/vorago-hardmode.md
-  - pvme-guides/high-tier-pvm/vorago-tips-and-tricks.md
-  - pvme-guides/high-tier-pvm/vorago-trio-hm.md
-  - pvme-guides/high-tier-pvm/vorago.md
   - pvme-guides/high-tier-pvm/yakamaru.md
+- Nex aod:
+  - pvme-guides/nex-aod/aod.md
+  - pvme-guides/nex-aod/nex-duo-ranged.md
+  - pvme-guides/nex-aod/nex-solo-melee.md
+  - pvme-guides/nex-aod/nex-solo-ranged-ecb.md
+  - pvme-guides/nex-aod/nex-solo-ranged.md
+- Elite dungeons:
+  - pvme-guides/elite-dungeons/dragonkin-laboratory-magic.md
+  - pvme-guides/elite-dungeons/dragonkin-laboratory-ranged.md
+  - pvme-guides/elite-dungeons/temple-of-aminishi-melee.md
+  - pvme-guides/elite-dungeons/temple-of-aminishi-ranged.md
+  - pvme-guides/elite-dungeons/the-shadow-reef-magic.md
+  - pvme-guides/elite-dungeons/the-shadow-reef-melee.md
+  - pvme-guides/elite-dungeons/the-shadow-reef-ranged.md
+- Vorago:
+  - pvme-guides/vorago/vorago-duo-hm.md
+  - pvme-guides/vorago/vorago-duo.md
+  - pvme-guides/vorago/vorago-hardmode.md
+  - pvme-guides/vorago/vorago-tips-and-tricks.md
+  - pvme-guides/vorago/vorago-trio-hm.md
+  - pvme-guides/vorago/vorago.md
+- Telos:
+  - pvme-guides/telos/telos-0-999-magic.md
+  - pvme-guides/telos/telos-1k-plus-magic.md
+  - pvme-guides/telos/telos-melee.md
+  - pvme-guides/telos/telos-ranged.md
+  - pvme-guides/telos/telos-stun-guide.md
 - Slayer:
   - pvme-guides/slayer/ed2-hydrix.md
   - pvme-guides/slayer/moss-golems.md

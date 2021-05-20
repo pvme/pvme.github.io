@@ -8,6 +8,7 @@
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
 - Use the same channel structure as the pvme discord
+- custom channel name instead of 'unknown channel'
 
 
 ## Release notes
@@ -53,3 +54,4 @@
 ### May 20, 2021
 
 - fixed broken channel links
+- updated missing roles/channels/users
