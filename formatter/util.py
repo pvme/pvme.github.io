@@ -65,8 +65,8 @@ def generate_embed(url: str) -> str:
     """
     # todo: open graph protocol formatting
     # todo: open graph protocol parsing for unknown urls
-    # i.imgur (png) note: can be managed in else but about 90% of the urls are in this format so it speeds up
-    if re.match(r"https?://i\.imgur\.com/([a-zA-Z0-9]+)\.png", url):
+    # (i.)imgur (png) note: can be managed in else but about 90% of the urls are in this format so it speeds up
+    if re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.png", url):
         embed = "<img class=\"media\" src=\"{}\">".format(url)
 
     # youtu.be
