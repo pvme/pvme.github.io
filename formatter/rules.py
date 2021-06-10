@@ -11,7 +11,7 @@ from gspread.utils import a1_to_rowcol
 import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
-           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID']
+           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink']
 
 logger = logging.getLogger('formatter.rules')
 logger.level = logging.WARN
@@ -39,15 +39,17 @@ class PVMEBotCommand(MKDocs):
             return
 
         if message.bot_command == '.':
-            message.bot_command = ''
+            message.bot_command_formatted = ''
         elif message.bot_command == "..":
-            message.bot_command = '.'
+            message.bot_command_formatted = '.'
         elif message.bot_command.startswith((".tag:", ".pin:", ".tag:")):
-            message.bot_command = ''
+            message.bot_command_formatted = ''
         elif message.bot_command.startswith((".img:", ".file:")):
             # todo: temporary parsing to get a general idea
             link = message.bot_command.split(':', 1)
-            message.bot_command = formatter.util.generate_embed(link[1])
+            message.bot_command_formatted = formatter.util.generate_embed(link[1])
+        elif message.bot_command == '.embed:json':
+            message.bot_command_formatted = ''
 
 
 class Section(MKDocs):
@@ -79,7 +81,7 @@ class Emoji(MKDocs):
         for pattern, extension in Emoji.PATTERNS:
             matches = [match for match in re.finditer(pattern, message.content)]
             for match in reversed(matches):
-                emoji_formatted = "<img title=\"{}\" class=\"emoji\" alt=\"{}\" src=\"https://cdn.discordapp.com/emojis/{}{}?v=1\">".format(match.group(1), match.group(1), match.group(2), extension)
+                emoji_formatted = "<img title=\"{}\" class=\"d-emoji\" alt=\"{}\" src=\"https://cdn.discordapp.com/emojis/{}{}?v=1\">".format(match.group(1), match.group(1), match.group(2), extension)
                 message.content = message.content[:match.start()] + emoji_formatted + message.content[match.end():]
 
 
@@ -187,7 +189,6 @@ class DiscordChannelID(MKDocs):
                 name = f"#{os.path.basename(path)}"
                 link = f"[{name}]({relative_file})"
             else:
-                # link = "[Unknown channel]()"
                 link = "[#unknown-channel]()"
                 logger.warning(f"unknown channel {match.group(1)}")
 
@@ -223,3 +224,22 @@ class DiscordRoleID(MKDocs):
                 logger.warning(f"unknown role {match.group(1)}")
             role_formatted = f"<code style=\"{role[1]}\">@{role[0]}</code>"
             message.content = message.content[:match.start()] + role_formatted + message.content[match.end():]
+
+
+# region direction markdown -> html formatting
+class MarkdownLink(MKDocs):
+    """Format [named links](https://discordapp.com) to
+    <a title="" href="https://discordapp.com" target="_blank" rel="noreferrer">named links</a>
+
+    NOTE: only used for formatting embed:json blocks
+    """
+    PATTERN = re.compile(r"\[([^]]+)]\(\s*(http[s]?://[^)]+)\s*\)")
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        matches = [match for match in re.finditer(MarkdownLink.PATTERN, message.content)]
+        for match in reversed(matches):
+            html_url_formatted = \
+                f"<a title=\"\" href=\"{match.group(2)}\" target=\"_blank\" rel=\"noreferrer\">{match.group(1)}</a>"
+            message.content = message.content[:match.start()] + html_url_formatted + message.content[match.end():]
+# end region

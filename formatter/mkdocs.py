@@ -12,11 +12,13 @@ Short overview of formatting:
 import os
 import shutil
 import logging
+from copy import deepcopy
+from dataclasses import dataclass, field
 
 import ruamel.yaml
 
 from formatter.rules import *
-
+from formatter.discord_embed import EmbedHTMLGenerator, parse_embed_json
 
 logger = logging.getLogger('formatter.mkdocs')
 logger.level = logging.WARN
@@ -51,16 +53,63 @@ DEFAULT_FORMAT_SEQUENCE = [
     DiscordRoleID
 ]
 
+JSON_EMBED_FORMAT_SEQUENCE = [
+    LineBreak,
+    Emoji,
+    DiscordChannelID,
+    DiscordUserID,
+    DiscordRoleID,
+    MarkdownLink
+]
+
+
+@dataclass
+class JsonEmbed(object):
+    raw: dict = field(default_factory=dict)
+    content: str = field(default='')
+    embeds: list = field(default_factory=list)  # unused
+
 
 class MKDocsMessage(object):
-    def __init__(self, content, embeds, bot_command):
+    def __init__(self, content, embeds, bot_command, json_embed=None):
         self.content = content
         self.embeds = embeds if embeds else list()
+        # todo: replace bot_command, bot_command_formatted with single bot_command dataclass
         self.bot_command = bot_command
+        self.bot_command_formatted = ''
+        self.json_embed = JsonEmbed(json_embed)
 
     @classmethod
-    def init_raw_message(cls, raw_content, raw_bot_command):
-        return cls(raw_content, None, raw_bot_command)
+    def init_raw_message(cls, content, bot_command):
+        if bot_command == '.embed:json':
+            # extract 'content' (normal message) and embed from .embed:json
+            json_dict = parse_embed_json(content)
+            content = json_dict.get('content', '')
+            json_embed = MKDocsMessage.parse_json_embed(json_dict, content)
+        else:
+            json_embed = None
+
+        return cls(content, None, bot_command, json_embed)
+
+    @staticmethod
+    def parse_json_embed(json_dict, content):
+        """Parse embed (dict) structure based on the following rules:
+
+        - the json object itself can be an embed
+        - the json object can have the key "embed" pointing to the embed
+        - or the json object can also have the key "embeds" pointing to an array of length 1, containing an embed
+        """
+        json_dict = deepcopy(json_dict)
+        if 'embed' in json_dict and type(json_dict['embed']) == dict:
+            json_embed = json_dict['embed']
+        elif 'embeds' in json_dict and type(json_dict['embeds'] == list):
+            json_embed = json_dict['embeds'][0] if len(json_dict['embeds']) >= 1 else None
+        elif (content == '' and len(json_dict.keys()) > 0) or (content != '' and len(json_dict.keys()) > 1):
+            json_embed = json_dict
+        else:
+            json_embed = None
+
+        return json_embed
 
     def format_bot_command(self):
         PVMEBotCommand.format_mkdocs_md(self)
@@ -71,14 +120,21 @@ class MKDocsMessage(object):
         for formatter in format_sequence:
             formatter.format_mkdocs_md(self)
 
+    def format_json_embed(self):
+        if self.json_embed.raw:
+            self.json_embed.content = str(EmbedHTMLGenerator(self.json_embed.raw))
+            for formatter in JSON_EMBED_FORMAT_SEQUENCE:
+                formatter.format_mkdocs_md(self.json_embed)
+
     def __str__(self):
         # todo: remove unnecessary spaces (won't affect html report but it's a bit cleaner)
-        bot_command_spacing = '\n' if self.bot_command != '' else ''
-        return '{}\n{}\n{}{}\n'.format(
+        bot_command_spacing = '\n' if self.bot_command_formatted != '' else ''
+        return '{}\n{}\n{}{}{}\n'.format(
             '\n\n'.join(self.content.splitlines()),
             '\n\n'.join(self.embeds),
+            self.json_embed.content,
             bot_command_spacing,
-            self.bot_command)
+            self.bot_command_formatted)
 
 
 def generate_channel_source(channel_txt_file, source_dir, category_name, channel_name):
@@ -86,6 +142,7 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
         raw_data = file.read()
 
     # obtain all the messages using the . separator
+    # todo: separate function
     messages = list()
     message_lines = list()
     for line in raw_data.splitlines():
@@ -104,10 +161,12 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
         messages.append(MKDocsMessage.init_raw_message("\n".join(message_lines), ''))
 
     # format the channel (format all messages)
+    # todo: separate function
     formatted_channel = '# {}\n'.format(channel_name.replace('-', ' ').capitalize())
     for message in messages:
         message.format_bot_command()
         message.format_content()
+        message.format_json_embed()
         formatted_channel = '{}{}'.format(formatted_channel, message)
 
     # write the formatted channel data to guide.md

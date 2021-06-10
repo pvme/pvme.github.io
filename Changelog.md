@@ -9,9 +9,36 @@
 - Obtain discord usernames using discord API/bot
 - Use the same channel structure as the pvme discord
 - custom channel name instead of 'unknown channel'
+- clickable link for non-embedded urls
 
 
 ## Release notes
+
+### June, 10, 2021
+
+- Added support for discord embeds [vorago-trio-hm](https://pvme.github.io/pvme-guides/vorago/vorago-trio-hm/#safe-phases-10-11)
+
+### May 20, 2021
+
+- fixed broken channel links
+- updated missing roles/channels/users
+- bugfix imgur links
+- light/dark mode switch
+
+### April 16, 2021
+
+- Added new categories (same structure as PVME Discord)
+
+### March 22, 2021
+
+- Added support for emojis (standard discord emojis)
+- Updated missing roles/channels/users
+- Removed note for survey
+
+### March 15, 2021
+
+- Updated missing roles/channels/users
+- Added note for survey
 
 ### January 9, 2021
 
@@ -35,25 +62,3 @@
 ### December 16, 2020
 
 - Initial release
-
-### March 15, 2021
-
-- Updated missing roles/channels/users
-- Added note for survey
-
-### March 22, 2021
-
-- Added support for emojis (standard discord emojis)
-- Updated missing roles/channels/users
-- Removed note for survey
-
-### April 16, 2021
-
-- Added new categories (same structure as PVME Discord)
-
-### May 20, 2021
-
-- fixed broken channel links
-- updated missing roles/channels/users
-- bugfix imgur links
-- light/dark mode switch

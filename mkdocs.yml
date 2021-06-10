@@ -33,9 +33,11 @@ markdown_extensions:
 - pymdownx.tilde
 - pymdownx.emoji
 - admonition
+# - pymdownx.extra (markdown formatting in HTMl blocks)
 
 extra_css:
 - css/extra.css
+- css/discord_embed.css
 
 # section below reserved for automatically generated nav !
 # ========================================================
