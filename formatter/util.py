@@ -69,6 +69,12 @@ def generate_embed(url: str) -> str:
     if re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.png", url):
         embed = "<img class=\"media\" src=\"{}\">".format(url)
 
+    elif re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.jpg", url):
+        embed = "<img class=\"media\" src=\"{}\">".format(url)
+
+    elif re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.mp4", url):
+        embed = "<video class=\"media\" controls><source src=\"{}\" type=\"video/mp4\"></video>".format(url)
+
     # youtu.be
     elif match := re.match(r"https?://youtu\.be/([a-zA-Z0-9_\-]+)", url):
         embed = "<iframe class=\"media\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>".format(match.group(1))
@@ -123,6 +129,7 @@ def generate_embed(url: str) -> str:
             elif url_type.startswith("video/"):
                 embed = "<video class=\"media\" autoplay loop muted controls><source src=\"{}\"></video>".format(adjusted_url)
             else:
+                logger.warning(f'not rendered url: {url}')
                 embed = None
 
     return embed

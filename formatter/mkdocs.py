@@ -168,6 +168,8 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
         message.format_content()
         message.format_json_embed()
         formatted_channel = '{}{}'.format(formatted_channel, message)
+        # if channel_name == 'dragonkin-laboratory-ranged':
+        #     print('')
 
     # write the formatted channel data to guide.md
     with open('{}/pvme-guides/{}/{}.md'.format(source_dir, category_name, channel_name), 'w', encoding='utf-8') as file:
@@ -239,4 +241,3 @@ if __name__ == '__main__':
     logging.getLogger('formatter.util').level = logging.DEBUG
 
     generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
-    pass

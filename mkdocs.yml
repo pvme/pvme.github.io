@@ -61,8 +61,12 @@ nav:
   - pvme-guides/upgrading-info/upgrade-order.md
 - Miscellaneous information:
   - pvme-guides/miscellaneous-information/ability-information.md
+  - pvme-guides/miscellaneous-information/auto-attacks.md
+  - pvme-guides/miscellaneous-information/boss-profits.md
   - pvme-guides/miscellaneous-information/eof-specs.md
   - pvme-guides/miscellaneous-information/mechanics.md
+  - pvme-guides/miscellaneous-information/pvm-achievement-sheets.md
+  - pvme-guides/miscellaneous-information/pvm-spreadsheets.md
 - Dpm advice:
   - pvme-guides/dpm-advice/dpm-advice-faq.md
   - pvme-guides/dpm-advice/dpm-advice-mage.md
@@ -121,6 +125,7 @@ nav:
 - Telos:
   - pvme-guides/telos/telos-0-999-magic.md
   - pvme-guides/telos/telos-1k-plus-magic.md
+  - pvme-guides/telos/telos-beginner.md
   - pvme-guides/telos/telos-melee.md
   - pvme-guides/telos/telos-ranged.md
   - pvme-guides/telos/telos-stun-guide.md

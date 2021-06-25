@@ -14,6 +14,10 @@
 
 ## Release notes
 
+### June, 6, 2021
+
+- Fixed bug with imgur.mp4 and imgur.jpg not being rendered
+
 ### June, 10, 2021
 
 - Added support for discord embeds [vorago-trio-hm](https://pvme.github.io/pvme-guides/vorago/vorago-trio-hm/#safe-phases-10-11)
