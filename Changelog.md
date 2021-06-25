@@ -14,7 +14,7 @@
 
 ## Release notes
 
-### June, 6, 2021
+### June, 25, 2021
 
 - Fixed bug with imgur.mp4 and imgur.jpg not being rendered
 
