@@ -1,10 +1,3 @@
-!!! info 
-    A bug with .mp4 and .jpg imgur links not being rendered is resolved now.
-    
-    All embedded images and videos are rendered correctly now.
-    
-    Please let me know if you find any inconsistencies between the site and discord or have any suggestions for improving the styling (Pleb#0025).
-
 # Home
 
 Welcome to the PVME Guides documentation!
