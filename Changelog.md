@@ -14,6 +14,10 @@
 
 ## Release notes
 
+### June, 30, 2021
+
+- Added Solak category and updated channels
+
 ### June, 25, 2021
 
 - Fixed bug with imgur.mp4 and imgur.jpg not being rendered
