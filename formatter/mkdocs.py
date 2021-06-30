@@ -35,6 +35,7 @@ CATEGORY_SEQUENCE = [
     'nex-aod',
     'elite-dungeons',
     'vorago',
+    'solak',
     'telos',
     'slayer'
 ]
