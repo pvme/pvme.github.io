@@ -45,6 +45,7 @@ nav:
 - index.md
 - Information:
   - pvme-guides/information/contribution-quick-start.md
+  - pvme-guides/information/mastery-system-expanded.md
   - pvme-guides/information/mastery-system-reqs.md
 - Getting started:
   - pvme-guides/getting-started/bossing-path.md
@@ -58,11 +59,12 @@ nav:
   - pvme-guides/upgrading-info/consumables.md
   - pvme-guides/upgrading-info/permanent-unlocks.md
   - pvme-guides/upgrading-info/unlockable-abilities.md
+  - pvme-guides/upgrading-info/upgrade-decisions.md
   - pvme-guides/upgrading-info/upgrade-order.md
 - Miscellaneous information:
   - pvme-guides/miscellaneous-information/ability-information.md
   - pvme-guides/miscellaneous-information/auto-attacks.md
-  - pvme-guides/miscellaneous-information/boss-profits.md
+  - pvme-guides/miscellaneous-information/boss-revenue.md
   - pvme-guides/miscellaneous-information/eof-specs.md
   - pvme-guides/miscellaneous-information/mechanics.md
   - pvme-guides/miscellaneous-information/pvm-achievement-sheets.md
@@ -98,8 +100,6 @@ nav:
   - pvme-guides/high-tier-pvm/magister.md
   - pvme-guides/high-tier-pvm/raksha.md
   - pvme-guides/high-tier-pvm/rots.md
-  - pvme-guides/high-tier-pvm/solak-mechanics.md
-  - pvme-guides/high-tier-pvm/solak-rotations.md
   - pvme-guides/high-tier-pvm/yakamaru.md
 - Nex aod:
   - pvme-guides/nex-aod/aod.md
@@ -109,7 +109,9 @@ nav:
   - pvme-guides/nex-aod/nex-solo-ranged.md
 - Elite dungeons:
   - pvme-guides/elite-dungeons/dragonkin-laboratory-magic.md
+  - pvme-guides/elite-dungeons/dragonkin-laboratory-melee.md
   - pvme-guides/elite-dungeons/dragonkin-laboratory-ranged.md
+  - pvme-guides/elite-dungeons/temple-of-aminishi-magic.md
   - pvme-guides/elite-dungeons/temple-of-aminishi-melee.md
   - pvme-guides/elite-dungeons/temple-of-aminishi-ranged.md
   - pvme-guides/elite-dungeons/the-shadow-reef-magic.md
@@ -117,11 +119,16 @@ nav:
   - pvme-guides/elite-dungeons/the-shadow-reef-ranged.md
 - Vorago:
   - pvme-guides/vorago/vorago-duo-hm.md
-  - pvme-guides/vorago/vorago-duo.md
   - pvme-guides/vorago/vorago-hardmode.md
+  - pvme-guides/vorago/vorago-rotations.md
   - pvme-guides/vorago/vorago-tips-and-tricks.md
   - pvme-guides/vorago/vorago-trio-hm.md
   - pvme-guides/vorago/vorago.md
+- Solak:
+  - pvme-guides/solak/solak-magic-brid.md
+  - pvme-guides/solak/solak-mechanics.md
+  - pvme-guides/solak/solak-range-brid.md
+  - pvme-guides/solak/solak-range.md
 - Telos:
   - pvme-guides/telos/telos-0-999-magic.md
   - pvme-guides/telos/telos-1k-plus-magic.md

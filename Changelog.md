@@ -14,6 +14,10 @@
 
 ## Release notes
 
+### July, 7, 2021
+
+- Updated users and roles
+
 ### June, 30, 2021
 
 - Added Solak category and updated channels
