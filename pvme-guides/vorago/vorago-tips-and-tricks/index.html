@@ -1,0 +1,2451 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/logo.ico">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
+    
+    
+      
+        <title>Vorago tips and tricks - PVME Guides</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3754935a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/discord_embed.css">
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-189398108-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vorago-tips-and-tricks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PVME Guides" class="md-header__button md-logo" aria-label="PVME Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PVME Guides
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vorago tips and tricks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PVME Guides" class="md-nav__button md-logo" aria-label="PVME Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PVME Guides
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Information
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/contribution-quick-start/" class="md-nav__link">
+        Contribution quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/mastery-system-expanded/" class="md-nav__link">
+        Mastery system expanded
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/mastery-system-reqs/" class="md-nav__link">
+        Mastery system reqs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Getting started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/bossing-path/" class="md-nav__link">
+        Bossing path
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/interface-guide/" class="md-nav__link">
+        Interface guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/perk-info/" class="md-nav__link">
+        Perk info
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/perks/" class="md-nav__link">
+        Perks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        Quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/revo-to-full-manual/" class="md-nav__link">
+        Revo to full manual
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Upgrading info
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrading info" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrading info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/armour-and-weapons/" class="md-nav__link">
+        Armour and weapons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/consumables/" class="md-nav__link">
+        Consumables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/permanent-unlocks/" class="md-nav__link">
+        Permanent unlocks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/unlockable-abilities/" class="md-nav__link">
+        Unlockable abilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/upgrade-decisions/" class="md-nav__link">
+        Upgrade decisions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../upgrading-info/upgrade-order/" class="md-nav__link">
+        Upgrade order
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Miscellaneous information
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellaneous information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellaneous information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/ability-information/" class="md-nav__link">
+        Ability information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/auto-attacks/" class="md-nav__link">
+        Auto attacks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/boss-revenue/" class="md-nav__link">
+        Boss revenue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/eof-specs/" class="md-nav__link">
+        Eof specs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/mechanics/" class="md-nav__link">
+        Mechanics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/pvm-achievement-sheets/" class="md-nav__link">
+        Pvm achievement sheets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/pvm-spreadsheets/" class="md-nav__link">
+        Pvm spreadsheets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Dpm advice
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Dpm advice" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Dpm advice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-faq/" class="md-nav__link">
+        Dpm advice faq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-mage/" class="md-nav__link">
+        Dpm advice mage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-melee/" class="md-nav__link">
+        Dpm advice melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-range/" class="md-nav__link">
+        Dpm advice range
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Low tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Low tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Low tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/barrows/" class="md-nav__link">
+        Barrows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/chaos-elemental/" class="md-nav__link">
+        Chaos elemental
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/dagannoth-kings/" class="md-nav__link">
+        Dagannoth kings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/giant-mole/" class="md-nav__link">
+        Giant mole
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/gwd1/" class="md-nav__link">
+        Gwd1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/kalphite-queen/" class="md-nav__link">
+        Kalphite queen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/king-black-dragon/" class="md-nav__link">
+        King black dragon
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Mid tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mid tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Mid tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/corporeal-beast/" class="md-nav__link">
+        Corporeal beast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/fight-kiln/" class="md-nav__link">
+        Fight kiln
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/gregorovic/" class="md-nav__link">
+        Gregorovic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/helwyr/" class="md-nav__link">
+        Helwyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/kalphite-king/" class="md-nav__link">
+        Kalphite king
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/legiones/" class="md-nav__link">
+        Legiones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/queen-black-dragon/" class="md-nav__link">
+        Queen black dragon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/rex-matriarchs/" class="md-nav__link">
+        Rex matriarchs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/twin-furies/" class="md-nav__link">
+        Twin furies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/vindicta/" class="md-nav__link">
+        Vindicta
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        High tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="High tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          High tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/araxxor-melee/" class="md-nav__link">
+        Araxxor melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/araxxor-range/" class="md-nav__link">
+        Araxxor range
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/beastmaster-durzag/" class="md-nav__link">
+        Beastmaster durzag
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/magister/" class="md-nav__link">
+        Magister
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/raksha/" class="md-nav__link">
+        Raksha
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/rots/" class="md-nav__link">
+        Rots
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/yakamaru/" class="md-nav__link">
+        Yakamaru
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Nex aod
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Nex aod" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Nex aod
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/aod/" class="md-nav__link">
+        Aod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-duo-ranged/" class="md-nav__link">
+        Nex duo ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-melee/" class="md-nav__link">
+        Nex solo melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-ranged-ecb/" class="md-nav__link">
+        Nex solo ranged ecb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-ranged/" class="md-nav__link">
+        Nex solo ranged
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Elite dungeons
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Elite dungeons" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Elite dungeons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-magic/" class="md-nav__link">
+        Dragonkin laboratory magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-melee/" class="md-nav__link">
+        Dragonkin laboratory melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-ranged/" class="md-nav__link">
+        Dragonkin laboratory ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-magic/" class="md-nav__link">
+        Temple of aminishi magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-melee/" class="md-nav__link">
+        Temple of aminishi melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-ranged/" class="md-nav__link">
+        Temple of aminishi ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-magic/" class="md-nav__link">
+        The shadow reef magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-melee/" class="md-nav__link">
+        The shadow reef melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-ranged/" class="md-nav__link">
+        The shadow reef ranged
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      <label class="md-nav__link" for="__nav_12">
+        Vorago
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Vorago" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Vorago
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vorago-duo-hm/" class="md-nav__link">
+        Vorago duo hm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vorago-hardmode/" class="md-nav__link">
+        Vorago hardmode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vorago-rotations/" class="md-nav__link">
+        Vorago rotations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vorago tips and tricks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Vorago tips and tricks
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-fight" class="md-nav__link">
+    Pre-Fight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-on-14k-entry-hits" class="md-nav__link">
+    Tutorial on 14k Entry Hits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    Phase 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-lure" class="md-nav__link">
+    Top Lure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solo-luring-vorago-no-tl5-voke-required" class="md-nav__link">
+    Solo Luring Vorago (No TL5 Voke Required)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crack-healing" class="md-nav__link">
+    Crack Healing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    Phase 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centring-vorago-courtesy-of-ry-and-foxis" class="md-nav__link">
+    Centring Vorago (Courtesy of #Ry and #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-tick-shatter-after-bring-him-down-courtesy-of-tho-mas" class="md-nav__link">
+    How to Tick Shatter After Bring Him Down (Courtesy of #Tho mas)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    Phase 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-dd-scops-on-spawn-using-backwards-target-cycle" class="md-nav__link">
+    How to DD Scops on Spawn Using Backwards Target Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4" class="md-nav__link">
+    Phase 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stone-clone-skip-courtesy-of-foxis-and-durmoth" class="md-nav__link">
+    Stone Clone Skip (Courtesy of #Foxis and #Durmoth)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-teamsplits-courtesy-of-xtl" class="md-nav__link">
+    Breaking Teamsplits (Courtesy of #XTL)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5" class="md-nav__link">
+    Phase 5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-pushback" class="md-nav__link">
+    P5 Pushback
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-debilitate-on-p5-courtesy-of-foxis" class="md-nav__link">
+    Skipping Debilitate on P5 (Courtesy of #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-cycling-at-vorago-courtesy-of-foxis" class="md-nav__link">
+    Target Cycling at Vorago (Courtesy of #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dummy-placement-courtesy-of-xtl" class="md-nav__link">
+    Dummy Placement (Courtesy of #XTL)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-logging" class="md-nav__link">
+    X-Logging
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vorago-trio-hm/" class="md-nav__link">
+        Vorago trio hm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vorago/" class="md-nav__link">
+        Vorago
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Solak
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Solak" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Solak
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-magic-brid/" class="md-nav__link">
+        Solak magic brid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-mechanics/" class="md-nav__link">
+        Solak mechanics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-range-brid/" class="md-nav__link">
+        Solak range brid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-range/" class="md-nav__link">
+        Solak range
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Telos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Telos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Telos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-0-999-magic/" class="md-nav__link">
+        Telos 0 999 magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-1k-plus-magic/" class="md-nav__link">
+        Telos 1k plus magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-beginner/" class="md-nav__link">
+        Telos beginner
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-melee/" class="md-nav__link">
+        Telos melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-ranged/" class="md-nav__link">
+        Telos ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-stun-guide/" class="md-nav__link">
+        Telos stun guide
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Slayer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Slayer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Slayer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/ed2-hydrix/" class="md-nav__link">
+        Ed2 hydrix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/moss-golems/" class="md-nav__link">
+        Moss golems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/nightmare-creatures/" class="md-nav__link">
+        Nightmare creatures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/optimal-block-prefer-lists/" class="md-nav__link">
+        Optimal block prefer lists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/overview-of-slayer/" class="md-nav__link">
+        Overview of slayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/raptor-mobs/" class="md-nav__link">
+        Raptor mobs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/ripper-demon/" class="md-nav__link">
+        Ripper demon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/shattered-worlds-slayer/" class="md-nav__link">
+        Shattered worlds slayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/slaying-to-120-for-xp/" class="md-nav__link">
+        Slaying to 120 for xp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/soul-devourers/" class="md-nav__link">
+        Soul devourers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-fight" class="md-nav__link">
+    Pre-Fight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-on-14k-entry-hits" class="md-nav__link">
+    Tutorial on 14k Entry Hits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    Phase 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-lure" class="md-nav__link">
+    Top Lure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solo-luring-vorago-no-tl5-voke-required" class="md-nav__link">
+    Solo Luring Vorago (No TL5 Voke Required)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crack-healing" class="md-nav__link">
+    Crack Healing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    Phase 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centring-vorago-courtesy-of-ry-and-foxis" class="md-nav__link">
+    Centring Vorago (Courtesy of #Ry and #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-tick-shatter-after-bring-him-down-courtesy-of-tho-mas" class="md-nav__link">
+    How to Tick Shatter After Bring Him Down (Courtesy of #Tho mas)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    Phase 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-dd-scops-on-spawn-using-backwards-target-cycle" class="md-nav__link">
+    How to DD Scops on Spawn Using Backwards Target Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4" class="md-nav__link">
+    Phase 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stone-clone-skip-courtesy-of-foxis-and-durmoth" class="md-nav__link">
+    Stone Clone Skip (Courtesy of #Foxis and #Durmoth)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-teamsplits-courtesy-of-xtl" class="md-nav__link">
+    Breaking Teamsplits (Courtesy of #XTL)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5" class="md-nav__link">
+    Phase 5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-pushback" class="md-nav__link">
+    P5 Pushback
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-debilitate-on-p5-courtesy-of-foxis" class="md-nav__link">
+    Skipping Debilitate on P5 (Courtesy of #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-cycling-at-vorago-courtesy-of-foxis" class="md-nav__link">
+    Target Cycling at Vorago (Courtesy of #Foxis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dummy-placement-courtesy-of-xtl" class="md-nav__link">
+    Dummy Placement (Courtesy of #XTL)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-logging" class="md-nav__link">
+    X-Logging
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="vorago-tips-and-tricks">Vorago tips and tricks</h1>
+<p><strong><ins>Miscellaneous Vorago Mechanics, Interactions and Glitches</ins> (Courtesy of #Dhoggo)</strong></p>
+<p>This is a collection of various miscellaneous mechanics and glitches that can occur during the Vorago encounter for both normal mode and hard mode. These tips can range from very helpful (to the point where dps strategies rely on them) to just knowing them for the sake of trivia. These are generally organized by phase. Some of this information is already listed on the RS Wiki but for the sake of completion I will reiterate them here. This is not an extensive list of all glitches and misc. tips as I’m sure there are more to be discovered. Unless stated otherwise, all of these apply to both normal mode and hard mode.</p>
+<h2 id="pre-fight">Pre-Fight</h2>
+<p><strong><ins>Challenge Timer</ins></strong></p>
+<p>⬥ Vorago’s fight challenge operates on a timer of 20 seconds. If you teleport away after you’ve accepted Vorago’s challenge to fight, and you travel back to the Face area within the 20 seconds, Vorago will still start the encounter and bring everyone into P1.</p>
+<p>‎ ‎ ‎ ‎• Potential application: If you teleport away, do not return to the Face area within 20 seconds unless you wish to join the fight.</p>
+<p><strong><ins>Fake Dropdown</ins></strong></p>
+<p>⬥ There are some methods wherein you can take the dropdown damage but not enter the fight. One method of doing so is to open the “change username” interface, though you do not need to change your username – just have the interface open. The dropdown damage will still calculate as if you will join the fight (eg. In a team of five, the dropdown damage will be 10k even though only four people enter the kill).</p>
+<p>‎ ‎ ‎ ‎• Potential application: This could be used to lessen dropdown damage without having to enter p1 and lobby thereafter, in the event you need to get someone with low HP into the fight.</p>
+<p><strong><ins>Rest Animation</ins></strong></p>
+<p>⬥ If you are in a rest animation when someone initiates the fight challenge prompt, you will not receive the challenge prompt until you have left the rest animation.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Don’t accidentally not accept the challenge prompt by resting at Face.</p>
+<p><strong><ins>Lucky and Dropdown Damage</ins></strong></p>
+<p>⬥ The Lucky perk can proc on the dropdown damage. Defenders and Armor set effects such as the Saradomin Warpriest effect can also proc on the dropdown damage nulling it to 1.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Get lucky and take 1 damage instead of 12500. This is unlikely to be useful for regular kills however.</p>
+<p><strong><ins>Powerburst of Vitality</ins></strong></p>
+<p>⬥ Dropdown is 20 seconds after challenge, so you can time using the powerburst of vitality by using a defensive ability like Preparation. Then right when it has some time before it comes back, you can use the powerburst right then to start the fight with more health than if you just used a phoenix necklace. You can also bring only one dose if you don't need it for the rest of the kill so you can equip your 2h weapons without needing to eat something else.</p>
+<h2 id="tutorial-on-14k-entry-hits">Tutorial on 14k Entry Hits</h2>
+<p><strong><ins>Order to Maximize HP</ins></strong></p>
+<ol>
+<li>
+<p>Bonfire with all of your HP-boosting gear; if you have a thermal flask, use it prior to bonfiring</p>
+</li>
+<li>
+<p>Load your preset with your shield equipped</p>
+</li>
+<li>
+<p>Activate Fortitude</p>
+</li>
+<li>
+<p>Eat a rocktail/sailfish soup</p>
+</li>
+<li>
+<p>Lobby</p>
+</li>
+<li>
+<p>You should be 14k+ hp without needing to keep prayer activated, just don't take off any hp boosting items (e.g. shield) or load another preset, else your hp disappears</p>
+</li>
+</ol>
+<h2 id="phase-1">Phase 1</h2>
+<p><strong><ins>Less Bombs on P1</ins></strong></p>
+<p>⬥ Once the TL5 reaches the top rock and vokes Vorago, Vorago will throw less auto attacks and often have a longer delay between auto attacks, provided no one else is standing in MD (ie. Base should not voke and stand MD until around 30k hp).</p>
+<p>‎ ‎ ‎ ‎• Potential application: In trios, this lessens the number of blues and red bombs the Bomb Tank has to take during P1</p>
+<p><strong><ins>TL5 Corner and Attack Range</ins></strong></p>
+<p>⬥ Assuming the Base lures Vorago to the North West quadrant so that the TL5 takes bombs as he climbs to the voke spot, the far North West corner of the TL5 path is often too far away from Vorago’s attack range. Thus, if the TL5 spends too long in the corner of the North West section, Vorago will start throwing bombs to the next furthest person which is usually the Bomb Tank.</p>
+<p>‎ ‎ ‎ ‎• Potential application: The TL5 should run past the North West corner as fast as possible to avoid sending bombs to the Bomb Tank in trios.</p>
+<p><strong><ins>How to Lobby P1</ins></strong></p>
+<p>⬥ If the TL5 is standing on the top platform and vokes Vorago, the rest of the team can run to the South wall and exit combat to lobby. Vorago may throw occasionally throw blue bombs to the people running Southward, though, he will do it so infrequently that you should still be able to lobby in between blue bombs.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Lobby p1 if someone dies and you don’t want to invest more to further the kill.</p>
+<p><strong><ins>Jump Damage Null</ins></strong></p>
+<p>⬥ Upon the TL5 clicking to jump on Vorago, all incoming damage will be nulled on the tick when the TL5 clicks to jump.</p>
+<p>‎ ‎ ‎ ‎• Potential application: If Vorago is close to HP reset and the TL5 sees someone doing a wild magic that will reset the HP, the TL5 can click to jump and immediately null any incoming damage, preventing an HP reset.</p>
+<p><strong><ins>TL5 Staying in Combat</ins></strong></p>
+<p>⬥ The jump animation is exactly 17 seconds. As the TL5, it is possible to stay in combat during the jump animation. This requires the TL5 to do an ability on the tick you click to jump. If you do an ability and wait a couple ticks before jump, you will have exited combat and lost adren during the jump animation.</p>
+<p>‎ ‎ ‎ ‎• Potential application: This is a way for the TL5 to keep adren during jump and threshold after jump to end p1 faster.</p>
+<p><strong><ins>Movement After Jump</ins></strong></p>
+<p>⬥ If the Base moves away from MD during the jump animation, Vorago will follow the Base as if Vorago is still in MD. However, Vorago will not visibly move as he is stuck in the jump animation. After the jump animation is over and the TL5 reaches the ground, Vorago’s character will “teleport” to be MD of where-ever the Base has walked to.</p>
+<p>‎ ‎ ‎ ‎• Potential application: In duos, the Base can escape during the jump animation. If the Bomb/TL5 happens to have a red bomb on them, the red bomb won’t deal 3k damage as the Base is far enough away. Be sure to walk one step north after you’ve escaped to prevent Vorago from moonwalking around the Base.</p>
+<p>⬥ After Vorago has moved to the Base’s MD post-jump, Vorago will not move from that location unless the Base steps under him.</p>
+<p>‎ ‎ ‎ ‎• Potential application: If no one is standing MD, Vorago will continue to throw blue bombs to the Bomb Tank. The Base can step away from Vorago’s MD and devo-cept the Bomb Tank.</p>
+<p><strong><ins>1 HP Glitch</ins></strong></p>
+<p>⬥ Vorago will regenerate HP on phase 1 at 1:09 (also 2:09, 3:09, etc.), if Vorago regenerates HP while jumping around before the phase transition, Vorago can have random aggro at the start of p2 meaning the first bleed on p2 will also be to a random person. Vorago can also start throwing blues and potentially reds. The blue and red bombs can follow you through the phase transition damage you upon p2 dropdown.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: The Base should target cycle as soon as possible on p2 to ensure that Base has aggro on p2.</p>
+<h2 id="top-lure">Top Lure</h2>
+<p><strong><ins>Lure to TL5 Spot in Small Teams</ins> (Courtesy of #Tho mas)</strong></p>
+<p>https://www.youtube.com/watch?v=OmYO-xwpxjo&amp;feature=youtu.be</p>
+<p><strong><ins>Proper Climbing as TL5</ins> (Courtesy of #Tho mas)</strong></p>
+<p>https://www.youtube.com/watch?v=Mzyfjey6IwQ&amp;feature=youtu.be</p>
+<p><strong><ins>Stalling Wild Magic as Top Lure</ins> (Courtesy of #Keny)</strong></p>
+<p>https://www.youtube.com/watch?v=sgnThNnO9W8&amp;feature=youtu.be</p>
+<h2 id="solo-luring-vorago-no-tl5-voke-required">Solo Luring Vorago (No TL5 Voke Required)</h2>
+<p><strong><ins>Solo Luring in Hard Mode from the East Wall</ins> (Courtesy of #wyld)</strong></p>
+<p>https://www.youtube.com/watch?v=Mu_EvH4Y_Xg</p>
+<p><strong><ins>Solo Luring in Normal Mode from the West Wall</ins> (Courtesy of #Durmoth)</strong></p>
+<p>https://www.youtube.com/watch?v=1mgdsTZGMuY</p>
+<h2 id="crack-healing">Crack Healing</h2>
+<p><strong><ins>Mechanics</ins></strong></p>
+<p>During a phase transition at Vorago, your character is immune for 1 tick. You can take advantage of this by using the spell Heal Other from the Lunar Spellbook and cast the heal at the same time as a phase transition.</p>
+<p>Normally, Heal Other will take hp from your character and transfer it to your target player; this results in a large 3-7k typeless "hit" on your character that is unavoidable. However, as your character is immune during a phase transition, the Heal Other will not damage your character. Thus, your target player will gain hp at no cost to you.</p>
+<p>This works on any phase transition at Vorago in both normal mode and hard mode (with the exception of p10 -&gt; p11 at hard mode).</p>
+<p><strong><ins>How to Perform a Crack Heal</ins></strong></p>
+<p>⬥ Be on the Lunar Spellbook and select the spell Heal Other.</p>
+<p>⬥ Click your target player when the floor shows cracks, right before it collapses.</p>
+<p>⬥ Important Notes</p>
+<p>‎ ‎ ‎ ‎• Your target player must have Accept Aid turned ON in their settings.</p>
+<p>‎ ‎ ‎ ‎• If you mess up and perform the Heal Other too early/late, the spell will take hp from your character and transfer it to your target.</p>
+<p>‎ ‎ ‎ ‎• Heal Group can be used as well, though it requires your target player(s) to be within 1 square of you. Easiest way to achieve this is to ask your partner to follow you, or vice versa.</p>
+<p>See video for examples: <a href="https://youtu.be/3bMTu1YJIbQ">https://youtu.be/3bMTu1YJIbQ</a></p>
+<h2 id="phase-2">Phase 2</h2>
+<p><strong><ins>Invisible First Bleed</ins></strong></p>
+<p>⬥ The first bleed of P2 does not have a character animation as Vorago is still in his dropdown animation.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Clear the first bleed by using freedom first, then tag and voke if you are the Base.</p>
+<p><strong><ins>1 Tick Bleed Clear</ins></strong></p>
+<p>⬥ It is possible to clear the bleed in 1 tick by first escaping, then bladed diving back onto Vorago within the same tick. You must target Vorago with the bladed dive, targeting the ground for MD will not work and will make Vorago walk towards you. You must avoid standing on the corner of Vorago’s MD as this will also make Vorago walk toward you after you’ve escaped.</p>
+<p>‎ ‎ ‎ ‎• Potential application: This is another way to keep Vorago in Base spot while clearing bleeds without freedom.</p>
+<p><strong><ins>Instant Bleed Clear</ins></strong></p>
+<p>⬥ After a bleed is applied, there is a couple ticks delay between when the bleed is applied to when the dismember icon appears on the debuff bar. It is possible to clear a bleed before the dismember bleed icon appears on your debuff bar.</p>
+<p>‎ ‎ ‎ ‎• Potential application: You can clear bleeds faster than you think.</p>
+<p><strong><ins>Voke Splash</ins></strong></p>
+<p>⬥ It is possible to have a voke splash on P2, and (likely) all other phases of the boss too. If a player vokes Vorago and another player is standing within the path of Vorago and the voker, Vorago will aggro onto the person standing in-between instead.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Avoid voking Vorago while standing behind another player. See clip: <a href="https://clips.twitch.tv/FrigidDeafMooseThisIsSparta">https://clips.twitch.tv/FrigidDeafMooseThisIsSparta</a></p>
+<p><strong><ins>Clearing All Bleeds Solo</ins></strong></p>
+<p>⬥ It is possible to clear all five bleeds solo. The order is escape/surge, bladed dive, freedom, escape/surge, bladed dive. Note a mobile perk is needed.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Clear all five bleeds solo in case of dead teammates.</p>
+<p><strong><ins>2k Typeless Damage</ins></strong></p>
+<p>⬥ Sometimes, after Bring Him Down, all players in the arena will take a 2k typeless hit immediately after the spam click mechanic. It is unclear what triggers this though it is believe to be an “anti-afk” where if players ignore Vorago for too long, Vorago will perform the 2k typeless hit (similar to how you must stay in combat in Yaka). This 2k typeless hit can also be encountered during P1 if the TL5 vokes Vorago and everyone else lobbies, but the TL5 stays in the kill and exits combat. The TL5 will proceed to take 2k typeless hits. It seems the entire team must exit combat for this bleed to occur, though confirmation on this is needed.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Keep above 2k HP after Bring Him Down just in case.</p>
+<p><strong><ins>Stuck Under Vorago</ins></strong></p>
+<p>⬥ During Bring Him Down, it is possible to get stuck under Vorago after the spam click mechanic. This is usually triggered by standing under Vorago during the Bring Him Down mechanic.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Avoid standing under Vorago during Bring Him Down.</p>
+<p><strong><ins>Bring Him Down – DPS Check</ins></strong></p>
+<p>⬥ The Bring Him Down DPS check to make Vorago stumble is 50k Hp no matter the team size. This is rather trivial to do in a team size of 3+ but becomes harder in Duos.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Do approx. 50k worth of damage during Bring Him Down to get past the mechanic.</p>
+<p><strong><ins>Bring Him Down – Staying in Combat</ins></strong></p>
+<p>⬥ Occasionally, it is possible to exit combat and drop adren during the Bring Him Down spam click mechanic. This usually occurs when players have refreshed their combat state before the last Gravity Orb is tagged.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: To avoid dropping combat and losing adren during Bring Him Down, do a defensive ability during the spam click mechanic, such as anticipate.</p>
+<h2 id="centring-vorago-courtesy-of-ry-and-foxis">Centring Vorago (Courtesy of #Ry and #Foxis)</h2>
+<p>Knowing how to walk Vorago is useful for moving him on phase 2.</p>
+<p>First determine his walking direction. Step one tile under Vorago and immediately cast an ability to walk him one tile in his walking direction.</p>
+<p><em>Note: If you do not cast an ability he may walk on top of you and around to the other side.</em></p>
+<p>Once you determine Vorago's walking direction, it is easiest to manipulate his position from the opposite side, i.e. if Vorago is walking west, stand on the east side of him.</p>
+<p>In order to move Vorago, he must be following you. During phase 2, Vorago does not follow between the red bomb and start of bleeds. This means if you step out of melee distance expecting Vorago to follow you after the red, he will stand there until bleeds begin. However, he can be walked under which will cause him to move in the direction he is walking.</p>
+<p>If Vorago is walking south, go west and bladed dive onto the square marked with the blue blubber jellyfish</p>
+<video class="media" autoplay loop muted controls><source src="https://thumbs.gfycat.com/SorrowfulFewBumblebee-mobile.mp4"></video>
+
+<p>To bring Vorago back to base spot when vorago is lured south during bleeds, step 2 squares north of the square west of L rock and provoke</p>
+<video class="media" autoplay loop muted controls><source src="https://thumbs.gfycat.com/BossyTallElephant-mobile.mp4"></video>
+
+<p>If Vorago is north, step 2 squares south instead.</p>
+<video class="media" autoplay loop muted controls><source src="https://thumbs.gfycat.com/RepentantVillainousArthropods-mobile.mp4"></video>
+
+<h2 id="how-to-tick-shatter-after-bring-him-down-courtesy-of-tho-mas">How to Tick Shatter After Bring Him Down (Courtesy of #Tho mas)</h2>
+<p>https://www.youtube.com/watch?v=CXqNT7XOOHk&amp;feature=youtu.be</p>
+<h2 id="phase-3">Phase 3</h2>
+<p><strong><ins>Scopulus – Aggro</ins></strong></p>
+<p>⬥ The Scopulus aggro seem to be random though there are a couple ways to trigger a reaggro. 1) If a player is constantly in motion, the Scopulus tend to aggro them more. 2) A player with an Ice Nihil will tend to draw more aggro, due to the Ice Nihil’s special effect acting on the Scops.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Bring a Smoke Nihil on Scop rotations to avoid drawing aggro.</p>
+<p><strong><ins>Vitalis – Base Spot and Vitalis Spawn</ins></strong></p>
+<p>⬥ If Vorago is not moved from the initial dropdown spot, the Vitalis Orb will always be sent North, North East, or East. If Vorago is moved from the initial dropdown spot, the Vitalis Orb can be send in any direction.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Avoid moving Vorago to have a predictable Vitalis Orb spawn.</p>
+<p><strong><ins>Vitalis – Max Vitalis</ins></strong></p>
+<p>⬥ The maximum number of Vitalis that can fill the room in Normal Mode is 15, the max in Hard Mode is 25. In Normal Mode, the number of Vitalis spawning per Orb is 5 on p3 and p4, and 2-4 on p5. In Hard Mode, there are 7 Vitalis on p5 and p9, and between 3 to 5 on p10 and p11.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: If you want to block all Vitalis spawns, have the appropriate number of people standing in the spawn Orb.</p>
+<p><strong><ins>Vitalis – Death Animation</ins></strong></p>
+<p>⬥ A Vitalis minion is still treated as a physical object while in its death animation.</p>
+<p>‎ ‎ ‎ ‎• Potential application: If surrounded by Vitali, be vary of their death animations still counting as a physical object. Same applies to Waterfall on P4, your character will attempt to path around the dying Vitalis which may lead to exiting the waterfall prematurely. See clip: <a href="https://youtu.be/-HOB3kLpHgI">https://youtu.be/-HOB3kLpHgI</a></p>
+<p><strong><ins>Teamsplit – Auto Attacks</ins></strong></p>
+<p>⬥ During the teamsplit mechanic, if you attempt to cast an auto attack on Vorago while outside the max cast distance, your character will run into the max cast distance in an attempt to cast your spell. Often times this results in a player leaving the teamsplit box early and taking 8k damage.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Do not attempt to auto cast while in teamsplit unless you are certain you are within 7 squares to Vorago.</p>
+<p><strong><ins>Teamsplit – Hard Mode</ins></strong></p>
+<p>⬥ The teamsplit boxes in hardmode, although appearing to be only 1x1, are actually 1x2. The square directly east of the 1x1 square is also safe to stand on. The same applies to the teamsplit boxes on p10 and p11.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Another safe square to stand on for team split.</p>
+<p><strong><ins>The End – Glitch Out of Arms</ins></strong></p>
+<p>⬥ It is possible to glitch out of the arms during the mechanic by standing directly on the South line, or East line, in the respective quadrants. When Vorago’s arm crosses said line, your character is free to move out into the open arena. Note that if you do not move after “glitching out” and stay standing on the South or East line, you will be forced back into the arms mechanic.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: DPS can glitch out of arms and set up their Sun with ample space.</p>
+<p><strong><ins>The End – Bombs after Phase</ins></strong></p>
+<p>⬥ Vorago only allows bombs to be interacted with when it is pointed to in their respective quadrant. If Vorago happens to phase while looking at a specific quadrant, the bombs in that quadrant can still be activated while the phase transition is happening.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Tag the red bombs during a phase transition and ask for a group hug.</p>
+<h2 id="how-to-dd-scops-on-spawn-using-backwards-target-cycle">How to DD Scops on Spawn Using Backwards Target Cycle</h2>
+<p>https://youtu.be/KmYgKcfLeRc</p>
+<p><strong><ins>Getting Flank on Scops as Base</ins> (Courtesy of #Archeus)</strong></p>
+<p>Stand on the tile shown in the video, and take one step north east after luring scops.</p>
+<p>https://youtu.be/UtBBbOpRx84 (Clip courtesy of #NamoV)</p>
+<h2 id="phase-4">Phase 4</h2>
+<p><strong><ins>Waterfall – First Spawn</ins></strong></p>
+<p>⬥ The first spawn of the waterfall will never be on the North East corner of the arena.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: That is one less corner you have to consider for waterfall upon dropdown.</p>
+<p><strong><ins>Waterfall – Auto Attacks</ins></strong></p>
+<p>⬥ Initiating an auto attack while standing in waterfall will force your character to run into max cast distance and often outside of the waterfall.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Avoid using auto attacks on Vorago while standing in waterfall.</p>
+<p><strong><ins>Waterfall – Corners of the Waterfall</ins></strong></p>
+<p>⬥ The corners of the waterfall (excluding the NE, SE, NW, SW corner) are not considered part of the waterfall.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Avoid standing on the edge/corners of the waterfall or else be ready to take a 9800 hit.</p>
+<p><strong><ins>Stone Clone – Vorago Melee Animation</ins></strong></p>
+<p>⬥ Upon summoning a stone clone, Vorago will perform a melee swipe animation. This melee swipe animation is non-damaging and is only cosmetic.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Do not try to res this attack as it won’t hit anything.</p>
+<p><strong><ins>Stone Clone – No Target</ins></strong></p>
+<p>⬥ If the stone clone target dies on the same tick, or shortly after the stone clone spawns, the stone clone will stand idle for a couple seconds before reaggroing to another person. However, the new player cannot attack the stone clone back as they are not the stone clones’ original target. The stone clone will eventually despawn.</p>
+<p><strong><ins>Teamsplit – Third Waterfall</ins></strong></p>
+<p>⬥ The teamsplit mechanic after the third waterfall is currently glitched. Vorago is still attackable during the teamsplit and if attacked, Vorago will proceed with his rotation and throw three blues, followed by bleeds. This means the team will have to tank 3 blues without any defensives and be ready to immediately deal with bleeds out of team split.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: DO NOT ATTACK Vorago as teamsplit is about to spawn. This prevents Vorago from sending blues during the teamsplit.</p>
+<h2 id="stone-clone-skip-courtesy-of-foxis-and-durmoth">Stone Clone Skip (Courtesy of #Foxis and #Durmoth)</h2>
+<p><strong><ins>Introduction</ins></strong></p>
+<p>A Stone Clone in Phase 4 / 9 always targets a person that Vorago does not hold aggression towards (the Base Tank). In other words, the Base Tank never receives a Stone Clone. It has been discovered in scenarios where you end in a Solo Phase 4, that Vorago will bug for a few ticks and then proceed with the weekly special, skipping the Stone Clone and its following 7 auto attacks completely. In place of creating the Stone Clone, Vorago bugs for 12 ticks and skips all 7 auto attacks which equates to a total of 56 ticks (33.6s) saved.</p>
+<p><strong><ins>Overview</ins></strong></p>
+<p>⬥ One player vokes <img title="voke" class="d-emoji" alt="voke" src="https://cdn.discordapp.com/emojis/535541259465392143.png?v=1">, underwalks Vorago <img title="vorago" class="d-emoji" alt="vorago" src="https://cdn.discordapp.com/emojis/572867742613635082.png?v=1"> and lures him to whatever wall he's walking towards.</p>
+<p>⬥ All other players quickly position at the opposite side of the arena, so that they leave the visibility range to Vorago.</p>
+<p>⬥ Due to the Base Tank being the only visible player in the arena, Vorago will skip the Stone Clone and its following 7 auto attacks.</p>
+<p>⬥ Vorago will continue his attack order with the weekly special mechanic.</p>
+<p><strong><ins>Strategy</ins></strong></p>
+<p>⬥ Toggle off running once you enter the Waterfall.</p>
+<p>⬥ Post-Waterfall: Either use Barge <img title="gbarge" class="d-emoji" alt="gbarge" src="https://cdn.discordapp.com/emojis/535532879250456578.png?v=1"> as your first ability or Surge <img title="surge" class="d-emoji" alt="surge" src="https://cdn.discordapp.com/emojis/535533810004262912.png?v=1"> within your first ability's GCD</p>
+<p><em>Note: On Team Split, use the Mobile perk <img title="mob" class="d-emoji" alt="mob" src="https://cdn.discordapp.com/emojis/689501908628799488.png?v=1"> with gBarge <img title="gbarge" class="d-emoji" alt="gbarge" src="https://cdn.discordapp.com/emojis/535532879250456578.png?v=1"> if you plan on breaking the TS.</em></p>
+<p>⬥ Walk towards Vorago's walking direction (do not run).</p>
+<p>⬥ Toggle on running as Vorago reaches the wall.</p>
+<p>⬥ The moment that Vorago starts moving, all other players should immediately position at the opposite side of Vorago's walking direction (utilise Surge <img title="surge" class="d-emoji" alt="surge" src="https://cdn.discordapp.com/emojis/535533810004262912.png?v=1"> and Bladed Dive <img title="bd" class="d-emoji" alt="bd" src="https://cdn.discordapp.com/emojis/535532854281764884.png?v=1">).</p>
+<p>⬥ Once the Stone Clone special mechanic is skipped, move back to the Base Tank</p>
+<p><strong><ins>Video Example</ins> (Courtesy of #XTL)</strong></p>
+<p>https://www.youtube.com/watch?v=maGhYnPa92w</p>
+<p><strong><ins>Important Notes</ins></strong></p>
+<p>Due to the incredible amount of time gained by a Clone Skip, Barricade <img title="cade" class="d-emoji" alt="cade" src="https://cdn.discordapp.com/emojis/535541306353778689.png?v=1"> will mostly no longer be available for each weekly special mechanic. Due to this it is required to alternate Barricades between the Base and Bomb Tank. Preferably the Bomb Tank barricades the first cycle so that it will be ready in case of a Phase 5 / 10 Barricade.</p>
+<h2 id="breaking-teamsplits-courtesy-of-xtl">Breaking Teamsplits (Courtesy of #XTL)</h2>
+<p>“Breaking” a teamsplit involves Vorago continuing his attack rotation during a teamsplit. This is beneficial during phase 4, as it can speed up the phase. However, this is harmful on phases 3 and 5, as it gives you less time to attack the boss.</p>
+<p>When the teamsplit is broken, Vorago can still use both melee attacks and blue bombs, so keep in mind to eat up if necessary to not die to this.</p>
+<p><strong><ins>How to Break TS</ins></strong></p>
+<p>⬥ You need to use mutated barge and then apply one of your melee channeled abilities as a bleed directly before the teamsplit.</p>
+<p>‎ ‎ ‎ ‎• It does not matter which ability you use (flurry, assault, or destroy), however the tick that you apply the bleed on DOES effect how quickly the teamsplit is broken.</p>
+<p>‎ ‎ ‎ ‎• Some ticks result in attacks starting slower during the teamsplit, meaning the phases lasts longer, where others result in the attacks starting sooner in teamsplit, meaning the phase doesn’t last as long. ‎ ‎A consistent way break the teamsplit on a fast tick is to barge immediately after the 6th blue bomb is released after the clone and then bleed destroy exactly one global cooldown later.</p>
+<p>‎ ‎ ‎ ‎• Keep in mind to stop attacking before your barge to get the buff.</p>
+<p>If done correctly, bleeds will come immediately after a phase 4 teamsplit. The first bleed received is somewhat invisible, similar to the first bleed on phase 2, so make sure to watch out for that. In addition, you can sometimes lose aggro, so make sure to voke.</p>
+<p>Both barge and the bleed following can splash and you will still break the teamsplit.</p>
+<p>Video example of a slow vs fast broken teamsplit (left side is the correct timing):</p>
+<p>https://youtu.be/5MMV0_JraMw</p>
+<h2 id="phase-5">Phase 5</h2>
+<p><strong><ins>Walking MD – Revo Friendly</ins></strong></p>
+<p>⬥ A player can spam click the ground behind Vorago to make their character stand MD while also stopping revo from attacking.</p>
+<p>‎ ‎ ‎ ‎• Potential application: Good for revo users to MD and be ready to clear bleeds on tick.</p>
+<p><strong><ins>P5 Voke</ins></strong></p>
+<p>⬥ Due to how P5 is set up, a player cannot voke Vorago during p5. The ability will simply not activate when pressed.</p>
+<p>‎ ‎ ‎ ‎• Potential application: None.</p>
+<p><strong><ins>Melee Dismember on Reflects</ins></strong></p>
+<p>⬥ If a player applies the dismember melee ability on reflects to another player, and the victim player receives the first bleed, the first bleed damage will immediately apply the 4500 damage as if the player was taking a second bleed from Vorago without clearing the first bleed. This is most likely an oversight. It is unknown if this works on p2, p3, and p4.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: Prank your teammates by putting a dismember on them during reflects.</p>
+<h2 id="p5-pushback">P5 Pushback</h2>
+<p><strong><ins>Stall and Auto Attacks</ins></strong></p>
+<p>⬥ Vorago begins his attack pattern the tick after the target cycle tick. His attack speed varies:</p>
+<p>‎ ‎ ‎ ‎• His attack speed will be 4 ticks if the last action he performed was either being pushed forwards or being pushed back</p>
+<p>‎ ‎ ‎ ‎• His attack speed will be 3 ticks if the last action he performed was attacking, whether it be a special attack, blue bomb, or melee swipe. This includes if he pushes and attacks in the same tick.</p>
+<p>⬥ As you can attack Vorago on the target cycle tick, which is before he releases the first spec, you can delay the release of the first special attack.</p>
+<p>‎ ‎ ‎ ‎• Potential applications: 0-Linking green bomb/vitalis; 0-Specing</p>
+<p>‎ ‎ ‎ ‎• Vorago can only be pushed once in either direction on any given tick.</p>
+<p><strong><ins>Damaged Required to Push</ins></strong></p>
+<p>Pushing Vorago one tile entails dealing 20k damage to him. As soon as this 20k threshold is hit, the damage counter resets to 0 for the next tile.</p>
+<p>⬥ Example A:</p>
+<p>‎ ‎ ‎ ‎• If you deal one hit of damage that deals 30k damage to Vorago, 30k damage is added to the damage counter, then the game performs a check to see if that total value is at least 20k.</p>
+<p>‎ ‎ ‎ ‎• It finds that 30,000 &gt;= 20,000 holds true, so Vorago pushes a tile and then the counter is reset to 0, effectively losing 10,000 damage. This 10,000 damage is referred to as “overkill”.</p>
+<p>⬥ Example B:</p>
+<p>‎ ‎ ‎ ‎• Presume you deal three individual hits of 10,000 damage on the same tick. The first one is added to the damage counter, it checks if 10,000 &gt;= 20,000 and finds that is false, so that hit doesn’t cause it to push.</p>
+<p>‎ ‎ ‎ ‎• The next hit is then added to the damage counter, which is now at 20,000 damage. It checks if 20,000 &gt;= 20,000 and finds that is true, so the boss pushes and resets the damage counter to 0.</p>
+<p>‎ ‎ ‎ ‎• Finally, the last hit of 10,000 is added to the damage counter, and it performs the same check, but finds that 10,000 &gt;= 20,000 does not hold true. This 10,000 damage stays in the damage counter until the next tick, and this damage is referred to as “overflow”. So the result of these hits is pushing one tile with 10,000 overflow.</p>
+<p>⬥ Example C:</p>
+<p>‎ ‎ ‎ ‎• Suppose there is one last hit of 10,000 damage on that tick. Again, this 10,000 is added to the damage counter as before, for a total of 20,000 damage.</p>
+<p>‎ ‎ ‎ ‎• The game performs the same check and finds that 20,000 is in fact at least 20,000, so the damage counter resets.</p>
+<p>‎ ‎ ‎ ‎• Vorago cannot be pushed twice on the same tick, so hitting this 40,000 damage mark in one tick may actively be detrimental to a kill, as you will end up losing 20,000 damage.</p>
+<h2 id="skipping-debilitate-on-p5-courtesy-of-foxis">Skipping Debilitate on P5 (Courtesy of #Foxis)</h2>
+<p>Debilitate should be skipped after bleeds because while it does have a chance of blocking push back, it can negatively impact stall. This is most notable on the TeamSplit rotation because the person who suns relies heavily on stall to use their threshes before TeamSplit.</p>
+<p>While this is not as harmful on other rotations, it may still prevent players from using the full duration of their sunshine. The dps of two or three players is typically greater than Vorago's push back. Thus, it is better to skip debilitate in favor of higher damage abilities to both induce stall from taking damage and dealing more damage overall.</p>
+<p>1st blue sent out</p>
+<p>2nd blue sent out</p>
+<p>1st blue hits and creates stall</p>
+<p>2nd blue hits and creates stall</p>
+<p>3rd blue sent out</p>
+<p>Teamsplit</p>
+<p>3rd blue hits and creates stall (while he is no longer attackable)</p>
+<p>In the above scenario Vorago pushes back 3 times and you can only take advantage of 2 times he stalls, 2 of which are 3 ticks apart.</p>
+<p>Now lets look at what Debilitating does.</p>
+<p>1st blue sent out</p>
+<p>2nd blue sent out</p>
+<p>1st blue hits</p>
+<p>3rd blue sent out</p>
+<p>2nd blue hits and creates stall</p>
+<p>Teamsplit</p>
+<p>3rd blue hits and creates stall (while he is no longer attackable)</p>
+<p>Debilitating prevents the first blue from stalling vorago which means that the third blue gets sent out, allowing his teamsplit attack to happen much earlier.</p>
+<p>If you have disruption shield, it is best to use it on the second blue and to asphyxiate instead of debilitating. If you push Vorago after he sends out the third blue, you have a chance to take advantage of the stall from the last blue rather than getting pushed while he TeamSplits.</p>
+<h2 id="target-cycling-at-vorago-courtesy-of-foxis">Target Cycling at Vorago (Courtesy of #Foxis)</h2>
+<p>Target cycling is extremely useful at Vorago for multiple reasons. It allows you to attack both scopulus on spawn, luring them extremely easily without issue. It can also let you attack Vorago before he becomes immune to a dropdown special attack, like the first waterfall, TeamSplit, or Purple Bomb. On the final phase, you can push forward Vorago before he does a dropdown special attack, which creates push stall, allowing you to do an additional ability.</p>
+<p>In order to target cycle Vorago on tick properly, you must know 2 important timings.</p>
+<p><strong><ins>Timing 1: Phase Transition 'Crack'</ins></strong></p>
+<p>⬥ This timing is very easy, as the crack animation is 3 ticks long, and you just need to use movement ability like Surge, Escape, or Bladed Dive on the third tick. Alternatively, you can use Provoke on a training dummy/Vitalis, or learn the timing with any other ability such as anticipate, although the easiest and most beneficial one is to use Escape, as that let's you easily cast Heal Other while staying in range of your partner.</p>
+<p>⬥ The first tick is when the crack first appears, and the third tick is when you use surge.</p>
+<p>To help, set a metronome to 100 bpm, count to 2 when the crack appears, then use surge.</p>
+<p>Once you get the timing down in your head it is hard to mess up during the kill.</p>
+<p><img class="media" src="https://i.imgur.com/h7dRWus.gif"></p>
+<p><strong><ins>Timing 2: Mobile Cooldown</ins></strong></p>
+<p>Cooldowns go around 360 degrees on your abilities clockwise, and keeping clocks in mind, we can use this to help make learning the target cycle timing much easier. 9 seconds after your surge/escape with mobile perk, your ability will be at 10 o' clock on 1 tick and 11 o'clock on another tick. On 11 o'clock you need to press target cycling and an instant hitting ability to follow (like dragon breath) (See image below)</p>
+<p><img class="media" src="https://i.imgur.com/64bHib9.png"></p>
+<h2 id="dummy-placement-courtesy-of-xtl">Dummy Placement (Courtesy of #XTL)</h2>
+<p><ins><strong>Introduction</strong></ins></p>
+<p><img class="media" src="https://i.imgur.com/xpxyzgO.png"></p>
+<p>⬥ Proper placement of dummies is necessary in kills to ensure that the dummy does not harm the phase</p>
+<p>‎ ‎ ‎ ‎• An improper dummy can cause difficulties when it comes to properly targetting rago, or with getting enough distance to stall off of the dummy.</p>
+<p>⬥ As a general reference: On a phase transition, one player at random will drop southwest (called the "default" drop), and all others will fall to roughly the same location they were in from the previous phase</p>
+<p>‎ ‎ ‎ ‎• We can use this to our advantage to allow for an easier time dropping dummies on the following phases, and also allow for an easier time 9-tile stalling.</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- For example, if you drop the P2 dummy north and both stay near the dummy, one person will drop southwest, and the other will drop north.</p>
+<p>⬥ Typically, if someone has to place their ult on a phase (whether it be Death's Swiftness, Sunshine, or a ZGS spec) then they should not be placing that phase's dummy.</p>
+<p>‎ ‎ ‎ ‎• Each dummy in this guide has been labeled as either the Bomb Tank's dummy or the Base Tank's dummy, keeping this in mind.</p>
+<p><ins><strong>Normal Mode</strong></ins></p>
+<p>⬥ Face: Base Tank</p>
+<p>⬥ P1: START OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (West)</p>
+<p>‎ ‎ ‎ ‎• Make sure to take the TL drop, and you will spawn in a good spot to drop the dummy</p>
+<p><img class="media" src="https://i.imgur.com/3Mhzf7H.png"></p>
+<p>⬥ P2: END OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Scopulus: Mid</p>
+<p>‎ ‎ ‎ ‎• The End: NW, SW if no 9 tile stall on P3</p>
+<p>‎ ‎ ‎ ‎• All other weeks: North, SW if no 9 tile stall on P3</p>
+<p><img class="media" src="https://i.imgur.com/AoGITgq.png"></p>
+<p>⬥ P3: START OF PHASE - Base</p>
+<p>‎ ‎ ‎ ‎• Scopulus: Mid</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Prevents re-targetting the dummy post TC tick</p>
+<p>‎ ‎ ‎ ‎• All other weeks: Drop asap (SW/North)</p>
+<p>⬥ P4: END OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop in the middle section as the last waterfall spawns, nearest to the waterfall</p>
+<p><img class="media" src="https://i.imgur.com/9AiYqxz.png"></p>
+<p>‎‎ ‎ ‎ ‎• Here is an example of a proper dummy:</p>
+<p><img class="media" src="https://i.imgur.com/hZuu2LD.png"></p>
+<p>⬥ P5: START OF PHASE - Base Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (Out of MD)</p>
+<p><img class="media" src="https://i.imgur.com/oVh2eFy.png"></p>
+<p><ins><strong>Hard Mode</strong></ins></p>
+<p>⬥ ‎ ‎Hard mode dummies follow roughly the same idea as normal mode dummies</p>
+<p>‎ ‎ ‎ ‎• However, you will want to be making use of SW dummies much more frequently</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- This is mostly because you will (generally) have more than two people, so even if you needed to 9 tile stall, you cannot guarantee that the person dropping the dummy will be separated from everyone who is 9 tile stalling, so it is better to just have consistent dummy placement.</p>
+<p>⬥ It is not currently standard to use face or P1 dummies, except in the case of Duo HM, in which case it is up to the discretion of the team who places those.</p>
+<p>⬥ P2: END OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop SW during Bring Him Down</p>
+<p><img class="media" src="https://i.imgur.com/6OXaOEE.png"></p>
+<p>⬥ P3: START OF PHASE - Base Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (SW)</p>
+<p>⬥ P4: END OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop SW, <em>end of phase</em></p>
+<p>⬥ P5: START OF PHASE - Base Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (SW)</p>
+<p>⬥ P6: START OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (SW)</p>
+<p>⬥ P7: START OF PHASE - Non-Ulting Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (SW)</p>
+<p>⬥ P8: START OF PHASE - Base Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (SW)</p>
+<p>⬥ P9: END OF PHASE - Bomb Tank</p>
+<p>‎ ‎ ‎ ‎• Drop in the middle section as the last waterfall spawns, nearest to the waterfall</p>
+<p><em>Note: This is the same as P4 normal mode</em></p>
+<p><img class="media" src="https://i.imgur.com/8ngMivo.png"></p>
+<p>‎‎ ‎ ‎ ‎• Here is an example of a proper dummy:</p>
+<p><img class="media" src="https://i.imgur.com/VR9qF1q.png"></p>
+<p>⬥ P10: START OF PHASE - Base Tank</p>
+<p>‎ ‎ ‎ ‎• Drop ASAP (Out of MD)</p>
+<p><em>Note: This is the same as P5 normal mode</em></p>
+<p><img class="media" src="https://i.imgur.com/csspJJ7.png"></p>
+<p>⬥ P11: END OF P10 - NORTH BOMB TANK</p>
+<p>‎ ‎ ‎ ‎• Drop as directly before mauling, in MD</p>
+<p>‎ ‎ ‎ ‎• Surge before placing the dummy if necessary</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- If you are too far back, the dummy will be unreachable at the start of P11</p>
+<p><img class="media" src="https://i.imgur.com/DHiI3iZ.png"></p>
+<h2 id="x-logging">X-Logging</h2>
+<p>Xlogging may be used at the end of the kill to forfeit drop piles to other teammates. This is done mostly to give pet chances (both bombi and vitalis) to teammates.</p>
+<p><strong><ins>How to Xlog</ins></strong></p>
+<p>Shield Dome prior to mauling on p5 (normal mode) or p11 (hard mode). Once the mauling animation begins, quick hop worlds through friends list, your piles will be rerolled to remaining members.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/logo.ico">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
+    
+    
+      
+        <title>Upgrade decisions - PVME Guides</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3754935a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/discord_embed.css">
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-189398108-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrade-decisions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PVME Guides" class="md-header__button md-logo" aria-label="PVME Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PVME Guides
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Upgrade decisions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PVME Guides" class="md-nav__button md-logo" aria-label="PVME Guides" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PVME Guides
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Information
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/contribution-quick-start/" class="md-nav__link">
+        Contribution quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/mastery-system-expanded/" class="md-nav__link">
+        Mastery system expanded
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/mastery-system-reqs/" class="md-nav__link">
+        Mastery system reqs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Getting started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/bossing-path/" class="md-nav__link">
+        Bossing path
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/interface-guide/" class="md-nav__link">
+        Interface guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/perk-info/" class="md-nav__link">
+        Perk info
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/perks/" class="md-nav__link">
+        Perks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        Quick start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/revo-to-full-manual/" class="md-nav__link">
+        Revo to full manual
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Upgrading info
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrading info" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrading info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../armour-and-weapons/" class="md-nav__link">
+        Armour and weapons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../consumables/" class="md-nav__link">
+        Consumables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permanent-unlocks/" class="md-nav__link">
+        Permanent unlocks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unlockable-abilities/" class="md-nav__link">
+        Unlockable abilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Upgrade decisions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Upgrade decisions
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-upgrade-order" class="md-nav__link">
+    How to Use Upgrade Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotated-upgrade-order-for-melee-araxxor" class="md-nav__link">
+    Annotated Upgrade Order for Melee Araxxor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-thoughts" class="md-nav__link">
+    Closing Thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade-order/" class="md-nav__link">
+        Upgrade order
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Miscellaneous information
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Miscellaneous information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Miscellaneous information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/ability-information/" class="md-nav__link">
+        Ability information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/auto-attacks/" class="md-nav__link">
+        Auto attacks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/boss-revenue/" class="md-nav__link">
+        Boss revenue
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/eof-specs/" class="md-nav__link">
+        Eof specs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/mechanics/" class="md-nav__link">
+        Mechanics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/pvm-achievement-sheets/" class="md-nav__link">
+        Pvm achievement sheets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miscellaneous-information/pvm-spreadsheets/" class="md-nav__link">
+        Pvm spreadsheets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Dpm advice
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Dpm advice" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Dpm advice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-faq/" class="md-nav__link">
+        Dpm advice faq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-mage/" class="md-nav__link">
+        Dpm advice mage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-melee/" class="md-nav__link">
+        Dpm advice melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpm-advice/dpm-advice-range/" class="md-nav__link">
+        Dpm advice range
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Low tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Low tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Low tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/barrows/" class="md-nav__link">
+        Barrows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/chaos-elemental/" class="md-nav__link">
+        Chaos elemental
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/dagannoth-kings/" class="md-nav__link">
+        Dagannoth kings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/giant-mole/" class="md-nav__link">
+        Giant mole
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/gwd1/" class="md-nav__link">
+        Gwd1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/kalphite-queen/" class="md-nav__link">
+        Kalphite queen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../low-tier-pvm/king-black-dragon/" class="md-nav__link">
+        King black dragon
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Mid tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mid tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Mid tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/corporeal-beast/" class="md-nav__link">
+        Corporeal beast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/fight-kiln/" class="md-nav__link">
+        Fight kiln
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/gregorovic/" class="md-nav__link">
+        Gregorovic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/helwyr/" class="md-nav__link">
+        Helwyr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/kalphite-king/" class="md-nav__link">
+        Kalphite king
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/legiones/" class="md-nav__link">
+        Legiones
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/queen-black-dragon/" class="md-nav__link">
+        Queen black dragon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/rex-matriarchs/" class="md-nav__link">
+        Rex matriarchs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/twin-furies/" class="md-nav__link">
+        Twin furies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mid-tier-pvm/vindicta/" class="md-nav__link">
+        Vindicta
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        High tier pvm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="High tier pvm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          High tier pvm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/araxxor-melee/" class="md-nav__link">
+        Araxxor melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/araxxor-range/" class="md-nav__link">
+        Araxxor range
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/beastmaster-durzag/" class="md-nav__link">
+        Beastmaster durzag
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/magister/" class="md-nav__link">
+        Magister
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/raksha/" class="md-nav__link">
+        Raksha
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/rots/" class="md-nav__link">
+        Rots
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high-tier-pvm/yakamaru/" class="md-nav__link">
+        Yakamaru
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Nex aod
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Nex aod" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Nex aod
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/aod/" class="md-nav__link">
+        Aod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-duo-ranged/" class="md-nav__link">
+        Nex duo ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-melee/" class="md-nav__link">
+        Nex solo melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-ranged-ecb/" class="md-nav__link">
+        Nex solo ranged ecb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nex-aod/nex-solo-ranged/" class="md-nav__link">
+        Nex solo ranged
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Elite dungeons
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Elite dungeons" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Elite dungeons
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-magic/" class="md-nav__link">
+        Dragonkin laboratory magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-melee/" class="md-nav__link">
+        Dragonkin laboratory melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/dragonkin-laboratory-ranged/" class="md-nav__link">
+        Dragonkin laboratory ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-magic/" class="md-nav__link">
+        Temple of aminishi magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-melee/" class="md-nav__link">
+        Temple of aminishi melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/temple-of-aminishi-ranged/" class="md-nav__link">
+        Temple of aminishi ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-magic/" class="md-nav__link">
+        The shadow reef magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-melee/" class="md-nav__link">
+        The shadow reef melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elite-dungeons/the-shadow-reef-ranged/" class="md-nav__link">
+        The shadow reef ranged
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Vorago
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Vorago" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Vorago
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago-duo-hm/" class="md-nav__link">
+        Vorago duo hm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago-hardmode/" class="md-nav__link">
+        Vorago hardmode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago-rotations/" class="md-nav__link">
+        Vorago rotations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago-tips-and-tricks/" class="md-nav__link">
+        Vorago tips and tricks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago-trio-hm/" class="md-nav__link">
+        Vorago trio hm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vorago/vorago/" class="md-nav__link">
+        Vorago
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Solak
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Solak" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Solak
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-magic-brid/" class="md-nav__link">
+        Solak magic brid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-mechanics/" class="md-nav__link">
+        Solak mechanics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-range-brid/" class="md-nav__link">
+        Solak range brid
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solak/solak-range/" class="md-nav__link">
+        Solak range
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Telos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Telos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Telos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-0-999-magic/" class="md-nav__link">
+        Telos 0 999 magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-1k-plus-magic/" class="md-nav__link">
+        Telos 1k plus magic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-beginner/" class="md-nav__link">
+        Telos beginner
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-melee/" class="md-nav__link">
+        Telos melee
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-ranged/" class="md-nav__link">
+        Telos ranged
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telos/telos-stun-guide/" class="md-nav__link">
+        Telos stun guide
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Slayer
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Slayer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Slayer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/ed2-hydrix/" class="md-nav__link">
+        Ed2 hydrix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/moss-golems/" class="md-nav__link">
+        Moss golems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/nightmare-creatures/" class="md-nav__link">
+        Nightmare creatures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/optimal-block-prefer-lists/" class="md-nav__link">
+        Optimal block prefer lists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/overview-of-slayer/" class="md-nav__link">
+        Overview of slayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/raptor-mobs/" class="md-nav__link">
+        Raptor mobs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/ripper-demon/" class="md-nav__link">
+        Ripper demon
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/shattered-worlds-slayer/" class="md-nav__link">
+        Shattered worlds slayer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/slaying-to-120-for-xp/" class="md-nav__link">
+        Slaying to 120 for xp
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slayer/soul-devourers/" class="md-nav__link">
+        Soul devourers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-upgrade-order" class="md-nav__link">
+    How to Use Upgrade Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotated-upgrade-order-for-melee-araxxor" class="md-nav__link">
+    Annotated Upgrade Order for Melee Araxxor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-thoughts" class="md-nav__link">
+    Closing Thoughts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="upgrade-decisions">Upgrade decisions</h1>
+<h2 id="how-to-use-upgrade-order">How to Use Upgrade Order</h2>
+<p>The lists in <a href="../upgrade-order/">#upgrade-order</a> are recommended natural combat style progression templates for players to follow. Upgrades are ranked based on many factors to determine the best progression for general bossing -- that is to say, the listed upgrade order may not be the best order for the bosses you do. Equally problematic, creating individual upgrade orders for every single boss would not work as most players do not do only 1 boss but rather several.</p>
+<p>Therefore, the best way to present upgrade order is to present a list and teach how to determine which upgrades are best for you.</p>
+<p>Below is the current Melee upgrade order at the time of writing (2021/06/24). <strong>Araxxor Melee</strong> was used to demonstrate the thought process for adapting upgrade order to specific content. In this example, you will notice some upgrades recommended by the general list are skipped/omitted (crossed out) here while others have been moved (+) to better reflect the specific needs presented by the Araxxor boss fight. See <a href="../../high-tier-pvm/araxxor-melee/">#araxxor-melee</a> for more information about the strategies mentioned and <a href="../../information/mastery-system-reqs/">#mastery-system-reqs</a> for speed references.</p>
+<p>Although this upgrade order is specific to Araxxor Melee, the critical thinking concepts are not and can be translated to other bosses. If you find yourself having any difficulties deciding what upgrade would best fit the content you do, please ask for assistance in <a href="">#unknown-channel</a> or <a href="">#unknown-channel</a>.</p>
+<p><strong><ins>Araxxor Specific Needs</ins></strong></p>
+<p>⬥ <strong>Accuracy</strong> - Araxxor has reasonably high defense</p>
+<p>‎ ‎ ‎ ‎• Prioritize weapons with high accuracy</p>
+<p>‎ ‎ ‎ ‎• Use the strongest possible accuracy aura (Berserker Aura <img title="berserker" class="d-emoji" alt="berserker" src="https://cdn.discordapp.com/emojis/643505116347105290.png?v=1"> &gt; T4 Brawler <img title="brawler" class="d-emoji" alt="brawler" src="https://cdn.discordapp.com/emojis/643505376917979138.png?v=1">).</p>
+<p>⬥ <strong>Burst</strong> - the Araxxor fight is split into 4 100k hp phases</p>
+<p>‎ ‎ ‎ ‎• Melee's go-to ultimate ability is Berserk <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1">.</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Perfect for bursting a phase</p>
+<p>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- As you speed up, you will run into cooldown problems.</p>
+<p>‎ ‎ ‎ ‎• Upgrades which improve your burst capabilities are prioritized.</p>
+<h2 id="annotated-upgrade-order-for-melee-araxxor">Annotated Upgrade Order for Melee Araxxor</h2>
+<p><em>Note: All upgrades will be listed in bold. Araxxor will commonly be abbreviated to 'rax'.</em></p>
+<p><strong><ins>Stage 1: No Real Variance Based on Content</ins></strong></p>
+<p><strong>⬥ Berserker Aura <img title="berserker" class="d-emoji" alt="berserker" src="https://cdn.discordapp.com/emojis/643505116347105290.png?v=1"></strong></p>
+<p><strong>⬥ Blade of Nymora + off-hand Ripper claw/Masuta's Warspear <img title="nymorablade" class="d-emoji" alt="nymorablade" src="https://cdn.discordapp.com/emojis/643161612819365888.png?v=1"> <img title="ripperclaw" class="d-emoji" alt="ripperclaw" src="https://cdn.discordapp.com/emojis/797895640054759444.png?v=1"> / <img title="masutaspear" class="d-emoji" alt="masutaspear" src="https://cdn.discordapp.com/emojis/643166903220699137.png?v=1"></strong></p>
+<p>Melee benefits heavily from dual wield/2h switching as it gives access to both Decimate <img title="deci" class="d-emoji" alt="deci" src="https://cdn.discordapp.com/emojis/535532879325822986.png?v=1"> and Cleave <img title="cleave" class="d-emoji" alt="cleave" src="https://cdn.discordapp.com/emojis/535532878616985610.png?v=1"> as well as Destroy <img title="destroy" class="d-emoji" alt="destroy" src="https://cdn.discordapp.com/emojis/535532879330148352.png?v=1"> and later gFlurry <img title="gflurry" class="d-emoji" alt="gflurry" src="https://cdn.discordapp.com/emojis/535532879283879977.png?v=1">. A Blade of Nymora <img title="nymorablade" class="d-emoji" alt="nymorablade" src="https://cdn.discordapp.com/emojis/643161612819365888.png?v=1"> offers you a cheap mainhand with T90 accuracy which is important for rax while an offhand Ripper Claw <img title="ripperclaw" class="d-emoji" alt="ripperclaw" src="https://cdn.discordapp.com/emojis/797895640054759444.png?v=1"> is a cheap offhand with T85 damage. Masuta's Warspear <img title="masutaspear" class="d-emoji" alt="masutaspear" src="https://cdn.discordapp.com/emojis/643166903220699137.png?v=1"> is a 2h with T82 accuracy and damage to be used for <img title="cleave" class="d-emoji" alt="cleave" src="https://cdn.discordapp.com/emojis/535532878616985610.png?v=1"> and occasionally Hurricane <img title="cane" class="d-emoji" alt="cane" src="https://cdn.discordapp.com/emojis/535532878969438210.png?v=1">.</p>
+<p><strong>⬥ Level 95 Prayer <img title="soulsplit" class="d-emoji" alt="soulsplit" src="https://cdn.discordapp.com/emojis/615613924506599497.png?v=1"> <img title="turmoil" class="d-emoji" alt="turmoil" src="https://cdn.discordapp.com/emojis/583429936606347280.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• Should also complete The Temple at Senntisten quest.</p>
+<p><strong>⬥ Level 99 Herblore <img title="elderovlsalve" class="d-emoji" alt="elderovlsalve" src="https://cdn.discordapp.com/emojis/648976643687317532.png?v=1"> <img title="adrenrenewal" class="d-emoji" alt="adrenrenewal" src="https://cdn.discordapp.com/emojis/736298121704767538.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• Can boost from 99 to make Elder Overloads with the aid of pulse cores, and can request assistance to make Adrenaline Renewals</p>
+<p>Normal Overloads are good but the extra stats from Elder Overloads are definitely worth the price when bossing. Any combination with your Elder Overloads such as making them into Elder Overload Salves is optional.</p>
+<p><strong>⬥ Drygores MH + Ripper Claw OH <img title="augdrygoremacemh" class="d-emoji" alt="augdrygoremacemh" src="https://cdn.discordapp.com/emojis/697485495684431902.png?v=1"> + <img title="ripperclaw" class="d-emoji" alt="ripperclaw" src="https://cdn.discordapp.com/emojis/797895640054759444.png?v=1"></strong></p>
+<p><strong>⬥ Entry Level Perks <img title="ancientweapongizmo" class="d-emoji" alt="ancientweapongizmo" src="https://cdn.discordapp.com/emojis/697405383752548382.png?v=1"> <img title="ancientarmourgizmo" class="d-emoji" alt="ancientarmourgizmo" src="https://cdn.discordapp.com/emojis/697405383769194516.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• Refer to <a href="../../getting-started/perks/">#perks</a> Starter Perks for Entry Level Perks.</p>
+<p>Here you should sell your Blade of Nymora <img title="nymorablade" class="d-emoji" alt="nymorablade" src="https://cdn.discordapp.com/emojis/643161612819365888.png?v=1"> to purchase and a Drygore mainhand <img title="augdrygoremacemh" class="d-emoji" alt="augdrygoremacemh" src="https://cdn.discordapp.com/emojis/697485495684431902.png?v=1"> to acquire an additional 10 tiers of damage. Your offhand only accounts for 33% of your damage compared to your mainhand's 66% so upgrading your offhand is not recommended yet. Entry level perks also offer a serious damage increase and should be aquired here.</p>
+<p><strong>⬥ Superior Vesta's Spear <img title="vestaspear" class="d-emoji" alt="vestaspear" src="https://cdn.discordapp.com/emojis/852661743682846720.png?v=1"> with Entry Level Perks <img title="ancientweapongizmo" class="d-emoji" alt="ancientweapongizmo" src="https://cdn.discordapp.com/emojis/697405383752548382.png?v=1"></strong></p>
+<p>Superior Vesta's Spear <img title="vestaspear" class="d-emoji" alt="vestaspear" src="https://cdn.discordapp.com/emojis/852661743682846720.png?v=1"> is a T88 2h created by combining a Vesta's Spear with an Ancient Warrior Equipment patch and should be augmented immediately. It uses the same degrade system as T90 armours <img title="malevbody" class="d-emoji" alt="malevbody" src="https://cdn.discordapp.com/emojis/643846996842512405.png?v=1">; however, your first one will likely last you until you reach your next 2h upgrade. You can sell your Masuta's Warspear <img title="masutaspear" class="d-emoji" alt="masutaspear" src="https://cdn.discordapp.com/emojis/643166903220699137.png?v=1"> here or keep it to be used as a halberd for slayer.</p>
+<p><strong>At this point, it would be ok to start trying rax; however, you should expect slow kills.</strong></p>
+<p><strong>⬥ Strength Skillcape <img title="strcape" class="d-emoji" alt="strcape" src="https://cdn.discordapp.com/emojis/689503815296352308.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• Primarily beneficial for extended Dismember <img title="dismember" class="d-emoji" alt="dismember" src="https://cdn.discordapp.com/emojis/535532879376023572.png?v=1"> duration.</p>
+<p><strong>All upgrades above this line should be the same for every boss.</strong></p>
+<p><strong>⬥ T90 Armour <img title="malevbody" class="d-emoji" alt="malevbody" src="https://cdn.discordapp.com/emojis/643846996842512405.png?v=1"></strong></p>
+<p>Definitely go for good dps perks on this rather than perks like Scavenging. If you want Scavenging for slayer, put it on a piece of augmented Bandos armour <img title="bandoschest" class="d-emoji" alt="bandoschest" src="https://cdn.discordapp.com/emojis/643151021748518917.png?v=1">.</p>
+<p><strong>⬥ Laceration Boots <img title="Laceration" class="d-emoji" alt="Laceration" src="https://cdn.discordapp.com/emojis/602581988599398400.png?v=1"></strong></p>
+<p><strong><del>⬥ Cinderbane Gloves <img title="Cinderbanes" class="d-emoji" alt="Cinderbanes" src="https://cdn.discordapp.com/emojis/513190158355660812.png?v=1"></del></strong></p>
+<p>Rax is poison immune. If your goal is to mainly do rax, you should skip Cinderbane Gloves <img title="Cinderbanes" class="d-emoji" alt="Cinderbanes" src="https://cdn.discordapp.com/emojis/513190158355660812.png?v=1">.</p>
+<p><strong>⬥ Amulet of Souls <img title="aos" class="d-emoji" alt="aos" src="https://cdn.discordapp.com/emojis/513190158359724056.png?v=1"></strong></p>
+<p><strong>⬥ Greater Barge <img title="gbarge" class="d-emoji" alt="gbarge" src="https://cdn.discordapp.com/emojis/535532879250456578.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• Feel free to use the !barge command in <a href="">#unknown-channel</a> for more information.</p>
+<p>gBarge <img title="gbarge" class="d-emoji" alt="gbarge" src="https://cdn.discordapp.com/emojis/535532879250456578.png?v=1"> is a massive upgrade for rax as it significantly improves your burst capabilities.</p>
+<p><strong>⬥ Greater Flurry <img title="gflurry" class="d-emoji" alt="gflurry" src="https://cdn.discordapp.com/emojis/535532879283879977.png?v=1"></strong></p>
+<p>gFlurry <img title="gflurry" class="d-emoji" alt="gflurry" src="https://cdn.discordapp.com/emojis/535532879283879977.png?v=1"> improves your overall dps and fills out a basic <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1"> rotation.</p>
+<p><strong>At this point you are ready to start using rotations from <a href="../../high-tier-pvm/araxxor-melee/">#araxxor-melee</a>. You will still need to improvise some rotations, P4 in particular; however, you should notice a serious uptick in your kill speeds. Beware, you should not use the recommended DBA <img title="DBA" class="d-emoji" alt="DBA" src="https://cdn.discordapp.com/emojis/603979368850653216.png?v=1"> spec as your accuracy is not high enough yet.</strong></p>
+<p><strong>⬥ Biting 4 <img title="biting4" class="d-emoji" alt="biting4" src="https://cdn.discordapp.com/emojis/712073087809617931.png?v=1"></strong></p>
+<p>Biting 4 <img title="biting4" class="d-emoji" alt="biting4" src="https://cdn.discordapp.com/emojis/712073087809617931.png?v=1"> is a decent general upgrade; however, in the context of rax it is not noticeably better than Biting 3. With the real cost of <img title="biting4" class="d-emoji" alt="biting4" src="https://cdn.discordapp.com/emojis/712073087809617931.png?v=1"> roughly 3 times as expensive as listed (due to acquiring components in batches of 20), it is ok to push this back until after Zaros Godsword <img title="zgs" class="d-emoji" alt="zgs" src="https://cdn.discordapp.com/emojis/626465964325601290.png?v=1">.</p>
+<p><strong><del>⬥ Limitless <img title="limitless" class="d-emoji" alt="limitless" src="https://cdn.discordapp.com/emojis/641339233638023179.png?v=1"></del></strong></p>
+<p>Natural Instinct <img title="NaturalInstinct" class="d-emoji" alt="NaturalInstinct" src="https://cdn.discordapp.com/emojis/513213538496675850.png?v=1"> can commonly be used for your P3 <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1"> at rax, saving Apot <img title="adrenrenewal" class="d-emoji" alt="adrenrenewal" src="https://cdn.discordapp.com/emojis/736298121704767538.png?v=1"> for P4. Limitless <img title="limitless" class="d-emoji" alt="limitless" src="https://cdn.discordapp.com/emojis/641339233638023179.png?v=1"> is therefore less impactful than it would be at many other bosses and should be purchased later in the list.</p>
+<p><strong><ins>Stage 2: Some Variance Based on Content/Wealth</ins></strong></p>
+<p><strong><del>⬥ An off-hand t80 Flanking 4 Switch <img title="avaryssblade" class="d-emoji" alt="avaryssblade" src="https://cdn.discordapp.com/emojis/643161612383158296.png?v=1"> <img title="flank4" class="d-emoji" alt="flank4" src="https://cdn.discordapp.com/emojis/712073088296157185.png?v=1"></del></strong></p>
+<p>You cannot flank <img title="flankicon" class="d-emoji" alt="flankicon" src="https://cdn.discordapp.com/emojis/841419289755385866.png?v=1"> rax so you should skip this.</p>
+<p><strong>⬥ Zaros Godsword <img title="zgs" class="d-emoji" alt="zgs" src="https://cdn.discordapp.com/emojis/626465964325601290.png?v=1"></strong></p>
+<p><strong>For rax, this is the most important upgrade as it is the solution to your <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1"> cooldown problem.</strong></p>
+<p><strong>From this point on, you can follow almost all strategies in <a href="../../high-tier-pvm/araxxor-melee/">#araxxor-melee</a>. Slightly different P2 Top Path (no Masterwork Spear <img title="masterworkspearofannihilation" class="d-emoji" alt="masterworkspearofannihilation" src="https://cdn.discordapp.com/emojis/694566917456789554.png?v=1">) and P4 rotation (no Seren Godbow <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> - substitute <img title="destroy" class="d-emoji" alt="destroy" src="https://cdn.discordapp.com/emojis/535532879330148352.png?v=1"> for <img title="cane" class="d-emoji" alt="cane" src="https://cdn.discordapp.com/emojis/535532878969438210.png?v=1">) are needed. You should be using a Ripper Demon familiar <img title="ripperpouch" class="d-emoji" alt="ripperpouch" src="https://cdn.discordapp.com/emojis/703581275453128714.png?v=1"> by now. Your gear should be enough to achieve the <code style="color: rgb(217,231,238); background-color: rgba(217,231,238,0.1);">@Araxxor Adept</code> times.</strong></p>
+<p><strong>+⬥ Storm Shards <img title="StormShards" class="d-emoji" alt="StormShards" src="https://cdn.discordapp.com/emojis/536256663641128971.png?v=1"> and Shatter <img title="Shatter" class="d-emoji" alt="Shatter" src="https://cdn.discordapp.com/emojis/536256673904328704.png?v=1"></strong></p>
+<p>Storm Shards <img title="StormShards" class="d-emoji" alt="StormShards" src="https://cdn.discordapp.com/emojis/536256663641128971.png?v=1"> and Shatter <img title="Shatter" class="d-emoji" alt="Shatter" src="https://cdn.discordapp.com/emojis/536256673904328704.png?v=1"> are unlocked via a Mazcab Ability Codex. For the advanced Mid path strategy, shards are stacked throughout P1 and P2 to be shattered during your P3 <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1">. This rotation saves up to 10s every kill -- a substantial improvement for such a cheap upgrade. Shards are, however, rarely used in advanced strategies -- especially for solo bosses -- and should not be considered a general upgrade.</p>
+<p><strong>⬥ Masterwork Spear of Annihilation + Lunging <img title="masterworkspearofannihilation" class="d-emoji" alt="masterworkspearofannihilation" src="https://cdn.discordapp.com/emojis/694566917456789554.png?v=1"> <img title="lunge4" class="d-emoji" alt="lunge4" src="https://cdn.discordapp.com/emojis/736522494315593759.png?v=1"></strong></p>
+<p>Masterwork Spear <img title="masterworkspearofannihilation" class="d-emoji" alt="masterworkspearofannihilation" src="https://cdn.discordapp.com/emojis/694566917456789554.png?v=1"> gives you access to the meta Top P2 rotations. It also allows for a better P4 rotation (<img title="cane" class="d-emoji" alt="cane" src="https://cdn.discordapp.com/emojis/535532878969438210.png?v=1"> <img title="bloodtendrils" class="d-emoji" alt="bloodtendrils" src="https://cdn.discordapp.com/emojis/535532854327640064.png?v=1"> replaces <img title="destroy" class="d-emoji" alt="destroy" src="https://cdn.discordapp.com/emojis/535532879330148352.png?v=1">).</p>
+<p><strong>+⬥ Limitless <img title="limitless" class="d-emoji" alt="limitless" src="https://cdn.discordapp.com/emojis/641339233638023179.png?v=1"></strong></p>
+<p>Now would be a good time to acquire Limitless for rax. You will use it to clean up your P4 rotation and consistently <img title="gflurry" class="d-emoji" alt="gflurry" src="https://cdn.discordapp.com/emojis/535532879283879977.png?v=1"> before 25k hp.</p>
+<p><strong>⬥ Essence of Finality <img title="eofred" class="d-emoji" alt="eofred" src="https://cdn.discordapp.com/emojis/780401412839833601.png?v=1"> <del>(adding Dragon Claws <img title="dragonclaw" class="d-emoji" alt="dragonclaw" src="https://cdn.discordapp.com/emojis/779048041088024606.png?v=1"> <img title="dragonclawoh" class="d-emoji" alt="dragonclawoh" src="https://cdn.discordapp.com/emojis/779048040865726485.png?v=1"> is recommended)</del></strong></p>
+<p>When doing ideal rotations at rax, you do not have the additional adrenaline for EoF special attacks. Instead you are purchasing EoF for the stats and for the Reaper Necklace <img title="Reaper" class="d-emoji" alt="Reaper" src="https://cdn.discordapp.com/emojis/513190159412494367.png?v=1"> passive. Adding an Ornament Kit is optional and likely not worth until later due to the costs. This <img title="Reaper" class="d-emoji" alt="Reaper" src="https://cdn.discordapp.com/emojis/513190159412494367.png?v=1"> passive finally provides you the accuracy needed to start using the <img title="DBA" class="d-emoji" alt="DBA" src="https://cdn.discordapp.com/emojis/603979368850653216.png?v=1"> top path strat with a Quake <img title="quake" class="d-emoji" alt="quake" src="https://cdn.discordapp.com/emojis/535532879506309150.png?v=1">.</p>
+<p><strong>⬥ Drygore OH <img title="rapieroh" class="d-emoji" alt="rapieroh" src="https://cdn.discordapp.com/emojis/656785061072338954.png?v=1"></strong></p>
+<p><strong>At this point you should be closing in on <code style="color: rgb(218,165,32); background-color: rgba(218,165,32,0.1);">@Araxxor Master</code> times; however, they are likely still out of reach.</strong></p>
+<p><strong>⬥ P6AS1 + AS4E2 (or P6R1 on 2h) <img title="p6" class="d-emoji" alt="p6" src="https://cdn.discordapp.com/emojis/712073088769982475.png?v=1"><img title="as1" class="d-emoji" alt="as1" src="https://cdn.discordapp.com/emojis/689502339891331093.png?v=1"> <img title="as4" class="d-emoji" alt="as4" src="https://cdn.discordapp.com/emojis/712074245202772009.png?v=1"><img title="eq2" class="d-emoji" alt="eq2" src="https://cdn.discordapp.com/emojis/689502258424971564.png?v=1"> <img title="ruthless1" class="d-emoji" alt="ruthless1" src="https://cdn.discordapp.com/emojis/712244800924942396.png?v=1"></strong></p>
+<p>‎ ‎ ‎ ‎• AS4 is a very strong perk in its own right. If you fail going for AS4E2, feel free to use AS4 in its place for the time being.</p>
+<p>AS4 <img title="as4" class="d-emoji" alt="as4" src="https://cdn.discordapp.com/emojis/712074245202772009.png?v=1"> is more than enough for rax. Dont worry if you don't get AS4E2 <img title="as4" class="d-emoji" alt="as4" src="https://cdn.discordapp.com/emojis/712074245202772009.png?v=1"><img title="eq2" class="d-emoji" alt="eq2" src="https://cdn.discordapp.com/emojis/689502258424971564.png?v=1">.</p>
+<p><strong>⬥ Malevolence <img title="Malevolence" class="d-emoji" alt="Malevolence" src="https://cdn.discordapp.com/emojis/513190159416557573.png?v=1"></strong></p>
+<p><strong>⬥ Custom Fitted Trimmed Masterwork <img title="tmwbody" class="d-emoji" alt="tmwbody" src="https://cdn.discordapp.com/emojis/536966366272552960.png?v=1"></strong></p>
+<p>By no means a necessity but TMW <img title="tmwbody" class="d-emoji" alt="tmwbody" src="https://cdn.discordapp.com/emojis/536966366272552960.png?v=1"> will make P4 at high enrage less risky.</p>
+<p><strong><del>⬥ Noxious Scythe <img title="noxscythe" class="d-emoji" alt="noxscythe" src="https://cdn.discordapp.com/emojis/513190159341322240.png?v=1"></del></strong></p>
+<p>Noxious Scythe <img title="noxscythe" class="d-emoji" alt="noxscythe" src="https://cdn.discordapp.com/emojis/513190159341322240.png?v=1"> is a popular weapon for rax; however, the best rax strategies require dual wield/2h switching -- negating Scythe's only strength, its range. It can still be used as a quality of life improvement during some of the more timegated phases, but for that purpose it should be purchased later on.</p>
+<p><strong><ins>Stage 3: Pretty Low ROI</ins></strong></p>
+<p><strong>+⬥ Seren Godbow <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> and Ingenuity of the Humans <img title="ingen" class="d-emoji" alt="ingen" src="https://cdn.discordapp.com/emojis/641339234111848463.png?v=1"></strong></p>
+<p>SGB <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> unlocks the best P4 rotation. IoH <img title="ingen" class="d-emoji" alt="ingen" src="https://cdn.discordapp.com/emojis/641339234111848463.png?v=1"> is needed to ensure your <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> spec does not splash. You now have all the gear needed to follow all rotations in <a href="../../high-tier-pvm/araxxor-melee/">#araxxor-melee</a>.</p>
+<p><strong>+⬥ Terrasaur Maul <img title="terramaul" class="d-emoji" alt="terramaul" src="https://cdn.discordapp.com/emojis/602561894829522954.png?v=1"> and Erethdor's Grimoire <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1"></strong></p>
+<p>Terrasaur Maul <img title="terramaul" class="d-emoji" alt="terramaul" src="https://cdn.discordapp.com/emojis/602561894829522954.png?v=1"> has very low ROI when compared to most of the upgrades recommended above, and Erethdor's Grimoire <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1"> is expensive to maintain. However, these two upgrades are most likely to shore up your rotations and ensure you have the damage you need to get over the final hurtles.</p>
+<p><strong>At this point, your gear is capable of consistently achieving <code style="color: rgb(218,165,32); background-color: rgba(218,165,32,0.1);">@Araxxor Master</code> times.</strong></p>
+<p><strong><del>⬥ An off-hand t90 Flanking 4 Switch <img title="augdrygorerapieroh" class="d-emoji" alt="augdrygorerapieroh" src="https://cdn.discordapp.com/emojis/697485495718117536.png?v=1"> <img title="flank4" class="d-emoji" alt="flank4" src="https://cdn.discordapp.com/emojis/712073088296157185.png?v=1"></del></strong></p>
+<p><strong>⬥ Khopesh <img title="khopeshmh" class="d-emoji" alt="khopeshmh" src="https://cdn.discordapp.com/emojis/513206794844110858.png?v=1"> <img title="khopeshoh" class="d-emoji" alt="khopeshoh" src="https://cdn.discordapp.com/emojis/513206794752098327.png?v=1"></strong></p>
+<p>Khopesh <img title="khopeshmh" class="d-emoji" alt="khopeshmh" src="https://cdn.discordapp.com/emojis/513206794844110858.png?v=1"> <img title="khopeshoh" class="d-emoji" alt="khopeshoh" src="https://cdn.discordapp.com/emojis/513206794752098327.png?v=1"> provide a small dps increase. At rax they mostly negate the need for <img title="quake" class="d-emoji" alt="quake" src="https://cdn.discordapp.com/emojis/535532879506309150.png?v=1"> if using <img title="DBA" class="d-emoji" alt="DBA" src="https://cdn.discordapp.com/emojis/603979368850653216.png?v=1">.</p>
+<p><strong>⬥ Greater Fury <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1"></strong></p>
+<p>gFury <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1"> is a quality of life upgrade.</p>
+<p><strong>+⬥ Noxious Scythe <img title="noxscythe" class="d-emoji" alt="noxscythe" src="https://cdn.discordapp.com/emojis/513190159341322240.png?v=1"></strong></p>
+<p>If you want to reduce a bit of damage during timegated phases, get Scythe <img title="noxscythe" class="d-emoji" alt="noxscythe" src="https://cdn.discordapp.com/emojis/513190159341322240.png?v=1"> here.</p>
+<p><strong><del>⬥ Upgrade to Flanking 4 Equilibrium 1 <img title="flank4" class="d-emoji" alt="flank4" src="https://cdn.discordapp.com/emojis/712073088296157185.png?v=1"><img title="eq1" class="d-emoji" alt="eq1" src="https://cdn.discordapp.com/emojis/689504357414207490.png?v=1"></del></strong></p>
+<p><strong>These last upgrades do not offer much in terms of improving kill times and are more for improving quality of life.</strong></p>
+<p><strong><ins>Final Upgrade Order Summary for Melee Araxxor</ins></strong></p>
+<pre><code>
+
+
+⬥ Berserker Aura
+
+⬥ Blade of Nymora + off-hand Ripper claw/Masuta's Warspear
+
+⬥ Level 95 Prayer
+
+⬥ Level 99 Herblore
+
+⬥ Drygores MH + Ripper Claw OH
+
+⬥ Entry Level Perks
+
+⬥ Superior Vesta's Spear with Entry Level Perks
+
+
+
+At this point, it would be ok to start trying rax; however, you should expect slow kills.
+
+
+
+⬥ Strength Skillcape
+
+
+
+All upgrades above this line should be the same for every boss.
+
+
+
+⬥ T90 Armour
+
+⬥ Laceration Boots
+
+⬥ Amulet of Souls
+
+⬥ Greater Barge
+
+⬥ Greater Flurry
+
+
+
+At this point you are ready to start using rotations from #araxxor-melee. You will still need to improvise some rotations, P4 in particular; however, you should notice a serious uptick in your kill speeds. Beware, you should not use the recommended DBA spec as your accuracy is not high enough yet.
+
+
+
+⬥ Biting 4
+
+⬥ Zaros Godsword (Most important upgrade)
+
+
+
+From this point on, you can follow almost all strategies in #araxxor-melee. Slightly different P2 Top Path and P4 rotations are needed. You should be using a Ripper Demon familiar by now. Your gear should be enough to achieve the Araxxor Adept times.
+
+
+
++⬥ Storm Shards + Shatter
+
+⬥ Masterwork Spear of Annihilation + Lunging
+
++⬥ Limitless
+
+⬥ Essence of Finality
+
+⬥ Drygore OH
+
+
+
+At this point you should be closing in on Araxxor Master times; however, they are likely still out of reach.
+
+
+
+⬥ P6AS1 + AS4E2 (or P6R1 on 2h)
+
+⬥ Malevolence
+
+⬥ Custom Fitted Trimmed Masterwork
+
++⬥ Seren Godbow + Ingenuity of the Humans
+
++⬥ Terrasaur Maul + Erethdor's Grimoire
+
+
+
+At this point, your gear is capable of consistently achieving Araxxor Master times.
+
+
+
+⬥ Khopesh
+
+⬥ Greater Fury
+
++⬥ Noxious Scythe
+
+
+
+These last upgrades do not offer much in terms of improving kill times and are more for improving quality of life.
+
+
+
+</code></pre>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>The primary goal of this exercise is to stress that you should not buy upgrades just because a list told you to. Always consider what your next upgrade offers you in the context of how you play the game. If you ever have any questions, please come by <a href="">#unknown-channel</a> or <a href="">#unknown-channel</a> and ask.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>
