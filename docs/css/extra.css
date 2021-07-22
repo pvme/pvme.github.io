@@ -24,3 +24,8 @@ html {
         max-width: 100% !important;
     }
 }
+
+p {
+    margin-block-start: .25em;
+    margin-block-end: .25em;
+}

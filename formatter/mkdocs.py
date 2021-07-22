@@ -37,7 +37,8 @@ CATEGORY_SEQUENCE = [
     'vorago',
     'solak',
     'telos',
-    'slayer'
+    'slayer',
+    'commands'
 ]
 
 DEFAULT_FORMAT_SEQUENCE = [
