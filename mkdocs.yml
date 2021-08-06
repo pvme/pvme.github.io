@@ -6,10 +6,15 @@ google_analytics:
 
 theme:
   name: material
+#  logo: assets/logo.png
   custom_dir: overrides
   favicon: assets/logo.ico
   features:
   - navigation.instant
+  - search.suggest
+  - search.highlight
+#  - search.share
+  - navigation.top
   palette:
   - scheme: slate
     toggle:
@@ -97,6 +102,7 @@ nav:
   - pvme-guides/high-tier-pvm/araxxor-melee.md
   - pvme-guides/high-tier-pvm/araxxor-range.md
   - pvme-guides/high-tier-pvm/beastmaster-durzag.md
+  - pvme-guides/high-tier-pvm/kerapac.md
   - pvme-guides/high-tier-pvm/magister.md
   - pvme-guides/high-tier-pvm/raksha.md
   - pvme-guides/high-tier-pvm/rots.md

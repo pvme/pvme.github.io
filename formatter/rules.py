@@ -177,6 +177,7 @@ class DiscordChannelID(MKDocs):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     PATTERN = re.compile(r"<#([0-9]{18})>")
     CHANNEL_LOOKUP = formatter.util.parse_channel_id_file()
+    INVALID_CHANNEL_LOOKUP = formatter.util.parse_invalid_channel_id_file()
 
     @staticmethod
     def format_mkdocs_md(message):
@@ -189,8 +190,15 @@ class DiscordChannelID(MKDocs):
                 name = f"#{os.path.basename(path)}"
                 link = f"[{name}]({relative_file})"
             else:
-                link = "[#unknown-channel]()"
-                logger.warning(f"unknown channel {match.group(1)}")
+                channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
+                if channel_name:
+                    name = channel_name
+                else:
+                    name = "unknown-channel"
+                    logger.warning(f"unknown channel {match.group(1)}")
+
+                link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
+
 
             message.content = message.content[:match.start()] + link + message.content[match.end():]
 

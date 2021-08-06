@@ -14,6 +14,14 @@
 
 ## Release notes
 
+### August, 6, 2021
+
+- Added invalid discord channels as non-clickable links (WiP)
+- Added search suggestions
+- Added search highlighting
+- Added "back to top" button
+- Updated channels and users
+
 ### July, 7, 2021
 
 - Updated users and roles

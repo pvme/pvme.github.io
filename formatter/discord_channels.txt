@@ -99,3 +99,9 @@
 | 858836097608712202 | solak/solak-magic-brid.txt                           |
 | 858835950330314802 | solak/solak-range.txt                                |
 | 858836169864511488 | solak/solak-range-brid.txt                           |
+| 860258997809840138 | table-of-contents/solak-directory.txt                |
+| 838896349596483616 | information/mastery/system-expanded.txt              |
+| 860684509838049290 | information/mastery-system-expanded.txt              |
+| 861670739459178577 | elite-dungeons/temple-of-aminishi-magic.txt          |
+| 862097323307827200 | table-of-contents/dpm-advice.txt                     |
+| 869082904842604604 | high-tier-pvm/kerapac.txt                            |

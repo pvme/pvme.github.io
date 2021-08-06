@@ -24,3 +24,9 @@ html {
         max-width: 100% !important;
     }
 }
+
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}
+

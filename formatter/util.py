@@ -140,12 +140,31 @@ def parse_channel_id_file() -> dict:
     The path ignores the '.txt' extension and it does not add a custom extension as this depends on Sphinx/Mkdocs.
 
     :return: lookup table (dict), when no file is discovered, an empty dict is returned
+    :rtype: dict
     """
     channel_id_file = f"{MODULE_PATH}/discord_channels.txt"
     if os.path.exists(channel_id_file):
         with open(channel_id_file, 'r') as file:
             # create dict from regex list of tuples containing group(channel_id), group(path_to_channel)
             channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-z/0-9]+)\.txt", file.read()))
+    else:
+        channel_lookup = dict()
+
+    return channel_lookup
+
+
+def parse_invalid_channel_id_file() -> dict:
+    """Generate a lookup table (dict) with the following content: {channel_id: channel_name}.
+    An un clickable link will be generated
+
+    :return: lookup table (dict), when no channels are discovered, an empty dict is returned
+    :rtype: dict
+    """
+    invalid_channel_id_file = f"{MODULE_PATH}/invalid_discord_channels.txt"
+    if os.path.exists(invalid_channel_id_file):
+        with open(invalid_channel_id_file, 'r') as file:
+            # create dict from regex list of tuples containing group(channel_id), group(channel_name)
+            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-z/0-9]+)\s*", file.read()))
     else:
         channel_lookup = dict()
 
