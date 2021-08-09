@@ -41,8 +41,12 @@ markdown_extensions:
 # - pymdownx.extra (markdown formatting in HTMl blocks)
 
 extra_css:
-- css/extra.css
-- css/discord_embed.css
+- stylesheets/extra.css
+- stylesheets/discordEmbed.css
+- stylesheets/discordInvite.css
+
+extra_javascript:
+- javascripts/discordInvite.js
 
 # section below reserved for automatically generated nav !
 # ========================================================

@@ -8,7 +8,6 @@
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
 - Use the same channel structure as the pvme discord
-- custom channel name instead of 'unknown channel'
 - clickable link for non-embedded urls
 
 
@@ -17,6 +16,7 @@
 ### August, 9, 2021
 
 - Updated invalid Discord channels
+- Added invite link url to home page
 
 ### August, 6, 2021
 
