@@ -164,7 +164,7 @@ def parse_invalid_channel_id_file() -> dict:
     if os.path.exists(invalid_channel_id_file):
         with open(invalid_channel_id_file, 'r') as file:
             # create dict from regex list of tuples containing group(channel_id), group(channel_name)
-            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-z/0-9]+)\s*", file.read()))
+            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-zA-Z0-9]+)\s*", file.read()))
     else:
         channel_lookup = dict()
 

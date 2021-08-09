@@ -14,6 +14,10 @@
 
 ## Release notes
 
+### August, 9, 2021
+
+- Updated invalid Discord channels
+
 ### August, 6, 2021
 
 - Added invalid discord channels as non-clickable links (WiP)
