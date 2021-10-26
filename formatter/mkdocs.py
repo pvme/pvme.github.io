@@ -34,6 +34,7 @@ CATEGORY_SEQUENCE = [
     'high-tier-pvm',
     'nex-aod',
     'elite-dungeons',
+    'gwd3'
     'vorago',
     'solak',
     'telos',
