@@ -29,6 +29,7 @@ CATEGORY_SEQUENCE = [
     'upgrading-info',
     'miscellaneous-information',
     'dpm-advice',
+    'basic-guides'
     'low-tier-pvm',
     'mid-tier-pvm',
     'high-tier-pvm',
