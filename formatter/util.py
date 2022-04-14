@@ -119,6 +119,7 @@ def generate_embed(url: str) -> str:
             adjusted_url = re.sub(r"\.gifv$", ".mp4", adjusted_url)
 
         try:
+            logger.info(f'request url: {adjusted_url}')
             response = requests.head(adjusted_url)
             url_type = response.headers.get('content-type', '') if response.status_code == 200 else ''
         except requests.exceptions.RequestException:
