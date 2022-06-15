@@ -150,13 +150,10 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
     message_lines = list()
     for line in raw_data.splitlines():
         if line.startswith('.'):
-            messages.append(MKDocsMessage.init_raw_message("\n".join(message_lines), line))
+            # ignore table of contents because there already is one
+            if len(message_lines) < 3 or 'table of contents' not in message_lines[2].lower():
+                messages.append(MKDocsMessage.init_raw_message("\n".join(message_lines), line))
             message_lines = list()
-        elif line.startswith('> ') and 'table of contents' in line.lower():
-            break
-        elif category_name == 'getting-started' and channel_name == 'perks' and line == '__**Table of Contents**__':
-            # todo: remove edge-case when the .txt file is updated
-            break
         else:
             message_lines.append(line)
 
@@ -171,8 +168,6 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
         message.format_content()
         message.format_json_embed()
         formatted_channel = '{}{}'.format(formatted_channel, message)
-        # if channel_name == 'dragonkin-laboratory-ranged':
-        #     print('')
 
     # write the formatted channel data to guide.md
     with open('{}/pvme-guides/{}/{}.md'.format(source_dir, category_name, channel_name), 'w', encoding='utf-8') as file:
