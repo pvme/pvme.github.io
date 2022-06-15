@@ -112,7 +112,7 @@ class EmbedLink(MKDocs):
         matches = [match for match in re.finditer(EmbedLink.PATTERN, message.content)]
         for match in reversed(matches):
             url_formatted = "<{}>".format(match.group(1))
-            message.content = message.content[:match.start()] + url_formatted + message.content[match.end():]
+            message.content = message.content[:match.start()] + '\n' + url_formatted + message.content[match.end():]
 
         for match in matches:
             embed = formatter.util.generate_embed(match.group(1))
