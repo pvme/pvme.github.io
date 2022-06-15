@@ -96,6 +96,7 @@ class Insert(MKDocs):
 class EmbedLink(MKDocs):
     # modified Django link regex with embed and () link detection
     PATTERN = re.compile(
+        r"(?:[^<]|^)"
         r"((?:http|ftp)s?://"
         r"(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|"
         r"localhost|"           # localhost...
