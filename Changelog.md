@@ -13,6 +13,11 @@
 
 ## Release notes
 
+### June, 15, 2022
+
+- Removed unnecessary ToC embed at the bottom of the page (thanks to emmett-shark)
+- Fixed a bunch of non-clickable urls (thanks to emmett-shark)
+
 ### August, 9, 2021
 
 - Updated invalid Discord channels
