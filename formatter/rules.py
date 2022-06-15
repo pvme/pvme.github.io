@@ -96,7 +96,7 @@ class Insert(MKDocs):
 class EmbedLink(MKDocs):
     # modified Django link regex with embed and () link detection
     PATTERN = re.compile(
-        r"(?:[^<])"
+        r"(?:[^<]|^)"
         r"((?:http|ftp)s?://"
         r"(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|"
         r"localhost|"           # localhost...
@@ -108,11 +108,11 @@ class EmbedLink(MKDocs):
 
     @staticmethod
     def format_mkdocs_md(message):
-        # todo: character at the start of the embed is removed (e.g. '(' in github for contribution quick start)
         matches = [match for match in re.finditer(EmbedLink.PATTERN, message.content)]
         for match in reversed(matches):
             url_formatted = "<{}>".format(match.group(1))
-            message.content = message.content[:match.start() + 1] + url_formatted + message.content[match.end():]
+            spacer = 1 if match.start() > 0 else 0
+            message.content = message.content[:match.start() + spacer] + url_formatted + message.content[match.end():]
 
         for match in matches:
             embed = formatter.util.generate_embed(match.group(1))
