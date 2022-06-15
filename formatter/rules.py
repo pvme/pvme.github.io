@@ -108,11 +108,11 @@ class EmbedLink(MKDocs):
 
     @staticmethod
     def format_mkdocs_md(message):
-        # todo: character at the start of the embed is removed (e.g. '(' in github for contribution quick start)
         matches = [match for match in re.finditer(EmbedLink.PATTERN, message.content)]
         for match in reversed(matches):
             url_formatted = "<{}>".format(match.group(1))
-            message.content = message.content[:match.start()] + '\n' + url_formatted + message.content[match.end():]
+            spacer = 1 if match.start() > 0 else 0
+            message.content = message.content[:match.start() + spacer] + url_formatted + message.content[match.end():]
 
         for match in matches:
             embed = formatter.util.generate_embed(match.group(1))
