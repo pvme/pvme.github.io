@@ -24,7 +24,6 @@ logger = logging.getLogger('formatter.mkdocs')
 logger.level = logging.WARN
 
 CATEGORY_SEQUENCE = [
-    'information',
     'getting-started',
     'upgrading-info',
     'miscellaneous-information',
