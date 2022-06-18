@@ -64,8 +64,7 @@ JSON_EMBED_FORMAT_SEQUENCE = [
     Emoji,
     DiscordChannelID,
     DiscordUserID,
-    DiscordRoleID,
-    MarkdownLink
+    DiscordRoleID
 ]
 
 

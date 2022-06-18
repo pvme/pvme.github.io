@@ -11,7 +11,7 @@ from gspread.utils import a1_to_rowcol
 import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
-           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink']
+           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID']
 
 logger = logging.getLogger('formatter.rules')
 logger.level = logging.WARN
@@ -228,22 +228,3 @@ class DiscordRoleID(MKDocs):
                 logger.warning(f"unknown role {match.group(1)}")
             role_formatted = f"<code style=\"{role[1]}\">@{role[0]}</code>"
             message.content = message.content[:match.start()] + role_formatted + message.content[match.end():]
-
-
-# region direction markdown -> html formatting
-class MarkdownLink(MKDocs):
-    """Format [named links](https://discordapp.com) to
-    <a title="" href="https://discordapp.com" target="_blank" rel="noreferrer">named links</a>
-
-    NOTE: only used for formatting embed:json blocks
-    """
-    PATTERN = re.compile(r"\[([^]]+)]\(\s*(http[s]?://[^)]+)\s*\)")
-
-    @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(MarkdownLink.PATTERN, message.content)]
-        for match in reversed(matches):
-            html_url_formatted = \
-                f"<a title=\"\" href=\"{match.group(2)}\" target=\"_blank\" rel=\"noreferrer\">{match.group(1)}</a>"
-            message.content = message.content[:match.start()] + html_url_formatted + message.content[match.end():]
-# end region

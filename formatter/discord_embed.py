@@ -11,7 +11,7 @@ import textwrap
 from collections import namedtuple
 from datetime import datetime
 
-from discord_markdown.discord_markdown import convert_to_html
+import markdown2
 
 
 RGB = namedtuple('RGB', 'red green blue')
@@ -68,11 +68,11 @@ def patched_convert_to_html(text):
     :return: formatted HTML
     :rtype: str
     """
-    formatted = text.replace('>', "[cpb]")
-    formatted = convert_to_html(formatted)
-    formatted = formatted.replace("[cpb]", '>')
-
-    return formatted
+    # formatted = text.replace('>', "[cpb]")
+    # formatted = convert_to_html(formatted)
+    # formatted = formatted.replace("[cpb]", '>')
+    #return formatted
+    return markdown2.markdown(text)
 
 
 class HTMLComponents(object):
