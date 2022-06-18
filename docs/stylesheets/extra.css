@@ -30,3 +30,7 @@ html {
    cursor: default;
 }
 
+p {
+    margin-block-start: .25em;
+    margin-block-end: .25em;
+}
