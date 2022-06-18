@@ -11,8 +11,15 @@ import textwrap
 from collections import namedtuple
 from datetime import datetime
 from markdown import markdown
+from formatter.rules import *
 
-
+JSON_EMBED_FORMAT_SEQUENCE = [
+    Emoji,
+    DiscordChannelID,
+    DiscordUserID,
+    DiscordRoleID,
+    MarkdownLink
+]
 RGB = namedtuple('RGB', 'red green blue')
 
 
@@ -54,23 +61,10 @@ def convert_timestamp(iso_timestamp):
 
 
 def patched_convert_to_html(text):
-    """Really ugly patch to prevent and issue with formatting '<' and '>' to HTML.
-    markdown converts "<hello:12312>" to "&lt;hello:12312&gt;"
-
-    1. "<hello:12312>" -> "[cpa]hello:12312[cpb]"
-    2. convert to html
-    3. "[cpa]hello:12312[cpb]" -> "<hello:12312>"
-
-    :param str text: markdown formatted text that is converted to HTML
-    :return: formatted HTML
-    :rtype: str
-    """
-    formatted = text.replace('<', "[cpa]")
-    formatted = formatted.replace('>', "[cpb]")
-    formatted = markdown(formatted)
-    formatted = formatted.replace("[cpa]", '<')
-    formatted = formatted.replace("[cpb]", '>')
-    return formatted
+    formatted = text
+    for formatter in JSON_EMBED_FORMAT_SEQUENCE:
+        formatted = formatter.format_content(formatted)
+    return markdown(formatted)
 
 
 class HTMLComponents(object):
@@ -174,7 +168,7 @@ class HTMLComponents(object):
             text_formatted += f" | {timestamp_formatted}"
 
         # note: original implementation checks for timestamp and text, would assume only text required ?
-        icon_formatted = f"<img src=\"{icon_url}\" class=\"embed-footer-icon\" role=\"presentation\" width=\"20\" height=\"20\">" if text_formatted != '' else ''
+        icon_formatted = f"<img src=\"{icon_url}\" class=\"embed-footer-icon\" role=\"presentation\" width=\"20\" height=\"20\">" if icon_url else ''
 
         return f"<div class=\"embed-footer\">{icon_formatted}<span class=\"embed-footer\">{text_formatted}</span></div>"
 

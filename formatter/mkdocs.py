@@ -59,14 +59,6 @@ DEFAULT_FORMAT_SEQUENCE = [
     DiscordRoleID
 ]
 
-JSON_EMBED_FORMAT_SEQUENCE = [
-    LineBreak,
-    Emoji,
-    DiscordChannelID,
-    DiscordUserID,
-    DiscordRoleID
-]
-
 
 @dataclass
 class JsonEmbed(object):
@@ -128,8 +120,6 @@ class MKDocsMessage(object):
     def format_json_embed(self):
         if self.json_embed.raw:
             self.json_embed.content = str(EmbedHTMLGenerator(self.json_embed.raw))
-            for formatter in JSON_EMBED_FORMAT_SEQUENCE:
-                formatter.format_mkdocs_md(self.json_embed)
 
     def __str__(self):
         # todo: remove unnecessary spaces (won't affect html report but it's a bit cleaner)
