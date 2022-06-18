@@ -1,6 +1,6 @@
 # PVME-Docs
 
-[PVME-Docs](pvme.github.io) is a static site that is generated from the [pvme-guides](https://github.com/pvme/pvme-guides) repository. 
+[PVME-Docs](https://pvme.github.io) is a static site that is generated from the [pvme-guides](https://github.com/pvme/pvme-guides) repository. 
 
 The site is generated using the [Material for Mkdocs theme](https://squidfunk.github.io/mkdocs-material/).
 
@@ -30,7 +30,7 @@ pip install pipenv
 pipenv install
 ```
 
-This will the packages and their dependencies (fixed version number) using `Pipfile.lock`.
+This will install the packages and their dependencies (fixed version number) using `Pipfile.lock`.
 
 **Environment variables**
 
