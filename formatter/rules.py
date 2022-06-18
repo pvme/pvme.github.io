@@ -72,16 +72,16 @@ class Section(MKDocs):
 
 
 class Emoji(MKDocs):
-    """<concBlast:1234> -> <img src="https://cdn.discordapp.com/emojis/535533809924571136.png?v=1" class="emoji">"""
-    PATTERNS = [(re.compile(r"<:([^:]{2,}):([0-9]+)>"), ".png"),
-                (re.compile(r"<:a:([^:]+):([0-9]+)>"), ".gif")]
+    """<:concBlast:1234> -> <img src="https://cdn.discordapp.com/emojis/535533809924571136.png?v=1" class="emoji">"""
+    PATTERNS = [(re.compile(r"(<|&lt;):([^:]{2,}):([0-9]+)(>|&gt;)"), ".png"),
+                (re.compile(r"(<|&lt;):a:([^:]+):([0-9]+)(>|&gt;)"), ".gif")]
 
     @staticmethod
     def format_mkdocs_md(message):
         for pattern, extension in Emoji.PATTERNS:
             matches = [match for match in re.finditer(pattern, message.content)]
             for match in reversed(matches):
-                emoji_formatted = "<img title=\"{}\" class=\"d-emoji\" alt=\"{}\" src=\"https://cdn.discordapp.com/emojis/{}{}?v=1\">".format(match.group(1), match.group(1), match.group(2), extension)
+                emoji_formatted = "<img title=\"{}\" class=\"d-emoji\" alt=\"{}\" src=\"https://cdn.discordapp.com/emojis/{}{}?v=1\">".format(match.group(2), match.group(2), match.group(3), extension)
                 message.content = message.content[:match.start()] + emoji_formatted + message.content[match.end():]
 
 

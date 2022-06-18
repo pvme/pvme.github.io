@@ -10,8 +10,7 @@ import json
 import textwrap
 from collections import namedtuple
 from datetime import datetime
-
-import markdown2
+from markdown import markdown
 
 
 RGB = namedtuple('RGB', 'red green blue')
@@ -54,27 +53,6 @@ def convert_timestamp(iso_timestamp):
     return datetime_parsed.strftime("%a %b %d, %Y at %H:%M %p")
 
 
-def patched_convert_to_html(text):
-    """Really ugly patch to prevent and issue with formatting '>' to HTML.
-    discord_markdown.convert_to_html converts "<hello:12312>" to "<p><hello:12312</p>" which breaks emoji parsing.
-
-    The patch temporarily replaces '>' with "[cpb]":
-
-    1. "<hello:12312>" -> "<hello:12312[cpb]"
-    2. "<hello:12312[cpb]" -> "<p><hello:12312[cpb]</p>"
-    3. "<p><hello:12312[cpb]</p>" -> "<p><hello:12312></p>"
-
-    :param str text: markdown formatted text that is converted to HTML
-    :return: formatted HTML
-    :rtype: str
-    """
-    # formatted = text.replace('>', "[cpb]")
-    # formatted = convert_to_html(formatted)
-    # formatted = formatted.replace("[cpb]", '>')
-    #return formatted
-    return markdown2.markdown(text)
-
-
 class HTMLComponents(object):
     """Collection of Discord embed -> HTML formatters."""
 
@@ -95,9 +73,9 @@ class HTMLComponents(object):
             return ''
 
         if url:
-            formatted_title = f"<a target=\"_blank\" rel=\"noreferrer\" href=\"{url}\" class=\"embed-title\">{patched_convert_to_html(title)}</a>"
+            formatted_title = f"<a target=\"_blank\" rel=\"noreferrer\" href=\"{url}\" class=\"embed-title\">{markdown(title)}</a>"
         else:
-            formatted_title = f"<div class=\"embed-title\" >{patched_convert_to_html(title)}</div>"
+            formatted_title = f"<div class=\"embed-title\" >{markdown(title)}</div>"
 
         return formatted_title
 
@@ -107,7 +85,7 @@ class HTMLComponents(object):
         if not content:
             return ''
 
-        return f"<div class=\"embed-description markup\" >{patched_convert_to_html(content)}</div>"
+        return f"<div class=\"embed-description markup\" >{markdown(content)}</div>"
 
     @staticmethod
     def author(name, url, icon_url):
@@ -119,9 +97,9 @@ class HTMLComponents(object):
             return ''
 
         if url:
-            author_formatted = f"<a target=\"_blank\" rel=\"noreferrer\" href=\"{url}\" class=\"embed-author-name\">{patched_convert_to_html(name)}</a>"
+            author_formatted = f"<a target=\"_blank\" rel=\"noreferrer\" href=\"{url}\" class=\"embed-author-name\">{markdown(name)}</a>"
         else:
-            author_formatted = f"<span class=\"embed-author-name\" >{patched_convert_to_html(name)}</span>"
+            author_formatted = f"<span class=\"embed-author-name\" >{markdown(name)}</span>"
 
         icon_formatted = f"<img src=\"{icon_url}\" role=\"presentation\" class=\"embed-author-icon\">"
         return f"<div class=\"embed-author\">{icon_formatted}{author_formatted}</div>"
@@ -137,8 +115,8 @@ class HTMLComponents(object):
             return ''
 
         class_name = "embed-field" + (" embed-field-inline" if inline else '')
-        name_formatted = f"<div class=\"embed-field-name\" >{patched_convert_to_html(name)}</div>" if name else ''
-        value_formatted = f"<div class=\"embed-field-value markup\" >{patched_convert_to_html(value)}</div>" if value else ''
+        name_formatted = f"<div class=\"embed-field-name\" >{markdown(name)}</div>" if name else ''
+        value_formatted = f"<div class=\"embed-field-value markup\" >{markdown(value)}</div>" if value else ''
 
         return f"<div class=\"{class_name}\" >{name_formatted}{value_formatted}</div>"
 
@@ -171,7 +149,7 @@ class HTMLComponents(object):
 
         timestamp_formatted = convert_timestamp(timestamp) if timestamp else ''
         # note: original implementation has no discord > HTML formatting
-        text_formatted = patched_convert_to_html(text) if text else ''
+        text_formatted = markdown(text) if text else ''
         if timestamp_formatted != '':
             text_formatted += f" | {timestamp_formatted}"
 
