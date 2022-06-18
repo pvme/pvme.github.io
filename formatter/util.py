@@ -6,6 +6,7 @@ import functools
 import re
 import pathlib
 import logging
+import json
 
 import gspread
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
@@ -22,6 +23,7 @@ GS_TOKEN_URI = os.environ.get('GS_TOKEN_URI')
 BASE_DOMAIN = "pvme.github.io"
 
 MODULE_PATH = pathlib.Path(__file__).parent.absolute()
+MAIN_PATH = pathlib.Path(__file__).parent.parent.absolute()
 
 
 @functools.lru_cache(maxsize=None)
@@ -136,22 +138,15 @@ def generate_embed(url: str) -> str:
     return embed
 
 
-def parse_channel_id_file() -> dict:
+def parse_channel_file() -> dict:
     """Generate a lookup table (dict) with the following content: {channel_id: path_to_channel}.
-    The path ignores the '.txt' extension and it does not add a custom extension as this depends on Sphinx/Mkdocs.
 
-    :return: lookup table (dict), when no file is discovered, an empty dict is returned
+    :return: lookup table (dict)
     :rtype: dict
     """
-    channel_id_file = f"{MODULE_PATH}/discord_channels.txt"
-    if os.path.exists(channel_id_file):
-        with open(channel_id_file, 'r') as file:
-            # create dict from regex list of tuples containing group(channel_id), group(path_to_channel)
-            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-z/0-9]+)\.txt", file.read()))
-    else:
-        channel_lookup = dict()
-
-    return channel_lookup
+    with open(f'{MAIN_PATH}/pvme-settings/channels.json', 'r', encoding='utf-8') as file:
+        channel_data = json.load(file)
+        return { channel['id']: channel['path'] for channel in channel_data }
 
 
 def parse_invalid_channel_id_file() -> dict:

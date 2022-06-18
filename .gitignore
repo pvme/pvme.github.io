@@ -21,6 +21,7 @@ docs/pvme-guides
 
 # pvme-guides repo
 pvme-guides
+pvme-settings
 
 # env file
 .env

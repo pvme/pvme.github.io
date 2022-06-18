@@ -176,7 +176,7 @@ class PVMESpreadSheet(MKDocs):
 class DiscordChannelID(MKDocs):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     PATTERN = re.compile(r"<#([0-9]{18})>")
-    CHANNEL_LOOKUP = formatter.util.parse_channel_id_file()
+    CHANNEL_LOOKUP = formatter.util.parse_channel_file()
     INVALID_CHANNEL_LOOKUP = formatter.util.parse_invalid_channel_id_file()
 
     @staticmethod
@@ -185,10 +185,9 @@ class DiscordChannelID(MKDocs):
         for index, match in enumerate(reversed(matches)):
             path = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if path:
-                relative_file = f"../{path}.md"
-                # name = os.path.basename(path).replace('-', ' ').capitalize()  # 'Araxxor melee'
-                name = f"#{os.path.basename(path)}"
-                link = f"[{name}]({relative_file})"
+                relative_file = path.replace(".txt", "")
+                name = os.path.basename(path).replace(".txt", "")
+                link = f"[#{name}](../../{relative_file})"
             else:
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:
@@ -196,10 +195,7 @@ class DiscordChannelID(MKDocs):
                 else:
                     name = "unknown-channel"
                     logger.warning(f"unknown channel {match.group(1)}")
-
                 link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
-
-
             message.content = message.content[:match.start()] + link + message.content[match.end():]
 
 
