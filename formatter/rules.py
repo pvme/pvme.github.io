@@ -181,7 +181,8 @@ class PVMESpreadSheet(MKDocs):
 class DiscordChannelID(MKDocs):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     PATTERN = re.compile(r"<#([0-9]{18})>")
-    CHANNEL_LOOKUP = formatter.util.parse_channel_file()
+    CHANNEL_FILE = formatter.util.parse_channel_file()
+    CHANNEL_LOOKUP = { channel['id']: channel['path'] for channel in CHANNEL_FILE }
     INVALID_CHANNEL_LOOKUP = formatter.util.parse_invalid_channel_id_file()
 
     @staticmethod

@@ -138,15 +138,14 @@ def generate_embed(url: str) -> str:
     return embed
 
 
-def parse_channel_file() -> dict:
-    """Generate a lookup table (dict) with the following content: {channel_id: path_to_channel}.
+def parse_channel_file() -> list:
+    """Read the pvme-settings/channels.json file as json
 
-    :return: lookup table (dict)
-    :rtype: dict
+    :return: list of channels with name, path, id
+    :rtype: list
     """
     with open(f'{MAIN_PATH}/pvme-settings/channels.json', 'r', encoding='utf-8') as file:
-        channel_data = json.load(file)
-        return { channel['id']: channel['path'] for channel in channel_data }
+        return json.load(file)
 
 
 def parse_invalid_channel_id_file() -> dict:

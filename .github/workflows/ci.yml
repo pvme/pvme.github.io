@@ -25,7 +25,7 @@ jobs:
         run: git clone --depth 1 https://github.com/pvme/pvme-settings.git
 
       - name: Generate sources
-        run: pipenv run python formatter_cli.py
+        run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
         env:
           GS_URL: ${{secrets.GS_URL}}
           GS_PRIVATE_KEY: ${{secrets.GS_PRIVATE_KEY}}

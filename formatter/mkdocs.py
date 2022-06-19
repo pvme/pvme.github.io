@@ -21,11 +21,10 @@ import ruamel.yaml
 
 from formatter.rules import *
 from formatter.discord_embed import EmbedHTMLGenerator, parse_embed_json
+from formatter.util import parse_channel_file
 
 logger = logging.getLogger('formatter.mkdocs')
 logger.level = logging.WARN
-
-MAIN_PATH = pathlib.Path(__file__).parent.parent.absolute()
 
 CATEGORY_SEQUENCE = [
     'getting-started',
@@ -162,7 +161,7 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
         formatted_channel = '{}{}'.format(formatted_channel, message)
 
     # write the formatted channel data to guide.md
-    with open('{}/{}/pvme-guides/{}/{}.md'.format(MAIN_PATH, source_dir, category_name, channel_name), 'w', encoding='utf-8') as file:
+    with open('{}/pvme-guides/{}/{}.md'.format(source_dir, category_name, channel_name), 'w', encoding='utf-8') as file:
         file.write(formatted_channel)
 
 
@@ -180,29 +179,27 @@ def update_mkdocs_nav(mkdocs_yml: str, mkdocs_nav: list):
         yaml.dump(data, file)
 
 
-def generate_sources() -> int:
+def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> int:
     # (clear) + create the source/pvme-guides directory (only really needed for debugging)
-    source_dir = 'docs'
-    if os.path.isdir('{}/{}/pvme-guides'.format(MAIN_PATH, source_dir)):
-        shutil.rmtree('{}/{}/pvme-guides'.format(MAIN_PATH, source_dir), ignore_errors=True)
+    if os.path.isdir('{}/pvme-guides'.format(source_dir)):
+        shutil.rmtree('{}/pvme-guides'.format(source_dir), ignore_errors=True)
 
     os.mkdir('{}/pvme-guides'.format(source_dir))
 
-    with open(f'{MAIN_PATH}/pvme-settings/channels.json', 'r', encoding='utf-8') as file:
-        channel_data = json.load(file)
-        channel_map = { channel['path']: channel['name'] for channel in channel_data }
+    channel_data = parse_channel_file()
+    channel_map = { channel['path']: channel['name'] for channel in channel_data }
 
     mkdocs_nav = list()     # contents of the mkdocs.yml nav:
 
     # only search for categories in category sequence, automatically excludes unused categories
     for category_name in CATEGORY_SEQUENCE:
-        category_dir = '{}/pvme-guides/{}'.format(MAIN_PATH, category_name)
+        category_dir = '{}/{}'.format(pvme_guides_dir, category_name)
 
         # exclude non-directories like README.md and LICENSE
         if not os.path.isdir(category_dir):
             continue
 
-        os.mkdir('{}/{}/pvme-guides/{}'.format(MAIN_PATH, source_dir, category_name))
+        os.mkdir('{}/pvme-guides/{}'.format(source_dir, category_name))
 
         # convert high-tier-pvm > High tier pvm
         formatted_category = category_name.replace('-', ' ').capitalize()
@@ -225,7 +222,7 @@ def generate_sources() -> int:
 
         mkdocs_nav.append({formatted_category: sorted(category_channels)})
 
-    update_mkdocs_nav('mkdocs.yml', mkdocs_nav)
+    update_mkdocs_nav(mkdocs_yml, mkdocs_nav)
 
     return 0
 
@@ -237,4 +234,4 @@ if __name__ == '__main__':
     logging.getLogger('formatter.rules').level = logging.DEBUG
     logging.getLogger('formatter.util').level = logging.DEBUG
 
-    generate_sources()
+    generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')
