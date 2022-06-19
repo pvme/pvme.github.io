@@ -10,7 +10,8 @@ import json
 import textwrap
 from collections import namedtuple
 from datetime import datetime
-from markdown import markdown
+import markdown
+from formatter.discord_markdown import DiscordMarkdownExtension
 from formatter.rules import *
 
 JSON_EMBED_FORMAT_SEQUENCE = [
@@ -21,6 +22,7 @@ JSON_EMBED_FORMAT_SEQUENCE = [
     MarkdownLink
 ]
 RGB = namedtuple('RGB', 'red green blue')
+MD = markdown.Markdown(extensions=[DiscordMarkdownExtension()])
 
 
 def parse_embed_json(json_string):
@@ -64,7 +66,7 @@ def patched_convert_to_html(text):
     formatted = text
     for formatter in JSON_EMBED_FORMAT_SEQUENCE:
         formatted = formatter.format_content(formatted)
-    return markdown(formatted)
+    return MD.convert(formatted)
 
 
 class HTMLComponents(object):
