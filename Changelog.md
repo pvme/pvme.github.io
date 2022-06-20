@@ -7,16 +7,27 @@
 - Embed: wiki links
 - Embed: google docs
 - Obtain discord usernames using discord API/bot
-- Use the same channel structure as the pvme discord
 - clickable link for non-embedded urls
 
 
 ## Release notes
 
+### June, 20, 2022
+
+Thanks to emmet-shark:
+
+- Added new category structure and guide names. The guide structure and names now always match the category + channel names in Discord 
+- Reduced spacing
+- embed fixes
+  - fix links inside embeds
+  - remove nonexistent footer embed icons
+
 ### June, 15, 2022
 
-- Removed unnecessary ToC embed at the bottom of the page (thanks to emmett-shark)
-- Fixed a bunch of non-clickable urls (thanks to emmett-shark)
+Thanks to emmet-shark:
+
+- Removed unnecessary ToC embed at the bottom of the page
+- Fixed a bunch of non-clickable urls
 
 ### August, 9, 2021
 

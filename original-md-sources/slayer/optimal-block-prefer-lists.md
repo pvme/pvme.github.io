@@ -1,0 +1,52 @@
+# Optimal block prefer lists
+## Optimal Block and Prefer Lists
+
+**^^For XP^^**
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/8ECumCp.png">
+
+
+
+**^^For GP^^**
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/HNQrT8C.png">
+
+
+
+**^^Assumptions^^**
+
+⬥ In the pictures above, the optimal block and prefer lists for XP and GP focused slayer is shown. These are based off the weightings of each task, the blocked tasks are highly weighted and offer low rates in either XP, GP or both. Some high-weight but fast tasks were excluded from the block list, as those are used to build points, such as Dagannoths or Order of Ascension Members.
+
+
+⬥ The XP-focused tasks have a few assumptions, that Ripper Demons are killed for all Demon tasks, Moss Golems are killed for Creatures of the Lost Grove, and that the player's highest level Soul Devourer is killed.
+
+ ‎ ‎ ‎ ‎• If required to, the player should boost with the use of a Wilder Pie to kill higher levelled mobs, to boost their XP rates further.
+
+
+⬥ The GP focused tasks assume that the player is using Binding Contracts for both Ripper Demon <img title="ripperpouch" class="d-emoji" alt="ripperpouch" src="https://cdn.discordapp.com/emojis/703581275453128714.png?v=1"> and Demon tasks. Tasks that are not preferred but are often good to do include Crystal Shapeshifters, Iorwerth Elves, Nihils and Tormented Demons, with the latter two being required to be unlocked.
+
+
+⬥ Laniakea's special assignment is a very strong task, granting 50k slayer XP and 45 slayer points upon completion, and only requires 1 kill of each Vile Bloom. This takes a few minutes and gives large rewards, so should always be completed. On the other hand, Morvran's special assignment requires many boss kills, takes too much time and gives very little reward, so should be turned off for free, after being completed once for the completionist cape requirement.
+
+
+**^^How to Use These Lists^^**
+
+⬥ In order for the player to profit or break-even on slayer points on average, their prefer list weighting must equal 19.2% of the total task weighting, as long as Slayer VIP tickets <img title="slayervip" class="d-emoji" alt="slayervip" src="https://cdn.discordapp.com/emojis/975284344597934120.png?v=1"> are used. Slayer tasks completed with Laniakea <img title="laniakea" class="d-emoji" alt="laniakea" src="https://cdn.discordapp.com/emojis/975284345411600426.png?v=1"> award 35.2 slayer points on average, and as a skip costs 30 points, the player must complete 46% of their tasks on average to profit slayer points, so don't be too afraid to skip tasks.
+
+ ‎ ‎ ‎ ‎• If the player is 120 Slayer <img title="slayercape" class="d-emoji" alt="slayercape" src="https://cdn.discordapp.com/emojis/975284344123953164.png?v=1">, the cape perk allows them to skip even more tasks, as they have a guaranteed task they will complete when they choose it, 20% of the time.
+
+
+⬥ Bad tasks should always be blocked or skipped with quick tasks completed to upkeep slayer points, and never reset your streak via a Spria task, as the streak bonus is very important to gaining slayer points consistently. Due to the nature of some tasks, slayer points can be quite valuable.
+
+
+⬥ Whilst these lists are optimal, many players will find that they enjoy or dislike tasks, which is perfectly fine. Take into account which tasks you personally prefer, and build your lists around that. **The most important thing is to enjoy slaying!**
+
+

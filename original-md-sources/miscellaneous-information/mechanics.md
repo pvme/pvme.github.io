@@ -1,0 +1,1199 @@
+# Mechanics
+## Tick System
+
+
+⬥ The time between game information updates is 0.6 seconds, this is commonly referred to as a tick.
+
+⬥ All of your actions will be registered on one of these intervals.
+
+⬥ Below is a video on understanding the tick system and ways to take advantage of it.
+
+
+<https://youtu.be/hElkOvHJmaA>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/hElkOvHJmaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Target Cycling
+
+
+**^^Keybind NPC Targetting^^**
+
+⬥ Targeting settings can be found under the Combat Tab in the Settings Interface and includes the situationally useful Cycle Target keybinds.
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/Apqq3Th.png">
+
+
+
+⬥ This function allows you to select a target procedurally based on whether you set the targeting mode to Radial or Conal.
+
+
+
+⬥ **Radial targeting:**
+
+ ‎ ‎ ‎ ‎• Cycles from the nearest to the farthest target from the player when pressed.
+
+ ‎ ‎ ‎ ‎• In the case of multiple equidistant targets, it will cycle clockwise starting from the north.
+
+ ‎ ‎ ‎ ‎• This is useful for simply snapping to the closest target available.
+
+
+
+⬥ **Conal Targeting:**
+
+ ‎ ‎ ‎ ‎• Cycles from the closest to the farthest target in the direction the camera is facing.
+
+ ‎ ‎ ‎ ‎• The angle for an NPC to be considered eligible for selection is around 75-90°.
+
+ ‎ ‎ ‎ ‎• This is most useful for more precise targeting in scenarios with multiple NPCs around.
+
+
+**^^Why it is Useful^^**
+
+⬥ It is very useful for improving consistency and speed in nearly all boss encounters.
+
+⬥ A notable advantage of target cycle is that Detonate is not cancelled upon selecting a new target before release.
+
+ ‎ ‎ ‎ ‎• Without target cycle if you wished to do this you would have to click and release on same tick to not lose Detonate
+
+
+^^**Notable Applications**^^
+
+⬥ **The Shadow Reef**
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Tagging Sinister Fragments at the Ambassador, saves 4 ticks.
+
+
+
+
+
+<video class="media" autoplay loop muted controls><source src="https://i.gyazo.com/a3b13b217022a8523de01b4e50b3cc9f.mp4"></video>
+
+
+
+⬥ **Vorago**
+
+ ‎ ‎ ‎ ‎• Gaining aggro on p2 dropdown. This can solve the 1 HP P1 issue where P2 starts off with random aggro.
+
+ ‎ ‎ ‎ ‎• Tagging Teamsplit on drop to Reprisal <img title="Reprisal" class="d-emoji" alt="Reprisal" src="https://cdn.discordapp.com/emojis/513190159462694912.png?v=1"> the first Teamsplit.
+
+ ‎ ‎ ‎ ‎• The timing for P3/P5 is 17 ticks from when you can crack heal:
+
+
+<https://youtu.be/9YejOAvquQk>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/9YejOAvquQk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+⬥ **Nex: Angel of Death**
+
+ ‎ ‎ ‎ ‎• Radial targeting to tag P2 Amalgamations when Detonating <img title="deto" class="d-emoji" alt="deto" src="https://cdn.discordapp.com/emojis/535533833358016512.png?v=1">. This allows to tag on spawn without risking cancelling detonate accidentally.
+
+ ‎ ‎ ‎ ‎• Tagging Pillars on P4, prevents possible misclicks with the camera snapping over after using Surge <img title="surge" class="d-emoji" alt="surge" src="https://cdn.discordapp.com/emojis/535533810004262912.png?v=1"> + Bladed Dive <img title="bd" class="d-emoji" alt="bd" src="https://cdn.discordapp.com/emojis/535532854281764884.png?v=1">.
+
+
+
+⬥ **Solak**
+
+ ‎ ‎ ‎ ‎• Tagging the Blight Afflicted Core on spawn, potentially saves a tick which helps a bit for one-cycling.
+
+ ‎ ‎ ‎ ‎• Tagging Arms and Legs faster.
+
+
+
+⬥ **GWD2**
+
+ ‎ ‎ ‎ ‎• The bosses with long spawn animations can be tagged immediately, which helps particularly on Helwyr.
+
+
+
+⬥ When attempting to cycle to a target on spawn, spam clicking the keybind will not work so you just have to know the exact tick it becomes targetable.
+
+ ‎ ‎ ‎ ‎• Alternatively if you're constantly moving you can spam it once per tick.
+
+
+## Solo Flanking(Courtesy of #Dming)
+
+
+⬥ In this section, different use cases of solo Flanking will be explained.
+
+
+
+⬥ **Case 1.0**: Target is stuck in position.
+
+ ‎ ‎ ‎ ‎• Target must be unable to move, not just their animation but actual position in the server.
+
+ ‎ ‎ ‎ ‎• Moving under or behind are the easiest flanking spots to reach.
+
+ ‎ ‎ ‎ ‎• Examples:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Black Stone Dragon while casting Smoke Spiral.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Taraket the Necromancer during the last phase as he casts Spirit Line.
+
+
+
+⬥ **Case 1.5**: Target is stuck but the player is unable to reach behind the target.
+
+ ‎ ‎ ‎ ‎• This condition applies to certain bosses and mobs.
+
+ ‎ ‎ ‎ ‎• They might be casting an AoE mechanic that originates from their center.
+
+ ‎ ‎ ‎ ‎• Simply prepare ahead of time and step 1 tile away from any of the cardinal directions.
+
+ ‎ ‎ ‎ ‎• Once the target locks their position, move 1 tile towards the same cardinal direction and activate your flanking ability.
+
+ ‎ ‎ ‎ ‎• Below is an example of Raksha's tail swipe mechanic. Notice the last ability used was Impact within Sunshine buff:
+
+
+
+
+
+<video class="media" controls><source src="https://imgur.com/G1zlwXH.mp4" type="video/mp4"></video>
+
+
+
+⬥ **Case 2**: Walking under an immovable and non-blocked target:
+
+ ‎ ‎ ‎ ‎• Taraket the Necromancer in his Ranged form.
+
+ ‎ ‎ ‎ ‎• Kerapac, while he is casting Shatter ability, upon landing from Jumping Slam, during casting Lightning Strike, and in his phase transitions (SS heal).
+
+ ‎ ‎ ‎ ‎• Any boss or monster that is rooted from Ice Barrage or Sticky Bombs can be walked under for flanking.
+
+ ‎ ‎ ‎ ‎• The Ambassador at all times:
+
+
+
+
+
+<video class="media" controls><source src="https://imgur.com/FMhz1Cm.mp4" type="video/mp4"></video>
+
+
+
+⬥ **Case 3**: Target that are size 2x2 can always be flanked on two of their adjacent tiles.
+
+ ‎ ‎ ‎ ‎• Applicable bosses: Commander Zilyanna, Gregovic.
+
+ ‎ ‎ ‎ ‎• Applicable monsters: Sea Horrors, Scopulus, Ripper Demons, Nightmare Creatures, Igneous Tzekhaar-Xil, Igneous Tzekhaar-Hur.
+
+ ‎ ‎ ‎ ‎• Below is a picture of the 2 tiles where flanking will always work as well as an example of Igneous Tzkhaar-Hur:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/btearNY.png">
+
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/kmlnJMh.png">
+
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/OOreFqF.png">
+
+
+
+## Critical Hits (Courtesy of #Unknown user)
+
+
+**^^Brief Introduction^^**
+
+⬥ A Critical hit is when the player hits between 95% and 100% of potential damage with an ability or auto-attack, denoted by a bolder hit splat.
+
+ ‎ ‎ ‎ ‎• This is broken up into two categories: forced critical hits and natural critical hits
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- A forced critical hit is when the game forces you to critical hit, based on your chance to force a critical hit
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- A natural critical hit is when the game fails to force a critical hit, and instead rolls damage normally and hits within the critical damage range
+
+⬥ Landing a Critical hit also increases your damage cap from 10000 to 12000 (15000 with <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">, 15720 with <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1"> and <img title="smokecloud" class="d-emoji" alt="smokecloud" src="https://cdn.discordapp.com/emojis/856635090641879050.png?v=1"> using non-<img title="Magic" class="d-emoji" alt="Magic" src="https://cdn.discordapp.com/emojis/689504724159823906.png?v=1">) and 16800 with <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1"> and <img title="smokecloud" class="d-emoji" alt="smokecloud" src="https://cdn.discordapp.com/emojis/856635090641879050.png?v=1"> using <img title="Magic" class="d-emoji" alt="Magic" src="https://cdn.discordapp.com/emojis/689504724159823906.png?v=1">).
+
+⬥ Forced critical chance is a unique combat stat in RuneScape, spread all-over different items and interacting in unique ways.
+
+ ‎ ‎ ‎ ‎• E.g. getting +5% critical hit means you are getting +5% chance to get a forced critical hit, this is where the game forces your damage to roll in the top 5% of possible damage range, as opposed to the upper 80% as usual.
+
+
+**^^Abilities interaction^^**
+
+⬥ **Fury <img title="fury" class="d-emoji" alt="fury" src="https://cdn.discordapp.com/emojis/535532879510372352.png?v=1">**
+
+ ‎ ‎ ‎ ‎• Each <img title="fury" class="d-emoji" alt="fury" src="https://cdn.discordapp.com/emojis/535532879510372352.png?v=1"> hit increases your next hit's chance to force a critical hit by 5% per strike, up to a maximum of 15% after the 3rd hit
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- A previous <img title="fury" class="d-emoji" alt="fury" src="https://cdn.discordapp.com/emojis/535532879510372352.png?v=1"> hit can affect a subsequent <img title="fury" class="d-emoji" alt="fury" src="https://cdn.discordapp.com/emojis/535532879510372352.png?v=1"> hit because of this
+
+
+
+⬥ **Greater Fury <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1">**
+
+ ‎ ‎ ‎ ‎• <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1"> turns <img title="fury" class="d-emoji" alt="fury" src="https://cdn.discordapp.com/emojis/535532879510372352.png?v=1"> into a non-channeled ability, granting 10% forced critical strike to your next hit.
+
+ ‎ ‎ ‎ ‎• If <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1"> itself critical hits, your next hit is guaranteed to be a critical hit.
+
+
+
+⬥ **Concentrated blast <img title="conc" class="d-emoji" alt="conc" src="https://cdn.discordapp.com/emojis/535533833106489365.png?v=1"> & Greater Concentrated Blast <img title="gconc" class="d-emoji" alt="gconc" src="https://cdn.discordapp.com/emojis/869285393223254107.png?v=1">**
+
+ ‎ ‎ ‎ ‎• Each <img title="conc" class="d-emoji" alt="conc" src="https://cdn.discordapp.com/emojis/535533833106489365.png?v=1"> / <img title="gconc" class="d-emoji" alt="gconc" src="https://cdn.discordapp.com/emojis/869285393223254107.png?v=1"> hit increases your next hit's chance to force a critical hit by 5% per strike, up to a maximum of 15% after the 3rd hit.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- A previous <img title="conc" class="d-emoji" alt="conc" src="https://cdn.discordapp.com/emojis/535533833106489365.png?v=1"> / <img title="gconc" class="d-emoji" alt="gconc" src="https://cdn.discordapp.com/emojis/869285393223254107.png?v=1"> hit can affect a subsequent <img title="conc" class="d-emoji" alt="conc" src="https://cdn.discordapp.com/emojis/535533833106489365.png?v=1"> / <img title="gconc" class="d-emoji" alt="gconc" src="https://cdn.discordapp.com/emojis/869285393223254107.png?v=1"> ‎ ‎because of this
+
+
+
+⬥ **Meteor strike <img title="meteorstrike" class="d-emoji" alt="meteorstrike" src="https://cdn.discordapp.com/emojis/535532879359377439.png?v=1">, Tsunami <img title="tsunami" class="d-emoji" alt="tsunami" src="https://cdn.discordapp.com/emojis/535533809995874304.png?v=1"> and Incendiary Shot <img title="incend" class="d-emoji" alt="incend" src="https://cdn.discordapp.com/emojis/535541258429661215.png?v=1">**
+
+ ‎ ‎ ‎ ‎• <img title="meteorstrike" class="d-emoji" alt="meteorstrike" src="https://cdn.discordapp.com/emojis/535532879359377439.png?v=1">, <img title="tsunami" class="d-emoji" alt="tsunami" src="https://cdn.discordapp.com/emojis/535533809995874304.png?v=1"> and <img title="incend" class="d-emoji" alt="incend" src="https://cdn.discordapp.com/emojis/535541258429661215.png?v=1"> each provide a 30 seconds that provides 10% adrenaline whenever your roll a critical hit.
+
+ ‎ ‎ ‎ ‎• <img title="incend" class="d-emoji" alt="incend" src="https://cdn.discordapp.com/emojis/535541258429661215.png?v=1"> starts the buff when it hits, while <img title="meteorstrike" class="d-emoji" alt="meteorstrike" src="https://cdn.discordapp.com/emojis/535532879359377439.png?v=1"> / <img title="tsunami" class="d-emoji" alt="tsunami" src="https://cdn.discordapp.com/emojis/535533809995874304.png?v=1"> start the buff when you release them
+
+ ‎ ‎ ‎ ‎• The Corbicula Rex Perk from Player owned Farm **No Fear** increases the forced critical hit chance of <img title="meteorstrike" class="d-emoji" alt="meteorstrike" src="https://cdn.discordapp.com/emojis/535532879359377439.png?v=1"> by 20% at tier 1 and 40% at tier 2.
+
+
+⬥ **Smoke tendrils <img title="smoketendrils" class="d-emoji" alt="smoketendrils" src="https://cdn.discordapp.com/emojis/536257336130404372.png?v=1">**
+
+ ‎ ‎ ‎ ‎• Each hit of smoke tendrils <img title="smoketendrils" class="d-emoji" alt="smoketendrils" src="https://cdn.discordapp.com/emojis/536257336130404372.png?v=1"> will always critical hit granted you are properly using overload and prayer
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- There is some weird case where it is possible for it to calculate two critical hits in a single hit (i.e. providing 20% adrenaline in <img title="meteorstrike" class="d-emoji" alt="meteorstrike" src="https://cdn.discordapp.com/emojis/535532879359377439.png?v=1">, <img title="tsunami" class="d-emoji" alt="tsunami" src="https://cdn.discordapp.com/emojis/535533809995874304.png?v=1"> and <img title="incend" class="d-emoji" alt="incend" src="https://cdn.discordapp.com/emojis/535541258429661215.png?v=1"> instead of 10%)
+
+
+
+⬥ **Abilities unable to critical hit**
+
+ ‎ ‎ ‎ ‎• Combustion <img title="comb" class="d-emoji" alt="comb" src="https://cdn.discordapp.com/emojis/535533833098100745.png?v=1">
+
+ ‎ ‎ ‎ ‎• Corruption blast <img title="corruptblast" class="d-emoji" alt="corruptblast" src="https://cdn.discordapp.com/emojis/513190159194259467.png?v=1">
+
+ ‎ ‎ ‎ ‎• Fragmentation shot <img title="frag" class="d-emoji" alt="frag" src="https://cdn.discordapp.com/emojis/535541273755385885.png?v=1">
+
+ ‎ ‎ ‎ ‎• Corruption shot<img title="corruptshot" class="d-emoji" alt="corruptshot" src="https://cdn.discordapp.com/emojis/535541306294796299.png?v=1">
+
+ ‎ ‎ ‎ ‎• DeadShot <img title="deadshot" class="d-emoji" alt="deadshot" src="https://cdn.discordapp.com/emojis/535541307666595870.png?v=1"> bleed hits
+
+ ‎ ‎ ‎ ‎• Dismember <img title="dismember" class="d-emoji" alt="dismember" src="https://cdn.discordapp.com/emojis/535532879376023572.png?v=1">
+
+ ‎ ‎ ‎ ‎• Slaughter <img title="slaughter" class="d-emoji" alt="slaughter" src="https://cdn.discordapp.com/emojis/535532879237873666.png?v=1">
+
+ ‎ ‎ ‎ ‎• Massacre <img title="massacre" class="d-emoji" alt="massacre" src="https://cdn.discordapp.com/emojis/535532879384543253.png?v=1"> bleed hits
+
+ ‎ ‎ ‎ ‎• Blood Tendrils <img title="BloodTend" class="d-emoji" alt="BloodTend" src="https://cdn.discordapp.com/emojis/513190158431158274.png?v=1">
+
+ ‎ ‎ ‎ ‎• Ek-ZekKil special attack <img title="zekkil" class="d-emoji" alt="zekkil" src="https://cdn.discordapp.com/emojis/903244090953588787.png?v=1"> <img title="spec" class="d-emoji" alt="spec" src="https://cdn.discordapp.com/emojis/537340400273195028.png?v=1"> / <img title="eofspec" class="d-emoji" alt="eofspec" src="https://cdn.discordapp.com/emojis/746403211908481184.png?v=1"> bleed hits
+
+ ‎ ‎ ‎ ‎• Magma Tempest <img title="magmatempest" class="d-emoji" alt="magmatempest" src="https://cdn.discordapp.com/emojis/902209626509025290.png?v=1">
+
+ ‎ ‎ ‎ ‎• Onslaught <img title="onsl" class="d-emoji" alt="onsl" src="https://cdn.discordapp.com/emojis/513190159085207555.png?v=1">
+
+
+**^^Item interaction^^**
+
+⬥ **Deathspore arrows <img title="deathsporearrows" class="d-emoji" alt="deathsporearrows" src="https://cdn.discordapp.com/emojis/900758234527301642.png?v=1">**
+
+ ‎ ‎ ‎ ‎• Increases chance of forcing a critical hit by 3% when used.
+
+ ‎ ‎ ‎ ‎• If you land a critical strike while using these arrows you get a stack of *Feasting Spores*
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Reaching 5 stacks of *Feasting Spores* causes your next Ranged threshold, ultimate or special attack to cost 0% adrenaline.
+
+ ‎ ‎ ‎ ‎• Getting a free ranged action has a 60 second cooldown.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Each critical hit landed during this cooldown reduces it by 1.8 seconds.
+
+
+⬥ **Fractured Staff of Armadyl <img title="soa" class="d-emoji" alt="soa" src="https://cdn.discordapp.com/emojis/869284271595069451.png?v=1">**
+
+ ‎ ‎ ‎ ‎• The Fractured Staff of Armadyl <img title="soa" class="d-emoji" alt="soa" src="https://cdn.discordapp.com/emojis/869284271595069451.png?v=1"> is a level 95 staff.
+
+ ‎ ‎ ‎ ‎• The Fractured Staff of Armadyl <img title="soa" class="d-emoji" alt="soa" src="https://cdn.discordapp.com/emojis/869284271595069451.png?v=1"> has a special attack called *Instability*, which costs 50% adrenaline and has a 60 second cooldown between uses.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- For the next 30 seconds whenever the player lands a critical hit with Magic **by any means** on your primary target, a lossless mainhand / two-handed auto attack will be fired based on your current autocast.
+
+
+⬥ **Precise and Equilibrium**
+
+ ‎ ‎ ‎ ‎• Precise and Equilibrium both affect your maximum and minimum possible max hit by modifying the potential damage rolls ranges.
+
+ ‎ ‎ ‎ ‎• Precise increases your minimum damage by 1.5% per rank of your maximum damage
+
+ ‎ ‎ ‎ ‎• Equilibrium increases the minimum roll by 2.4% per rank & decreased the maximum hit by 0.8% per rank.
+
+ ‎ ‎ ‎ ‎• These will affect your chances of naturally rolling a critical hit
+
+
+ ‎‎ ‎**^^Forced Critical Hit Chance increases^^**
+
+⬥ Some items increase the chance you force critical strikes and said items can stack together
+
+ ‎ ‎ ‎ ‎• E.g. combining the Biting 4 perk, A Reaver's ring <img title="reaverring" class="d-emoji" alt="reaverring" src="https://cdn.discordapp.com/emojis/839903943018283050.png?v=1">, Erethdor's grimoire <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">, a Kal'gerion demon <img title="kalgpouch" class="d-emoji" alt="kalgpouch" src="https://cdn.discordapp.com/emojis/921410226484301925.png?v=1"> using its scroll <img title="kalgscroll" class="d-emoji" alt="kalgscroll" src="https://cdn.discordapp.com/emojis/841409588954923049.png?v=1"> you'll have a base Forced Critical strike chance of 31% (31.8% with biting at lv20).
+
+
+⬥ ‎ ‎**^^Biting perk & Tuska's Might^^**
+
+ ‎ ‎ ‎ ‎• The biting perk grants you +2% forced critical hit chance per rank.
+
+ ‎ ‎ ‎ ‎• Tuska's Might is the set effect of Tuska's warpriest, granting 1% force critical hit chance per piece equipped.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Usable with Anima Core of Sliske.
+
+ ‎ ‎ ‎ ‎• If Tuska's Might is in effect, then Biting is ignored.
+
+
+⬥ **^^Kal'gerion Demon <img title="kalgpouch" class="d-emoji" alt="kalgpouch" src="https://cdn.discordapp.com/emojis/921410226484301925.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• Special attack <img title="kalgscroll" class="d-emoji" alt="kalgscroll" src="https://cdn.discordapp.com/emojis/841409588954923049.png?v=1"> grants a buff granting +5% forced critical hit chance to everyone around the Kal'gerion Demon for 60 seconds
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- <img title="kalgscroll" class="d-emoji" alt="kalgscroll" src="https://cdn.discordapp.com/emojis/841409588954923049.png?v=1"> cannot be auto-fired
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Ironman cannot benefit from other players' <img title="kalgscroll" class="d-emoji" alt="kalgscroll" src="https://cdn.discordapp.com/emojis/841409588954923049.png?v=1"> buff
+
+ ‎ ‎ ‎ ‎• Has a passive effect that grants you a passive +1% forced critical hit chance
+
+
+
+⬥ ‎ ‎**^^Erethdor's grimoire <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• When active, Erethdor's grimoire <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1"> will give you +12% forced critical hit chance and increase your critical hit damage cap from 12000 to 15000.
+
+
+
+⬥ ‎ ‎**^^Channeler's ring <img title="channellerring" class="d-emoji" alt="channellerring" src="https://cdn.discordapp.com/emojis/839903943404027914.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• When using any channeled ability with Magic you will get stacks of *Runic Embrace* for every hit in the channel, giving you a stacking +4% increase to your forced critical hit chance on each hit of the channel.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- E.g. a 2-hit channel would get +4% on the first hit and +8% on the second hit due to Runic Embrace.
+
+
+
+⬥ ‎ ‎**^^Champion's ring <img title="championring" class="d-emoji" alt="championring" src="https://cdn.discordapp.com/emojis/839903943630520350.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• if your target is suffering from any Bleed you'll get +3% forced critical hit chance.
+
+
+
+⬥ ‎ ‎**^^Reaver's ring <img title="reaverring" class="d-emoji" alt="reaverring" src="https://cdn.discordapp.com/emojis/839903943018283050.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• At the cost of 5% accuracy, the Reaver's ring gives you a passive +5% forced critical hit chance.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Generally speaking, you can calculate this accuracy impact as 0.95\*(current hitchance).
+
+
+
+⬥ ‎ ‎**^^Stalker's ring <img title="stalkerring" class="d-emoji" alt="stalkerring" src="https://cdn.discordapp.com/emojis/839903943601029120.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• When using a bow, the <img title="stalkerring" class="d-emoji" alt="stalkerring" src="https://cdn.discordapp.com/emojis/839903943601029120.png?v=1"> provides +3% increase to forced critical hit chance.
+
+
+⬥ ‎ ‎**^^Smoke cloud <img title="smokecloud" class="d-emoji" alt="smokecloud" src="https://cdn.discordapp.com/emojis/856635090641879050.png?v=1">^^**
+
+ ‎ ‎ ‎ ‎• It is a debuff applied to the boss, how it affects your critical hit damage cap depends on the style
+
+ ‎ ‎ ‎ ‎• For Magic:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Increases the target's damage received from critical strikes by 15%.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Critical hit damage cap increase to 13440 (no <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">) or 16800 (with <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">)
+
+ ‎ ‎ ‎ ‎• For non-Magic:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Increases the target's damage received from critical strikes by 6%.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Critical hit damage cap increase to 12576 (no <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">) or 15.720 (with <img title="grim" class="d-emoji" alt="grim" src="https://cdn.discordapp.com/emojis/568262896375824385.png?v=1">)
+
+
+ ‎**^^RuneScape Wiki's Critical hit chance calculator^^**
+
+The RuneScape wiki has an excellent calculator to calculate your current critical hit chance here: <https://runescape.wiki/w/Calculator:Combat/Critical_hit_chance/>
+
+
+## Walking Bosses (Courtesy of #pavu)
+
+
+**^^Moving NPCs^^**
+
+⬥ In RS, bosses only walk East, West, or South (never North). The direction they walk is random at first, but they will always walk in that direction afterwards.
+
+⬥ Hitting a wall changes walking behavior in the following ways:
+
+ ‎ ‎ ‎ ‎• East-walking boss will turn west
+
+ ‎ ‎ ‎ ‎• West-walking boss will turn south
+
+ ‎ ‎ ‎ ‎• South-walking boss will turn either east or west.
+
+ ‎ ‎ ‎ ‎• The Araxxor Walking Guide demonstrates this behavior:
+
+
+<https://youtu.be/A_6ah7GF_1k>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/A_6ah7GF_1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**^^Applications^^**
+
+⬥ The simplest of these includes walking a bleed such as Combust <img title="comb" class="d-emoji" alt="comb" src="https://cdn.discordapp.com/emojis/535533833098100745.png?v=1">, Fragmentation Shot <img title="frag" class="d-emoji" alt="frag" src="https://cdn.discordapp.com/emojis/535541273755385885.png?v=1">, or Slaughter <img title="slaughter" class="d-emoji" alt="slaughter" src="https://cdn.discordapp.com/emojis/535532879237873666.png?v=1">.
+
+ ‎ ‎ ‎ ‎• Below is a demonstation of this (Courtesy of #ykro):
+
+
+<https://youtu.be/0Y0JGMeLcmI>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/0Y0JGMeLcmI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+⬥ Advanced version: Use a bleed and then immediately Surge <img title="surge" class="d-emoji" alt="surge" src="https://cdn.discordapp.com/emojis/535533810004262912.png?v=1"> to go under the boss and Bladed Dive <img title="bd" class="d-emoji" alt="bd" src="https://cdn.discordapp.com/emojis/535532854281764884.png?v=1"> to get back all within a GCD.
+
+ ‎ ‎ ‎ ‎• This allows you to double bleed damage against bosses when you aren't MD.
+
+⬥ Reposition a boss: Fixing base spot on P2 Vorago, moving Vorago out of green bomb mists, and moving Telos out of beams.
+
+⬥ Most bosses move at 2 squares per tick, just like players' characters.
+
+ ‎ ‎ ‎ ‎• Bosses that you don’t want to walk, should be moved an even number of squares to prevent unwanted movement.
+
+
+## Manual Spell Casting (Courtesy of #Linie, #nadir and #Dming)
+
+
+**^^Where to Find it^^**
+
+⬥ Manual spell casting toggle can be found in the combat settings:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/e678FYp.png">
+
+
+
+**^^What it Does and Why it is Useful^^**
+
+⬥ Magic auto attacks deal damage based on the spell your weapon is set to.
+
+ ‎ ‎ ‎ ‎• The Surge <img title="AirSurge" class="d-emoji" alt="AirSurge" src="https://cdn.discordapp.com/emojis/543465115870035999.png?v=1">, Aurora <img title="RubyAurora" class="d-emoji" alt="RubyAurora" src="https://cdn.discordapp.com/emojis/574292444791963659.png?v=1">, and Barrage <img title="bloodbarrage" class="d-emoji" alt="bloodbarrage" src="https://cdn.discordapp.com/emojis/537338981747261446.png?v=1"> spells deal damage scaling up to T99 while other spells are capped at a lower tier.
+
+
+
+⬥ Enabling manual spell casting makes it so that the autocast spell that the player's weapon is set to does not change even if they attack with a different spell.
+
+
+
+⬥ Without manual spell casting enabled, Using Ice blitz <img title="iceblitz" class="d-emoji" alt="iceblitz" src="https://cdn.discordapp.com/emojis/535613865912696883.png?v=1">, while autocast is set to Blood Barrage <img title="bloodbarrage" class="d-emoji" alt="bloodbarrage" src="https://cdn.discordapp.com/emojis/537338981747261446.png?v=1">, results in Ice Biltz <img title="iceblitz" class="d-emoji" alt="iceblitz" src="https://cdn.discordapp.com/emojis/535613865912696883.png?v=1"> becoming the autocast, which is capped at T92 damage
+
+ ‎ ‎ ‎ ‎• With manual spell casting toggled on, the autocast spell remains Blood Barrage <img title="bloodbarrage" class="d-emoji" alt="bloodbarrage" src="https://cdn.discordapp.com/emojis/537338981747261446.png?v=1">:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Holds damage done to Blood Barrage <img title="bloodbarrage" class="d-emoji" alt="bloodbarrage" src="https://cdn.discordapp.com/emojis/537338981747261446.png?v=1"> damage even if a lower damaging spell is casted.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- This is due to magic ability damage being based on the current autocast spell, not the spell the player last attacked with.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- This is useful for players that are using the Fractured Staff of Armadyl <img title="soa" class="d-emoji" alt="soa" src="https://cdn.discordapp.com/emojis/869284271595069451.png?v=1"> as otherwise the damage is reduced from T95 to T92.
+
+
+⬥ On the normal spellbook, the player can manually cast Air Strike <img title="airstrike" class="d-emoji" alt="airstrike" src="https://cdn.discordapp.com/emojis/895600427930910730.png?v=1"> instead of Air Surge <img title="AirSurge" class="d-emoji" alt="AirSurge" src="https://cdn.discordapp.com/emojis/543465115870035999.png?v=1">, reducing Air rune costs by 4 per cast.
+
+
+
+⬥ On Ancient spellbook, Aurora spells can be manually cast to benefit yourself or your teammates:
+
+ ‎ ‎ ‎ ‎• Ruby Aurora <img title="RubyAurora" class="d-emoji" alt="RubyAurora" src="https://cdn.discordapp.com/emojis/574292444791963659.png?v=1"> can increase the damage of teammates by upto 3%.
+
+ ‎ ‎ ‎ ‎• Emerald Aurora provides damage reduction up to 5% to yourself only.
+
+ ‎ ‎ ‎ ‎• Blood Burst <img title="bloodburst" class="d-emoji" alt="bloodburst" src="https://cdn.discordapp.com/emojis/841419289714098246.png?v=1"> for the same damage and effect as Blood Barrage <img title="bloodbarrage" class="d-emoji" alt="bloodbarrage" src="https://cdn.discordapp.com/emojis/537338981747261446.png?v=1"> but a lower cost.
+
+
+
+⬥ At Telos, manual spell casting may be used to prevent the player from accidentally auto attacking with an Ice spell when it may be undesirable to do so.
+
+ ‎ ‎ ‎ ‎• Stops poorly timed binding of Telos or breaking his freedom too early by having control on when you want to freeze.
+
+ ‎ ‎ ‎ ‎• Potential ping spikes won't have as much of an unintended consequence.
+
+
+## NPC Centre and AoE (Courtesy of #Dming, Mod Sponge, and #Foxis)
+
+
+**^^NPC Centre and NPC Coordinate^^**
+
+⬥ For all NPCs, there's two Attributes used as the center of the NPC:
+
+ ‎ ‎ ‎ ‎• NPC Centre: This differs depends on the size of NPC.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Odd-sized (1x1, 3x3, 5x5...): This will always be the centre tile.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Even-Sized (2x2, 4x4, 6x6...): This will always be the first SW tile in that NPC's middle region.
+
+ ‎ ‎ ‎ ‎• NPC Coordinate: This will always be the most SW tile of that NPC.
+
+
+
+⬥ Below image show cases all the NPC Centre tiles and NPC Coordinate tiles:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/53FBsUZ.png">
+
+
+
+**^^Abilities that use NPC Coordinate as the Point of Origin:^^**
+
+⬥ <img title="Magic" class="d-emoji" alt="Magic" src="https://cdn.discordapp.com/emojis/689504724159823906.png?v=1"> **Magic:**
+
+Corruption blast <img title="corruptblast" class="d-emoji" alt="corruptblast" src="https://cdn.discordapp.com/emojis/513190159194259467.png?v=1">, Chain <img title="chain" class="d-emoji" alt="chain" src="https://cdn.discordapp.com/emojis/535533833056026624.png?v=1">, Greater Chain <img title="gchain" class="d-emoji" alt="gchain" src="https://cdn.discordapp.com/emojis/787904334495088672.png?v=1">, Detonate <img title="deto" class="d-emoji" alt="deto" src="https://cdn.discordapp.com/emojis/535533833358016512.png?v=1">, and all Bursts and Barrages <img title="iceburst" class="d-emoji" alt="iceburst" src="https://cdn.discordapp.com/emojis/841419289797197824.png?v=1"> / <img title="icebarrage" class="d-emoji" alt="icebarrage" src="https://cdn.discordapp.com/emojis/537340400185245701.png?v=1">.
+
+
+
+⬥ <img title="range" class="d-emoji" alt="range" src="https://cdn.discordapp.com/emojis/580168050121113623.png?v=1"> **Ranged:**
+
+Corruption Shot <img title="corruptshot" class="d-emoji" alt="corruptshot" src="https://cdn.discordapp.com/emojis/535541306294796299.png?v=1">, Ricochet<img title="ricochet" class="d-emoji" alt="ricochet" src="https://cdn.discordapp.com/emojis/535541259566186521.png?v=1">, Greater ricochet<img title="grico" class="d-emoji" alt="grico" src="https://cdn.discordapp.com/emojis/787904334812807238.png?v=1">, Bombardment<img title="bombard" class="d-emoji" alt="bombard" src="https://cdn.discordapp.com/emojis/535541306391265284.png?v=1">, and Incendiary Shot<img title="incend" class="d-emoji" alt="incend" src="https://cdn.discordapp.com/emojis/535541258429661215.png?v=1">.
+
+
+
+⬥ All abilities and auto-attacks of Mechanized Chinchompas <img title="mechchin" class="d-emoji" alt="mechchin" src="https://cdn.discordapp.com/emojis/641669268722810881.png?v=1">.
+
+
+⬥ Below picture shows the Detonate <img title="deto" class="d-emoji" alt="deto" src="https://cdn.discordapp.com/emojis/535533833358016512.png?v=1"> crosshairs are on NPC Coordinate tile, meaning the Dragon north of it will not be hit.
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/cPreXnV.png">
+
+
+
+⬥ Below picture shows crosshairs are perfectly aligned to hit both dragons.
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/7JT4mVE.png">
+
+
+
+⬥ Here is a general diagram showcasing the above visuals in the context of a 3x3 AoE being used:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/D4A5eC2.png">
+
+
+
+## Various Interactions of the Seren Godbow (SGB) (Courtesy of #Archeus, #sfox, and #Dming) <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1">
+
+
+**^^Reliance on Arrow 1^^**
+
+⬥ Arrows 2-5+ scale their random damage as follows:
+
+ ‎ ‎ ‎ ‎• Based on the minimum hit of Arrow 1 after Precise perk <img title="p6" class="d-emoji" alt="p6" src="https://cdn.discordapp.com/emojis/712073088769982475.png?v=1"> is applied.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- I.e., after calculating most the damage using a diminishing multiplier on it.
+
+ ‎ ‎ ‎ ‎• Equilibrium perk <img title="eq4" class="d-emoji" alt="eq4" src="https://cdn.discordapp.com/emojis/712073088589627505.png?v=1"> is applied as normal.
+
+ ‎ ‎ ‎ ‎• The diminishing multiplier is as follows:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/hwUELED.png">
+
+
+
+⬥ Ammunition with secondary effects, such as Blackstone arrows <img title="blackstonearrow" class="d-emoji" alt="blackstonearrow" src="https://cdn.discordapp.com/emojis/785031580149743617.png?v=1">, also only proc/apply on Arrow 1.
+
+ ‎ ‎ ‎ ‎• Deathspore arrows <img title="deathsporearrows" class="d-emoji" alt="deathsporearrows" src="https://cdn.discordapp.com/emojis/900758234527301642.png?v=1"> will apply for each calculated critical hit.
+
+
+**^^Where Arrows 2-5 can Land^^**
+
+1) Determine NPC's center
+
+ ‎ ‎ ‎ ‎a) The actual centre tile for odd sizes
+
+ ‎ ‎ ‎ ‎b) SW tile of the middle 2x2 area for even sizes
+
+
+
+2) Choose a random tile that is: Floor(Size / 2) away from NPC centre.
+
+ ‎ ‎ ‎ ‎a) This will be the center tile of the SGB Spec <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> <img title="spec" class="d-emoji" alt="spec" src="https://cdn.discordapp.com/emojis/537340400273195028.png?v=1"> arrow landing zone.
+
+ ‎ ‎ ‎ ‎b) It must be possible for the player to walk from this tile to the NPC's centre.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- If the player can not walk from any of the tiles chosen randomly to the NPC centre, then the NPC Centre is used as a default.
+
+
+
+3) Choose 4 random tiles in a 2 tile radius from the above tile
+
+ ‎ ‎ ‎ ‎• If an arrow chooses to land on a tile already chosen by a previous arrow, it will reroll its choice up to 10 times.
+
+
+⬥ Diagram from Mod Pi visualizing this:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/OOMssns.png">
+
+
+
+**^^What Blocking Is^^**
+
+⬥ A blocked NPC is an NPC where the player is unable to reach the NPC centre tile.
+
+
+
+⬥ The area covered by the SGB Spec <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> <img title="spec" class="d-emoji" alt="spec" src="https://cdn.discordapp.com/emojis/537340400273195028.png?v=1"> is as shown above is a 5x5 area.
+
+
+
+⬥ So, NPCs size 5x5 or bigger and are blocked will have all subsequent arrows land 100% of the time if the first arrows lands.
+
+
+**^^Practical Applications of This Info^^**
+
+⬥ Assuming best in slot gear, average damage will be as follows:
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/Us84iTb.png">
+
+
+
+⬥ SGB is only worth using on-style for 3x3+, and off-style for 5x5+
+
+
+
+⬥ Multi SGB Hits:
+
+ ‎ ‎ ‎ ‎• Each spec that hits within 2 ticks will get a normal Arrow 1 hit.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Arrows 2-5 can hit as normal and any arrows beyond those will continue to scale down linearly until their max hit is the same as their min hit.
+
+
+
+⬥ Crit chance for these is updated when they are "cast," i.e., after Arrow 1 hits/3t after SGB cast.
+
+
+
+⬥ Ingenutiy of the Humans <img title="ingen" class="d-emoji" alt="ingen" src="https://cdn.discordapp.com/emojis/641339234111848463.png?v=1"> ‎ ‎makes Arrow 1 hit with 100% accuracy, so the remaining arrows can not splash.
+
+ ‎ ‎ ‎ ‎• This is because normally if you <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> <img title="spec" class="d-emoji" alt="spec" src="https://cdn.discordapp.com/emojis/537340400273195028.png?v=1">, if Arrow 1 hits, Arrows 2-5 do not splash
+
+
+**^^SGB EoF interactions^^** <img title="sgb" class="d-emoji" alt="sgb" src="https://cdn.discordapp.com/emojis/626466665848242186.png?v=1"> <img title="eofblue" class="d-emoji" alt="eofblue" src="https://cdn.discordapp.com/emojis/780401412906680330.png?v=1">
+
+⬥ **Chin <img title="mechchin" class="d-emoji" alt="mechchin" src="https://cdn.discordapp.com/emojis/641669268722810881.png?v=1"> SGB:**
+
+ ‎ ‎ ‎ ‎• Acts as if you have SGBed N times, once per target affected by the Chin effect.
+
+⬥ ‎ ‎**Bakriminel bolts <img title="RubyBakri" class="d-emoji" alt="RubyBakri" src="https://cdn.discordapp.com/emojis/565726489413287956.png?v=1"> SGB:**
+
+ ‎ ‎ ‎ ‎• As mentioned, these are determined on cast, so only Arrow 1 can proc them
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- But if it affects Arrow 1's hit directly (e.g., Ruby <img title="RubyBakri" class="d-emoji" alt="RubyBakri" src="https://cdn.discordapp.com/emojis/565726489413287956.png?v=1"> / Onyx <img title="OnyxBakri" class="d-emoji" alt="OnyxBakri" src="https://cdn.discordapp.com/emojis/565726489362956308.png?v=1">) it will also affect Arrows 2-5's damage as described earlier
+
+
+## Boss Sizes for SGB (Courtesy of #Kukkelis)
+
+
+**^^List^^**
+
+*Note: Only bosses where it is worth using SGB have been included (3x3 and larger). 5x5+ Blocked targets are guaranteed to be hit with 5 arrows*
+
+⬥ **The Ambassador (ED3) **- 3x3
+
+⬥ **Araxxor/Araxxi** - 5x5 (Araxxi is blocked)
+
+⬥ **Arch-Glacor** - 8x8 (blocked)
+
+⬥ **Astellarn (ED2)** - 5x5 (blocked)
+
+⬥ **Beastmaster Durzag** - 4x4 (Pets are 3x3)
+
+⬥ **Black Stone Dragon (ED2)** - 5x5 (Black hands are 1x1)
+
+⬥ **Chaos Elemental** - 3x3
+
+⬥ **Corporeal Beast** - 5x5
+
+⬥ **Dagannoth Kings** - 3x3
+
+⬥ **General Graardor** - 3x3
+
+⬥ **Giant mole** - 3x3
+
+⬥ **Har-Aken** - 5x5
+
+⬥ **Helwyr** - 5x5
+
+⬥ **Kalphite King** - 5x5
+
+⬥ **Kalphite Queen** - 5x5
+
+⬥ **Kerapac** - 3x3
+
+⬥ **Kerapac Echos** - 1x1
+
+⬥ **King Black Dragon** - 5x5
+
+⬥ **Kree'arra** - 3x3
+
+⬥ **K'ril Tsutsaroth** - 5x5
+
+⬥ **Nex AoD **- 3x3 (Pillars are 5x5 non-blocked)
+
+⬥ **Queen Black Dragon** - 5x5 (blocked)
+
+⬥ **Raksha** - 5x5 (blocked on p4)
+
+⬥ **Sanctum Guardian (ED1)** - 9x9
+
+⬥ **Seiryu (ED1)** - 4x4 (Black crystals are 1x1)
+
+⬥ **Solak** - 3x3 (Core is 3x3)
+
+⬥ **Telos **- 5x5 (10x10 p5)
+
+⬥ **Twin Furies **- 3x3
+
+⬥ **TzKal-Zuk** - 5x5 (blocked when sitting on his throne during DPS check)
+
+⬥ **Tztok-Jad** - 5x5
+
+⬥ **Verak Lith (ED2)** - 5x5
+
+⬥ **Vindicta **- 3x3 (5x5 with Gorvek)
+
+⬥ **Vorago** - 5x5 (blocked on p5/10/11 and during "The End" spin)
+
+⬥ **Yakamaru** - 5x5 (blocked)
+
+
+
+⬥ For a full list of all NPC sizes, see the NPC Bestiary: <https://chisel.weirdgloop.org/gazproj/cache/bestiary.json>*
+
+
+## How Adren Gaining Without a Target Works (Courtesy of #pavu)
+
+
+**^^Stalling Adrenaline^^**
+
+⬥ After doing your last damaging ability on an NPC, you can use any abilities to gain adren for then next 10 seconds.
+
+
+
+⬥ After 10 seconds, you will only be able to gain adren for 1 defensive basic for every 10 seconds.
+
+
+
+⬥ The following abilities do not affect or reset this “cooldown”:
+
+ ‎ ‎ ‎ ‎• Non-defensive abilities that do not require a target (Surge <img title="surge" class="d-emoji" alt="surge" src="https://cdn.discordapp.com/emojis/535533810004262912.png?v=1">, Escape <img title="escape" class="d-emoji" alt="escape" src="https://cdn.discordapp.com/emojis/535541258832052231.png?v=1">, and Bladed Dive <img title="bd" class="d-emoji" alt="bd" src="https://cdn.discordapp.com/emojis/535532854281764884.png?v=1">)
+
+ ‎ ‎ ‎ ‎• Defensive thresholds (these will always take 15 adren unless you lose target, and their use does not affect the CD)
+
+ ‎ ‎ ‎ ‎• Ultimates that do not require a target.
+
+
+
+⬥ An example showcasing the latter (ultimates not affecting this cooldown):
+
+
+
+
+
+<video class="media" controls><source src="https://i.imgur.com/kq3890N.mp4" type="video/mp4"></video>
+
+
+
+## Ability Stalling (Courtesy of #Evil Lucario)
+
+
+⬥ The act of activating an ability outside your weapon's cast distance, "holding" the ability, and finally releasing it.
+
+⬥ Short video guide on this topic.
+
+
+<https://youtu.be/kd9QpM12ckg>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/kd9QpM12ckg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Weapon Poison (Courtesy of #FriggityFrank, #Malevolence, <@99615618117935104>, and help from Mod Sponge)
+
+
+**^^How it Works^^**
+
+⬥ Weapon Poison provides a buff to the player for an amount of time dependent on the grade of poison being used.
+
+ ‎ ‎ ‎ ‎• While this is active, players have a 12.5% chance of poisoning a target so long as they are not poison-immune.
+
+ ‎ ‎ ‎ ‎• After being poisoned, the target will take damage every 16 game ticks, or 9.6 seconds, and will continue to take damage for 3 minutes.
+
+ ‎ ‎ ‎ ‎• Poison damage will hit 2 ticks after the damage that applied it.
+
+
+
+⬥ Damage is derived in the following manner:
+
+ ‎ ‎ ‎ ‎• Poison damage starts with a base value of 20% of the player's ability damage, base Weapon Poison representing 100% of this damage.
+
+ ‎ ‎ ‎ ‎• Each tier of poison adds +25% to this value. Cinderbane Gloves <img title="Cinderbanes" class="d-emoji" alt="Cinderbanes" src="https://cdn.discordapp.com/emojis/513190158355660812.png?v=1"> will also provide an additional 25%.
+
+ ‎ ‎ ‎ ‎• Damage is rolled between 65-130% of this final poison damage value.
+
+ ‎ ‎ ‎ ‎• Unless refreshed, the damage range will be reduced by 3% on every subsequent hit (63.5-127%, 62-124%, etc.)
+
+ ‎ ‎ ‎ ‎• Final Damage Ranges:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison ‎ ‎ ‎ ‎= 13.00-26.00%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison+ ‎ ‎ ‎= 16.25-32.50%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison++ ‎ ‎= 19.50-39.00%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison+++ = 22.75-45.50%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Cinderbanes+++ ‎ ‎ ‎= 26.00-52.00%
+
+ ‎ ‎ ‎ ‎• Average Damage Values:
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison ‎ ‎ ‎ ‎= 19.50%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison+ ‎ ‎ ‎= 24.36%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison++ ‎ ‎= 29.25%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Weapon Poison+++ = 34.13%
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Cinderbanes+++ ‎ ‎ ‎= 39.00%
+
+
+
+⬥ Vulnerability <img title="Vuln" class="d-emoji" alt="Vuln" src="https://cdn.discordapp.com/emojis/537349530551582720.png?v=1">, Kwuarm Incense Sticks <img title="KwuarmSticks" class="d-emoji" alt="KwuarmSticks" src="https://cdn.discordapp.com/emojis/565726489341984779.png?v=1">, Bik Arrows <img title="bikarrow" class="d-emoji" alt="bikarrow" src="https://cdn.discordapp.com/emojis/971025697235689513.png?v=1">, and Laniakea's Spear <img title="lanispear" class="d-emoji" alt="lanispear" src="https://cdn.discordapp.com/emojis/839903893177106454.png?v=1"> increase poison damage values, but prayers and damage boosting ultimates do not.
+
+
+⬥ **Cinderbane Gloves** <img title="Cinderbanes" class="d-emoji" alt="Cinderbanes" src="https://cdn.discordapp.com/emojis/513190158355660812.png?v=1">:
+
+ ‎ ‎ ‎ ‎• The gloves effectively ignore the 16 tick cooldown on poison damage, 12.5% chance of reapplication and refreshing the poison timer on the target.
+
+ ‎ ‎ ‎ ‎• This reapplication will incur an extra poison hit, and the 16 tick damage timer is also reset.
+
+ ‎ ‎ ‎ ‎• This effect also allows for poison to reapply itself, so each poison hitsplat has a 12.5% chance of dealing an extra poison hit and refreshing the timer.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- With this considered, the effective application rate per hitsplat is ~14.3%
+
+ ‎ ‎ ‎ ‎• Even without consuming Weapon Poison, the gloves will apply poison damage as if Weapon Poison+ was in effect.
+
+
+⬥ **Kwuarm Incense Sticks** <img title="KwuarmSticks" class="d-emoji" alt="KwuarmSticks" src="https://cdn.discordapp.com/emojis/565726489341984779.png?v=1">:
+
+ ‎ ‎ ‎ ‎• Per potency level, Kwuarm Incense Sticks will add a multiplicative damage increase of 2.5% to the player's final poison damage.
+
+ ‎ ‎ ‎ ‎• At maximum potency, this is a multiplicative 10% to poison damage.
+
+ ‎ ‎ ‎ ‎• This brings the range of Weapon Poison+++ with Cinderbane Gloves worn to 28.60-57.52%, or an average of 42.9% ability damage.
+
+
+⬥ **Bik Arrows** <img title="bikarrow" class="d-emoji" alt="bikarrow" src="https://cdn.discordapp.com/emojis/971025697235689513.png?v=1">:
+
+ ‎ ‎ ‎ ‎• Per stack, Bik Arrows will add a multiplicative damage increase of 2% to the player's final poison damage.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- An arrow is consumed for every stack added, which are applied on every ranged ability hit. *Bleed effects after the initial cast do NOT add any stacks.*
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Bik arrow stacks will last for **30 seconds**, with the timer refreshing every time a new stack is applied.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Bik arrows will continue to be consumed in the espected manner even after reaching maximum stacks, and they will continue refreshing the effect.
+
+ ‎ ‎ ‎ ‎• At maximum stacks (200) this is a multiplicative 400% damage increase, or an effective **5x multiplier** to poison damage.
+
+ ‎ ‎ ‎ ‎• This brings the range of Weapon Poison+++ with Cinderbane Gloves and Kwuarm Incense Sticks to 143.00-287.60%, or an average of 214.50% ability damage.
+
+
+⬥ **Laniakea's Spear** <img title="lanispear" class="d-emoji" alt="lanispear" src="https://cdn.discordapp.com/emojis/839903893177106454.png?v=1">:
+
+ ‎ ‎ ‎ ‎• The application rate of poison is boosted by an additive 5%, increasing it to 17.5%.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- When considering poison re-applying itself, this gives an effective application rate per hitsplat of ~21.2%, up from ~14.3%.
+
+ ‎ ‎ ‎ ‎• Poison damage is increased by a multiplicative 5%, similar to Kwuarm Incense Sticks.
+
+
+⬥ **Upgraded Bone Blowpipe**:
+
+ ‎ ‎ ‎ ‎• Poison damage is halved, but the application rate is doubled to 25%.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- When considering poison re-applying itself, this gives an effective application rate per hitsplat of ~33.3%, up from ~14.3%.
+
+
+⬥ **Wyvern Crossbow** <img title="wyverncrossbow" class="d-emoji" alt="wyverncrossbow" src="https://cdn.discordapp.com/emojis/580177522587729940.png?v=1">:
+
+ ‎ ‎ ‎ ‎• Applies its own "poison" damage separate from normal weapon poison.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- 50% chance on hit to apply a stacking damage over time effect.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Hits every 2 ticks after application, up to 5 hits unless refreshed before the final hit.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- When refreshed, the damage will increase and hit another 5 times.
+
+ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎- Damage starts with a range of 10-24 per hit, and can climb up to 125-249 per hit.
+
+ ‎ ‎ ‎ ‎• While this weapon doesn't directly influence the base damage or application rate of poison, the passive effect hits very rapidly and consistently.
+
+ ‎ ‎ ‎ ‎• This allows for more chances for poison hits to occur.
+
+
+⬥ Poison can be applied/refreshed by **any player-sourced damage**. This includes:
+
+ ‎ ‎ ‎ ‎• Abilities (Includes every hit from bleeds/damage over time, including Sunshine & Death's Swiftness)
+
+ ‎ ‎ ‎ ‎• Abyssal Parasites
+
+ ‎ ‎ ‎ ‎• Auras (Ancestor Spirits & Dark Magic)
+
+ ‎ ‎ ‎ ‎• Auto attacks
+
+ ‎ ‎ ‎ ‎• Bakriminel/Enchanted Bolt extra hits (Emerald & Dragonstone)
+
+ ‎ ‎ ‎ ‎• Blood necklaces
+
+ ‎ ‎ ‎ ‎• Blood Reaver passive
+
+ ‎ ‎ ‎ ‎• Cannon damage
+
+ ‎ ‎ ‎ ‎• Dominion mines
+
+ ‎ ‎ ‎ ‎• Eldritch Crossbow special
+
+ ‎ ‎ ‎ ‎• God books and Scriptures
+
+ ‎ ‎ ‎ ‎• Poison damage
+
+ ‎ ‎ ‎ ‎• Puncture bleeds
+
+ ‎ ‎ ‎ ‎• Reflect damage
+
+ ‎ ‎ ‎ ‎• Wyvern Crossbow passive.
+
+
+## Zerk Auras and On-Cast Ult Interactions (Courtesy of #Archeus)
+
+
+⬥ Sunshine, Death's Swiftness, and Berserk apply on yourself when you cast the ability.
+
+⬥ Maniacal, Berserker, and Reckless auras apply on-hit.
+
+⬥ The ability(s) and/or hit(s) initiated on the last tick of an ultimate ability boosting your damage will also benefit from the Auras mentioned above.
+
+⬥ Notice the following image: the same ability is cast, yet one hit significantly harder, that is because of this interaction.
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/0TxDCjz.png">
+
+
+
+⬥ In the following video, a well known bug with Ability Queueing and "last tick of ult" is shown. (courtesy of #Mia Groves)
+
+
+
+
+
+<video class="media" controls><source src="https://i.imgur.com/JlBezRH.mp4" type="video/mp4"></video>
+
+
+
+⬥ The ability rotation being done is: <img title="zerk" class="d-emoji" alt="zerk" src="https://cdn.discordapp.com/emojis/535532854004678657.png?v=1"> → <img title="barge" class="d-emoji" alt="barge" src="https://cdn.discordapp.com/emojis/535532853916860437.png?v=1"> → <img title="flankicon" class="d-emoji" alt="flankicon" src="https://cdn.discordapp.com/emojis/841419289755385866.png?v=1"> <img title="backhand" class="d-emoji" alt="backhand" src="https://cdn.discordapp.com/emojis/535532854302605333.png?v=1"> → <img title="freedom" class="d-emoji" alt="freedom" src="https://cdn.discordapp.com/emojis/535541258240786434.png?v=1"> → <img title="assault" class="d-emoji" alt="assault" src="https://cdn.discordapp.com/emojis/535532855191928842.png?v=1"> → (4-hit) <img title="destroy" class="d-emoji" alt="destroy" src="https://cdn.discordapp.com/emojis/535532879330148352.png?v=1"> → (3-hit) <img title="gflurry" class="d-emoji" alt="gflurry" src="https://cdn.discordapp.com/emojis/535532879283879977.png?v=1"> → <img title="deci" class="d-emoji" alt="deci" src="https://cdn.discordapp.com/emojis/535532879325822986.png?v=1"> → <img title="gfury" class="d-emoji" alt="gfury" src="https://cdn.discordapp.com/emojis/535532879334080527.png?v=1"> → <img title="flankicon" class="d-emoji" alt="flankicon" src="https://cdn.discordapp.com/emojis/841419289755385866.png?v=1"> <img title="backhand" class="d-emoji" alt="backhand" src="https://cdn.discordapp.com/emojis/535532854302605333.png?v=1">
+
+ ‎ ‎ ‎ ‎• Clearly the last flank Backhand did not go off inside your berserk even though it was queued at that point.
+
+ ‎ ‎ ‎ ‎• To resolve this either do not queue the ability that will be casted on the last tick of your ultimate, or turn of ability queueing
+
+
+## Hex Modifier (Courtesy of <@99615618117935104>)
+
+
+**^^What Is a Hex Modifier^^**
+
+⬥ This refers to the passive effect of the Hexhunter bow <img title="hexhunterbow" class="d-emoji" alt="hexhunterbow" src="https://cdn.discordapp.com/emojis/581180369911414794.png?v=1">, Terrasaur maul <img title="terramaul" class="d-emoji" alt="terramaul" src="https://cdn.discordapp.com/emojis/602561894829522954.png?v=1">, and Inquisitor staff <img title="inquisitorstaff" class="d-emoji" alt="inquisitorstaff" src="https://cdn.discordapp.com/emojis/694566917553520680.png?v=1">.
+
+ ‎ ‎ ‎ ‎• The modifier is commonly just called "Hex" because the <img title="hexhunterbow" class="d-emoji" alt="hexhunterbow" src="https://cdn.discordapp.com/emojis/581180369911414794.png?v=1"> was the first weapon released with this effect.
+
+
+**^^What Is the Passive Effect^^**
+
+⬥ When active, it provides +12.5% ability damage and +10% hit chance.
+
+
+
+⬥ This damage increase applies to all abilities and auto attacks, but not to poison, Aftershock <img title="as4" class="d-emoji" alt="as4" src="https://cdn.discordapp.com/emojis/712074245202772009.png?v=1">, or Crackling <img title="crack4" class="d-emoji" alt="crack4" src="https://cdn.discordapp.com/emojis/712073087662686249.png?v=1"> procs.
+
+
+
+⬥ The hit chance increase is a flat +10% over typical T80 weapon hit chance values before the effects of DBA <img title="DBA" class="d-emoji" alt="DBA" src="https://cdn.discordapp.com/emojis/603979368850653216.png?v=1"> and Reaver's Ring <img title="reaverring" class="d-emoji" alt="reaverring" src="https://cdn.discordapp.com/emojis/839903943018283050.png?v=1"> are considered.
+
+
+**^^When is the Effect Active^^**
+
+⬥ To receive the buffs, you must be against a target whose main attack style is weak to your weapon's style (based on the combat triangle).
+
+
+
+⬥ If you don't see a debuff icon under your target's health bar indicating it is susceptible to your weapon, you are effectively using a normal T80 weapon.
+
+
+**^^What Does This all Mean^^**
+
+⬥ Expect to see a ~4.8%/3.4%/1.4% damage increase over T90/T92/T95 weapons, provided you aren't losing any hits due to the lower accuracy.
+
+
+
+⬥ It is a common misconception that the weapons have T97 damage and accuracy
+
+
+
+⬥ This is only a theoretical effective tier for their damage and is only true with sufficient level boosts and equipment bonuses.
+
+
+
+⬥ The hit chance is typically slightly above that of a T90 weapon, but because it is a flat hit chance increase, this scales up as the target's armour increases.
+
+
+**^^Useful Links^^**
+
+⬥ For damages make a copy of the Ability damage sheet then customize to your liking:
+
+<https://docs.google.com/spreadsheets/d/1F5vBijBmZw2aWI-OA0DxV0Iw5efolCx58nqkzGLeqC0/>
+
+
+
+⬥ For hitchances make a copy of the Hit chance calculator then customize it to your liking:
+
+<https://docs.google.com/spreadsheets/d/1X0GwTMCpCW5plaV0Gdvgw_glPlj-y-UBDiKjHmTkGBM/edit#gid=1250242134>
+
+
+
+⬥ For a list of susceptible things refer to:
+
+ ‎ ‎ ‎ ‎• For <img title="hexhunterbow" class="d-emoji" alt="hexhunterbow" src="https://cdn.discordapp.com/emojis/581180369911414794.png?v=1"> <https://runescape.wiki/w/Category:Susceptible_to_hexhunter_bow>
+
+ ‎ ‎ ‎ ‎• For <img title="terramaul" class="d-emoji" alt="terramaul" src="https://cdn.discordapp.com/emojis/602561894829522954.png?v=1"> <https://runescape.wiki/w/Category:Susceptible_to_terrasaur_maul>
+
+ ‎ ‎ ‎ ‎• For <img title="inquisitorstaff" class="d-emoji" alt="inquisitorstaff" src="https://cdn.discordapp.com/emojis/694566917553520680.png?v=1"> <https://runescape.wiki/w/Category:Susceptible_to_inquisitor_staff>
+
+
+## Grimoire and Scrimshaw Switching
+
+
+**^^Obtaining both pocket slot's benefits^^**
+
+⬥ It is possible to obtain the boosts of Erethdor's Grimoire at the same time as a Scrimshaw.
+
+
+
+⬥ This can result in roughly a 6% increase in damage across the course of an entire rotation, but will significantly increase the amount of inputs.
+
+
+
+⬥ This happens because critical hits are rolled on cast, while modifiers like scrimshaws are calculated on hit.
+
+
+
+⬥ Inputs for grimshaw with 4taa, in order (bracket groups indicate inputs in a single tick):
+
+
+
+⬥ [Have Active Grimoire <img title="grim2" class="d-emoji" alt="grim2" src="https://cdn.discordapp.com/emojis/643168158613504031.png?v=1"> + Staff Equipped <img title="inquisitorstaff" class="d-emoji" alt="inquisitorstaff" src="https://cdn.discordapp.com/emojis/694566917553520680.png?v=1">] → [ <img title="bloodblitz" class="d-emoji" alt="bloodblitz" src="https://cdn.discordapp.com/emojis/535616247807868938.png?v=1"> → Ability → Equip and activate Scrimshaw] ‎ ‎→ [Equip and Activate Grimoire <img title="grim2" class="d-emoji" alt="grim2" src="https://cdn.discordapp.com/emojis/643168158613504031.png?v=1">]
+
+
+
+⬥ [Have Active Grimoire <img title="grim2" class="d-emoji" alt="grim2" src="https://cdn.discordapp.com/emojis/643168158613504031.png?v=1"> + DW Equipped <img title="praeswand" class="d-emoji" alt="praeswand" src="https://cdn.discordapp.com/emojis/643166769518739477.png?v=1"> <img title="impercore" class="d-emoji" alt="impercore" src="https://cdn.discordapp.com/emojis/643166751067996160.png?v=1">] → [Ability → Equip and activate Scrimshaw] ‎ ‎→ [Equip and Activate Grimoire <img title="grim2" class="d-emoji" alt="grim2" src="https://cdn.discordapp.com/emojis/643168158613504031.png?v=1"> + Equip Staff <img title="inquisitorstaff" class="d-emoji" alt="inquisitorstaff" src="https://cdn.discordapp.com/emojis/694566917553520680.png?v=1">]
+
+
+
+⬥ Demonstration:
+
+
+<https://youtu.be/M65xdRYYxJ4>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/M65xdRYYxJ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Instance Hopping (Courtesy of #ykro)
+
+
+**^^Why is it Useful^^**
+
+⬥ Basis: kill boss → pick loot if worth it → quickly leave instance → re-join instance → repeat
+
+⬥ Comparison of waiting for spawn time x instance hopping:
+
+
+<https://youtu.be/O-Lb93vFRAI>
+<iframe class="media" width="560" height="315" src="https://www.youtube.com/embed/O-Lb93vFRAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Camera Shaking Toggle (Courtesy of #Dhoggo)
+
+
+**^^Camera Toggles^^**
+
+⬥ If you suffer from motion sickness, you may toggle this off in the settings menu. This is particularly useful for Rise of the Six tunnels, or usage of Quake <img title="quake" class="d-emoji" alt="quake" src="https://cdn.discordapp.com/emojis/535532879506309150.png?v=1">.
+
+
+
+⬥ However be aware that camera shake often helps indicate a mechanic is about to happen, for example at Solak or Black Stone Dragon.
+
+
+
+
+
+<img class="media" src="https://i.imgur.com/Qw1kFay.png">
+
+
+
+## Typless Damage
+
+
+**^^What Is Typeless Damage^^**
+
+⬥ This refers to damage that appears as a red hitsplat with no symbol beside it.
+
+ ‎ ‎ ‎ ‎• All hits of this nature are categorized as either hard typeless or soft typeless.
+
+
+**^^Hard Typeless^^**
+
+⬥ This is damage that is unaffected by nearly all damage modifiers.
+
+ ‎ ‎ ‎ ‎• Common exceptions of this are <img title="cade" class="d-emoji" alt="cade" src="https://cdn.discordapp.com/emojis/535541306353778689.png?v=1"> and <img title="Cept" class="d-emoji" alt="Cept" src="https://cdn.discordapp.com/emojis/543478434509357098.png?v=1">(5% damage reduction).
+
+⬥ Araxxor <img title="Araxxi" class="d-emoji" alt="Araxxi" src="https://cdn.discordapp.com/emojis/513213019543699466.png?v=1"> Egg Bomb and Vorago <img title="vorago" class="d-emoji" alt="vorago" src="https://cdn.discordapp.com/emojis/572867742613635082.png?v=1"> Drop Down are a couple examples of this.
+
+
+**^^Soft Typeless^^**
+
+⬥ This is damage that is scaled by most modifiers.
+
+ ‎ ‎ ‎ ‎• Decreased by all defensive abilities, <img title="disrupt" class="d-emoji" alt="disrupt" src="https://cdn.discordapp.com/emojis/535614336207552523.png?v=1">, etc.
+
+ ‎ ‎ ‎ ‎• Increased by <img title="Berserk" class="d-emoji" alt="Berserk" src="https://cdn.discordapp.com/emojis/513190158468907012.png?v=1">, Zerk auras, etc.
+
+⬥ Examples of this are Elements at Nex: AoD <img title="Nex" class="d-emoji" alt="Nex" src="https://cdn.discordapp.com/emojis/513213159071547395.png?v=1"> and Rockfall at Telos <img title="Telos" class="d-emoji" alt="Telos" src="https://cdn.discordapp.com/emojis/513212949033123840.png?v=1">.
+
+
+
+
+
