@@ -36,7 +36,7 @@ CATEGORY_SEQUENCE = [
     'mid-tier-pvm',
     'high-tier-pvm',
     'angel-of-death',
-    'elder-god-wars'
+    'elder-god-wars',
     'elite-dungeons',
     'heart-of-gielinor',
     'nex',

@@ -118,6 +118,26 @@ nav:
   - pvme-guides/angel-of-death/aod-mechanics.md
   - pvme-guides/angel-of-death/aod-melee.md
   - pvme-guides/angel-of-death/aod-ranged.md
+- Elder god wars:
+  - pvme-guides/elder-god-wars/arch-glacor.md
+  - pvme-guides/elder-god-wars/croesus-duo.md
+  - pvme-guides/elder-god-wars/croesus.md
+  - pvme-guides/elder-god-wars/kerapac-duo-hm.md
+  - pvme-guides/elder-god-wars/kerapac-nm.md
+  - pvme-guides/elder-god-wars/kerapac-solo-hm.md
+  - pvme-guides/elder-god-wars/kerapac-trio-hm.md
+  - pvme-guides/elder-god-wars/tzkal-zuk-hm.md
+  - pvme-guides/elder-god-wars/tzkal-zuk-nm.md
+- Elite dungeons:
+  - pvme-guides/elite-dungeons/ed1-magic.md
+  - pvme-guides/elite-dungeons/ed1-melee.md
+  - pvme-guides/elite-dungeons/ed1-ranged.md
+  - pvme-guides/elite-dungeons/ed2-magic.md
+  - pvme-guides/elite-dungeons/ed2-melee.md
+  - pvme-guides/elite-dungeons/ed2-ranged.md
+  - pvme-guides/elite-dungeons/ed3-magic.md
+  - pvme-guides/elite-dungeons/ed3-melee.md
+  - pvme-guides/elite-dungeons/ed3-ranged.md
 - Heart of gielinor:
   - pvme-guides/heart-of-gielinor/gregorovic.md
   - pvme-guides/heart-of-gielinor/helwyr.md
@@ -156,7 +176,7 @@ nav:
   - pvme-guides/telos/telos-stuns-mechanics.md
 - Vorago:
   - pvme-guides/vorago/vorago-duo-hm.md
-  - pvme-guides/vorago/vorago-hardmode.md
+  - pvme-guides/vorago/vorago-hm.md
   - pvme-guides/vorago/vorago-rotations.md
   - pvme-guides/vorago/vorago-solo-hm.md
   - pvme-guides/vorago/vorago-solo.md
