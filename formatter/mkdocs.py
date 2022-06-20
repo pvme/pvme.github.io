@@ -12,6 +12,8 @@ Short overview of formatting:
 import os
 import shutil
 import logging
+import json
+import pathlib
 from copy import deepcopy
 from dataclasses import dataclass, field
 
@@ -19,6 +21,7 @@ import ruamel.yaml
 
 from formatter.rules import *
 from formatter.discord_embed import EmbedHTMLGenerator, parse_embed_json
+from formatter.util import parse_channel_file
 
 logger = logging.getLogger('formatter.mkdocs')
 logger.level = logging.WARN
@@ -40,7 +43,7 @@ CATEGORY_SEQUENCE = [
     'slayer',
     'solak',
     'telos',
-    'vorago'
+    'vorago',
 ]
 
 DEFAULT_FORMAT_SEQUENCE = [
@@ -55,15 +58,6 @@ DEFAULT_FORMAT_SEQUENCE = [
     DiscordChannelID,
     DiscordUserID,
     DiscordRoleID
-]
-
-JSON_EMBED_FORMAT_SEQUENCE = [
-    LineBreak,
-    Emoji,
-    DiscordChannelID,
-    DiscordUserID,
-    DiscordRoleID,
-    MarkdownLink
 ]
 
 
@@ -127,8 +121,6 @@ class MKDocsMessage(object):
     def format_json_embed(self):
         if self.json_embed.raw:
             self.json_embed.content = str(EmbedHTMLGenerator(self.json_embed.raw))
-            for formatter in JSON_EMBED_FORMAT_SEQUENCE:
-                formatter.format_mkdocs_md(self.json_embed)
 
     def __str__(self):
         # todo: remove unnecessary spaces (won't affect html report but it's a bit cleaner)
@@ -196,6 +188,9 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
     os.mkdir('{}/pvme-guides'.format(source_dir))
 
+    channel_data = parse_channel_file()
+    channel_map = { channel['path']: channel['name'] for channel in channel_data }
+
     mkdocs_nav = list()     # contents of the mkdocs.yml nav:
 
     # only search for categories in category sequence, automatically excludes unused categories
@@ -220,12 +215,14 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
             if ext != '.txt':
                 continue
 
-            logger.debug(f"formatting {category_name}/{channel_name}.md")
-            generate_channel_source(channel_dir, source_dir, category_name, channel_name)
+            channel_path = f'{category_name}/{channel_name}{ext}'
+            discord_name = channel_map[channel_path] if channel_path in channel_map else channel_name
+            logger.debug(f"formatting {category_name}/{discord_name}.md")
+            generate_channel_source(channel_dir, source_dir, category_name, discord_name)
 
-            category_channels.append('pvme-guides/{}/{}.md'.format(category_name, channel_name))
+            category_channels.append('pvme-guides/{}/{}.md'.format(category_name, discord_name))
 
-        mkdocs_nav.append({formatted_category: category_channels})
+        mkdocs_nav.append({formatted_category: sorted(category_channels)})
 
     update_mkdocs_nav(mkdocs_yml, mkdocs_nav)
 

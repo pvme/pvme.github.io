@@ -1,6 +1,4 @@
-| 773365514348527626 | deleted-channel |
 | 536715031128309780 | affiliates |
-| 820151918818492416 | archived-pvm-help-2 |
 | 656898197561802760 | pvm-help |
 | 534563158304620564 | bot-commands |
 | 562827048914124800 | ability-damage-maths |

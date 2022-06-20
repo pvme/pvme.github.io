@@ -77,12 +77,17 @@ class Emoji(MKDocs):
                 (re.compile(r"<:a:([^:]+):([0-9]+)>"), ".gif")]
 
     @staticmethod
-    def format_mkdocs_md(message):
+    def format_content(content):
         for pattern, extension in Emoji.PATTERNS:
-            matches = [match for match in re.finditer(pattern, message.content)]
+            matches = [match for match in re.finditer(pattern, content)]
             for match in reversed(matches):
                 emoji_formatted = "<img title=\"{}\" class=\"d-emoji\" alt=\"{}\" src=\"https://cdn.discordapp.com/emojis/{}{}?v=1\">".format(match.group(1), match.group(1), match.group(2), extension)
-                message.content = message.content[:match.start()] + emoji_formatted + message.content[match.end():]
+                content = content[:match.start()] + emoji_formatted + content[match.end():]
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = Emoji.format_content(message.content)
 
 
 class Insert(MKDocs):
@@ -176,19 +181,19 @@ class PVMESpreadSheet(MKDocs):
 class DiscordChannelID(MKDocs):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     PATTERN = re.compile(r"<#([0-9]{18})>")
-    CHANNEL_LOOKUP = formatter.util.parse_channel_id_file()
+    CHANNEL_FILE = formatter.util.parse_channel_file()
+    CHANNEL_LOOKUP = { channel['id']: channel['path'] for channel in CHANNEL_FILE }
     INVALID_CHANNEL_LOOKUP = formatter.util.parse_invalid_channel_id_file()
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(DiscordChannelID.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(DiscordChannelID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
             path = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if path:
-                relative_file = f"../{path}.md"
-                # name = os.path.basename(path).replace('-', ' ').capitalize()  # 'Araxxor melee'
-                name = f"#{os.path.basename(path)}"
-                link = f"[{name}]({relative_file})"
+                relative_file = path.replace(".txt", "")
+                name = os.path.basename(path).replace(".txt", "")
+                link = f"[#{name}](../../{relative_file})"
             else:
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:
@@ -196,11 +201,13 @@ class DiscordChannelID(MKDocs):
                 else:
                     name = "unknown-channel"
                     logger.warning(f"unknown channel {match.group(1)}")
-
                 link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
+            content = content[:match.start()] + link + content[match.end():]
+        return content
 
-
-            message.content = message.content[:match.start()] + link + message.content[match.end():]
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = DiscordChannelID.format_content(message.content)
 
 
 class DiscordUserID(MKDocs):
@@ -209,13 +216,18 @@ class DiscordUserID(MKDocs):
     USER_LOOKUP = formatter.util.parse_user_id_file()
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(DiscordUserID.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(DiscordUserID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
             user = f"#{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
             if user == '#Unknown user':
                 logger.warning(f"unknown user {match.group(1)}")
-            message.content = message.content[:match.start()] + user + message.content[match.end():]
+            content = content[:match.start()] + user + content[match.end():]
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = DiscordUserID.format_content(message.content)
 
 
 class DiscordRoleID(MKDocs):
@@ -224,30 +236,37 @@ class DiscordRoleID(MKDocs):
     ROLE_LOOKUP = formatter.util.parse_role_id_file()
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(DiscordRoleID.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(DiscordRoleID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
             role = DiscordRoleID.ROLE_LOOKUP.get(match.group(1), ('Unknown role', None))
             if role[0] == 'Unknown role':
                 logger.warning(f"unknown role {match.group(1)}")
             role_formatted = f"<code style=\"{role[1]}\">@{role[0]}</code>"
-            message.content = message.content[:match.start()] + role_formatted + message.content[match.end():]
+            content = content[:match.start()] + role_formatted + content[match.end():]
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = DiscordRoleID.format_content(message.content)
 
 
-# region direction markdown -> html formatting
 class MarkdownLink(MKDocs):
     """Format [named links](https://discordapp.com) to
     <a title="" href="https://discordapp.com" target="_blank" rel="noreferrer">named links</a>
-
     NOTE: only used for formatting embed:json blocks
     """
     PATTERN = re.compile(r"\[([^]]+)]\(\s*(http[s]?://[^)]+)\s*\)")
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(MarkdownLink.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(MarkdownLink.PATTERN, content)]
         for match in reversed(matches):
             html_url_formatted = \
                 f"<a title=\"\" href=\"{match.group(2)}\" target=\"_blank\" rel=\"noreferrer\">{match.group(1)}</a>"
-            message.content = message.content[:match.start()] + html_url_formatted + message.content[match.end():]
-# end region
+            content = content[:match.start()] + html_url_formatted + content[match.end():]
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = MarkdownLink.format_content(message.content)

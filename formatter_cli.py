@@ -16,12 +16,7 @@ def main():
 
     match = parser.parse_args()
 
-    if match.generate_mkdocs:
-        result = generate_sources(*match.generate_mkdocs)
-    else:
-        result = 0
-
-    return result
+    return generate_sources(*match.generate_mkdocs) if match.generate_mkdocs else 0
 
 
 if __name__ == "__main__":

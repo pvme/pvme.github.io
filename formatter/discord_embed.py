@@ -10,11 +10,19 @@ import json
 import textwrap
 from collections import namedtuple
 from datetime import datetime
+import markdown
+from formatter.discord_markdown import DiscordMarkdownExtension
+from formatter.rules import *
 
-from discord_markdown.discord_markdown import convert_to_html
-
-
+JSON_EMBED_FORMAT_SEQUENCE = [
+    Emoji,
+    DiscordChannelID,
+    DiscordUserID,
+    DiscordRoleID,
+    MarkdownLink
+]
 RGB = namedtuple('RGB', 'red green blue')
+MD = markdown.Markdown(extensions=[DiscordMarkdownExtension()])
 
 
 def parse_embed_json(json_string):
@@ -55,24 +63,10 @@ def convert_timestamp(iso_timestamp):
 
 
 def patched_convert_to_html(text):
-    """Really ugly patch to prevent and issue with formatting '>' to HTML.
-    discord_markdown.convert_to_html converts "<hello:12312>" to "<p><hello:12312</p>" which breaks emoji parsing.
-
-    The patch temporarily replaces '>' with "[cpb]":
-
-    1. "<hello:12312>" -> "<hello:12312[cpb]"
-    2. "<hello:12312[cpb]" -> "<p><hello:12312[cpb]</p>"
-    3. "<p><hello:12312[cpb]</p>" -> "<p><hello:12312></p>"
-
-    :param str text: markdown formatted text that is converted to HTML
-    :return: formatted HTML
-    :rtype: str
-    """
-    formatted = text.replace('>', "[cpb]")
-    formatted = convert_to_html(formatted)
-    formatted = formatted.replace("[cpb]", '>')
-
-    return formatted
+    formatted = text
+    for formatter in JSON_EMBED_FORMAT_SEQUENCE:
+        formatted = formatter.format_content(formatted)
+    return MD.convert(formatted)
 
 
 class HTMLComponents(object):
@@ -176,7 +170,7 @@ class HTMLComponents(object):
             text_formatted += f" | {timestamp_formatted}"
 
         # note: original implementation checks for timestamp and text, would assume only text required ?
-        icon_formatted = f"<img src=\"{icon_url}\" class=\"embed-footer-icon\" role=\"presentation\" width=\"20\" height=\"20\">" if text_formatted != '' else ''
+        icon_formatted = f"<img src=\"{icon_url}\" class=\"embed-footer-icon\" role=\"presentation\" width=\"20\" height=\"20\">" if icon_url else ''
 
         return f"<div class=\"embed-footer\">{icon_formatted}<span class=\"embed-footer\">{text_formatted}</span></div>"
 
