@@ -28,20 +28,22 @@ logger.level = logging.WARN
 
 CATEGORY_SEQUENCE = [
     'getting-started',
-    'upgrading-info',
     'miscellaneous-information',
+    'upgrading-info',
     'dpm-advice',
     'basic-guides',
     'low-tier-pvm',
     'mid-tier-pvm',
     'high-tier-pvm',
-    'nex-aod',
+    'angel-of-death',
+    'elder-god-wars'
     'elite-dungeons',
-    'gwd3',
-    'vorago',
+    'heart-of-gielinor',
+    'nex',
+    'slayer',
     'solak',
     'telos',
-    'slayer'
+    'vorago',
 ]
 
 DEFAULT_FORMAT_SEQUENCE = [
