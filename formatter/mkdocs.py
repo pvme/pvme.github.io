@@ -36,14 +36,15 @@ CATEGORY_SEQUENCE = [
     'mid-tier-pvm',
     'high-tier-pvm',
     'angel-of-death',
+    'heart-of-gielinor',
     'elder-god-wars',
     'elite-dungeons',
-    'heart-of-gielinor',
     'nex',
     'slayer',
     'solak',
     'telos',
     'vorago',
+    'zamorak'
 ]
 
 DEFAULT_FORMAT_SEQUENCE = [
