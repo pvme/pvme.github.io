@@ -12,6 +12,10 @@
 
 ## Release notes
 
+### July, 4, 2022
+
+- added Zamorak category
+
 ### June, 20, 2022
 
 Thanks to emmet-shark:

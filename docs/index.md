@@ -1,9 +1,7 @@
 !!! info 
-    Some of the categories and guide names have changed. Don't worry, the guides are still all there! 
+    Zamorak category is up! 
 
-    The guide structure and guide names now match the categories + channels in Discord. This will be kept up to date automatically in the future. 
-
-    There have also been a lot of bugfixes and improvements thanks to emmet-shark ([Release-notes](https://github.com/pvme/pvme.github.io/blob/master/Changelog.md#release-notes)).
+    The site is updated multiple times a day for the next few days due to frequent changes in [pvme-guides/zamorak](https://github.com/pvme/pvme-guides/tree/master/zamorak).
 
 # Home
 
