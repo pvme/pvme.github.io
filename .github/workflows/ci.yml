@@ -22,7 +22,7 @@ jobs:
       - name: Clone pvme-guides repository
         run: git clone --depth 1 https://github.com/pvme/pvme-guides.git
       - name: Clone pvme-settings repository
-        run: git clone --depth 1 https://github.com/pvme/pvme-settings.git
+        run: git clone --depth 1 --branch pvme-discord https://github.com/pvme/pvme-settings.git
 
       - name: Generate sources
         run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
