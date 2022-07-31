@@ -1,8 +1,3 @@
-!!! info 
-    Zamorak category is up! 
-
-    The site is updated multiple times a day for the next few days due to frequent changes in [pvme-guides/zamorak](https://github.com/pvme/pvme-guides/tree/master/zamorak).
-
 # Home
 
 Welcome to the PVME Guides documentation!
