@@ -1,8 +1,9 @@
 site_name: PVME Guides
 
-google_analytics:
-- UA-189398108-1
-- auto
+extra:
+  analytics:
+    provider: google
+    property: G-Z5B43L9EGL
 
 theme:
   name: material
