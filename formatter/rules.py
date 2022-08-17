@@ -165,17 +165,22 @@ class PVMESpreadSheet(MKDocs):
     PATTERN = re.compile(r"\$data_pvme:([^!]+)!([^$]+)\$")
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, content)]
         for match in reversed(matches):
             worksheet_data = formatter.util.obtain_pvme_spreadsheet_data(match.group(1))
             row, column = a1_to_rowcol(match.group(2))
             if worksheet_data:
-                price_formatted = "{}".format(worksheet_data[row-1][column-1])
+                price_formatted = "{}".format(worksheet_data[row - 1][column - 1])
             else:
                 price_formatted = "N/A"
 
-            message.content = message.content[:match.start()] + price_formatted + message.content[match.end():]
+            content = content[:match.start()] + price_formatted + content[match.end():]
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = PVMESpreadSheet.format_content(message.content)
 
 
 class DiscordChannelID(MKDocs):

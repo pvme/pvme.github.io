@@ -19,7 +19,8 @@ JSON_EMBED_FORMAT_SEQUENCE = [
     DiscordChannelID,
     DiscordUserID,
     DiscordRoleID,
-    MarkdownLink
+    MarkdownLink,
+    PVMESpreadSheet
 ]
 RGB = namedtuple('RGB', 'red green blue')
 MD = markdown.Markdown(extensions=[DiscordMarkdownExtension()])
