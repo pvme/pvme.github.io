@@ -1,0 +1,46 @@
+name: build
+
+on:
+  push:
+    branches:
+      - master
+
+  schedule:
+    - cron: '0 1 * * *'
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Setup pipenv virtual environment
+        run: |
+          pip install pipenv
+          pipenv install
+
+      - name: Clone pvme-guides repository
+        run: git clone --depth 1 https://github.com/pvme/pvme-guides.git
+
+      - name: Clone pvme-settings repository
+        run: git clone --depth 1 --branch pvme-discord https://github.com/pvme/pvme-settings.git
+
+      - name: Generate sources
+        run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
+        env:
+          GS_URL: ${{secrets.GS_URL}}
+          GS_PRIVATE_KEY: ${{secrets.GS_PRIVATE_KEY}}
+          GS_CLIENT_EMAIL: ${{secrets.GS_CLIENT_EMAIL}}
+          GS_TOKEN_URI: ${{secrets.GS_TOKEN_URI}}
+
+      - name: Update website
+        run: pipenv run mkdocs gh-deploy --force
