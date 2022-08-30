@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 import os
 import logging
 
-from gspread.utils import a1_to_rowcol
+from pvme_settings import PVMESpreadsheetData
 
 import formatter.util
 
@@ -162,19 +162,15 @@ class CodeBlock(MKDocs):
 
 class PVMESpreadSheet(MKDocs):
     """Format "$data_pvme:Perks!H11$" to the price from the pvme-guides spreadsheet."""
-    PATTERN = re.compile(r"\$data_pvme:([^!]+)!([^$]+)\$")
+    PATTERN = re.compile(r"\$data_pvme:([^!]+)!([A-Za-z]+)([1-9]\d*)\$")
+    PVME_SPREADSHEET_DATA = PVMESpreadsheetData()
 
     @staticmethod
     def format_content(content):
         matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, content)]
         for match in reversed(matches):
-            worksheet_data = formatter.util.obtain_pvme_spreadsheet_data(match.group(1))
-            row, column = a1_to_rowcol(match.group(2))
-            if worksheet_data:
-                price_formatted = "{}".format(worksheet_data[row - 1][column - 1])
-            else:
-                price_formatted = "N/A"
-
+            price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell_data(match.group(1), match.group(2),
+                                                                              int(match.group(3)))
             content = content[:match.start()] + price_formatted + content[match.end():]
         return content
 

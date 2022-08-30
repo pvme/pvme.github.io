@@ -2,59 +2,21 @@
 Utility functions that are only really in a separate module to clean up rules.py a bit.
 """
 import os
-import functools
 import re
 import pathlib
 import logging
 import json
 
-import gspread
-from google.oauth2.service_account import Credentials as ServiceAccountCredentials
 import requests
+
 
 logger = logging.getLogger('formatter.util')
 logger.level = logging.WARN
-
-GS_URL = os.environ.get('GS_URL')
-GS_PRIVATE_KEY = os.environ.get('GS_PRIVATE_KEY')
-GS_CLIENT_EMAIL = os.environ.get('GS_CLIENT_EMAIL')
-GS_TOKEN_URI = os.environ.get('GS_TOKEN_URI')
 
 BASE_DOMAIN = "pvme.github.io"
 
 MODULE_PATH = pathlib.Path(__file__).parent.absolute()
 MAIN_PATH = pathlib.Path(__file__).parent.parent.absolute()
-
-
-@functools.lru_cache(maxsize=None)
-def obtain_pvme_spreadsheet_data(worksheet: str) -> dict:
-    """Obtain a worksheet from the PVME-guides price spreadsheet.
-    This function is only called once for every worksheet (function caching).
-
-    :param worksheet: Worksheet to obtain (e.g. Perks/Consumables)
-    :return: all the worksheet contents as a dictionary or None (cannot obtain the worksheet)
-    """
-    try:
-        # set the credentials
-        credentials = ServiceAccountCredentials.from_service_account_info({
-            'private_key': GS_PRIVATE_KEY,
-            'client_email': GS_CLIENT_EMAIL,
-            'token_uri': GS_TOKEN_URI},
-            scopes=gspread.auth.READONLY_SCOPES)
-
-        # authenticate + obtain the pvme-guides spreadsheet URL
-        gc = gspread.client.Client(auth=credentials)
-        sh = gc.open_by_url(GS_URL)
-
-        worksheet = sh.worksheet(worksheet)
-    except ValueError as e:
-        logger.warning(f"PVME-spreadsheet ValueError: {e}")
-    except gspread.exceptions.GSpreadException as e:
-        logger.warning(f"PVME-spreadsheet GSpreadException: {e}")
-    except Exception as e:
-        logger.warning(f"PVME-spreadsheet Exception: {e}")
-    else:
-        return worksheet.get_all_values()
 
 
 def generate_embed(url: str) -> str:
