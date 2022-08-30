@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 import os
 import logging
 
-from pvme_settings import PVMESpreadsheetData
+from formatter.pvme_settings import PVMESpreadsheetData
 
 import formatter.util
 
