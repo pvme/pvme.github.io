@@ -21,7 +21,7 @@ import ruamel.yaml
 
 from formatter.rules import *
 from formatter.discord_embed import EmbedHTMLGenerator, parse_embed_json
-from formatter.util import parse_channel_file
+from formatter.pvme_settings import github_json_request
 
 logger = logging.getLogger('formatter.mkdocs')
 logger.level = logging.WARN
@@ -189,8 +189,9 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
     os.mkdir('{}/pvme-guides'.format(source_dir))
 
-    channel_data = parse_channel_file()
-    channel_map = { channel['path']: channel['name'] for channel in channel_data }
+    # todo: data should be obtained from previously obtained channel LUT rather than making new request
+    channel_data = github_json_request('https://raw.githubusercontent.com/pvme/pvme-settings/pvme-discord/channels.json')
+    channel_map = {channel['path']: channel['name'] for channel in channel_data}
 
     mkdocs_nav = list()     # contents of the mkdocs.yml nav:
 
