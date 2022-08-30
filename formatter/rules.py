@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 import os
 import logging
 
-from formatter.pvme_settings import PVMESpreadsheetData
+from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData
 
 import formatter.util
 
@@ -214,7 +214,7 @@ class DiscordChannelID(MKDocs):
 class DiscordUserID(MKDocs):
     """Format '<@213693069764198401>' to '#Piegood'."""
     PATTERN = re.compile(r"<@!?([0-9]{18})>")
-    USER_LOOKUP = formatter.util.parse_user_id_file()
+    USER_LOOKUP = PVMEUserData()
 
     @staticmethod
     def format_content(content):
