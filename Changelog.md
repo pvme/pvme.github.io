@@ -14,7 +14,7 @@
 
 ### August, 30, 2022
 
-- PVME settings are now all obtained from pvme-settings and will be kept up to date mostly automatically and otherwise more frequently (users is still manual):
+- PVME settings are now all obtained from pvme-settings and will be kept up to date mostly automatically and otherwise more frequently (users is still manual)
 - Various refactoring for PVME settings migration
 
 ### August, 15, 2022
