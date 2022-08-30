@@ -2,7 +2,6 @@
 python_version = "3.8"
 
 [packages]
-gspread = "*"
 mkdocs-material = "*"
 requests = "*"
 "ruamel.yaml" = "*"
