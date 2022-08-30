@@ -126,22 +126,3 @@ def parse_invalid_channel_id_file() -> dict:
         channel_lookup = dict()
 
     return channel_lookup
-
-
-def parse_role_id_file() -> dict:
-    """Generate a lookup table (dict) with the following content: {role_id: (channel_name, style)}.
-
-    :return: lookup table (dict), when no file is discovered, an empty dict is returned
-    """
-    role_id_file = f"{MODULE_PATH}/discord_roles.txt"
-    if os.path.exists(role_id_file):
-        with open(role_id_file, 'r') as file:
-            # create dict from regex list of tuples containing group(role_id): (group(role_name), group(style))
-            role_lookup = dict()
-            for match in re.finditer(r"([0-9]{18})\|([^|]+)\|([^|]+)\|", file.read()):
-                role_lookup[match.group(1)] = (match.group(2), match.group(3))
-    else:
-        role_lookup = dict()
-
-    return role_lookup
-

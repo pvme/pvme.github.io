@@ -13,7 +13,7 @@ class PVMESpreadsheetData(dict):
             'A': ['10', '20', '30'],
             'B': ['30', '-1', '20,3']
         },
-        'Perks': {}
+        'Perks': {...}
     }
     """
     def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/settings/pvme-spreadsheet/pvme_spreadsheet.json"):
@@ -28,12 +28,24 @@ class PVMEUserData(dict):
     """PVME User LUT:
     {
         '1234': 'Pleb',
-        '1111': 'User2'
+        '1111': ...
     }
     """
     def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/settings/users/users.json"):
         users = {user['id']: user['name'] for user in github_json_request(url)}
         super().__init__(users)
+
+
+class PVMERoleData(dict):
+    """PVME Role LUT:
+    {
+        '785434303353454593': ('Raksha Master', 1234),
+        '536406236988702750': (...)
+    }
+    """
+    def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/pvme-discord/roles.json"):
+        roles = {role['id']: (role['name'], role['color']) for role in github_json_request(url)}
+        super().__init__(roles)
 
 
 class PVMEChannelData(dict):
@@ -43,4 +55,5 @@ class PVMEChannelData(dict):
 if __name__ == '__main__':
     PVMESpreadsheetData()
     PVMEUserData()
+    PVMERoleData()
     PVMEChannelData()

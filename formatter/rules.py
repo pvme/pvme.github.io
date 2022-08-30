@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 import os
 import logging
 
-from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData
+from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
 
 import formatter.util
 
@@ -234,16 +234,16 @@ class DiscordUserID(MKDocs):
 class DiscordRoleID(MKDocs):
     """Format '<@&645851931842969611>' to '@Araxxor Initiate'."""
     PATTERN = re.compile(r"<@&([0-9]{18})>")
-    ROLE_LOOKUP = formatter.util.parse_role_id_file()
+    ROLE_LOOKUP = PVMERoleData()
 
     @staticmethod
     def format_content(content):
         matches = [match for match in re.finditer(DiscordRoleID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
-            role = DiscordRoleID.ROLE_LOOKUP.get(match.group(1), ('Unknown role', None))
+            role = DiscordRoleID.ROLE_LOOKUP.get(match.group(1), ('Unknown role', 0xFFFFFF))
             if role[0] == 'Unknown role':
                 logger.warning(f"unknown role {match.group(1)}")
-            role_formatted = f"<code style=\"{role[1]}\">@{role[0]}</code>"
+            role_formatted = f"<code style=\"color: #{role[1]:06X}; background: #{role[1]:06X}30;\">@{role[0]}</code>"
             content = content[:match.start()] + role_formatted + content[match.end():]
         return content
 
