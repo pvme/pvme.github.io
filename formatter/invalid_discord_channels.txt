@@ -1,4 +1,0 @@
-| 536715031128309780 | affiliates |
-| 656898197561802760 | pvm-help |
-| 534563158304620564 | bot-commands |
-| 562827048914124800 | ability-damage-maths |

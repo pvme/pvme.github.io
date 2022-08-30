@@ -1,11 +1,8 @@
 """
 Utility functions that are only really in a separate module to clean up rules.py a bit.
 """
-import os
 import re
-import pathlib
 import logging
-import json
 
 import requests
 
@@ -14,9 +11,6 @@ logger = logging.getLogger('formatter.util')
 logger.level = logging.WARN
 
 BASE_DOMAIN = "pvme.github.io"
-
-MODULE_PATH = pathlib.Path(__file__).parent.absolute()
-MAIN_PATH = pathlib.Path(__file__).parent.parent.absolute()
 
 
 def generate_embed(url: str) -> str:
@@ -98,21 +92,3 @@ def generate_embed(url: str) -> str:
                 embed = None
 
     return embed
-
-
-def parse_invalid_channel_id_file() -> dict:
-    """Generate a lookup table (dict) with the following content: {channel_id: channel_name}.
-    An un clickable link will be generated
-
-    :return: lookup table (dict), when no channels are discovered, an empty dict is returned
-    :rtype: dict
-    """
-    invalid_channel_id_file = f"{MODULE_PATH}/invalid_discord_channels.txt"
-    if os.path.exists(invalid_channel_id_file):
-        with open(invalid_channel_id_file, 'r') as file:
-            # create dict from regex list of tuples containing group(channel_id), group(channel_name)
-            channel_lookup = dict(re.findall(r"\| ([0-9]{18}) \| ([-a-zA-Z0-9]+)\s*", file.read()))
-    else:
-        channel_lookup = dict()
-
-    return channel_lookup

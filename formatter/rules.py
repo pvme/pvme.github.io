@@ -184,7 +184,10 @@ class DiscordChannelID(MKDocs):
     PATTERN = re.compile(r"<#([0-9]{18})>")
     CHANNEL_LOOKUP = PVMEChannelData()
     INVALID_CHANNEL_LOOKUP = {
-
+        '656898197561802760': 'pvm-help',
+        '656914685152722954': 'vod-review-submission',
+        '534563158304620564': 'bot-commands',
+        '537042924026724353': 'suggestions'
     }
 
     @staticmethod
