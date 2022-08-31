@@ -12,8 +12,6 @@ Short overview of formatting:
 import os
 import shutil
 import logging
-import json
-import pathlib
 from copy import deepcopy
 from dataclasses import dataclass, field
 
@@ -58,7 +56,7 @@ DEFAULT_FORMAT_SEQUENCE = [
     PVMESpreadSheet,
     DiscordChannelID,
     DiscordUserID,
-    DiscordRoleID
+    DiscordRoleID,
 ]
 
 
@@ -79,16 +77,22 @@ class MKDocsMessage(object):
         self.json_embed = JsonEmbed(json_embed)
 
     @classmethod
-    def init_raw_message(cls, content, bot_command):
+    def init_raw_message(cls, message_lines: list, bot_command: str):
         if bot_command == '.embed:json':
             # extract 'content' (normal message) and embed from .embed:json
-            json_dict = parse_embed_json(content)
+            json_dict = parse_embed_json('\n'.join(message_lines))
             content = json_dict.get('content', '')
             json_embed = MKDocsMessage.parse_json_embed(json_dict, content)
         else:
+            content = MKDocsMessage.lines_to_content(message_lines)
             json_embed = None
 
         return cls(content, None, bot_command, json_embed)
+
+    @staticmethod
+    def lines_to_content(message_lines: list) -> str:
+        message_lines_formatted = ['&#x200b;' if len(line) == 0 else line for line in message_lines]
+        return '\n'.join(message_lines_formatted)
 
     @staticmethod
     def parse_json_embed(json_dict, content):
@@ -143,16 +147,17 @@ def generate_channel_source(channel_txt_file, source_dir, category_name, channel
     messages = list()
     message_lines = list()
     for line in raw_data.splitlines():
-        if line.startswith('.'):
+        if line.startswith('.') and not line.startswith('..'):
             # ignore table of contents because there already is one
             if len(message_lines) < 3 or 'table of contents' not in message_lines[2].lower():
-                messages.append(MKDocsMessage.init_raw_message("\n".join(message_lines), line))
+                messages.append(MKDocsMessage.init_raw_message(message_lines, line))
             message_lines = list()
         else:
             message_lines.append(line)
 
     if len(message_lines) > 0:
-        messages.append(MKDocsMessage.init_raw_message("\n".join(message_lines), ''))
+        # add last message if it's not closed by a bot command
+        messages.append(MKDocsMessage.init_raw_message(message_lines, ''))
 
     # format the channel (format all messages)
     # todo: separate function

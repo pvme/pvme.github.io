@@ -1,3 +1,8 @@
+!!! info 
+    I'm making some changes to the text formatting to improve readability.
+
+    If any formatting seems off. Or if anything is not shown correctly. Feel free to create a [Issue](https://github.com/pvme/pvme-guides) or ping/message me in Discord (Pleb#0025).
+
 # Home
 
 Welcome to the PVME Guides documentation!
