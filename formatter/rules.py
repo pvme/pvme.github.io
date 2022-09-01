@@ -279,6 +279,9 @@ class MarkdownLink(MKDocs):
 
 
 class EmbedCodeBlock(MKDocs):
+    """Format: ```cool text``` to <pre><code>cool text</code></pre>
+    NOTE: couldn't use fenced_code python-markdown extension here as it was inconsistent with formatting.
+    """
     PATTERN = re.compile(r"```\n?")
 
     @staticmethod
@@ -287,7 +290,7 @@ class EmbedCodeBlock(MKDocs):
         for index, match in enumerate(reversed(matches)):
             if index % 2:
                 # code block start
-                # optional discord CSS
+                # optional: discord CSS
                 # content = content[:match.start()] + "<pre><code class=\"h1js\">" + content[match.end():]
                 content = content[:match.start()] + "<pre><code>" + content[match.end():]
             else:
