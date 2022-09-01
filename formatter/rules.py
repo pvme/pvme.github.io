@@ -11,7 +11,8 @@ from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleD
 import formatter.util
 
 __all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
-           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink']
+           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink',
+           'EmbedCodeBlock']
 
 logger = logging.getLogger('formatter.rules')
 logger.level = logging.WARN
@@ -275,3 +276,26 @@ class MarkdownLink(MKDocs):
     @staticmethod
     def format_mkdocs_md(message):
         message.content = MarkdownLink.format_content(message.content)
+
+
+class EmbedCodeBlock(MKDocs):
+    PATTERN = re.compile(r"```\n?")
+
+    @staticmethod
+    def format_content(content):
+        matches = [match for match in re.finditer(EmbedCodeBlock.PATTERN, content)]
+        for index, match in enumerate(reversed(matches)):
+            if index % 2:
+                # code block start
+                # optional discord CSS
+                # content = content[:match.start()] + "<pre><code class=\"h1js\">" + content[match.end():]
+                content = content[:match.start()] + "<pre><code>" + content[match.end():]
+            else:
+                # code block end
+                content = content[:match.start()] + "</code></pre>" + content[match.end():]
+
+        return content
+
+    @staticmethod
+    def format_mkdocs_md(message):
+        message.content = EmbedCodeBlock.format_content(message.content)
