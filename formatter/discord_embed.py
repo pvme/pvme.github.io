@@ -27,7 +27,7 @@ RGB = namedtuple('RGB', 'red green blue')
 MD = markdown.Markdown(extensions=[DiscordMarkdownExtension()])
 
 
-def parse_embed_json(json_string):
+def embed_str_to_dict(json_string):
     """Parse json string and convert it to a dictionary.
 
     :param str json_string: json formatted string

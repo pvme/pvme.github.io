@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 import ruamel.yaml
 
 from formatter.rules import *
-from formatter.discord_embed import EmbedHTMLGenerator, parse_embed_json
+from formatter.discord_embed import EmbedHTMLGenerator, embed_str_to_dict
 from formatter.pvme_settings import github_json_request
 
 logger = logging.getLogger('formatter.mkdocs')
@@ -80,7 +80,7 @@ class MKDocsMessage(object):
     def init_raw_message(cls, message_lines: list, bot_command: str):
         if bot_command == '.embed:json':
             # extract 'content' (normal message) and embed from .embed:json
-            json_dict = parse_embed_json('\n'.join(message_lines))
+            json_dict = embed_str_to_dict('\n'.join(message_lines))
             content = json_dict.get('content', '')
             json_embed = MKDocsMessage.parse_json_embed(json_dict, content)
         else:
