@@ -10,56 +10,28 @@ from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleD
 
 import formatter.util
 
-__all__ = ['PVMEBotCommand', 'Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace',
-           'CodeBlock', 'PVMESpreadSheet', 'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink',
-           'EmbedCodeBlock']
+__all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
+           'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',
+           'MarkdownLineSpacing', 'EmptyLines']
 
 logger = logging.getLogger('formatter.rules')
 logger.level = logging.WARN
 
 
-class Sphinx(ABC):
+class AbsFormattingRule(ABC):
     @staticmethod
     @abstractmethod
-    def format_sphinx_rst(message, doc_info):
+    def format_content(content):
         raise NotImplementedError()
 
 
-class MKDocs(ABC):
-    @staticmethod
-    @abstractmethod
-    def format_mkdocs_md(message):
-        raise NotImplementedError()
-
-
-class PVMEBotCommand(MKDocs):
-    """Format lines starting with . (bot commands)."""
-    @staticmethod
-    def format_mkdocs_md(message):
-        if not message.bot_command:
-            return
-
-        if message.bot_command == '.':
-            message.bot_command_formatted = ''
-        elif message.bot_command == "..":
-            message.bot_command_formatted = '.'
-        elif message.bot_command.startswith((".tag:", ".pin:", ".tag:")):
-            message.bot_command_formatted = ''
-        elif message.bot_command.startswith((".img:", ".file:")):
-            # todo: temporary parsing to get a general idea
-            link = message.bot_command.split(':', 1)
-            message.bot_command_formatted = formatter.util.generate_embed(link[1])
-        elif message.bot_command == '.embed:json':
-            message.bot_command_formatted = ''
-
-
-class Section(MKDocs):
+class Section(AbsFormattingRule):
     """Format lines starting with > __**section**__ to ## section."""
     PATTERN = re.compile(r"(?:^|\n)>\s(.+?)(?=\n|$)")
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(Section.PATTERN, message.content)]
+    def format_content(content):
+        matches = [match for match in re.finditer(Section.PATTERN, content)]
 
         for match in reversed(matches):
             section_name = re.sub(r"[*_]*", '', match.group(1))
@@ -69,10 +41,11 @@ class Section(MKDocs):
             if section_name_formatted.endswith(':'):
                 section_name_formatted = section_name_formatted[:-1]
 
-            message.content = message.content[:match.start()] + section_name_formatted + message.content[match.end():]
+            content = content[:match.start()] + section_name_formatted + content[match.end():]
+        return content
 
 
-class Emoji(MKDocs):
+class Emoji(AbsFormattingRule):
     """<concBlast:1234> -> <img src="https://cdn.discordapp.com/emojis/535533809924571136.png?v=1" class="emoji">"""
     PATTERNS = [(re.compile(r"<:([^:]{2,}):([0-9]+)>"), ".png"),
                 (re.compile(r"<:a:([^:]+):([0-9]+)>"), ".gif")]
@@ -86,20 +59,16 @@ class Emoji(MKDocs):
                 content = content[:match.start()] + emoji_formatted + content[match.end():]
         return content
 
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = Emoji.format_content(message.content)
 
-
-class Insert(MKDocs):
+class Insert(AbsFormattingRule):
     PATTERN = re.compile(r"__")
 
     @staticmethod
-    def format_mkdocs_md(message):
-        message.content = re.sub(Insert.PATTERN, '^^', message.content)
+    def format_content(content):
+        return re.sub(Insert.PATTERN, '^^', content)
 
 
-class EmbedLink(MKDocs):
+class EmbedLink:
     # modified Django link regex with embed and () link detection
     PATTERN = re.compile(
         r"(?:[^<]|^)"
@@ -113,55 +82,50 @@ class EmbedLink(MKDocs):
         r"(?:[^ )\n\t\r]*))", re.IGNORECASE)
 
     @staticmethod
-    def format_mkdocs_md(message):
-        matches = [match for match in re.finditer(EmbedLink.PATTERN, message.content)]
+    def format_content(content, attachment_embeds):
+        matches = [match for match in re.finditer(EmbedLink.PATTERN, content)]
         for match in reversed(matches):
             url_formatted = "<{}>".format(match.group(1))
             spacer = 1 if match.start() > 0 else 0
-            message.content = message.content[:match.start() + spacer] + url_formatted + message.content[match.end():]
+            content = content[:match.start() + spacer] + url_formatted + content[match.end():]
 
         for match in matches:
             embed = formatter.util.generate_embed(match.group(1))
             if embed:
-                message.embeds.append(embed)
+                attachment_embeds.append(embed)
+
+        # todo: better option that doesn't change purpose of format_content()
+        return content
 
 
-class LineBreak(MKDocs):
+class LineBreak(AbsFormattingRule):
     PATTERN = re.compile(r"_ _")
 
     @staticmethod
-    def format_mkdocs_md(message):
-        message.content = re.sub(LineBreak.PATTERN, '', message.content)
+    def format_content(content):
+        return re.sub(LineBreak.PATTERN, '', content)
 
 
-class DiscordWhiteSpace(MKDocs):
+class DiscordWhiteSpace(AbsFormattingRule):
     """Converts whitespace and tabs that would normally be converted to a single space in html/markdown
     to a special "empty" character. For now this is used over <pre> </pre> and &nbsp; due to inline code blocks
 
     todo: use &nbsp; instead of the weirdchamp "empty" character, this requires detecting code blocks
     """
     @staticmethod
-    def format_mkdocs_md(message):
-        message.content = re.sub(r"\t", '    ‎', message.content)
+    def format_content(content):
+        content = re.sub(r"\t", '    ‎', content)
 
-        matches = [match for match in re.finditer(r"( {2,})", message.content)]
+        matches = [match for match in re.finditer(r"( {2,})", content)]
         for match in reversed(matches):
             line_spaces = ' ‎' * len(match.group(1))
-            message.content = message.content[:match.start()] + line_spaces + message.content[match.end():]
+            content = content[:match.start()] + line_spaces + content[match.end():]
 
-        message.content = re.sub(r"^ ", ' ‎', message.content)
-
-
-class CodeBlock(MKDocs):
-    # todo: current approach adds enter to start and end of block, consider improving this
-    PATTERN = re.compile(r"```")
-
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = re.sub(CodeBlock.PATTERN, '\n```\n', message.content)
+        content = re.sub(r"^ ", ' ‎', content)
+        return content
 
 
-class PVMESpreadSheet(MKDocs):
+class PVMESpreadSheet(AbsFormattingRule):
     """Format "$data_pvme:Perks!H11$" to the price from the pvme-guides spreadsheet."""
     PATTERN = re.compile(r"\$data_pvme:([^!]+)!([A-Za-z]+)([1-9]\d*)\$")
     PVME_SPREADSHEET_DATA = PVMESpreadsheetData()
@@ -175,12 +139,8 @@ class PVMESpreadSheet(MKDocs):
             content = content[:match.start()] + price_formatted + content[match.end():]
         return content
 
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = PVMESpreadSheet.format_content(message.content)
 
-
-class DiscordChannelID(MKDocs):
+class DiscordChannelID(AbsFormattingRule):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     PATTERN = re.compile(r"<#([0-9]{18})>")
     CHANNEL_LOOKUP = PVMEChannelData()
@@ -211,12 +171,8 @@ class DiscordChannelID(MKDocs):
             content = content[:match.start()] + link + content[match.end():]
         return content
 
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = DiscordChannelID.format_content(message.content)
 
-
-class DiscordUserID(MKDocs):
+class DiscordUserID(AbsFormattingRule):
     """Format '<@213693069764198401>' to '#Piegood'."""
     PATTERN = re.compile(r"<@!?([0-9]{18})>")
     USER_LOOKUP = PVMEUserData()
@@ -231,12 +187,8 @@ class DiscordUserID(MKDocs):
             content = content[:match.start()] + user + content[match.end():]
         return content
 
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = DiscordUserID.format_content(message.content)
 
-
-class DiscordRoleID(MKDocs):
+class DiscordRoleID(AbsFormattingRule):
     """Format '<@&645851931842969611>' to '@Araxxor Initiate'."""
     PATTERN = re.compile(r"<@&([0-9]{18})>")
     ROLE_LOOKUP = PVMERoleData()
@@ -252,12 +204,23 @@ class DiscordRoleID(MKDocs):
             content = content[:match.start()] + role_formatted + content[match.end():]
         return content
 
+
+class MarkdownLineSpacing(AbsFormattingRule):
     @staticmethod
-    def format_mkdocs_md(message):
-        message.content = DiscordRoleID.format_content(message.content)
+    def format_content(content):
+        lines = content.splitlines()
+        return '\n\n'.join(lines)
 
 
-class MarkdownLink(MKDocs):
+class EmptyLines(AbsFormattingRule):
+    @staticmethod
+    def format_content(content):
+        lines = content.split('\n')
+        lines_formatted = ['&#x200b;' if len(line) == 0 else line for line in lines]
+        return '\n'.join(lines_formatted)
+
+
+class MarkdownLink(AbsFormattingRule):
     """Format [named links](https://discordapp.com) to
     <a title="" href="https://discordapp.com" target="_blank" rel="noreferrer">named links</a>
     NOTE: only used for formatting embed:json blocks
@@ -273,12 +236,8 @@ class MarkdownLink(MKDocs):
             content = content[:match.start()] + html_url_formatted + content[match.end():]
         return content
 
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = MarkdownLink.format_content(message.content)
 
-
-class EmbedCodeBlock(MKDocs):
+class EmbedCodeBlock(AbsFormattingRule):
     """Format: ```cool text``` to <pre><code>cool text</code></pre>
     NOTE: couldn't use fenced_code python-markdown extension here as it was inconsistent with formatting.
     """
@@ -298,7 +257,3 @@ class EmbedCodeBlock(MKDocs):
                 content = content[:match.start()] + "</code></pre>" + content[match.end():]
 
         return content
-
-    @staticmethod
-    def format_mkdocs_md(message):
-        message.content = EmbedCodeBlock.format_content(message.content)

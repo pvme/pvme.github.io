@@ -5,7 +5,7 @@ Mainly used for CI/CD integration.
 import argparse
 import logging
 
-from formatter.mkdocs import generate_sources
+from formatter.doc_builder import generate_sources
 
 
 def main():
