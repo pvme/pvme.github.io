@@ -34,3 +34,10 @@ p {
     margin-block-start: .25em;
     margin-block-end: .25em;
 }
+
+.embed-code-inline {
+    background-color: hsl(232 14% 15% / 1) !important;
+    color: hsl(231deg 18% 86%) !important;
+    border-radius: .1rem !important;
+    font-family: monospace;
+}

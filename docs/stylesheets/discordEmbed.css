@@ -47,6 +47,41 @@ to:
   -ms-user-select: text;
   user-select: text
 }
+
+4. change:
+.embed-wrapper {
+  position: relative;
+  margin-top: 5px;
+  max-width: 520px;
+  display: flex
+}
+
+to:
+.embed-wrapper {
+  position: relative;
+  margin-top: 5px;
+  max-width: 560px;
+  display: flex;
+  background-color: #272834;
+  border-radius: 3px;
+}
+
+5. change:
+.theme-dark .message-group .comment .markup pre code {
+  background: #2e3136
+}
+
+to:
+.theme-dark .message-group .comment .markup pre code {
+  background: #2e3136;
+  color: #d5d7e2;
+}
+
+6. remove:
+.theme-dark .message-group .embed .embed-description,
+.theme-dark .message-group .embed .embed-fields {
+  color: hsla(0, 0%, 100%, .6)
+}
 */
 .bot-tag {
   background: #7289da;
@@ -631,6 +666,7 @@ to:
   border-radius: 3px;
   font-size: 85%;
   text-indent: 0
+
 }
 
 .message-group.compact .comment {
@@ -720,7 +756,8 @@ to:
 
 .theme-dark .message-group .comment .markup code.inline,
 .theme-dark .message-group .comment .markup pre code {
-  background: #2e3136
+  background: #2e3136;
+  color: #d5d7e2;
 }
 
 .theme-dark .message-group.compact .message .markup .user-name {
@@ -751,11 +788,6 @@ to:
 
 .theme-dark .message-group .embed div.embed-title {
   color: #fff
-}
-
-.theme-dark .message-group .embed .embed-description,
-.theme-dark .message-group .embed .embed-fields {
-  color: hsla(0, 0%, 100%, .6)
 }
 
 .theme-dark .message-group .embed .embed-fields .embed-field-name {
@@ -794,8 +826,10 @@ to:
 .embed-wrapper {
   position: relative;
   margin-top: 5px;
-  max-width: 520px;
-  display: flex
+  max-width: 560px;
+  display: flex;
+  background-color: #272834;
+  border-radius: 3px;
 }
 
 .embed-wrapper .embed-color-pill {

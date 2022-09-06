@@ -12,7 +12,7 @@ import formatter.util
 
 __all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
            'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',
-           'MarkdownLineSpacing', 'EmptyLines']
+           'MarkdownLineSpacing', 'EmptyLines', 'EmbedCodeInline']
 
 logger = logging.getLogger('formatter.rules')
 logger.level = logging.WARN
@@ -240,6 +240,7 @@ class MarkdownLink(AbsFormattingRule):
 class EmbedCodeBlock(AbsFormattingRule):
     """Format: ```cool text``` to <pre><code>cool text</code></pre>
     NOTE: couldn't use fenced_code python-markdown extension here as it was inconsistent with formatting.
+    todo: code block margin
     """
     PATTERN = re.compile(r"```\n?")
 
@@ -255,5 +256,22 @@ class EmbedCodeBlock(AbsFormattingRule):
             else:
                 # code block end
                 content = content[:match.start()] + "</code></pre>" + content[match.end():]
+
+        return content
+
+
+class EmbedCodeInline(AbsFormattingRule):
+    PATTERN = re.compile(r"`")
+
+    @staticmethod
+    def format_content(content):
+        matches = [match for match in re.finditer(EmbedCodeInline.PATTERN, content)]
+        for index, match in enumerate(reversed(matches)):
+            if index % 2:
+                # inline code start
+                content = content[:match.start()] + "<code class=\"embed-code-inline\">" + content[match.end():]
+            else:
+                # inline code end
+                content = content[:match.start()] + "</code>" + content[match.end():]
 
         return content
