@@ -1,15 +1,5 @@
 # Changelog
 
-## Planned updates/bug fixes
-
-- Embed: open graph for unknown links
-- Embed: open graph for all links (*)
-- Embed: wiki links
-- Embed: google docs
-- Obtain discord usernames using discord API/bot
-- clickable link for non-embedded urls
-
-
 ## Release notes
 
 ### September, 6, 2022
@@ -25,6 +15,7 @@
   - removed autoplay option to improve page load time
   - all videos have the same control options
   - added more known url regexes to reduce build time
+- bugfix with incorrect channel urls: https://github.com/pvme/pvme.github.io/issues/9
 
 ### September, 1, 2022
 

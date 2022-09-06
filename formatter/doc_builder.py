@@ -6,7 +6,7 @@ import logging
 
 import ruamel.yaml
 
-from formatter.pvme_settings import github_json_request
+from formatter.rules import DiscordChannelID
 from formatter.message_formatter import RawMessageParser, MessageFormatter
 
 logger = logging.getLogger('formatter.file_writer')
@@ -33,13 +33,8 @@ CATEGORY_SEQUENCE = [
     'zamorak'
 ]
 
-# CATEGORY_SEQUENCE = ['angel-of-death']
-
 
 def generate_channel_source(channel_txt_file, source_dir, category_name, channel_name):
-    # if channel_name != 'aod-melee':
-    #     return
-
     # read guide.txt
     with open(channel_txt_file, 'r', encoding='utf-8') as file:
         text = file.read()
@@ -82,9 +77,7 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 
     os.mkdir('{}/pvme-guides'.format(source_dir))
 
-    # todo: data should be obtained from previously obtained channel LUT rather than making new request
-    channel_data = github_json_request('https://raw.githubusercontent.com/pvme/pvme-settings/pvme-discord/channels.json')
-    channel_map = {channel['path']: channel['name'] for channel in channel_data}
+    channel_map = {channel['path']: channel['name'] for channel in DiscordChannelID.CHANNEL_LOOKUP.values()}
 
     mkdocs_nav = list()     # contents of the mkdocs.yml nav:
 
