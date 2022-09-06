@@ -12,6 +12,20 @@
 
 ## Release notes
 
+### September, 6, 2022
+
+- Finished formatter rewrite
+- Embed changes
+  - increased max width (if content fits on discord, it will fit on the site)
+  - fixed inline code formatting (correct font so width matches discord)
+  - darkened background slightly
+  - changed description font color to match that of the rest of the embed
+  - light mode looks the same as dark mode
+- Attachment url changes (videos/images)
+  - removed autoplay option to improve page load time
+  - all videos have the same control options
+  - added more known url regexes to reduce build time
+
 ### September, 1, 2022
 
 - Code blocks in embeds now shown correctly
