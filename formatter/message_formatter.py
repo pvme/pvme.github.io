@@ -73,7 +73,8 @@ class MessageFormatter:
                                                                                       self.__raw_message.content)))
 
     def __format_bot_command(self):
-        if self.__raw_message.bot_command == '.':
+        bot_command = self.__raw_message.bot_command.rstrip()
+        if bot_command == '.':
             self.__formatted_message.bot_command = ''
 
         elif self.__raw_message.bot_command.startswith((".tag:", ".pin:", ".tag:")):
@@ -100,13 +101,15 @@ class MessageFormatter:
         sections_split_by_code_block = self.split_code_block_sections(self.__raw_message.content)
         for index, section in enumerate(sections_split_by_code_block):
             if index % 2 == 0:
-                # section should be formatted
-                content, attachment_embeds = self.apply_formatting_rules(section, format_sequence)
+                # section should be formatted (not in code block)
+                content = self.set_code_block_margin(sections_split_by_code_block, index)
+
+                content, attachment_embeds = self.apply_formatting_rules(content, format_sequence)
                 self.__formatted_message.content += content
                 self.__formatted_message.attachment_embeds.extend(attachment_embeds)
             else:
                 # section inside code block, don't apply formatting
-                self.__formatted_message.content += self.set_code_block(section)
+                self.__formatted_message.content += self.set_code_block_padding(section)
 
     def format(self, format_sequence: List = None):
         format_sequence = format_sequence if format_sequence else DEFAULT_FORMAT_SEQUENCE
@@ -130,10 +133,6 @@ class MessageFormatter:
         return content, attachment_embeds
 
     @staticmethod
-    def split_code_block_sections(content: str) -> List[str]:
-        return content.split('```')
-
-    @staticmethod
     def parse_embed_json(embed_json: dict, content: str) -> dict:
         """Parse embed from various allowed structures."""
         # todo: some of these rule checks should be part of syntax checker
@@ -150,16 +149,34 @@ class MessageFormatter:
             raise ValueError(f"invalid embed format {embed_json}")
 
     @staticmethod
-    def set_code_block(section: str) -> str:
+    def split_code_block_sections(content: str) -> List[str]:
+        return content.split('```')
+
+    @staticmethod
+    def set_code_block_margin(sections: List[str], non_code_section_index: int) -> str:
+        content = sections[non_code_section_index]
+
+        # apply margin before code block
+        if non_code_section_index < len(sections) - 1 and content.endswith('\n'):
+            content = content[:-1]  # remove last \n
+
+        # apply margin after code block
+        if non_code_section_index > 0 and content.startswith('\n'):
+            content = content[1:]  # remove first \n
+
+        return content
+
+    @staticmethod
+    def set_code_block_padding(code_section: str) -> str:
         content = "\n```"
 
-        if not section.startswith('\n'):
+        if not code_section.startswith('\n'):
             # apply start padding if code block is not followed by empty line
             content += '\n'
 
-        content += section
+        content += code_section
 
-        if not section.endswith('\n'):
+        if not code_section.endswith('\n'):
             # apply end padding if the content is not followed by a empty line
             content += '\n'
 
