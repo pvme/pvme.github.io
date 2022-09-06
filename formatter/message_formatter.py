@@ -73,18 +73,18 @@ class MessageFormatter:
                                                                                       self.__raw_message.content)))
 
     def __format_bot_command(self):
-        bot_command = self.__raw_message.bot_command.rstrip()
+        bot_command = self.__raw_message.bot_command.rstrip()   # some commands have trailing spaces
         if bot_command == '.':
             self.__formatted_message.bot_command = ''
 
-        elif self.__raw_message.bot_command.startswith((".tag:", ".pin:", ".tag:")):
+        elif bot_command.startswith((".tag:", ".pin:", ".tag:")):
             self.__formatted_message.bot_command = ''
 
-        elif self.__raw_message.bot_command.startswith((".img:", ".file:")):
+        elif bot_command.startswith((".img:", ".file:")):
             link = self.__raw_message.bot_command.split(':', 1)
             self.__formatted_message.bot_command = generate_embed(link[1])
 
-        elif self.__raw_message.bot_command == '.embed:json':
+        elif bot_command == '.embed:json':
             self.__formatted_message.bot_command = ''
 
         else:
