@@ -7,8 +7,7 @@ import os
 import logging
 
 from formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
-
-import formatter.util
+from formatter.attachment_embed import get_attachment_from_url
 
 __all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
            'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',
@@ -90,7 +89,7 @@ class EmbedLink:
             content = content[:match.start() + spacer] + url_formatted + content[match.end():]
 
         for match in matches:
-            embed = formatter.util.generate_embed(match.group(1))
+            embed = get_attachment_from_url(match.group(1))
             if embed:
                 attachment_embeds.append(embed)
 

@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 
 from formatter.rules import *
 from formatter.discord_embed import EmbedHTMLGenerator, embed_str_to_dict
-from formatter.util import generate_embed
+from formatter.attachment_embed import get_attachment_from_url
 from typing import List
 
 
@@ -82,7 +82,7 @@ class MessageFormatter:
 
         elif bot_command.startswith((".img:", ".file:")):
             link = self.__raw_message.bot_command.split(':', 1)
-            self.__formatted_message.bot_command = generate_embed(link[1])
+            self.__formatted_message.bot_command = get_attachment_from_url(link[1])
 
         elif bot_command == '.embed:json':
             self.__formatted_message.bot_command = ''
