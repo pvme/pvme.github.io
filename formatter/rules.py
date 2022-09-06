@@ -155,11 +155,12 @@ class DiscordChannelID(AbsFormattingRule):
     def format_content(content):
         matches = [match for match in re.finditer(DiscordChannelID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
-            path = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
-            if path:
-                relative_file = path.replace(".txt", "")
-                name = os.path.basename(path).replace(".txt", "")
-                link = f"[#{name}](../../{relative_file})"
+            channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
+            if channel:
+                name = channel['name']
+                txt_path = channel['path']
+                path = f"{os.path.dirname(txt_path)}/{name}"
+                link = f"[#{name}](../../{path})"
             else:
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:

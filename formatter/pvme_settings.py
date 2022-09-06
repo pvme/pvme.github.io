@@ -51,12 +51,16 @@ class PVMERoleData(dict):
 class PVMEChannelData(dict):
     """PVME Channel LUT:
     {
-        '553632787639435284': 'getting-started/perks.txt',
-        '689234925064290323': ...
+        '534912860711550989': {
+            'name': 'dpm-advice-ranged',
+            'path': 'dpm-advice/dpm-advice-range.txt'
+        },
+        '689234925064290323': {...}
     }
     """
     def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/pvme-discord/channels.json"):
-        channels = {channel['id']: channel['path'] for channel in github_json_request(url)}
+        channels = {channel['id']: {'path': channel['path'], 'name': channel['name']} for channel in
+                    github_json_request(url)}
         super().__init__(channels)
 
 
