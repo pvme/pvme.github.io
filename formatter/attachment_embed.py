@@ -84,7 +84,7 @@ def get_attachment_from_url(url: str) -> str:
         embed = None
 
     # discord image
-    elif re.match(r"https?://media\.discordapp\.net/attachments/[0-9]{18}/[0-9]{18}/([a-zA-Z0-9-]+)\n.png", url):
+    elif re.match(r"https?://media\.discordapp\.net/attachments/[0-9]{18}/[0-9]{18}/([a-zA-Z0-9-]+)\.png", url):
         embed = "<img class=\"media\" src=\"{}\">".format(url)
 
     else:
