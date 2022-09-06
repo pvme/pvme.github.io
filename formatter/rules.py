@@ -148,7 +148,8 @@ class DiscordChannelID(AbsFormattingRule):
         '656898197561802760': 'pvm-help',
         '656914685152722954': 'vod-review-submission',
         '534563158304620564': 'bot-commands',
-        '537042924026724353': 'suggestions'
+        '537042924026724353': 'suggestions',
+        '185315527571406848': 'deleted-channel'
     }
 
     @staticmethod
