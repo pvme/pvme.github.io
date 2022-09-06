@@ -106,8 +106,7 @@ class MessageFormatter:
                 self.__formatted_message.attachment_embeds.extend(attachment_embeds)
             else:
                 # section inside code block, don't apply formatting
-                # todo: amount of padding depends on code block
-                self.__formatted_message.content += f"\n```\n{section}\n```\n"
+                self.__formatted_message.content += self.set_code_block(section)
 
     def format(self, format_sequence: List = None):
         format_sequence = format_sequence if format_sequence else DEFAULT_FORMAT_SEQUENCE
@@ -149,6 +148,23 @@ class MessageFormatter:
             return embed_json
         else:
             raise ValueError(f"invalid embed format {embed_json}")
+
+    @staticmethod
+    def set_code_block(section: str) -> str:
+        content = "\n```"
+
+        if not section.startswith('\n'):
+            # apply start padding if code block is not followed by empty line
+            content += '\n'
+
+        content += section
+
+        if not section.endswith('\n'):
+            # apply end padding if the content is not followed by a empty line
+            content += '\n'
+
+        content += "```\n"
+        return content
 
 
 class RawMessageParser:
