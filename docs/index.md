@@ -1,7 +1,13 @@
-!!! info 
-    I'm making some changes to the text formatting to improve readability.
+!!! warning
+    The PVME discord guide structure is being changed. As a result, the PVME webstie structure will also change to match that of Discord. 
+    
+    So the next few days, be aware of the following:
 
-    If any formatting seems off. Or if anything is not shown correctly. Feel free to create a [Issue](https://github.com/pvme/pvme-guides) or ping/message me in Discord (Pleb#0025).
+    - Guides being shuffled around
+
+    - Links from one guide to another (#araxxor-basic) are also likely to break
+
+    - Missing guides (I'll do my best to prevent this)
 
 # Home
 
