@@ -15,7 +15,7 @@ logger.level = logging.WARN
 CATEGORY_SEQUENCE = [
     'getting-started',
     'miscellaneous-information',
-    'afk'
+    'afk',
     {'upgrading-info': [
         'upgrade-order'
     ]},
