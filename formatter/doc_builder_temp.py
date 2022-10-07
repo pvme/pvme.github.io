@@ -25,12 +25,12 @@ CATEGORY_SEQUENCE = [
     {'rs3-full-boss-guides': [
         'angel-of-death',
         'araxxor',
-        'arch-glacor'
+        'arch-glacor',
         'croesus',
         'ed1-temple-of-aminishi',
         'ed2-dragonkin-library',
         'ed3-shadow-reef',
-        'gwd2-heart-of-gielinor'
+        'gwd2-heart-of-gielinor',
         'kerapac',
         'nex',
         'raksha',
