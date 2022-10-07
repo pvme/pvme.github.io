@@ -42,8 +42,7 @@ CATEGORY_SEQUENCE = [
     {'high-tier-pvm': [
         'vorago'
     ]},
-    'slayer',
-    'heart-of-gielinor',
+    'slayer'
 ]
 
 
