@@ -14,28 +14,33 @@ logger.level = logging.WARN
 
 CATEGORY_SEQUENCE = [
     'getting-started',
-    'miscellaneous-information',
-    'afk',
+    'invention-and-perks',
+    'miscellaneous-information', 
     {'upgrading-info': [
         'upgrade-order'
     ]},
     'dpm-advice',
+    'afk',
     'basic-guides',
-    {'elder-god-wars': [
-        'zamorak'
-    ]},
-    'elite-dungeons',
-    'low-tier-pvm',
-    {'mid-tier-pvm': [
-        'nex'
-    ]},
-    {'high-tier-pvm': [
+    {'rs3-full-boss-guides': [
         'angel-of-death',
         'araxxor',
+        'arch-glacor'
+        'croesus',
+        'ed1-temple-of-aminishi',
+        'ed2-dragonkin-library',
+        'ed3-shadow-reef',
+        'gwd2-heart-of-gielinor'
+        'kerapac',
+        'nex',
         'raksha',
         'solak',
         'telos',
-        'vorago',
+        'tzkal-zuk',
+        'zamorak'
+    ]},
+    {'high-tier-pvm': [
+        'vorago'
     ]},
     'slayer',
     'heart-of-gielinor',
