@@ -1,13 +1,5 @@
-!!! warning
-    The PVME discord guide structure is being changed. As a result, the PVME webstie structure will also change to match that of Discord. 
-    
-    So the next few days, be aware of the following:
-
-    - Guides being shuffled around
-
-    - Links from one guide to another (#araxxor-basic) are also likely to break
-
-    - Missing guides (I'll do my best to prevent this)
+!!! info
+    PVME structure (mostly) finalized now.
 
 # Home
 
