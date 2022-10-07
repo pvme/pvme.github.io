@@ -28,7 +28,7 @@ CATEGORY_SEQUENCE = [
         'arch-glacor',
         'croesus',
         'ed1-temple-of-aminishi',
-        'ed2-dragonkin-library',
+        'ed2-dragonkin-laboratory',
         'ed3-shadow-reef',
         'gwd2-heart-of-gielinor',
         'kerapac',
