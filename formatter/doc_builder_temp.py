@@ -30,18 +30,19 @@ CATEGORY_SEQUENCE = [
         'ed1-temple-of-aminishi',
         'ed2-dragonkin-laboratory',
         'ed3-shadow-reef',
-        'gwd2-heart-of-gielinor',
+        # 'gwd2-heart-of-gielinor',
         'kerapac',
         'nex',
         'raksha',
         'solak',
         'telos',
         'tzkal-zuk',
-        'zamorak'
-    ]},
-    {'high-tier-pvm': [
+        'zamorak',
         'vorago'
     ]},
+    # {'high-tier-pvm': [
+    #     'vorago'
+    # ]},
     'slayer'
 ]
 

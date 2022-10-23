@@ -1,6 +1,3 @@
-!!! info
-    PVME structure (mostly) finalized now.
-
 # Home
 
 Welcome to the PVME Guides documentation!

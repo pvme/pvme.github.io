@@ -56,131 +56,180 @@ nav:
 - Getting started:
   - pvme-guides/getting-started/bossing-path.md
   - pvme-guides/getting-started/interface-guide.md
-  - pvme-guides/getting-started/invention-basics.md
-  - pvme-guides/getting-started/perks.md
+  - pvme-guides/getting-started/learning-pvm.md
   - pvme-guides/getting-started/quick-start.md
   - pvme-guides/getting-started/revo-to-full-manual.md
+- Invention and perks:
+  - pvme-guides/invention-and-perks/invention-basics.md
+  - pvme-guides/invention-and-perks/perk-information.md
+  - pvme-guides/invention-and-perks/perks.md
 - Miscellaneous information:
   - pvme-guides/miscellaneous-information/ability-information.md
   - pvme-guides/miscellaneous-information/auto-attacks.md
   - pvme-guides/miscellaneous-information/boss-revenue.md
+  - pvme-guides/miscellaneous-information/command-info.md
   - pvme-guides/miscellaneous-information/eof-specs.md
   - pvme-guides/miscellaneous-information/irl-gear.md
   - pvme-guides/miscellaneous-information/mechanics.md
-  - pvme-guides/miscellaneous-information/perk-information.md
+  - pvme-guides/miscellaneous-information/mobile-pvm.md
   - pvme-guides/miscellaneous-information/pvm-spreadsheets.md
 - Upgrading info:
+  - Upgrade order:
+    - pvme-guides/upgrading-info/upgrade-order/upgrade-order-magic.md
+    - pvme-guides/upgrading-info/upgrade-order/upgrade-order-melee.md
+    - pvme-guides/upgrading-info/upgrade-order/upgrade-order-ranged.md
   - pvme-guides/upgrading-info/armour-and-weapons.md
   - pvme-guides/upgrading-info/consumables.md
   - pvme-guides/upgrading-info/permanent-unlocks.md
   - pvme-guides/upgrading-info/unlockable-abilities.md
-  - pvme-guides/upgrading-info/upgrade-order.md
 - Dpm advice:
   - pvme-guides/dpm-advice/dpm-advice-faq.md
   - pvme-guides/dpm-advice/dpm-advice-mage.md
   - pvme-guides/dpm-advice/dpm-advice-melee.md
-  - pvme-guides/dpm-advice/dpm-advice-ranged.md
+  - pvme-guides/dpm-advice/dpm-advice-range.md
+- Afk:
+  - pvme-guides/afk/afk-arch-glacor.md
+  - pvme-guides/afk/afk-commander-zilyana.md
+  - pvme-guides/afk/afk-corporeal-beast.md
+  - pvme-guides/afk/afk-dagannoth-kings.md
+  - pvme-guides/afk/afk-general-graardor.md
+  - pvme-guides/afk/afk-giant-mole.md
+  - pvme-guides/afk/afk-gregorovic.md
+  - pvme-guides/afk/afk-helwyr.md
+  - pvme-guides/afk/afk-kalphite-queen.md
+  - pvme-guides/afk/afk-kbd.md
+  - pvme-guides/afk/afk-kerapac.md
+  - pvme-guides/afk/afk-kree-arra.md
+  - pvme-guides/afk/afk-kril-tsutsaroth.md
+  - pvme-guides/afk/afk-magister.md
+  - pvme-guides/afk/afk-orikalka.md
+  - pvme-guides/afk/afk-overview.md
+  - pvme-guides/afk/afk-pthentraken.md
+  - pvme-guides/afk/afk-rathis.md
+  - pvme-guides/afk/afk-twin-furies.md
+  - pvme-guides/afk/afk-vindicta.md
 - Basic guides:
   - pvme-guides/basic-guides/araxxor-basic.md
+  - pvme-guides/basic-guides/bm-basic.md
+  - pvme-guides/basic-guides/ed1-basic.md
+  - pvme-guides/basic-guides/ed2-basic.md
   - pvme-guides/basic-guides/ed3-basic.md
   - pvme-guides/basic-guides/helwyr-basic.md
   - pvme-guides/basic-guides/kerapac-hm-basic.md
-  - pvme-guides/basic-guides/mobile-pvm.md
   - pvme-guides/basic-guides/nex-basic.md
   - pvme-guides/basic-guides/raksha-basic.md
   - pvme-guides/basic-guides/solak-basic.md
   - pvme-guides/basic-guides/telos-basic.md
-- Low tier pvm:
-  - pvme-guides/low-tier-pvm/barrows.md
-  - pvme-guides/low-tier-pvm/chaos-elemental.md
-  - pvme-guides/low-tier-pvm/dagannoth-kings.md
-  - pvme-guides/low-tier-pvm/giant-mole.md
-  - pvme-guides/low-tier-pvm/gwd1.md
-  - pvme-guides/low-tier-pvm/kalphite-queen.md
-  - pvme-guides/low-tier-pvm/king-black-dragon.md
-- Mid tier pvm:
-  - pvme-guides/mid-tier-pvm/corporeal-beast.md
-  - pvme-guides/mid-tier-pvm/fight-kiln.md
-  - pvme-guides/mid-tier-pvm/kalphite-king.md
-  - pvme-guides/mid-tier-pvm/legiones.md
-  - pvme-guides/mid-tier-pvm/queen-black-dragon.md
-  - pvme-guides/mid-tier-pvm/rex-matriarchs.md
-- High tier pvm:
-  - pvme-guides/high-tier-pvm/araxxor-melee.md
-  - pvme-guides/high-tier-pvm/araxxor-ranged.md
-  - pvme-guides/high-tier-pvm/beastmaster-durzag.md
-  - pvme-guides/high-tier-pvm/magister.md
-  - pvme-guides/high-tier-pvm/raksha.md
-  - pvme-guides/high-tier-pvm/rots.md
-  - pvme-guides/high-tier-pvm/yakamaru.md
-- Angel of death:
-  - pvme-guides/angel-of-death/aod-4-man.md
-  - pvme-guides/angel-of-death/aod-magic.md
-  - pvme-guides/angel-of-death/aod-mechanics.md
-  - pvme-guides/angel-of-death/aod-melee.md
-  - pvme-guides/angel-of-death/aod-ranged.md
-- Elder god wars:
-  - pvme-guides/elder-god-wars/arch-glacor.md
-  - pvme-guides/elder-god-wars/croesus-duo.md
-  - pvme-guides/elder-god-wars/croesus.md
-  - pvme-guides/elder-god-wars/kerapac-duo-hm.md
-  - pvme-guides/elder-god-wars/kerapac-nm.md
-  - pvme-guides/elder-god-wars/kerapac-solo-hm.md
-  - pvme-guides/elder-god-wars/kerapac-trio-hm.md
-  - pvme-guides/elder-god-wars/tzkal-zuk-hm.md
-  - pvme-guides/elder-god-wars/tzkal-zuk-nm.md
-- Elite dungeons:
-  - pvme-guides/elite-dungeons/ed1-magic.md
-  - pvme-guides/elite-dungeons/ed1-melee.md
-  - pvme-guides/elite-dungeons/ed1-ranged.md
-  - pvme-guides/elite-dungeons/ed2-magic.md
-  - pvme-guides/elite-dungeons/ed2-melee.md
-  - pvme-guides/elite-dungeons/ed2-ranged.md
-  - pvme-guides/elite-dungeons/ed3-magic.md
-  - pvme-guides/elite-dungeons/ed3-melee.md
-  - pvme-guides/elite-dungeons/ed3-ranged.md
-- Heart of gielinor:
-  - pvme-guides/heart-of-gielinor/gregorovic.md
-  - pvme-guides/heart-of-gielinor/helwyr.md
-  - pvme-guides/heart-of-gielinor/twin-furies.md
-  - pvme-guides/heart-of-gielinor/vindicta.md
-- Nex:
-  - pvme-guides/nex/nex-duo-ranged.md
-  - pvme-guides/nex/nex-solo-melee.md
-  - pvme-guides/nex/nex-solo-ranged-ecb.md
-  - pvme-guides/nex/nex-solo-ranged.md
+  - pvme-guides/basic-guides/tzkal-zuk-basic.md
+  - pvme-guides/basic-guides/zamorak-basic.md
+- Rs3 full boss guides:
+  - Angel of death:
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/4-man.md
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/hybrid.md
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/magic.md
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/mechanics.md
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/melee.md
+    - pvme-guides/rs3-full-boss-guides/angel-of-death/ranged.md
+  - Araxxor:
+    - pvme-guides/rs3-full-boss-guides/araxxor/araxxor-melee.md
+    - pvme-guides/rs3-full-boss-guides/araxxor/araxxor-range.md
+  - Arch glacor:
+    - pvme-guides/rs3-full-boss-guides/arch-glacor/arch-glacor.md
+  - Croesus:
+    - pvme-guides/rs3-full-boss-guides/croesus/croesus-1mid-4man.md
+    - pvme-guides/rs3-full-boss-guides/croesus/croesus-duo.md
+    - pvme-guides/rs3-full-boss-guides/croesus/croesus.md
+  - Ed1 temple of aminishi:
+    - pvme-guides/rs3-full-boss-guides/ed1-temple-of-aminishi/magic.md
+    - pvme-guides/rs3-full-boss-guides/ed1-temple-of-aminishi/melee.md
+    - pvme-guides/rs3-full-boss-guides/ed1-temple-of-aminishi/ranged.md
+  - Ed2 dragonkin laboratory:
+    - pvme-guides/rs3-full-boss-guides/ed2-dragonkin-laboratory/magic.md
+    - pvme-guides/rs3-full-boss-guides/ed2-dragonkin-laboratory/melee.md
+    - pvme-guides/rs3-full-boss-guides/ed2-dragonkin-laboratory/ranged.md
+  - Ed3 shadow reef:
+    - pvme-guides/rs3-full-boss-guides/ed3-shadow-reef/magic.md
+    - pvme-guides/rs3-full-boss-guides/ed3-shadow-reef/melee.md
+    - pvme-guides/rs3-full-boss-guides/ed3-shadow-reef/ranged.md
+  - Kerapac:
+    - pvme-guides/rs3-full-boss-guides/kerapac/kerapac-duo-hm.md
+    - pvme-guides/rs3-full-boss-guides/kerapac/kerapac-nm.md
+    - pvme-guides/rs3-full-boss-guides/kerapac/kerapac-solo-hm.md
+  - Nex:
+    - pvme-guides/rs3-full-boss-guides/nex/nex-duo-ranged.md
+    - pvme-guides/rs3-full-boss-guides/nex/nex-solo-bolg.md
+    - pvme-guides/rs3-full-boss-guides/nex/nex-solo-ecb.md
+    - pvme-guides/rs3-full-boss-guides/nex/nex-solo-melee.md
+    - pvme-guides/rs3-full-boss-guides/nex/nex-solo-ranged.md
+  - Raksha:
+    - pvme-guides/rs3-full-boss-guides/raksha/low-effort.md
+    - pvme-guides/rs3-full-boss-guides/raksha/magic.md
+    - pvme-guides/rs3-full-boss-guides/raksha/melee.md
+    - pvme-guides/rs3-full-boss-guides/raksha/ranged.md
+  - Solak:
+    - pvme-guides/rs3-full-boss-guides/solak/fsoa-hybrid.md
+    - pvme-guides/rs3-full-boss-guides/solak/magic.md
+    - pvme-guides/rs3-full-boss-guides/solak/mechanics.md
+    - pvme-guides/rs3-full-boss-guides/solak/range.md
+  - Telos:
+    - pvme-guides/rs3-full-boss-guides/telos/magic-fsoa.md
+    - pvme-guides/rs3-full-boss-guides/telos/magic-no-fsoa.md
+    - pvme-guides/rs3-full-boss-guides/telos/melee.md
+    - pvme-guides/rs3-full-boss-guides/telos/ranged-botlg.md
+    - pvme-guides/rs3-full-boss-guides/telos/ranged-no-botlg.md
+    - pvme-guides/rs3-full-boss-guides/telos/stuns-and-mechanics.md
+  - Tzkal zuk:
+    - pvme-guides/rs3-full-boss-guides/tzkal-zuk/tzkal-zuk-hm.md
+    - pvme-guides/rs3-full-boss-guides/tzkal-zuk/tzkal-zuk-nm.md
+  - Zamorak:
+    - pvme-guides/rs3-full-boss-guides/zamorak/zamorak-dungeon.md
+    - pvme-guides/rs3-full-boss-guides/zamorak/zamorak-group-50.md
+    - pvme-guides/rs3-full-boss-guides/zamorak/zamorak.md
+  - Vorago:
+    - pvme-guides/rs3-full-boss-guides/vorago/duo-hard-mode.md
+    - pvme-guides/rs3-full-boss-guides/vorago/hard-mode-overview.md
+    - pvme-guides/rs3-full-boss-guides/vorago/overview.md
+    - pvme-guides/rs3-full-boss-guides/vorago/rotations.md
+    - pvme-guides/rs3-full-boss-guides/vorago/solo-hard-mode.md
+    - pvme-guides/rs3-full-boss-guides/vorago/solo-normal-mode.md
+    - pvme-guides/rs3-full-boss-guides/vorago/tips-and-tricks.md
+    - pvme-guides/rs3-full-boss-guides/vorago/trio-hard-mode.md
+  - pvme-guides/rs3-full-boss-guides/barrows.md
+  - pvme-guides/rs3-full-boss-guides/beastmaster-durzag.md
+  - pvme-guides/rs3-full-boss-guides/chaos-elemental.md
+  - pvme-guides/rs3-full-boss-guides/corporeal-beast.md
+  - pvme-guides/rs3-full-boss-guides/dagannoth-kings.md
+  - pvme-guides/rs3-full-boss-guides/fight-kiln.md
+  - pvme-guides/rs3-full-boss-guides/giant-mole.md
+  - pvme-guides/rs3-full-boss-guides/gregorovic-gwd2.md
+  - pvme-guides/rs3-full-boss-guides/gwd1.md
+  - pvme-guides/rs3-full-boss-guides/helwyr-gwd2.md
+  - pvme-guides/rs3-full-boss-guides/kalphite-king.md
+  - pvme-guides/rs3-full-boss-guides/kalphite-queen.md
+  - pvme-guides/rs3-full-boss-guides/king-black-dragon.md
+  - pvme-guides/rs3-full-boss-guides/legiones.md
+  - pvme-guides/rs3-full-boss-guides/magister.md
+  - pvme-guides/rs3-full-boss-guides/queen-black-dragon.md
+  - pvme-guides/rs3-full-boss-guides/rex-matriarchs.md
+  - pvme-guides/rs3-full-boss-guides/rise-of-the-six.md
+  - pvme-guides/rs3-full-boss-guides/twin-furies-gwd2.md
+  - pvme-guides/rs3-full-boss-guides/vindicta-gwd2.md
+  - pvme-guides/rs3-full-boss-guides/yakamaru.md
 - Slayer:
   - pvme-guides/slayer/abyssal-creatures.md
   - pvme-guides/slayer/block-prefer-list.md
+  - pvme-guides/slayer/celestial-dragons.md
   - pvme-guides/slayer/gemstone-dragons.md
   - pvme-guides/slayer/glacors.md
+  - pvme-guides/slayer/lost-grove-creatures.md
   - pvme-guides/slayer/miscellaneous-slayer.md
-  - pvme-guides/slayer/moss-golems.md
   - pvme-guides/slayer/nightmare-creatures.md
   - pvme-guides/slayer/overview-of-slayer.md
   - pvme-guides/slayer/raptor-mobs.md
-  - pvme-guides/slayer/ripper-demons.md
+  - pvme-guides/slayer/ripper-demon.md
   - pvme-guides/slayer/shattered-worlds.md
   - pvme-guides/slayer/soul-devourers.md
+  - pvme-guides/slayer/tzhaar-and-fight-cauldron.md
+  - pvme-guides/slayer/ultimate-slayer.md
   - pvme-guides/slayer/venomous-dinosaurs.md
-- Solak:
-  - pvme-guides/solak/solak-fsoa-hybrid.md
-  - pvme-guides/solak/solak-magic-hybrid.md
-  - pvme-guides/solak/solak-mechanics.md
-  - pvme-guides/solak/solak-range-hybrid.md
-  - pvme-guides/solak/solak-range.md
-- Telos:
-  - pvme-guides/telos/telos-magic-fsoa.md
-  - pvme-guides/telos/telos-magic-no-fsoa.md
-  - pvme-guides/telos/telos-melee.md
-  - pvme-guides/telos/telos-ranged.md
-  - pvme-guides/telos/telos-stuns-mechanics.md
-- Vorago:
-  - pvme-guides/vorago/vorago-duo-hm.md
-  - pvme-guides/vorago/vorago-hm.md
-  - pvme-guides/vorago/vorago-rotations.md
-  - pvme-guides/vorago/vorago-solo-hm.md
-  - pvme-guides/vorago/vorago-solo.md
-  - pvme-guides/vorago/vorago-tricks.md
-  - pvme-guides/vorago/vorago-trio-hm.md
-  - pvme-guides/vorago/vorago.md
+  - pvme-guides/slayer/wilderness-slayer.md
