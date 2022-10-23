@@ -1,3 +1,6 @@
+!!! info
+    Guide structure is final now. Also fixed some broken links.
+
 # Home
 
 Welcome to the PVME Guides documentation!

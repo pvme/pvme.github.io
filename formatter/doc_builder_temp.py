@@ -43,8 +43,11 @@ CATEGORY_SEQUENCE = [
     # {'high-tier-pvm': [
     #     'vorago'
     # ]},
-    'slayer'
+    'slayer',
+    'osrs-guides'
 ]
+
+# CATEGORY_SEQUENCE = ['dpm-advice']
 
 
 def generate_channel_source(channel_txt_file, source_dir, category_name, channel_name):
@@ -83,7 +86,7 @@ def update_mkdocs_nav(mkdocs_yml: str, mkdocs_nav: list):
         yaml.dump(data, file)
 
 
-def generate_category(pvme_guides_dir: str, source_dir: str, category: str) -> list:
+def generate_category(pvme_guides_dir: str, source_dir: str, category: str, channel_map: dict) -> list:
     category_dir = '{}/{}'.format(pvme_guides_dir, category)
 
     os.mkdir('{}/pvme-guides/{}'.format(source_dir, category))
@@ -94,6 +97,11 @@ def generate_category(pvme_guides_dir: str, source_dir: str, category: str) -> l
     for channel_file in sorted(os.listdir(category_dir)):
         channel_dir = '{}/{}'.format(category_dir, channel_file)
         channel_name, ext = os.path.splitext(channel_file)
+        channel_full = f"{category}/{channel_file}"
+        # discord_name = channel_map[channel_full] if channel_full in channel_map else channel_name
+        channel_name = channel_map.get(channel_full, channel_name)
+        # if discord_name != channel_name:
+        #     print(discord_name)
 
         if ext != '.txt':
             continue
@@ -119,24 +127,24 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
     os.mkdir('{}/pvme-guides'.format(source_dir))
 
     # todo: unused until github structure is finalized
-    # channel_map = {channel['path']: channel['name'] for channel in DiscordChannelID.CHANNEL_LOOKUP.values()}
+    channel_map = {channel['path']: channel['name'] for channel in DiscordChannelID.CHANNEL_LOOKUP.values()}
 
     mkdocs_nav = list()  # contents of the mkdocs.yml nav:
 
     for category in CATEGORY_SEQUENCE:
         if isinstance(category, dict):
             main_category = list(category.keys())[0]
-            main_category_channels = generate_category(pvme_guides_dir, source_dir, main_category)
+            main_category_channels = generate_category(pvme_guides_dir, source_dir, main_category, channel_map)
             category_nav = list()
 
             for sub_category in category[main_category]:
-                channels = generate_category(pvme_guides_dir, source_dir, f"{main_category}/{sub_category}")
+                channels = generate_category(pvme_guides_dir, source_dir, f"{main_category}/{sub_category}", channel_map)
                 category_nav.append({format_category_name(sub_category): channels})
 
             category_nav.extend(sorted(main_category_channels))
             mkdocs_nav.append({format_category_name(main_category): category_nav})
         else:
-            channels = generate_category(pvme_guides_dir, source_dir, category)
+            channels = generate_category(pvme_guides_dir, source_dir, category, channel_map)
             mkdocs_nav.append({format_category_name(category): sorted(channels)})
 
     update_mkdocs_nav(mkdocs_yml, mkdocs_nav)

@@ -141,14 +141,40 @@ class PVMESpreadSheet(AbsFormattingRule):
 
 class DiscordChannelID(AbsFormattingRule):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
-    PATTERN = re.compile(r"<#([0-9]{18})>")
+    PATTERN = re.compile(r"<#(\d{18,19})>")
     CHANNEL_LOOKUP = PVMEChannelData()
     INVALID_CHANNEL_LOOKUP = {
+        '1021152606455873686': 'pvm-help-forums',
+        '1019648841965916220': 'vod-reviews',
         '656898197561802760': 'pvm-help',
-        '656914685152722954': 'vod-review-submission',
+        '1020050459618185328': 'deleted-channel',
+        '611748860746006528': 'deleted-channel',
+        '1020050319457132654': 'deleted-channel',
+        '1020052687070445618': 'deleted-channel',
+        '1020050385676812368': 'deleted-channel',
+        '1024671502064431164': 'deleted-channel',
+        '1020034741644316754': 'deleted-channel',
+        '1020034711491444737': 'deleted-channel',
+        '1020034653945593857': 'deleted-channel',
+        '1020050437963010149': 'deleted-channel',
+        '534514775120412692': 'deleted-channel',
+        '776298051567353917': 'deleted-channel',
+        '959583319853506680': 'deleted-channel',
+        '1020043790582554634': 'deleted-channel',
+        '1020043833955864606': 'deleted-channel',
+        '892084479953358869': 'deleted-channel',
+        '858836097608712202': 'deleted-channel',
+        '858836169864511488': 'deleted-channel',
+        '1020046883575566376': 'deleted-channel',
+        '1020052936631533638': 'deleted-channel',
+        '1020049593901264946': 'deleted-channel',
+        '1020047304075513857': 'deleted-channel',
+        '1020047234328436858': 'deleted-channel',
+        '796067569735041046': 'deleted-channel',
         '534563158304620564': 'bot-commands',
-        '537042924026724353': 'suggestions',
-        '185315527571406848': 'deleted-channel'
+        '1020853673317908500': 'suggestions',
+        '537042924026724353': 'to-be-archived-suggestions',
+        '1020024227115573369': 'rs3-slayer',
     }
 
     @staticmethod
