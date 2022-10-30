@@ -37,6 +37,9 @@ INCLUDES = [
     'rs3-full-boss-guides/**/*.txt',
 
     'slayer/overview-of-slayer.txt',
+    'slayer/block-prefer-list.txt',
+    'slayer/ultimate-slayer.txt',
+    'slayer/miscellaneous-slayer.txt',
     'slayer/**/*.txt',
 
     'osrs-guides/**/*.txt',
@@ -49,6 +52,8 @@ EXCLUDES = [
     'editor-resources/**/*.txt',
     'navigation/**/*.txt',
     'osrs-commands/**/*.txt',
+    'miscellaneous-information/command-info.txt',
+    'afk/afk-overview.txt'
 ]
 
 UNCATEGORIZED = '**/*.txt'
