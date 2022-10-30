@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - new-doc-builder
 
   schedule:
     - cron: '0 1 * * *'
@@ -31,8 +32,8 @@ jobs:
       - name: Clone pvme-guides repository
         run: git clone --depth 1 https://github.com/pvme/pvme-guides.git
 
-      - name: Generate sources
-        run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
+#      - name: Update website
+#        run: pipenv run mkdocs gh-deploy --force
 
-      - name: Update website
-        run: pipenv run mkdocs gh-deploy --force
+      - name: test pipeline build
+        run: pipenv run mkdocs build
