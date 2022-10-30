@@ -31,8 +31,5 @@ jobs:
       - name: Clone pvme-guides repository
         run: git clone --depth 1 https://github.com/pvme/pvme-guides.git
 
-      - name: Generate sources
-        run: pipenv run python formatter_cli.py --generate_mkdocs pvme-guides docs mkdocs.yml
-
       - name: Update website
         run: pipenv run mkdocs gh-deploy --force
