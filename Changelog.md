@@ -2,6 +2,14 @@
 
 ## Release notes
 
+### October, 30, 2022
+
+- Implemented new site generation
+  - by default, guides are sorted alphabetically
+  - all guides will be included, even when the discord (pvme-guides repo) structure changes
+- Fixed remaining broken links (will continue to work in the future)
+
+
 ### September, 6, 2022
 
 - Finished formatter rewrite
