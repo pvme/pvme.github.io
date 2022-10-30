@@ -5,6 +5,7 @@ import re
 from abc import ABC, abstractmethod
 import os
 import logging
+from pathlib import Path
 
 from file_formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
 from file_formatter.attachment_embed import get_attachment_from_url
@@ -141,6 +142,7 @@ class PVMESpreadSheet(AbsFormattingRule):
 
 class DiscordChannelID(AbsFormattingRule):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
+    CUR_FILE: Path = None
     PATTERN = re.compile(r"<#(\d{18,19})>")
     CHANNEL_LOOKUP = PVMEChannelData()
     INVALID_CHANNEL_LOOKUP = {
@@ -183,10 +185,15 @@ class DiscordChannelID(AbsFormattingRule):
         for index, match in enumerate(reversed(matches)):
             channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if channel:
+                # name = channel['name']
+                # txt_path = channel['path']
+                # path = f"{os.path.dirname(txt_path)}/{name}"
+                # link = f"[#{name}](../../{path})"
                 name = channel['name']
-                txt_path = channel['path']
-                path = f"{os.path.dirname(txt_path)}/{name}"
-                link = f"[#{name}](../../{path})"
+                txt_file = Path(channel['path'])
+                # todo: work-around relative links, check if absolute links work
+                relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
+                link = f"[#{name}]({relative_path})"
             else:
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:
