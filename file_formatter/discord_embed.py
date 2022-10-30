@@ -11,8 +11,8 @@ import textwrap
 from collections import namedtuple
 from datetime import datetime
 import markdown
-from formatter.discord_markdown import DiscordMarkdownExtension
-from formatter.rules import *
+from file_formatter.discord_markdown import DiscordMarkdownExtension
+from file_formatter.rules import *
 
 JSON_EMBED_FORMAT_SEQUENCE = [
     Emoji,
@@ -195,7 +195,7 @@ class HTMLComponents(object):
 
 
 class EmbedHTMLGenerator(object):
-    """Discord embed -> HTML formatter"""
+    """Discord embed -> HTML file_formatter"""
 
     def __init__(self, embed):
         """Create EmbedHTMLGenerator object.

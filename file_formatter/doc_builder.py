@@ -6,10 +6,10 @@ import logging
 
 import ruamel.yaml
 
-from formatter.rules import DiscordChannelID
-from formatter.message_formatter import RawMessageParser, MessageFormatter
+from file_formatter.rules import DiscordChannelID
+from file_formatter.message_formatter import RawMessageParser, MessageFormatter
 
-logger = logging.getLogger('formatter.file_writer')
+logger = logging.getLogger('file_formatter.file_writer')
 logger.level = logging.WARN
 
 CATEGORY_SEQUENCE = [
@@ -120,8 +120,8 @@ def generate_sources(pvme_guides_dir: str, source_dir: str, mkdocs_yml: str) -> 
 if __name__ == '__main__':
     # for debugging
     logging.basicConfig()
-    logging.getLogger('formatter.file_writer').level = logging.DEBUG
-    logging.getLogger('formatter.rules_new').level = logging.DEBUG
-    logging.getLogger('formatter.util').level = logging.DEBUG
+    logging.getLogger('file_formatter.file_writer').level = logging.DEBUG
+    logging.getLogger('file_formatter.rules_new').level = logging.DEBUG
+    logging.getLogger('file_formatter.util').level = logging.DEBUG
 
     generate_sources('../pvme-guides', '../docs', '../mkdocs.yml')

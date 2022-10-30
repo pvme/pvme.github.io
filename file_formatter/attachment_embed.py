@@ -7,7 +7,7 @@ import logging
 import requests
 
 
-logger = logging.getLogger('formatter.util')
+logger = logging.getLogger('file_formatter.util')
 logger.level = logging.WARN
 
 BASE_DOMAIN = "pvme.github.io"
