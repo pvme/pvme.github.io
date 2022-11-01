@@ -27,21 +27,23 @@ class AbsFormattingRule(ABC):
 
 class Section(AbsFormattingRule):
     """Format lines starting with > __**section**__ to ## section."""
-    PATTERN = re.compile(r"(?:^|\n)>\s(.+?)(?=\n|$)")
+    PATTERN = re.compile(r"(^|\n)>\s(.+?)(?=\n|$)")
 
     @staticmethod
     def format_content(content):
         matches = [match for match in re.finditer(Section.PATTERN, content)]
 
         for match in reversed(matches):
-            section_name = re.sub(r"[*_]*", '', match.group(1))
+            new_line_before, section = match.groups()
+
+            section_name = re.sub(r"[*_]*", '', section)
             section_name_formatted = "## {}".format(section_name)
 
             # remove ':' at the end of a section name to keep ry happy
             if section_name_formatted.endswith(':'):
                 section_name_formatted = section_name_formatted[:-1]
 
-            content = content[:match.start()] + section_name_formatted + content[match.end():]
+            content = content[:match.start() + len(new_line_before)] + section_name_formatted + content[match.end():]
         return content
 
 
