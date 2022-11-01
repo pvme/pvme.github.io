@@ -9,7 +9,8 @@ import mkdocs_gen_files
 import sys
 sys.path.append(str(Path.cwd()))
 from file_formatter.rules import DiscordChannelID
-from file_formatter.message_formatter import RawMessageParser, MessageFormatter
+from file_formatter.message_formatter import MessageFormatter
+from file_formatter.raw_message_parser import get_raw_messages
 
 
 logger = logging.getLogger(__name__)
@@ -70,6 +71,7 @@ class FileCollector(list):
 
     @classmethod
     def from_structure_file(cls, file='structure.ini'):
+        # todo: implement this
         pass
 
     def __add_files(self, files, warn=False):
@@ -133,12 +135,8 @@ class PageGenerator:
         # todo: work-around relative links, check if absolute links work
         DiscordChannelID.CUR_FILE = output_file
 
-        text = source_file.read_text('utf-8')
-
         formatted_channel = f"# {channel_name}\n"
-        raw_message_parser = RawMessageParser(text)
-        raw_message_parser.parse()
-        for raw_message in raw_message_parser.raw_messages:
+        for raw_message in get_raw_messages(source_file.read_text('utf-8')):
             message_formatter = MessageFormatter(raw_message)
             message_formatter.format()
             formatted_channel += str(message_formatter.formatted_message)
@@ -148,7 +146,6 @@ class PageGenerator:
 
     def __update_nav(self, category_forum_path: Path, output_file, channel_name):
         category_forum = [part for part in category_forum_path.parts]
-        # category_forum.append(channel_name)
         self.__nav[category_forum] = channel_name, output_file.as_posix()
 
 
@@ -163,6 +160,7 @@ logging.basicConfig()
 logging.getLogger(__name__).level = logging.DEBUG
 
 files = FileCollector(INCLUDES, EXCLUDES, UNCATEGORIZED)
-# files = FileCollector(['upgrading-info/**/*.txt'], EXCLUDES)
+# files = FileCollector(['upgrading-info/**/*.txt', 'afk/**/*.txt'], EXCLUDES)
+# files = FileCollector(['afk/**/*.txt'], EXCLUDES)
 page_generator = PageGenerator(files)
 page_generator.generate_pages()
