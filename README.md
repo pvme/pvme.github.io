@@ -12,11 +12,11 @@ The site is generated using the [Material for Mkdocs theme](https://squidfunk.gi
 
 **Python**
 
-Install the python version that is required in `Pipfile`
+Install the python version specified in the `Pipfile` `[requires]` section.
 
 **Pipenv**
 
-```
+```commandline
 pip install pipenv
 ```
 
@@ -26,70 +26,52 @@ pip install pipenv
 
 **Setup**
 
-```
-pipenv install
-```
-
-This will install the packages and their dependencies (fixed version number) using `Pipfile.lock`.
-
-**Environment variables**
-
-The following environment variables <u>can</u> be set in order to test API functionality locally:
-
-```
-GS_URL
-GS_PRIVATE_KEY
-GS_CLIENT_EMAIL
-GS_TOKEN_URI
+```commandline
+pipenv sync
 ```
 
-*It's not mandatory to set the environment variables.
+This will setup a virtual environment and install packages from `Pipfile.lock`.
+
+*note: use `pipenv --rm` to reset the old environment in case of any installation issues.*
 
 ## Development
 
-It's suggested to follow the steps described in: `.github/workflows/ci.yml` for an overview on how to clone the [pvme-guides](https://github.com/pvme/pvme-guides) repository and run tests etc. 
+**Clone pvme-guides**
 
-**Installing new packages**
-
-```
-pipenv install package
+```commandline
+git clone --depth 1 https://github.com/pvme/pvme-guides.git
 ```
 
-This will update the `Pipfile` and `Pipfile.lock` with the new package requirement.
+**Building the site**
 
-**Previewing changes**
-
-Changes can be previewed in 2 ways:
-
-*Build site*
-
-```
+```commandline
 pipenv run mkdocs build
 ```
 
-*Automatically updated site*
+This will build the site locally under the `site/` folder.
 
-```
-pipenv run mkdocs serve
-```
+**Updating packages**
 
-*Automatically updating the site is a bugged as is sometimes doesn't update when rebuilding the sources.
-
-## Troubleshooting
-
-**Installation issues**
-
-The simplest way to resolve installation issues is to remove and reinstall the virtual environment:
-
-```
-pipenv --rm
-pipenv install
+```commandline
+pipenv update
 ```
 
-**Missing dependencies**
+Updates packages in `Pipfile.lock` to the latest version according to the versions specified in `Pipfile`.
 
-The following command shows a dependency graph of all packages:
+**Installing new packages**
 
+```commandline
+pipenv install package
 ```
-pipenv graph
+
+This adds the package to the `Pipfile` and `Pipfile.lock`.
+
+**Debugging**
+
+```commandline
+pipenv run python gen_pages.py
 ```
+
+This will write the generated `.md` files to the `docs/pvme-guides` folder. This is useful for comparing builds.
+
+*Note: You might need to remove the `docs-pvme-guides` folder before building the site.*
