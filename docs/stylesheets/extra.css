@@ -41,3 +41,13 @@ p {
     border-radius: .1rem !important;
     font-family: monospace;
 }
+
+.md-header__button.md-logo :-webkit-any(img,svg) {
+    /* height: 1.2rem; */
+    height: 1.8rem;     /* original: 1.2 */
+}
+
+.md-header__button.md-logo {
+    margin: 0.1rem;     /* original: 0.2 */
+    padding: 0.2rem;    /* original: 0.4 */
+}

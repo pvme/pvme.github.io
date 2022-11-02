@@ -8,7 +8,7 @@ extra:
 
 theme:
   name: material
-#  logo: assets/logo.png
+  logo: assets/logo-no-bg.png
   custom_dir: overrides
   favicon: assets/logo.ico
   features:
