@@ -4,6 +4,10 @@
 
 ### November, 1, 2022
 
+- Moved "(Courtesy of)" to the line below the heading to clean up ToC on the side
+
+### November, 1, 2022
+
 - Fixed some broken headings
 
 ### October, 30, 2022

@@ -28,6 +28,26 @@ class AbsFormattingRule(ABC):
 class Section(AbsFormattingRule):
     """Format lines starting with > __**section**__ to ## section."""
     PATTERN = re.compile(r"(^|\n)>\s(.+?)(?=\n|$)")
+    COURTESY_PATTERNS = [
+        re.compile(r"\((courtesy of .+)\)", flags=re.IGNORECASE),
+        re.compile(r"\((image courtesy of .+)\)", flags=re.IGNORECASE),
+        re.compile(r"\((credit to .+)\)", flags=re.IGNORECASE),
+        re.compile(r"\((by .+)\)", flags=re.IGNORECASE),
+        # re.compile(r"(courtesy of .+)", flags=re.IGNORECASE), # occurs once but bit to risky as it includes everything
+    ]
+
+    @staticmethod
+    def split_courtesy_of(section_name: str):
+        """Format "section (Courtesy of ...) -> "section\nCourtesy of ...".
+        Mainly used to clean up the side ToC.
+
+        :param section_name: pre-formatted section name "section" that can contain "section (courtesy of..)"
+        :return: "section\nCourtesy of ..."
+        """
+        for pattern in Section.COURTESY_PATTERNS:
+            if match := re.search(pattern, section_name):
+                return re.sub(pattern, '', section_name, 1) + f"\n*{match.group(1)}*"
+        return section_name
 
     @staticmethod
     def format_content(content):
@@ -37,7 +57,7 @@ class Section(AbsFormattingRule):
             new_line_before, section = match.groups()
 
             section_name = re.sub(r"[*_]*", '', section)
-            section_name_formatted = "## {}".format(section_name)
+            section_name_formatted = f"## {Section.split_courtesy_of(section_name)}"
 
             # remove ':' at the end of a section name to keep ry happy
             if section_name_formatted.endswith(':'):
