@@ -334,8 +334,14 @@ class EmbedCodeInline(AbsFormattingRule):
 
 
 class ToCPinsMention(AbsFormattingRule):
-    PATTERN = re.compile(r"\*Note: a \*\*Table of Contents\*\* can be found in the pins\.\*", flags=re.IGNORECASE)
+    PATTERNS = [
+        re.compile(r"\*Note: a \*\*Table of Contents\*\* can be found in the pins\.\*", flags=re.IGNORECASE),
+        re.compile(r"\*\*The Table of Contents with navigation links for this channel can be found in the pinned messages\.\*\*", flags=re.IGNORECASE),
+        # re.compile(r"\*Note: Use the \^\^\*\*Table of Contents\*\*\^\^ present at the bottom of the channel, or in the pinned comments, to quickly navigate through this channel and find the information you are looking for\.\*", flags=re.IGNORECASE),
+    ]
 
     @staticmethod
     def format_content(content):
-        return re.sub(ToCPinsMention.PATTERN, '', content)
+        for pattern in ToCPinsMention.PATTERNS:
+            content = re.sub(pattern, '', content)
+        return content
