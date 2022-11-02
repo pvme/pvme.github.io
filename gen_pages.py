@@ -92,6 +92,10 @@ class FileCollector(list):
 
 
 class Nav(dict):
+    def __init__(self, nav):
+        self.__nav = nav
+        super().__init__()
+
     def __setitem__(self, keys: Union[str, Tuple[str, ...], List[str]], value: Union[Tuple[str, str], str]):
         # todo: fix type hinting
         if isinstance(keys, str):
@@ -103,9 +107,12 @@ class Nav(dict):
 
         cur[value[0]] = value[1]
 
-    @property
-    def mkdocs_nav(self):
-        return ['index.md'] + [{key: value} for key, value in self.items()]
+    # @property
+    # def mkdocs_nav(self):
+    #     return ['index.md'] + [{key: value} for key, value in self.items()]
+
+    def update_mkdocs_nav(self):
+        self.__nav.extend([{key: value} for key, value in self.items()])
 
 
 class PageGenerator:
@@ -114,8 +121,8 @@ class PageGenerator:
         self.__source_files = source_files
         self.__custom_channels = {source_output_dir / channel['path']: channel['name'] for channel in
                                   DiscordChannelID.CHANNEL_LOOKUP.values()}
-        self.__editor = mkdocs_gen_files.FilesEditor.current()
-        self.__nav = Nav()
+        editor = mkdocs_gen_files.FilesEditor.current()
+        self.__nav = Nav(editor.config.nav)
 
     def generate_pages(self):
         for source_file in self.__source_files:
@@ -126,7 +133,8 @@ class PageGenerator:
             self.generate_page(source_file, output_file, channel_name)
             self.__update_nav(category_forum, output_file, channel_name)
 
-        self.__editor.config.nav = self.__nav.mkdocs_nav
+        # self.__editor.config.nav = self.__nav.mkdocs_nav
+        self.__nav.update_mkdocs_nav()
 
     @staticmethod
     def generate_page(source_file: Path, output_file: Path, channel_name):
@@ -161,6 +169,6 @@ logging.getLogger(__name__).level = logging.DEBUG
 
 files = FileCollector(INCLUDES, EXCLUDES, UNCATEGORIZED)
 # files = FileCollector(['upgrading-info/**/*.txt', 'afk/**/*.txt'], EXCLUDES)
-# files = FileCollector(['afk/**/*.txt'], EXCLUDES)
+# files = FileCollector(['afk/afk-arch-glacor.txt'], EXCLUDES)
 page_generator = PageGenerator(files)
 page_generator.generate_pages()

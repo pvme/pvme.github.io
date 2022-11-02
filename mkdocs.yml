@@ -4,7 +4,6 @@ extra:
   analytics:
     provider: google
     property: UA-189398108-1
-  url_prefix: !ENV MM_DOCS_URL_PREFIX
 
 theme:
   name: material
@@ -13,6 +12,8 @@ theme:
   favicon: assets/logo.ico
   features:
   - navigation.instant
+#  - navigation.tabs
+#  - navigation.tabs.sticky
   - search.suggest
   - search.highlight
 #  - search.share
@@ -52,3 +53,6 @@ extra_css:
 
 extra_javascript:
 - javascripts/discordInvite.js
+
+nav:
+  - index.md
