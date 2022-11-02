@@ -22,6 +22,7 @@ DEFAULT_FORMAT_SEQUENCE = [
     DiscordUserID,
     DiscordRoleID,
     MarkdownLineSpacing,
+    ToCPinsMention,
 ]
 
 

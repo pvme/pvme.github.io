@@ -6,6 +6,7 @@
 
 - Moved "(Courtesy of)" to the line below the heading to clean up ToC on the side
 - New logo
+- Removed mentions of `*Note: a **Table of Contents** can be found in the pins.*`
 
 ### November, 1, 2022
 

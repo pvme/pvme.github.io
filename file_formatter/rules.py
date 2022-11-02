@@ -12,7 +12,7 @@ from file_formatter.attachment_embed import get_attachment_from_url
 
 __all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
            'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',
-           'MarkdownLineSpacing', 'EmptyLines', 'EmbedCodeInline']
+           'MarkdownLineSpacing', 'EmptyLines', 'EmbedCodeInline', 'ToCPinsMention']
 
 logger = logging.getLogger('file_formatter.rules')
 logger.level = logging.WARN
@@ -331,3 +331,11 @@ class EmbedCodeInline(AbsFormattingRule):
                 content = content[:match.start()] + "</code>" + content[match.end():]
 
         return content
+
+
+class ToCPinsMention(AbsFormattingRule):
+    PATTERN = re.compile(r"\*Note: a \*\*Table of Contents\*\* can be found in the pins\.\*", flags=re.IGNORECASE)
+
+    @staticmethod
+    def format_content(content):
+        return re.sub(ToCPinsMention.PATTERN, '', content)
