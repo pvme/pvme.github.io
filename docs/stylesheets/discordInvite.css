@@ -54,18 +54,17 @@
     user-select:none
 }
 #discordInviteBox{
-    background-color:#37393e;
     display:inline-block
 }
 #discordInvite{
     text-align:left;
     box-sizing:border-box;
     color:#fff;
-    background:rgba(47,49,54,.6);
-    border:1px solid rgba(47,49,54,.9);
-    border-radius:3px;
-    font:normal normal 400 normal 16px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    margin:0;
+    background-color:#282933;
+    border:1px solid black;
+    border-radius:6px;
+    margin-top:10px;
+    margin-bottom:10px;
     padding:10px 15px 10px 10px;
     display:inline-block
 }
