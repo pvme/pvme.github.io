@@ -1,4 +1,5 @@
-site_name: PVME Guides
+site_name: PvM Encyclopedia Guides
+site_url: https://pvme.github.io
 
 extra:
   analytics:
@@ -11,13 +12,13 @@ theme:
   custom_dir: overrides
   favicon: assets/logo.ico
   features:
-  - navigation.instant
-#  - navigation.tabs
-#  - navigation.tabs.sticky
-  - search.suggest
-  - search.highlight
-#  - search.share
-  - navigation.top
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+  #  - search.share
+    - navigation.top
   palette:
   - scheme: slate
     toggle:
@@ -35,24 +36,28 @@ plugins:
 - macros
 - gen-files:
     scripts:
-    - gen_pages.py
+      - gen_pages.py
 
 markdown_extensions:
-- pymdownx.keys
-- pymdownx.caret
-- pymdownx.saneheaders
-- pymdownx.tilde
-- pymdownx.emoji
-- admonition
+  - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.saneheaders
+  - pymdownx.tilde
+  - pymdownx.emoji
+  - admonition
+  - footnotes
 # - pymdownx.extra (markdown formatting in HTMl blocks)
 
 extra_css:
-- stylesheets/extra.css
-- stylesheets/discordEmbed.css
-- stylesheets/discordInvite.css
+  - stylesheets/extra.css
+  - stylesheets/discordEmbed.css
+  - stylesheets/discordInvite.css
 
 extra_javascript:
-- javascripts/discordInvite.js
+  - javascripts/discordInvite.js
 
 nav:
-  - index.md
+  - Home:
+    - About: index.md
+    - How The Site Works : home/workings.md
+    - Changelog: home/changelog.md

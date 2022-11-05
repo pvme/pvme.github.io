@@ -1,30 +1,43 @@
-# Home
+---
+hide:
+ - toc
+---
+!!! info
+    New menu structure to make it easier to navigate guides that have sub-categories (mainly full boss guides).
 
-Welcome to the PVME Guides documentation!
+    The Home page has also been updated and the ([Changelog](../home/changelog)) is included in the site. 
 
-This site is automatically generated from the [pvme-guides repository](https://github.com/pvme/pvme-guides) and is therefore always up to date with the [PVME Discord](https://discord.gg/6djqFVN).
+    Big UI improvements soon tm
+
+
+# About
+
+Welcome to the PvM Encyclopedia (PvME) website!
+
+PvME is a [Discord server](https://discord.gg/6djqFVN) with the largest collection of RS3 (and some OSRS) PvM guides.
+
 <script src="javascripts/discordInvite.js"></script>
 <script>
 discordInvite.init({
   inviteCode: '6djqFVN',
-  title: 'PVME'
+  title: 'PVME',
   });
   discordInvite.render();
 </script>
 <div id="discordInviteBox"></div>
 
-## Navigation tips
+This site has all the same guides as the Discord server and is updated daily.
 
-* ++f++ , ++s++ , ++slash++ : open search dialog
-* ++arrow-down++ , ++arrow-up++ : select next / previous result
-* ++arrow-right++ : complete search suggestion
-* ++enter++ : follow selected result
-* ++esc++ , ++tab++ : close search dialog
+## Motivation
 
-## Updates/Bugs
+The motivation behind this site is to make the PvME guides accessible to anyone who doesn't use Discord.
 
-Checkout the [Changelog](https://github.com/pvme/pvme.github.io/blob/master/Changelog.md) for planned updates and release notes.
+A custom-built website also makes it easier to navigate guides by having: 
 
-For bugs or feature requests, message me on discord (Pleb#0025) or create an issue in the [pvme.github.io repository](https://github.com/pvme/pvme.github.io)
+- Always visible table of contents.
+- A powerful search.
 
-Last updated: {{ now().strftime("%b %d, %Y %H:%M:%S") }}
+<div class="footnote">
+<hr>
+Last updated: {{ now().strftime("%b %d, %Y") }}
+</div>
