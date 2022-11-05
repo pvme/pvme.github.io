@@ -1,5 +1,6 @@
 site_name: PvM Encyclopedia Guides
 site_url: https://pvme.github.io
+site_description: "Up-to-date collection of all PvM guides from the PvME Discord Server."
 
 extra:
   analytics:
