@@ -6,7 +6,7 @@ The site is generated using the [Material for Mkdocs theme](https://squidfunk.gi
 
 ## Changelog
 
-[Changelog](https://github.com/pvme/pvme.github.io/blob/master/Changelog.md)
+[Changelog](https://github.com/pvme/pvme.github.io/blob/master/docs/home/changelog.md)
 
 ## Requirements
 
