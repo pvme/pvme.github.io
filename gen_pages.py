@@ -92,6 +92,21 @@ class FileCollector(list):
 
 
 class Nav(dict):
+    CATEGORY_ALIAS = {
+        'afk': 'AFK',
+        'basic-guides': 'Basic Guides',
+        'dpm-advice': 'DPM Advice',
+        'getting-started': 'Getting Started',
+        # 'invention-and-perks': 'Perks <img title="Invention" class="d-emoji" alt="Invention" src="https://cdn.discordapp.com/emojis/689509250946695292.png?v=1">',
+        'invention-and-perks': 'Perks',
+        'miscellaneous-information': 'Miscellaneous Info',
+        'rs3-full-boss-guides': 'Full Boss Guides',
+        # 'slayer': 'Slayer <img title="Slayer" class="d-emoji" src="https://cdn.discordapp.com/emojis/797896049548066857.png?v=1">',
+        'slayer': 'Slayer',
+        'osrs-guides': 'OSRS',
+        'upgrading-info': 'Upgrade Info'
+    }
+
     def __init__(self, nav):
         self.__nav = nav
         super().__init__()
@@ -102,14 +117,13 @@ class Nav(dict):
             keys = (keys,)
 
         cur = self
-        for key in keys:
+        for i, key in enumerate(keys):
+            if i == 0:
+                # todo: improve
+                key = self.CATEGORY_ALIAS.get(key, key)
             cur = cur.setdefault(key, {})
 
         cur[value[0]] = value[1]
-
-    # @property
-    # def mkdocs_nav(self):
-    #     return ['index.md'] + [{key: value} for key, value in self.items()]
 
     def update_mkdocs_nav(self):
         self.__nav.extend([{key: value} for key, value in self.items()])
@@ -133,7 +147,6 @@ class PageGenerator:
             self.generate_page(source_file, output_file, channel_name)
             self.__update_nav(category_forum, output_file, channel_name)
 
-        # self.__editor.config.nav = self.__nav.mkdocs_nav
         self.__nav.update_mkdocs_nav()
 
     @staticmethod

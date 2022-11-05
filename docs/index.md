@@ -2,6 +2,14 @@
 hide:
  - toc
 ---
+!!! info
+    New menu structure to make it easier to navigate guides that have sub-categories (mainly full boss guides).
+
+    The Home page has also been updated and the ([Changelog](../home/changelog)) is included in the site. 
+
+    Big UI improvements soon tm
+
+
 # About
 
 Welcome to the PvM Encyclopedia (PvME) website!

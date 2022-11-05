@@ -13,7 +13,7 @@ First and foremost, the guides on the website are always up-to-date with the Dis
 
 This is because both are using the `.txt` guides from the [pvme-guides repository](https://github.com/pvme/pvme-guides).
 
-With that being said, the `.txt` guides are primarily aimed at Discord. The result is that some content might not appear correctly on the website:
+With that being said, the `.txt` guides are primarily aimed at Discord. This results in some content not appearing correctly on the site:
 
 - References to social Discord exclusive channels (`#pvm-help`)
 - Mentions of `$linkmsg` 
