@@ -1,5 +1,15 @@
 # Changelog
 
+## November, 5, 2022
+
+- New site structure:
+    - Categories now on the top of the page.
+    - Added category aliases
+    - Updated "about" page
+    - Added "how the site works" page
+    - Included changelog to the site itself
+- Generated pages are now appended to mkdocs.yaml `nav` instead of fully overwriting it.
+
 ## November, 1, 2022
 
 - Moved `"(Courtesy of)"` to the line below headings to clean up the ToC on the side
