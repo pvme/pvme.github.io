@@ -8,25 +8,25 @@ from site_builder.navigation import NavInterface
 from site_builder.formatter.rules import DiscordChannelID
 from site_builder.raw_message_parser import get_raw_messages
 from site_builder.formatter.message_formatter import MessageFormatter
+from site_builder.name_conversion import NameConverter
 
 
 logger = logging.getLogger(__name__)
 
 
 class PageGenerator:
-    def __init__(self, source_files: List[Path], source_output_dir: Path):
+    def __init__(self, source_files: List[Path], name_converter: NameConverter, source_output_dir: Path):
         self.__source_output_dir = source_output_dir
         self.__source_files = source_files
-        self.__custom_channels = {source_output_dir / channel['path']: channel['name'] for channel in
-                                  DiscordChannelID.CHANNEL_LOOKUP.values()}
+        self.__name_converter = name_converter
 
-        mkdocs = mkdocs_gen_files.FilesEditor.current()
-        self.__nav = NavInterface(mkdocs.config.nav)
+        mkdocs_process = mkdocs_gen_files.FilesEditor.current()
+        self.__nav = NavInterface(mkdocs_process.config.nav)
 
     def generate_pages(self):
         for source_file in self.__source_files:
-            channel_name = self.__custom_channels.get(source_file, source_file.stem).replace('-', ' ').capitalize()
-            output_file = Path(source_file).with_suffix('.md')
+            channel_name = self.__name_converter.channel(source_file)
+            output_file = source_file.with_suffix('.md')
 
             self.generate_page(source_file, output_file, channel_name)
             self.__update_nav(source_file.relative_to(self.__source_output_dir).parent, output_file, channel_name)
@@ -50,5 +50,8 @@ class PageGenerator:
             file.write(formatted_channel)
 
     def __update_nav(self, category_forum_path: Path, output_file, channel_name):
-        category_forum = [part for part in category_forum_path.parts]
-        self.__nav.add_item(category_forum, channel_name, output_file.as_posix())
+        category, *forum = category_forum_path.parts
+        category_name = self.__name_converter.category(category)
+        forum_name = self.__name_converter.forum(forum[0]) if len(forum) > 0 else None
+
+        self.__nav.add_item(category_name, forum_name, channel_name, output_file.as_posix())

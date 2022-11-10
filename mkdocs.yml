@@ -20,6 +20,7 @@ theme:
     - search.highlight
   #  - search.share
     - navigation.top
+    - navigation.indexes
   palette:
   - scheme: slate
     toggle:
@@ -58,7 +59,14 @@ extra_javascript:
   - javascripts/discordInvite.js
 
 nav:
+#  - Home:
+#    - About: index.md
+#    - How The Site Works : home/workings.md
+#    - Changelog: home/changelog.md
+
+#  - index.md
+
   - Home:
-    - About: index.md
-    - How The Site Works : home/workings.md
+    - index.md
+    - About : home/workings.md
     - Changelog: home/changelog.md

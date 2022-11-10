@@ -14,8 +14,11 @@ class NavInterface:
         self.__nav = mkdocs_nav
         self.__structure = NavStructure()
 
-    def add_item(self, category_forum_name, channel_name, output_file):
-        self.__structure[category_forum_name] = channel_name, output_file
+    def add_item(self, category_name, forum_name, channel_name, output_file):
+        keys = [category_name]
+        if forum_name:
+            keys.append(forum_name)
+        self.__structure[keys] = channel_name, output_file
 
     def update_mkdocs_nav(self):
         self.__nav.extend([{key: value} for key, value in self.__structure.items()])

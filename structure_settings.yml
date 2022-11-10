@@ -35,19 +35,19 @@ files:
     - miscellaneous-information/command-info.txt
     - afk/afk-overview.txt
 
-  uncategorized:
-    - '**/*.txt'
+#  uncategorized:
+#    - '**/*.txt'
 
-alias:
+name_convert:
   category:
     invention-and-perks: perks
     miscellaneous-information: miscellaneous info
-    rs3-full-boss-guidesn: full boss guides
+    rs3-full-boss-guides: full boss guides
     osrs-guides: osrs
     upgrading-info: upgrade info
 
-  forum:
-    upgrade-order: style upgrade order
+#  forum:
+#    upgrade-order: style upgrade order
 
   word:
     osrs: OSRS
