@@ -25,8 +25,11 @@ settings = StructureSettings.from_yaml('structure_settings.yml')
 files = FileCollector(settings.files)
 
 # uncomment for debugging
-# files = FileCollector.from_modified_settings(settings.files, includes=['upgrading-info/**/*.txt'], uncategorized=[])
-# files = FileCollector.from_modified_settings(settings.files, includes=['afk/**/*.txt'], uncategorized=[])
+# files = FileCollector.from_modified_settings(settings.files, uncategorized=[], includes=[
+#     # 'upgrading-info/**/*.txt',
+#     'invention-and-perks/**/*.txt',
+#     'afk/**/*.txt'
+# ])
 
 name_converter = NameConverter(settings.name_convert, settings.files.source_dir)
 

@@ -12,7 +12,7 @@
 }
 
 .md-grid {
-    max-width: 80rem;
+    max-width: 72rem;
 }
 
 html {
@@ -42,12 +42,27 @@ p {
     font-family: monospace;
 }
 
+/* Increase logo size */
 .md-header__button.md-logo :-webkit-any(img,svg) {
     /* height: 1.2rem; */
     height: 1.8rem;     /* original: 1.2 */
 }
 
+/* Reduce logo border size */
 .md-header__button.md-logo {
     margin: 0.1rem;     /* original: 0.2 */
     padding: 0.2rem;    /* original: 0.4 */
+}
+
+
+/* Emojis used in navigation bar */
+.nav-emoji {
+    width: 1.3em;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* Hide navigation emojis when the category is opened */
+.md-nav__link .nav-emoji {
+    display: none;
 }

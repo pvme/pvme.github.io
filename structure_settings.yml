@@ -23,7 +23,7 @@ files:
     - slayer/miscellaneous-slayer.txt
     - slayer/**/*.txt
 
-#    - osrs-guides/**/*.txt
+    - osrs-guides/**/*.txt
 
   excludes:
     - archive/**/*.txt
@@ -40,14 +40,24 @@ files:
 
 name_convert:
   category:
-    invention-and-perks: perks
-    miscellaneous-information: miscellaneous info
-    rs3-full-boss-guides: full boss guides
-    osrs-guides: osrs
-    upgrading-info: upgrade info
+    invention-and-perks:
+      alias: perks
+      emoji: 689509250946695292
+    miscellaneous-information:
+      alias: miscellaneous
+    osrs-guides:
+      alias: osrs
+    upgrading-info:
+      alias: upgrades
+    slayer:
+      emoji: 797896049548066857
+    rs3-full-boss-guides:
+      alias: full boss guides
 
-#  forum:
-#    upgrade-order: style upgrade order
+  # channel
+  channel:
+
+    val: None
 
   word:
     osrs: OSRS
@@ -55,6 +65,7 @@ name_convert:
     pvm: PvM
     afk: AFK
     ed: ED
+    Ed: ED  # using this for some reason
     botlg: BotLG
     fsoa: fSoA
     dpm: DPM

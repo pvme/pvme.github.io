@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 from pathlib import Path
 
 import yaml
@@ -9,13 +9,19 @@ class FileSettings(BaseModel):
     source_dir: Path = Path('pvme-guides')
     includes: List[str] = []
     excludes: List[str] = []
+    # default value to prevent accidentally ignoring guides
     uncategorized: List[str] = ['**/*.txt']
 
 
+class NavNameSettings(BaseModel):
+    alias: Optional[str]
+    emoji: Optional[str]
+
+
 class NameConvertSettings(BaseModel):
-    category: Dict[str, str] = {}
     forum: Dict[str, str] = {}
     word: Dict[str, str] = {}
+    category: Dict[str, NavNameSettings] = {}
 
 
 class StructureSettings(BaseModel):

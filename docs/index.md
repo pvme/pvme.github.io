@@ -1,4 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+---
 # Home
+
 
 PvM Encyclopedia (PvME) is a [Discord server](https://discord.gg/6djqFVN) with the largest collection of RS3 (and some OSRS) PvM guides.
 
@@ -12,13 +18,13 @@ discordInvite.init({
 </script>
 <div id="discordInviteBox"></div>
 
-This website has all the same PvM guides and is updated daily.
+This website has all the same guides and is updated daily.
 
-&nbsp;
+## Motivation
 
-The motivation behind this site is to make the guides accessible to anyone who doesn't use Discord.
-
-It also makes navigating guides easier through features such as an always-visible table of contents and a powerful search.
+- Make the PvME guides available outside of Discord.
+- Improve guide navigation through a powerful search and an always-visible table of contents.
+- Fast and lightweight thanks to [Mkdocs material](https://squidfunk.github.io/mkdocs-material/).
 
 <div class="footnote">
 <hr>
