@@ -11,8 +11,8 @@ import textwrap
 from collections import namedtuple
 from datetime import datetime
 import markdown
-from file_formatter.discord_markdown import DiscordMarkdownExtension
-from file_formatter.rules import *
+from site_builder.formatter.discord_markdown import DiscordMarkdownExtension
+from site_builder.formatter.rules import *
 
 JSON_EMBED_FORMAT_SEQUENCE = [
     Emoji,

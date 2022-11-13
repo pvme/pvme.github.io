@@ -7,8 +7,8 @@ import os
 import logging
 from pathlib import Path
 
-from file_formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
-from file_formatter.attachment_embed import get_attachment_from_url
+from site_builder.formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
+from site_builder.formatter.attachment_embed import get_attachment_from_url
 
 __all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
            'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',

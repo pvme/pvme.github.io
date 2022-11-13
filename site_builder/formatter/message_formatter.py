@@ -3,10 +3,10 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from file_formatter.rules import *
-from file_formatter.discord_embed import EmbedHTMLGenerator, embed_str_to_dict
-from file_formatter.attachment_embed import get_attachment_from_url
-from file_formatter.raw_message_parser import RawMessage
+from site_builder.formatter.rules import *
+from site_builder.formatter.discord_embed import EmbedHTMLGenerator, embed_str_to_dict
+from site_builder.formatter.attachment_embed import get_attachment_from_url
+from site_builder.raw_message_parser import RawMessage
 
 
 DEFAULT_FORMAT_SEQUENCE = [
@@ -112,7 +112,7 @@ class MessageFormatter:
     def apply_formatting_rules(content: str, format_sequence: List) -> (str, List[str]):
         attachment_embeds = []
         for formatter_ in format_sequence:
-            if repr(formatter_) == "<class 'file_formatter.rules.EmbedLink'>":
+            if repr(formatter_) == "<class 'site_builder.formatter.rules.EmbedLink'>":
                 # todo: change to actual detection
                 content = EmbedLink.format_content(content, attachment_embeds)
             else:

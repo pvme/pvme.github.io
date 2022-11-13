@@ -1,0 +1,73 @@
+files:
+  includes:
+    - getting-started/quick-start.txt
+    - getting-started/bossing-path.txt
+    - getting-started/revo-to-full-manual.txt
+    - getting-started/interface-guide.txt
+    - getting-started/learning-pvm.txt
+
+    - invention-and-perks/**/*.txt
+    - miscellaneous-information/**/*.txt
+
+    - upgrading-info/upgrade-order/*.txt
+    - upgrading-info/**/*.txt
+
+    - dpm-advice/**/*.txt
+    - afk/**/*.txt
+    - basic-guides/**/*.txt
+    - rs3-full-boss-guides/**/*.txt
+
+    - slayer/overview-of-slayer.txt
+    - slayer/block-prefer-list.txt
+    - slayer/ultimate-slayer.txt
+    - slayer/miscellaneous-slayer.txt
+    - slayer/**/*.txt
+
+    - osrs-guides/**/*.txt
+
+  excludes:
+    - archive/**/*.txt
+    - commands/**/*.txt
+    - get-involved/**/*.txt
+    - editor-resources/**/*.txt
+    - navigation/**/*.txt
+    - osrs-commands/**/*.txt
+    - miscellaneous-information/command-info.txt
+    - afk/afk-overview.txt
+
+#  uncategorized:
+#    - '**/*.txt'
+
+name_convert:
+  category:
+    invention-and-perks:
+      alias: perks
+      emoji: 689509250946695292
+    miscellaneous-information:
+      alias: miscellaneous
+    osrs-guides:
+      alias: osrs
+    upgrading-info:
+      alias: upgrades
+    slayer:
+      emoji: 797896049548066857
+    rs3-full-boss-guides:
+      alias: full boss guides
+
+  extra_channel:
+    AFK Commander Zilyana Hard Mode: afk commander zilyana hm
+    AFK General Graardor Hard Mode: afk general graardor hm
+    AFK Kree-arra Hard Mode: afk kree'arra hm
+    AFK K'ril Tsutsaroth Hard Mode: afk k'ril tsutsaroth hm
+
+  word:
+    osrs: OSRS
+    gwd1: GWD1
+    gwd2: GWD2
+    pvm: PvM
+    afk: AFK
+    ed1: ED1
+    ed2: ED2
+    ed3: ED3
+    dpm: DPM
+    hm: HM
