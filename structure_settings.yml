@@ -54,18 +54,20 @@ name_convert:
     rs3-full-boss-guides:
       alias: full boss guides
 
-  # channel
-  channel:
-
-    val: None
+  extra_channel:
+    AFK Commander Zilyana Hard Mode: afk commander zilyana hm
+    AFK General Graardor Hard Mode: afk general graardor hm
+    AFK Kree-arra Hard Mode: afk kree'arra hm
+    AFK K'ril Tsutsaroth Hard Mode: afk k'ril tsutsaroth hm
 
   word:
     osrs: OSRS
-    gwd: GWD
+    gwd1: GWD1
+    gwd2: GWD2
     pvm: PvM
     afk: AFK
-    ed: ED
-    Ed: ED  # using this for some reason
-    botlg: BotLG
-    fsoa: fSoA
+    ed1: ED1
+    ed2: ED2
+    ed3: ED3
     dpm: DPM
+    hm: HM

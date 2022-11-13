@@ -33,11 +33,12 @@ class NameConverter:
         self.__word_alias = AliasStore('word', settings.word)
         self.__channel_alias = {source_dir / channel['path']: channel['name'] for channel in
                                 DiscordChannelID.CHANNEL_LOOKUP.values()}
+        self.__extra_channel_alias = AliasStore('extra-channel-alias', settings.extra_channel)
 
     def channel(self, source_file: Path):
         # __custom_channels.get(source_file, source_file.stem).replace('-', ' ').capitalize()
         name = self.__channel_alias.get(source_file, source_file.stem)
-        # return self.__format_name(name)
+        name = self.__extra_channel_alias(name, name)
         return self.__format_name(name)
 
     def forum(self, name):

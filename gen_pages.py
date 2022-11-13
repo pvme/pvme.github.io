@@ -27,7 +27,7 @@ files = FileCollector(settings.files)
 # uncomment for debugging
 # files = FileCollector.from_modified_settings(settings.files, uncategorized=[], includes=[
 #     # 'upgrading-info/**/*.txt',
-#     'invention-and-perks/**/*.txt',
+#     # 'invention-and-perks/**/*.txt',
 #     'afk/**/*.txt'
 # ])
 

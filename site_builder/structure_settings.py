@@ -22,6 +22,8 @@ class NameConvertSettings(BaseModel):
     forum: Dict[str, str] = {}
     word: Dict[str, str] = {}
     category: Dict[str, NavNameSettings] = {}
+    # this overrides channel.json
+    extra_channel: Dict[str, str] = {}
 
 
 class StructureSettings(BaseModel):
