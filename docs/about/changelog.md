@@ -4,6 +4,12 @@ Updates for the website.
 
 For bugs or feature requests, message me on Discord (Pleb#0025) or create an issue on [Github](https://github.com/pvme/pvme.github.io).
 
+## April 6, 2023
+
+- Added "Editor Info" and "Mastery" categories
+- Updated logo
+- Fixed some roles that weren't rendered because of a different ID length
+
 ## November, 13, 2022
 
 - Reorganized about and home page (improves navigation on mobile).

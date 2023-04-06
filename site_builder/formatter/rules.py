@@ -165,7 +165,7 @@ class PVMESpreadSheet(AbsFormattingRule):
 class DiscordChannelID(AbsFormattingRule):
     """Format '<#534514775120412692>' to '[araxxor-melee](../../high-tier-pvm/araxxor-melee.md)'."""
     CUR_FILE: Path = None
-    PATTERN = re.compile(r"<#(\d{18,19})>")
+    PATTERN = re.compile(r"<#(\d{17,20})>")
     CHANNEL_LOOKUP = PVMEChannelData()
     INVALID_CHANNEL_LOOKUP = {
         '1021152606455873686': 'pvm-help-forums',
@@ -230,7 +230,7 @@ class DiscordChannelID(AbsFormattingRule):
 
 class DiscordUserID(AbsFormattingRule):
     """Format '<@213693069764198401>' to '#Piegood'."""
-    PATTERN = re.compile(r"<@!?([0-9]{18})>")
+    PATTERN = re.compile(r"<@!?([0-9]{17,20})>")
     USER_LOOKUP = PVMEUserData()
 
     @staticmethod
@@ -246,7 +246,7 @@ class DiscordUserID(AbsFormattingRule):
 
 class DiscordRoleID(AbsFormattingRule):
     """Format '<@&645851931842969611>' to '@Araxxor Initiate'."""
-    PATTERN = re.compile(r"<@&([0-9]{18})>")
+    PATTERN = re.compile(r"<@&([0-9]{17,20})>")
     ROLE_LOOKUP = PVMERoleData()
 
     @staticmethod

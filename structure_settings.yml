@@ -25,11 +25,17 @@ files:
 
     - osrs-guides/**/*.txt
 
+    - get-involved/mastery-requirements.txt
+    - get-involved/feats-requirements.txt
+
+    - editor-resources/editing-quick-start.txt
+    - editor-resources/editor-tools/*.txt
+    - editor-resources/editor-references/*.txt
+    - editor-resources/github-tutorials/*.txt
+
   excludes:
     - archive/**/*.txt
     - commands/**/*.txt
-    - get-involved/**/*.txt
-    - editor-resources/**/*.txt
     - navigation/**/*.txt
     - osrs-commands/**/*.txt
     - miscellaneous-information/command-info.txt
@@ -53,6 +59,10 @@ name_convert:
       emoji: 797896049548066857
     rs3-full-boss-guides:
       alias: full boss guides
+    get-involved:
+      alias: mastery
+    editor-resources:
+      alias: editor info
 
   extra_channel:
     AFK Commander Zilyana Hard Mode: afk commander zilyana hm
