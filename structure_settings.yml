@@ -40,6 +40,8 @@ files:
     - osrs-commands/**/*.txt
     - miscellaneous-information/command-info.txt
     - afk/afk-overview.txt
+    - get-involved/applications.txt
+    - get-involved/editor-entry.txt
 
 #  uncategorized:
 #    - '**/*.txt'
