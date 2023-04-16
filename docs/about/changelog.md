@@ -4,6 +4,9 @@ Updates for the website.
 
 For bugs or feature requests, message me on Discord (Pleb#0025) or create an issue on [Github](https://github.com/pvme/pvme.github.io).
 
+## April 16, 2023
+- Urls and other formatting now disabled when text is in `inline code field`
+
 ## April 6, 2023
 
 - Added "Editor Info" and "Mastery" categories
