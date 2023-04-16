@@ -91,13 +91,20 @@ class MessageFormatter:
             if index % 2 == 0:
                 # section should be formatted (not in code block)
                 content = self.set_code_block_margin(sections_split_by_code_block, index)
-
-                content, attachment_embeds = self.apply_formatting_rules(content, format_sequence)
-                self.__formatted_message.content += content
-                self.__formatted_message.attachment_embeds.extend(attachment_embeds)
+                self.__format_non_code_block_section(content, format_sequence)
             else:
                 # section inside code block, don't apply formatting
                 self.__formatted_message.content += self.set_code_block_padding(section)
+
+    def __format_non_code_block_section(self, content, format_sequence):
+        sections_split_by_inline_code = self.split_inline_code_sections(content)
+        for index, section in enumerate(sections_split_by_inline_code):
+            if index % 2 == 0:
+                content, attachment_embeds = self.apply_formatting_rules(section, format_sequence)
+                self.__formatted_message.content += content
+                self.__formatted_message.attachment_embeds.extend(attachment_embeds)
+            else:
+                self.__formatted_message.content += f"`{section}`"
 
     def format(self, format_sequence: List = None):
         format_sequence = format_sequence if format_sequence else DEFAULT_FORMAT_SEQUENCE
@@ -139,6 +146,10 @@ class MessageFormatter:
     @staticmethod
     def split_code_block_sections(content: str) -> List[str]:
         return content.split('```')
+
+    @staticmethod
+    def split_inline_code_sections(content: str) -> List[str]:
+        return content.split('`')
 
     @staticmethod
     def set_code_block_margin(sections: List[str], non_code_section_index: int) -> str:
