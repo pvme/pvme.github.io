@@ -6,7 +6,8 @@ on:
       - master
 
   schedule:
-    - cron: '0 1 * * *'
+    # - cron: '0 1 * * *'
+    - cron: '* */2 * * *'
 
   pull_request:
     branches:
