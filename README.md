@@ -1,6 +1,6 @@
 # PVME-Docs
 
-[PVME-Docs](https://pvme.github.io) is a static site that is generated from the [pvme-guides](https://github.com/pvme/pvme-guides) repository. 
+[PVME-Docs](https://pvme.io) is a static site that is generated from the [pvme-guides](https://github.com/pvme/pvme-guides) repository. 
 
 The site is generated using the [Material for Mkdocs theme](https://squidfunk.github.io/mkdocs-material/).
 

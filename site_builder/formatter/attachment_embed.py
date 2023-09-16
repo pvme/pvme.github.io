@@ -10,7 +10,7 @@ import requests
 logger = logging.getLogger('file_formatter.util')
 logger.level = logging.WARN
 
-BASE_DOMAIN = "pvme.github.io"
+BASE_DOMAIN = "https://pvme.io"
 
 
 def get_attachment_from_url(url: str) -> str:

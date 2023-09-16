@@ -127,7 +127,7 @@ Thanks to emmet-shark:
 
 ## June, 10, 2021
 
-- Added support for discord embeds [vorago-trio-hm](https://pvme.github.io/pvme-guides/vorago/vorago-trio-hm/#safe-phases-10-11)
+- Added support for discord embeds [vorago-trio-hm](https://pvme.io/pvme-guides/vorago/vorago-trio-hm/#safe-phases-10-11)
 
 ## May 20, 2021
 
