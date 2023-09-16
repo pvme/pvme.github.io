@@ -23,12 +23,27 @@ def get_attachment_from_url(url: str) -> str:
     """
     # todo: open graph protocol formatting
     # todo: open graph protocol parsing for unknown urls
+    # todo: warning for None urls
+    # todo: https://youtube.com/clip/UgkxHyqloWFPpDtOQVisyq-p-J8GyoFG7i91 (rs3-full-boss-guides\tzkal-zuk\hard-mode.txt)
     # (i.)imgur (png) note: can be managed in else but about 90% of the urls are in this format so it speeds up
     if re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.png", url):
         embed = "<img class=\"media\" src=\"{}\">".format(url)
 
     elif re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.jpe?g", url):
         embed = "<img class=\"media\" src=\"{}\">".format(url)
+
+    # img.pvme.io links
+    elif re.match(r"https?://img\.pvme\.io/images/([a-zA-Z0-9]+)\.jpe?g", url):
+        embed = "<img class=\"media\" src=\"{}\">".format(url)
+
+    elif re.match(r"https?://img\.pvme\.io/images/([a-zA-Z0-9]+)\.png", url):
+        embed = "<img class=\"media\" src=\"{}\">".format(url)
+
+    elif re.match(r"https?://img\.pvme\.io/images/([a-zA-Z0-9]+)\.gif", url):
+        embed = "<img class=\"media\" src=\"{}\">".format(url)
+
+    elif re.match(r"https?://img\.pvme\.io/images/([a-zA-Z0-9]+)\.mp4", url):
+        embed = "<video class=\"media\" loop muted controls><source src=\"{}\"></video>".format(url)
 
     elif re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.mp4", url):
         embed = "<video class=\"media\" loop muted controls><source src=\"{}\" type=\"video/mp4\"></video>".format(url)
