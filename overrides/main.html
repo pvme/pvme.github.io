@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block announce %}
+  <p><span>&#9888;</span> Some guides will be outdated for a bit because of the March 4th, 2024 combat update (<a href="https://secure.runescape.com/m=news/combat-update--thoks-smashing-buffs--this-week-in-runescape">news post</a>).</p>
+{% endblock %}
+
 {% block extrahead %}
   {% set title = config.site_name %}
   {% if page and page.meta and page.meta.title %}

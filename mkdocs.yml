@@ -21,6 +21,7 @@ theme:
   #  - search.share
     - navigation.top
 #    - navigation.indexes
+    - announce.dismiss
   palette:
   - scheme: slate
     toggle:
