@@ -281,7 +281,7 @@ class MarkdownLink(AbsFormattingRule):
     <a title="" href="https://discordapp.com" target="_blank" rel="noreferrer">named links</a>
     NOTE: only used for formatting embed:json blocks
     """
-    PATTERN = re.compile(r"\[([^]]+)]\(\s*(http[s]?://[^)]+)\s*\)")
+    PATTERN = re.compile(r"\[([^]]+)]\(\s*(http[s]?://[^\s()]+)\s*\)")
 
     @staticmethod
     def format_content(content):
