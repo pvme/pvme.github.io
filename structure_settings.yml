@@ -1,10 +1,13 @@
 files:
   includes:
     - getting-started/quick-start.txt
-    - getting-started/bossing-path.txt
-    - getting-started/revo-to-full-manual.txt
     - getting-started/interface-guide.txt
-    - getting-started/learning-pvm.txt
+    - getting-started/early-moneymaking-ideas.txt
+    - getting-started/noncombat-skilling-guides.txt
+
+    - new-to-pvm/**/*.txt
+
+    - new-to-bossing/**/*.txt
 
     - invention-and-perks/**/*.txt
     - miscellaneous-information/**/*.txt
