@@ -10,14 +10,18 @@ files:
     - new-to-bossing/**/*.txt
 
     - invention-and-perks/**/*.txt
+    
     - miscellaneous-information/**/*.txt
 
     - upgrading-info/upgrade-order/*.txt
     - upgrading-info/**/*.txt
 
     - dpm-advice/**/*.txt
+    
     - afk/**/*.txt
+    
     - basic-guides/**/*.txt
+    
     - rs3-full-boss-guides/**/*.txt
 
     - slayer/overview-of-slayer.txt
@@ -25,8 +29,6 @@ files:
     - slayer/ultimate-slayer.txt
     - slayer/miscellaneous-slayer.txt
     - slayer/**/*.txt
-
-    - osrs-guides/**/*.txt
 
     - get-involved/mastery-requirements.txt
     - get-involved/feats-requirements.txt
@@ -41,6 +43,7 @@ files:
     - commands/**/*.txt
     - navigation/**/*.txt
     - osrs-commands/**/*.txt
+    - osrs-guides/**/*.txt
     - miscellaneous-information/command-info.txt
     - afk/afk-overview.txt
     - get-involved/applications.txt
@@ -56,8 +59,6 @@ name_convert:
       emoji: 689509250946695292
     miscellaneous-information:
       alias: miscellaneous
-    osrs-guides:
-      alias: osrs
     upgrading-info:
       alias: upgrades
     slayer:
