@@ -56,13 +56,13 @@ name_convert:
   category:
     invention-and-perks:
       alias: perks
-      emoji: 689509250946695292
+      emoji: "689509250946695292"
     miscellaneous-information:
       alias: miscellaneous
     upgrading-info:
       alias: upgrades
     slayer:
-      emoji: 797896049548066857
+      emoji: "797896049548066857"
     rs3-full-boss-guides:
       alias: full boss guides
     get-involved:
