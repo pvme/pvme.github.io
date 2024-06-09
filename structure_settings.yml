@@ -34,7 +34,7 @@ files:
     - get-involved/mastery-requirements.txt
     - get-involved/feats-requirements.txt
 
-    - editor-resources/editing-quick-start.txt
+    - editor-resources/intro-to-editing.txt
     - editor-resources/editor-tools/*.txt
     - editor-resources/editor-references/*.txt
     - editor-resources/github-tutorials/*.txt
