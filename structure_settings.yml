@@ -4,6 +4,7 @@ files:
     - getting-started/interface-guide.txt
     - getting-started/early-moneymaking-ideas.txt
     - getting-started/noncombat-skilling-guides.txt
+    - navigation/how-to-use-pvme.txt
 
     - new-to-pvm/**/*.txt
 
@@ -33,7 +34,7 @@ files:
     - get-involved/mastery-requirements.txt
     - get-involved/feats-requirements.txt
 
-    - editor-resources/editing-quick-start.txt
+    - editor-resources/intro-to-editing.txt
     - editor-resources/editor-tools/*.txt
     - editor-resources/editor-references/*.txt
     - editor-resources/github-tutorials/*.txt
