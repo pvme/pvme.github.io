@@ -19,6 +19,7 @@ files:
 
     - dpm-advice/**/*.txt
     
+    - afk/afk-overview.txt
     - afk/**/*.txt
     
     - basic-guides/**/*.txt
@@ -42,11 +43,9 @@ files:
   excludes:
     - archive/**/*.txt
     - commands/**/*.txt
-    - navigation/**/*.txt
     - osrs-commands/**/*.txt
     - osrs-guides/**/*.txt
     - miscellaneous-information/command-info.txt
-    - afk/afk-overview.txt
     - get-involved/applications.txt
     - get-involved/editor-entry.txt
 
