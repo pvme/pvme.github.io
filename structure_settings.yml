@@ -1,10 +1,10 @@
 files:
   includes:
     - getting-started/quick-start.txt
+    - getting-started/how-to-use-pvme.txt
     - getting-started/interface-guide.txt
     - getting-started/early-moneymaking-ideas.txt
     - getting-started/noncombat-skilling-guides.txt
-    - navigation/how-to-use-pvme.txt
 
     - new-to-pvm/**/*.txt
 
@@ -41,6 +41,7 @@ files:
     - editor-resources/github-tutorials/*.txt
 
   excludes:
+    - navigation/**/*.txt
     - archive/**/*.txt
     - commands/**/*.txt
     - osrs-commands/**/*.txt
