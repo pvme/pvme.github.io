@@ -1,10 +1,10 @@
 files:
   includes:
     - getting-started/quick-start.txt
+    - getting-started/how-to-use-pvme.txt
     - getting-started/interface-guide.txt
     - getting-started/early-moneymaking-ideas.txt
     - getting-started/noncombat-skilling-guides.txt
-    - navigation/how-to-use-pvme.txt
 
     - new-to-pvm/**/*.txt
 
@@ -19,6 +19,7 @@ files:
 
     - dpm-advice/**/*.txt
     
+    - afk/afk-overview.txt
     - afk/**/*.txt
     
     - basic-guides/**/*.txt
@@ -34,19 +35,18 @@ files:
     - get-involved/mastery-requirements.txt
     - get-involved/feats-requirements.txt
 
-    - editor-resources/editing-quick-start.txt
+    - editor-resources/intro-to-editing.txt
     - editor-resources/editor-tools/*.txt
     - editor-resources/editor-references/*.txt
     - editor-resources/github-tutorials/*.txt
 
   excludes:
+    - navigation/**/*.txt
     - archive/**/*.txt
     - commands/**/*.txt
-    - navigation/**/*.txt
     - osrs-commands/**/*.txt
     - osrs-guides/**/*.txt
     - miscellaneous-information/command-info.txt
-    - afk/afk-overview.txt
     - get-involved/applications.txt
     - get-involved/editor-entry.txt
 
