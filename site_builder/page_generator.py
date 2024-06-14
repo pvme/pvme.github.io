@@ -1,4 +1,5 @@
 import logging
+from re import match
 from typing import List
 from pathlib import Path
 
@@ -39,8 +40,7 @@ class PageGenerator:
 
         # todo: work-around relative links, check if absolute links work
         DiscordChannelID.CUR_FILE = output_file
-
-        formatted_channel = f"# {channel_name}\n"
+        formatted_channel = f""
         for raw_message in get_raw_messages(source_file.read_text('utf-8')):
             message_formatter = MessageFormatter(raw_message)
             message_formatter.format()
