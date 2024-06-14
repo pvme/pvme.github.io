@@ -36,6 +36,7 @@ files:
     - get-involved/feats-requirements.txt
 
     - editor-resources/intro-to-editing.txt
+    - editor-resources/intro-to-editing-continued.txt
     - editor-resources/editor-tools/*.txt
     - editor-resources/editor-references/*.txt
     - editor-resources/github-tutorials/*.txt
