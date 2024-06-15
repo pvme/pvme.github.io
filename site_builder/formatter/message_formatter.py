@@ -11,7 +11,6 @@ from site_builder.raw_message_parser import RawMessage
 
 DEFAULT_FORMAT_SEQUENCE = [
     EmptyLines,
-    Section,
     LineBreak,
     EmbedLink,
     Emoji,

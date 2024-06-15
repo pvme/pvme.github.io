@@ -10,7 +10,7 @@ from pathlib import Path
 from site_builder.formatter.pvme_settings import PVMESpreadsheetData, PVMEUserData, PVMERoleData, PVMEChannelData
 from site_builder.formatter.attachment_embed import get_attachment_from_url
 
-__all__ = ['Section', 'Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
+__all__ = ['Emoji', 'Insert', 'EmbedLink', 'LineBreak', 'DiscordWhiteSpace', 'PVMESpreadSheet',
            'DiscordChannelID', 'DiscordUserID', 'DiscordRoleID', 'MarkdownLink', 'EmbedCodeBlock',
            'MarkdownLineSpacing', 'EmptyLines', 'EmbedCodeInline', 'ToCPinsMention']
 
@@ -23,49 +23,6 @@ class AbsFormattingRule(ABC):
     @abstractmethod
     def format_content(content):
         raise NotImplementedError()
-
-
-class Section(AbsFormattingRule):
-    """Format lines starting with > __**section**__ to ## section."""
-    PATTERN = re.compile(r"(^|\n)>\s(.+?)(?=\n|$)")
-    COURTESY_PATTERNS = [
-        re.compile(r"\((courtesy of .+)\)", flags=re.IGNORECASE),
-        re.compile(r"\((image courtesy of .+)\)", flags=re.IGNORECASE),
-        re.compile(r"\((credit to .+)\)", flags=re.IGNORECASE),
-        re.compile(r"\((by .+)\)", flags=re.IGNORECASE),
-        # re.compile(r"(courtesy of .+)", flags=re.IGNORECASE), # occurs once but bit to risky as it includes everything
-    ]
-
-    @staticmethod
-    def split_courtesy_of(section_name: str):
-        """Format "section (Courtesy of ...) -> "section\nCourtesy of ...".
-        Mainly used to clean up the side ToC.
-
-        :param section_name: pre-formatted section name "section" that can contain "section (courtesy of..)"
-        :return: "section\nCourtesy of ..."
-        """
-        for pattern in Section.COURTESY_PATTERNS:
-            if match := re.search(pattern, section_name):
-                return re.sub(pattern, '', section_name, 1) + f"\n*{match.group(1)}*"
-        return section_name
-
-    @staticmethod
-    def format_content(content):
-        matches = [match for match in re.finditer(Section.PATTERN, content)]
-
-        for match in reversed(matches):
-            new_line_before, section = match.groups()
-
-            section_name = re.sub(r"[*_]*", '', section)
-            section_name_formatted = f"## {Section.split_courtesy_of(section_name)}"
-
-            # remove ':' at the end of a section name to keep ry happy
-            if section_name_formatted.endswith(':'):
-                section_name_formatted = section_name_formatted[:-1]
-
-            content = content[:match.start() + len(new_line_before)] + section_name_formatted + content[match.end():]
-        return content
-
 
 class Emoji(AbsFormattingRule):
     """<concBlast:1234> -> <img src="https://cdn.discordapp.com/emojis/535533809924571136.png?v=1" class="emoji">"""
