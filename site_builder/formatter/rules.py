@@ -186,7 +186,7 @@ class DiscordChannelID(AbsFormattingRule):
 
 
 class DiscordUserID(AbsFormattingRule):
-    """Format '<@213693069764198401>' to '#Piegood'."""
+    """Format '<@213693069764198401>' to '@Piegood'."""
     PATTERN = re.compile(r"<@!?([0-9]{17,20})>")
     USER_LOOKUP = PVMEUserData()
 
@@ -194,8 +194,8 @@ class DiscordUserID(AbsFormattingRule):
     def format_content(content):
         matches = [match for match in re.finditer(DiscordUserID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
-            user = f"#{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
-            if user == '#Unknown user':
+            user = f"@{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
+            if user == '@Unknown user':
                 logger.warning(f"unknown user {match.group(1)}")
             content = content[:match.start()] + user + content[match.end():]
         return content
