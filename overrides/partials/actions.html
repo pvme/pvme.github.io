@@ -1,0 +1,13 @@
+
+<!-- Edit button -->
+{% if "content.action.edit" in features %}
+  <a
+    href="https://pvme.io/guide-editor/?id={{ page.url }}"
+    title="{{ lang.t('action.edit') }}"
+    class="md-content__button md-icon"
+  >
+    {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </a>
+{% endif %}
+

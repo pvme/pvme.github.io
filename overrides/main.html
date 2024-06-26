@@ -20,3 +20,17 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 {% endblock %}
+
+
+
+<!-- Page content -->
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <article class="md-content__inner md-typeset">
+      {% block content %}
+        {% include "partials/actions.html" %}
+        {{ page.content }}
+      {% endblock %}
+    </article>
+  </div>
+{% endblock %}
