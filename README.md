@@ -76,6 +76,10 @@ This will write the generated `.md` files to the `docs/pvme-guides` folder. This
 
 **Viewing Changes**
 
+Build the site and open a live server using:
+
 ```commandline
 pipenv run mkdocs serve
 ```
+
+Alternatively, after running `pipenv run mkdocs build`, open `/site/index.html` using a live server. 
