@@ -28,7 +28,9 @@
   <div class="md-content" data-md-component="content">
     <article class="md-content__inner md-typeset">
       {% block content %}
-        {% include "partials/actions.html" %}
+        {% if not page.meta.hide_actions %}
+          {% include "partials/actions.html" %}
+        {% endif %}
         {{ page.content }}
       {% endblock %}
     </article>

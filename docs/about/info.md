@@ -1,3 +1,6 @@
+---
+hide_actions: true
+---
 # Info
 
 Info about PvME and the website.

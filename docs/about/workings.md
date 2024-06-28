@@ -1,3 +1,6 @@
+---
+hide_actions: true
+---
 # How The Site Works
 
 Full process on [Github](https://github.com/pvme/pvme.github.io), and in short:
