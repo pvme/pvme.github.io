@@ -23,7 +23,6 @@ theme:
   #  - navigation.indexes
     - announce.dismiss
     - content.action.edit
-  #  - content.action.view
   palette:
   - scheme: slate
     toggle:

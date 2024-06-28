@@ -43,7 +43,6 @@ files:
 
   excludes:
     - navigation/**/*.txt
-    - .github/**/*.txt
     - archive/**/*.txt
     - commands/**/*.txt
     - osrs-commands/**/*.txt
