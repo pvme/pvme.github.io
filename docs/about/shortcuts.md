@@ -1,3 +1,6 @@
+---
+hide_actions: true
+---
 # Keyboard Shortcuts
 
 ## Search

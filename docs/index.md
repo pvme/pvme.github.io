@@ -2,6 +2,8 @@
 hide:
   - navigation
   - toc
+
+hide_actions: true
 ---
 # Home
 

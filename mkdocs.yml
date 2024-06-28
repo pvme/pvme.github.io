@@ -20,8 +20,9 @@ theme:
     - search.highlight
   #  - search.share
     - navigation.top
-#    - navigation.indexes
+  #  - navigation.indexes
     - announce.dismiss
+    - content.action.edit
   palette:
   - scheme: slate
     toggle:

@@ -1,8 +1,28 @@
+---
+hide_actions: true
+---
 # Changelog
 
 Updates for the website.
 
 For bugs or feature requests, message me on Discord (Pleb#0025) or create an issue on [Github](https://github.com/pvme/pvme.github.io).
+
+## June 28, 2024
+- Added "edit this guide" button
+- Change #user -> @user
+
+## June 15, 2024
+- Fixed issue with duplicate titles and improved headings
+
+## May 3, 2024
+- Updated mkdocs and other dependencies to latest version
+
+## April 2, 2024
+- Fixed markdown links with )) not being formatted correctly
+
+## November 9, 2023
+- Updated social card
+- New PVME logo
 
 ## April 16, 2023
 - Urls and other formatting now disabled when text is in `inline code field`
