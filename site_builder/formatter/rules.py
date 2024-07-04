@@ -105,16 +105,20 @@ class DiscordWhiteSpace(AbsFormattingRule):
 
 
 class PVMESpreadSheet(AbsFormattingRule):
-    """Format "$data_pvme:Perks!H11$" to the price from the pvme-guides spreadsheet."""
-    PATTERN = re.compile(r"\$data_pvme:([^!]+)!([A-Za-z]+)([1-9]\d*)\$")
+    """Format "$data_pvme:Perks!H11$" and "$data_pvme:gptotal_archglacor_200ks$" to the price from the pvme-guides spreadsheet."""
+    PATTERN = re.compile(r"\$data_pvme:([^$]+)\$")
     PVME_SPREADSHEET_DATA = PVMESpreadsheetData()
 
     @staticmethod
     def format_content(content):
         matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, content)]
         for match in reversed(matches):
-            price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell_data(match.group(1), match.group(2),
-                                                                              int(match.group(3)))
+            cell_id = match.group(1)
+            if match_cell := re.match(r"([^!]+)!([A-Za-z]+)([1-9]\d*)", cell_id):
+                price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell(match_cell.group(1), match_cell.group(2),
+                                                                            int(match_cell.group(3)))
+            else:
+                price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell_alias(cell_id)
             content = content[:match.start()] + price_formatted + content[match.end():]
         return content
 
