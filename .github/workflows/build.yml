@@ -8,7 +8,7 @@ on:
   schedule:
     # 1am daily (default):    '0 1 * * *'
     # hourly (boss updates):  '0 * * * *'
-    - cron: '0 * * * *'
+    - cron: '0 1 * * *'
 
   pull_request:
     branches:
