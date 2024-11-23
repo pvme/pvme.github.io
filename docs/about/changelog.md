@@ -12,6 +12,9 @@ For bugs or feature requests, message me on Discord (Pleb#0025) or create an iss
 - Updated various #unknown-channel to show actual channel name
 - youtube.com/live show embed preview correctly
 
+## July 4, 2024
+- Added support for pvme spreadsheet cell alias (prices shown correctly again)
+
 ## June 28, 2024
 - Added "edit this guide" button
 - Change #user -> @user
