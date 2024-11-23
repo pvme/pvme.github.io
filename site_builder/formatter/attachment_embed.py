@@ -60,9 +60,18 @@ def get_attachment_from_url(url: str) -> str:
     elif match := re.match(r"https?://youtu\.be/([a-zA-Z0-9_\-]+)", url):
         embed = "<iframe class=\"media\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>".format(match.group(1))
 
-    # youtube.com
+    # youtube.com/watch
     elif match := re.match(r"https?://(www\.)?youtube\.[a-z0-9.]*?/watch\?([0-9a-zA-Z$\-_.+!*'(),;/?:@=&#]*&)?v=([a-zA-Z0-9_\-]+)", url):
         embed = "<iframe class=\"media\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>".format(match.group(3))
+
+    # youtube.com/live
+    elif match := re.match(r"https?://(www\.)?youtube\.[a-z0-9.]*?/live/([a-zA-Z0-9_\-]+)", url):
+        embed = "<iframe class=\"media\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>".format(match.group(2))
+
+    # youtube.com/clip
+    # todo: commented because the only clips currently used are not available, uncomment when/if more clips are used
+    # elif match := re.match(r"https?://(www\.)?youtube\.[a-z0-9.]*?/clip/([a-zA-Z0-9_\-]+)", url):
+    #     embed = "<iframe class=\"media\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>".format(match.group(2))
 
     # clips.twitch.tv
     elif match := re.match(r"https?://clips\.twitch\.tv/([a-zA-Z]+)", url):

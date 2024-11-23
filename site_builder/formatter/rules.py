@@ -156,6 +156,50 @@ class DiscordChannelID(AbsFormattingRule):
         '1020853673317908500': 'suggestions',
         '537042924026724353': 'to-be-archived-suggestions',
         '1020024227115573369': 'rs3-slayer',
+
+        '1020045708746833930': 'upgrade-order',         # todo: forum overview
+        '827692629197324348': 'role-submissions',
+        '53565476994822964': 'server-announcements',
+        '771436827214086154': 'guide-media-upload-and-request',
+        '1152990486714388622': 'editing-jobs',
+        '724129126314803230': 'editors-chat',
+
+        '992535252276887602': 'RuneScape -> recruitment-all',
+        '723915055976153138': 'affiliates',
+        '944775418844688464': 'RuneScape -> runescape-questions',
+        '1197226494523621376': 'RuneScape -> looking-for-group',
+        '1081013603194380359': 'dpm-advice-basic',      # todo: forum overview
+        
+        '1141139913610362940': 'other-social',      # note: forum overview but social channels only
+        '1141048675620102154': 'osrs-general',
+        '1082182941762924595': 'general',
+        '538137911292329986': 'achievements',
+        '536062588090318850': 'theorycrafting',
+        '557699151291351060': 'pvm-fails',
+        '935213935999737916': 'rs3-general',
+
+        '1128137032418467890': 'ability-information',   # todo: forum overview
+        '1020418878121197678': 'afk-guides',            # todo: forum overview
+        
+        '1020025399079600178': 'angel-of-death-7s',     # todo: forum overview
+
+        '1020050703017844856': 'unknown',               # note: unknown in disc
+
+        '1251377290995306516': 'unknown',               # note: unknown in disc
+
+        # '535654769948229643': 'server-announcements',   # note: not sure why server-announcements has 2 ids
+
+        '1020841129064812646': 'editor-resources',      # todo: forum overview
+        '1020841226414604308': 'github-tutorials',      # todo: forum overview
+
+        '689575078698287152': 'bot-test',
+        '1096801858535833602': 'unknown',               # note: unknown but clickable thread
+        '1162558489533612063': 'unknown',               # note: unknown but clickable thread
+
+        '1153050298978422925': 'unknown',               # note: unknown in disc
+        '820143052227346442': 'mod-mail',
+        '1019739867032330290': 'dpm-advice',            # todo: forum overview
+        '535654769948229643': 'server-announcements',
     }
 
     @staticmethod
