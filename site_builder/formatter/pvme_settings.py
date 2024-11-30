@@ -71,15 +71,6 @@ class PVMEChannelData(dict):
         channels = {channel['id']: {'path': channel['path'], 'name': channel['name']} for channel in
                     github_json_request(url)}
 
-        # remove pvm-help (was used in some testing in #website but gives 404)
-        # todo: remove when pvm-help is removed from channels.txt
-        pvm_help_id = None
-        for id_, settings in channels.items():
-            if settings.get('name') == 'pvm-help':
-                pvm_help_id = id_
-        if pvm_help_id:
-            channels.pop(pvm_help_id)
-
         super().__init__(channels)
 
 

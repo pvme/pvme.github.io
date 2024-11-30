@@ -213,11 +213,12 @@ class DiscordChannelID(AbsFormattingRule):
             channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if channel:
                 name = channel['name']
-                txt_file = Path(channel['path'])
-                if txt_file:
+
+                path_ = channel['path']
+                if path_:
                     # todo: work-around relative links, check if absolute links work
                     # link = f"[#{name}](../../{path})"
-                    relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
+                    relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + Path(path_).with_suffix('').as_posix()
                     link = f"[#{name}]({relative_path})"
                 else:
                     link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
