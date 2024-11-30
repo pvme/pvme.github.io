@@ -7,8 +7,10 @@ Updates for the website.
 
 For bugs or feature requests, message me on Discord (Pleb#0025) or create an issue on [Github](https://github.com/pvme/pvme.github.io).
 
-## November 23, 2024
+## November 30, 2024
+- unlinked social channel and forum names now always up to date (support new channels.json format)
 
+## November 23, 2024
 - Updated various #unknown-channel to show actual channel name
 - youtube.com/live show embed preview correctly
 

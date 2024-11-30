@@ -212,16 +212,17 @@ class DiscordChannelID(AbsFormattingRule):
         for index, match in enumerate(reversed(matches)):
             channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if channel:
-                # name = channel['name']
-                # txt_path = channel['path']
-                # path = f"{os.path.dirname(txt_path)}/{name}"
-                # link = f"[#{name}](../../{path})"
                 name = channel['name']
                 txt_file = Path(channel['path'])
-                # todo: work-around relative links, check if absolute links work
-                relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
-                link = f"[#{name}]({relative_path})"
+                if txt_file:
+                    # todo: work-around relative links, check if absolute links work
+                    # link = f"[#{name}](../../{path})"
+                    relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
+                    link = f"[#{name}]({relative_path})"
+                else:
+                    link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
             else:
+                logger.warning(f"channel {match.group(1)} not in channels.json")
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:
                     name = channel_name
@@ -229,6 +230,7 @@ class DiscordChannelID(AbsFormattingRule):
                     name = "unknown-channel"
                     logger.warning(f"unknown channel {match.group(1)}")
                 link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
+
             content = content[:match.start()] + link + content[match.end():]
         return content
 
