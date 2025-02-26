@@ -169,7 +169,8 @@ class DiscordChannelID(AbsFormattingRule):
                 # path = f"{os.path.dirname(txt_path)}/{name}"
                 # link = f"[#{name}](../../{path})"
                 name = channel['name']
-                txt_file = Path(channel['path'])
+                txt_file = Path(channel['path']) if channel.get('path') else Path("docs/unknown.txt")
+
                 # todo: work-around relative links, check if absolute links work
                 relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
                 link = f"[#{name}]({relative_path})"

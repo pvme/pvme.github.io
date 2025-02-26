@@ -29,7 +29,18 @@ class PageGenerator:
             output_file = source_file.with_suffix('.md')
 
             self.generate_page(source_file, output_file, channel_name)
-            self.__update_nav(source_file.relative_to(self.__source_output_dir).parent, output_file, channel_name)
+
+            source_file_absolute = source_file.resolve()
+            source_output_absolute = self.__source_output_dir.resolve()
+
+            try:
+                relative_source = source_file_absolute.relative_to(source_output_absolute)
+            except ValueError:
+                logger.warning(f"Cannot compute relative path for {source_file_absolute}. Using absolute path instead.")
+                relative_source = source_file_absolute  # Fallback to absolute path
+
+            self.__update_nav(relative_source.parent, output_file, channel_name)
+
 
         self.__nav.update_mkdocs_nav()
 
