@@ -105,16 +105,20 @@ class DiscordWhiteSpace(AbsFormattingRule):
 
 
 class PVMESpreadSheet(AbsFormattingRule):
-    """Format "$data_pvme:Perks!H11$" to the price from the pvme-guides spreadsheet."""
-    PATTERN = re.compile(r"\$data_pvme:([^!]+)!([A-Za-z]+)([1-9]\d*)\$")
+    """Format "$data_pvme:Perks!H11$" and "$data_pvme:gptotal_archglacor_200ks$" to the price from the pvme-guides spreadsheet."""
+    PATTERN = re.compile(r"\$data_pvme:([^$]+)\$")
     PVME_SPREADSHEET_DATA = PVMESpreadsheetData()
 
     @staticmethod
     def format_content(content):
         matches = [match for match in re.finditer(PVMESpreadSheet.PATTERN, content)]
         for match in reversed(matches):
-            price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell_data(match.group(1), match.group(2),
-                                                                              int(match.group(3)))
+            cell_id = match.group(1)
+            if match_cell := re.match(r"([^!]+)!([A-Za-z]+)([1-9]\d*)", cell_id):
+                price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell(match_cell.group(1), match_cell.group(2),
+                                                                            int(match_cell.group(3)))
+            else:
+                price_formatted = PVMESpreadSheet.PVME_SPREADSHEET_DATA.cell_alias(cell_id)
             content = content[:match.start()] + price_formatted + content[match.end():]
         return content
 
@@ -156,6 +160,50 @@ class DiscordChannelID(AbsFormattingRule):
         '1020853673317908500': 'suggestions',
         '537042924026724353': 'to-be-archived-suggestions',
         '1020024227115573369': 'rs3-slayer',
+
+        '1020045708746833930': 'upgrade-order',         # todo: forum overview
+        '827692629197324348': 'role-submissions',
+        '53565476994822964': 'server-announcements',
+        '771436827214086154': 'guide-media-upload-and-request',
+        '1152990486714388622': 'editing-jobs',
+        '724129126314803230': 'editors-chat',
+
+        '992535252276887602': 'RuneScape -> recruitment-all',
+        '723915055976153138': 'affiliates',
+        '944775418844688464': 'RuneScape -> runescape-questions',
+        '1197226494523621376': 'RuneScape -> looking-for-group',
+        '1081013603194380359': 'dpm-advice-basic',      # todo: forum overview
+        
+        '1141139913610362940': 'other-social',      # note: forum overview but social channels only
+        '1141048675620102154': 'osrs-general',
+        '1082182941762924595': 'general',
+        '538137911292329986': 'achievements',
+        '536062588090318850': 'theorycrafting',
+        '557699151291351060': 'pvm-fails',
+        '935213935999737916': 'rs3-general',
+
+        '1128137032418467890': 'ability-information',   # todo: forum overview
+        '1020418878121197678': 'afk-guides',            # todo: forum overview
+        
+        '1020025399079600178': 'angel-of-death-7s',     # todo: forum overview
+
+        '1020050703017844856': 'unknown',               # note: unknown in disc
+
+        '1251377290995306516': 'unknown',               # note: unknown in disc
+
+        # '535654769948229643': 'server-announcements',   # note: not sure why server-announcements has 2 ids
+
+        '1020841129064812646': 'editor-resources',      # todo: forum overview
+        '1020841226414604308': 'github-tutorials',      # todo: forum overview
+
+        '689575078698287152': 'bot-test',
+        '1096801858535833602': 'unknown',               # note: unknown but clickable thread
+        '1162558489533612063': 'unknown',               # note: unknown but clickable thread
+
+        '1153050298978422925': 'unknown',               # note: unknown in disc
+        '820143052227346442': 'mod-mail',
+        '1019739867032330290': 'dpm-advice',            # todo: forum overview
+        '535654769948229643': 'server-announcements',
     }
 
     @staticmethod
@@ -164,17 +212,18 @@ class DiscordChannelID(AbsFormattingRule):
         for index, match in enumerate(reversed(matches)):
             channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if channel:
-                # name = channel['name']
-                # txt_path = channel['path']
-                # path = f"{os.path.dirname(txt_path)}/{name}"
-                # link = f"[#{name}](../../{path})"
                 name = channel['name']
-                txt_file = Path(channel['path']) if channel.get('path') else Path("docs/unknown.txt")
 
-                # todo: work-around relative links, check if absolute links work
-                relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + txt_file.with_suffix('').as_posix()
-                link = f"[#{name}]({relative_path})"
+                path_ = channel['path']
+                if path_:
+                    # todo: work-around relative links, check if absolute links work
+                    # link = f"[#{name}](../../{path})"
+                    relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + Path(path_).with_suffix('').as_posix()
+                    link = f"[#{name}]({relative_path})"
+                else:
+                    link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
             else:
+                logger.warning(f"channel {match.group(1)} not in channels.json")
                 channel_name = DiscordChannelID.INVALID_CHANNEL_LOOKUP.get(match.group(1))
                 if channel_name:
                     name = channel_name
@@ -182,12 +231,13 @@ class DiscordChannelID(AbsFormattingRule):
                     name = "unknown-channel"
                     logger.warning(f"unknown channel {match.group(1)}")
                 link = f"<a href=\"\" class=\"inactiveLink\">#{name}</a>"
+
             content = content[:match.start()] + link + content[match.end():]
         return content
 
 
 class DiscordUserID(AbsFormattingRule):
-    """Format '<@213693069764198401>' to '#Piegood'."""
+    """Format '<@213693069764198401>' to '@Piegood'."""
     PATTERN = re.compile(r"<@!?([0-9]{17,20})>")
     USER_LOOKUP = PVMEUserData()
 
@@ -195,8 +245,8 @@ class DiscordUserID(AbsFormattingRule):
     def format_content(content):
         matches = [match for match in re.finditer(DiscordUserID.PATTERN, content)]
         for index, match in enumerate(reversed(matches)):
-            user = f"#{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
-            if user == '#Unknown user':
+            user = f"@{DiscordUserID.USER_LOOKUP.get(match.group(1), 'Unknown user')}"
+            if user == '@Unknown user':
                 logger.warning(f"unknown user {match.group(1)}")
             content = content[:match.start()] + user + content[match.end():]
         return content

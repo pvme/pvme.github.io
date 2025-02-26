@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{% block announce %}
-  <p><span>&#9888;</span> Some guides will be outdated for a bit because of the March 4th, 2024 combat update (<a href="https://secure.runescape.com/m=news/combat-update--thoks-smashing-buffs--this-week-in-runescape">news post</a>).</p>
-{% endblock %}
-
 {% block extrahead %}
   {% set title = config.site_name %}
   {% if page and page.meta and page.meta.title %}
@@ -19,4 +15,20 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+{% endblock %}
+
+
+
+<!-- Page content -->
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <article class="md-content__inner md-typeset">
+      {% block content %}
+        {% if not page.meta.hide_actions %}
+          {% include "partials/actions.html" %}
+        {% endif %}
+        {{ page.content }}
+      {% endblock %}
+    </article>
+  </div>
 {% endblock %}

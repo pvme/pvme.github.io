@@ -73,3 +73,13 @@ pipenv run python gen_pages.py
 This will write the generated `.md` files to the `docs/pvme-guides` folder. This is useful for comparing builds.
 
 *Note: You might need to remove the `docs/pvme-guides` folder before building the site.*
+
+**Viewing Changes**
+
+Build the site and open a live server using:
+
+```commandline
+pipenv run mkdocs serve
+```
+
+Alternatively, after running `pipenv run mkdocs build`, open `/site/index.html` using a live server. 

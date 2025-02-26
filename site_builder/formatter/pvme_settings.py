@@ -9,19 +9,28 @@ def github_json_request(url: str) -> dict:
 class PVMESpreadsheetData(dict):
     """PVME Spreadsheet LUT:
     {
-        'prices': {
-            'A': ['10', '20', '30'],
-            'B': ['30', '-1', '20,3']
+        "cells": {
+            "prices": {
+            "A": ["10", "20", "30"],
+            "B": ["30", "-1", "20,3"]
+            },
+            "Perks": {...}
         },
-        'Perks': {...}
+        "cell_aliases": {
+            "gptotal_archglacor_200ks": "20",
+            ...
+        }
     }
     """
     def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/settings/pvme-spreadsheet/pvme_spreadsheet.json"):
         super().__init__(github_json_request(url))
 
-    def cell_data(self, worksheet: str, col: str, row: int) -> str:
-        rows = self.get(worksheet, {}).get(col, [])
+    def cell(self, worksheet: str, col: str, row: int) -> str:
+        rows = self.get('cells', {}).get(worksheet, {}).get(col, [])
         return rows[row] if row < len(rows) else 'N/A'
+
+    def cell_alias(self, alias: str) -> str:
+        return self.get('cell_aliases', {}).get(alias, 'N/A')
 
 
 class PVMEUserData(dict):
@@ -61,6 +70,7 @@ class PVMEChannelData(dict):
     def __init__(self, url="https://raw.githubusercontent.com/pvme/pvme-settings/pvme-discord/channels.json"):
         channels = {channel['id']: {'path': channel['path'], 'name': channel['name']} for channel in
                     github_json_request(url)}
+
         super().__init__(channels)
 
 
