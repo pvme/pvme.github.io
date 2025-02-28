@@ -48,7 +48,7 @@ class PageGenerator:
         DiscordChannelID.CUR_FILE = output_file
 
         formatted_channel = f"# {channel_name}\n\n"
-        for raw_message in get_raw_messages(source_file.read_text('utf-8')):
+        for raw_message in get_raw_messages(source_file.read_text('utf-8')): 
             message_formatter = MessageFormatter(raw_message)
             message_formatter.format()
             formatted_channel += str(message_formatter.formatted_message)
@@ -64,7 +64,8 @@ class PageGenerator:
 
         corrected_path = output_file.as_posix()
 
-        if corrected_path.startswith("pvme-guides/pvme-guides"):
-            corrected_path = corrected_path.replace("pvme-guides/pvme-guides", "pvme-guides", 1)
+        # Update path logic for "Boss Guides" and renamed directories
+        if corrected_path.startswith("boss-guides/boss-guides"):
+            corrected_path = corrected_path.replace("boss-guides/boss-guides", "boss-guides", 1)
 
         self.__nav.add_item(category_name, forum_name, channel_name, corrected_path)

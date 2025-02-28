@@ -1,11 +1,10 @@
 ---
 hide:
-  - navigation
   - toc
 
 hide_actions: true
 ---
-# PVM Guides
+# Boss Guides - Directory
 
 <div class="grid cards">
   <ul>

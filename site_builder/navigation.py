@@ -51,7 +51,7 @@ class NavInterface:
         return md_files[0] if md_files else None  # Return first guide if found
 
     def rebuild_nav(self, mkdocs_files):
-        """Ensures 'PVME Guides' appears with its subcategories and actual guides."""
+        """Ensures 'Boss Guides' appears with its subcategories and actual guides."""
         logger.debug("🔍 Rebuilding MkDocs Navigation")
 
         nav = []
@@ -60,15 +60,15 @@ class NavInterface:
         all_md_files = [file.src_path.replace("\\", "/") for file in mkdocs_files if file.src_path.endswith(".md")]
         logger.debug(f"📄 ALL MkDocs Markdown Files: {all_md_files}")
 
-        # Load PVME Guides categories from HARDCODED_NAV
-        pvme_guides_section = None
+        # Load Boss Guides categories from HARDCODED_NAV
+        boss_guides_section = None
         for section in HARDCODED_NAV:
-            if isinstance(section, dict) and "PVME Guides" in section:
-                category_entries = section["PVME Guides"]
-                logger.debug(f"📂 Found PVME Guides Categories: {category_entries}")
+            if isinstance(section, dict) and "Boss Guides" in section:
+                category_entries = section["Boss Guides"]
+                logger.debug(f"📂 Found Boss Guides Categories: {category_entries}")
 
-                # Initialize PVME Guides with its landing page
-                pvme_guides_section = {"PVME Guides": []}
+                # Initialize Boss Guides with its landing page
+                boss_guides_section = {"Boss Guides": []}
 
                 for entry in category_entries:
                     if isinstance(entry, dict):
@@ -80,28 +80,28 @@ class NavInterface:
 
                             if category_guides:
                                 # Append actual guides under each category
-                                pvme_guides_section["PVME Guides"].append({category: category_guides})
+                                boss_guides_section["Boss Guides"].append({category: category_guides})
                                 logger.debug(f"📌 Added {len(category_guides)} guides under '{category}'.")
                             else:
                                 # Ensure empty categories still exist as placeholders
-                                pvme_guides_section["PVME Guides"].append({category: folder})
+                                boss_guides_section["Boss Guides"].append({category: folder})
                                 logger.warning(f"⚠️ No guides found for '{category}', keeping as placeholder.")
 
                     elif isinstance(entry, str):
                         # Ensure the landing page is added first
-                        pvme_guides_section["PVME Guides"].insert(0, entry)
-                        logger.debug(f"📌 Added PVME Guides Landing Page: {entry}")
+                        boss_guides_section["Boss Guides"].insert(0, entry)
+                        logger.debug(f"📌 Added Boss Guides Landing Page: {entry}")
 
-                break  # We only need to process PVME Guides once
+                break  # We only need to process Boss Guides once
 
-        if pvme_guides_section:
-            nav.append(pvme_guides_section)
+        if boss_guides_section:
+            nav.append(boss_guides_section)
         else:
-            logger.warning("⚠️ PVME Guides structure not found, skipping.")
+            logger.warning("⚠️ Boss Guides structure not found, skipping.")
 
         # Preserve other sections
         for section in HARDCODED_NAV:
-            if isinstance(section, dict) and "PVME Guides" not in section:
+            if isinstance(section, dict) and "Boss Guides" not in section:
                 nav.append(section)
 
         self.__nav.clear()

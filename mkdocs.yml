@@ -14,11 +14,8 @@ theme:
   favicon: assets/logo.ico
   features:
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.instant
-    - navigation.sections
-    - navigation.expand
-    - navigation.path
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - announce.dismiss
@@ -65,11 +62,12 @@ nav:
       - New to PvM: new-to-pvm
       - New to Bossing: new-to-bossing
   - Invention & Perks: invention-and-perks
-  - PVME Guides:
-      - Guides Home: pvme-guides.md
+  - Boss Guides:
+      - Boss Guide Directory: boss-guides-directory.md
       - Basic Guides: basic-guides
       - RS3 Full Boss Guides: rs3-full-boss-guides
       - AFK Methods: afk
+  - Other Guides:
       - Combat Achievements: combat-achievements
       - Slayer Guides: slayer
       - One Tick Guides: one-tick-guides
