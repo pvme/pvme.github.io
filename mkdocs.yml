@@ -62,15 +62,14 @@ nav:
       - New to PvM: new-to-pvm
       - New to Bossing: new-to-bossing
   - Invention & Perks: invention-and-perks
-  - Boss Guides:
-      - Boss Guide Directory: boss-guides-directory.md
-      - Basic Guides: basic-guides
-      - RS3 Full Boss Guides: rs3-full-boss-guides
-      - AFK Methods: afk
-  - Other Guides:
-      - Combat Achievements: combat-achievements
-      - Slayer Guides: slayer
-      - One Tick Guides: one-tick-guides
+  - Boss & Slayer Guides:
+      - Guide Directory: boss-guides/index.md
+      - Basic Guides: boss-guides/basic-guides.md
+      - RS3 Full Boss Guides: boss-guides/rs3-full-boss-guides.md
+      - AFK Methods: boss-guides/afk.md
+      - Combat Achievements: boss-guides/combat-achievements.md
+      - Slayer Guides: boss-guides/slayer.md
+      - One Tick Guides: boss-guides/one-tick-guides.md
   - Strategy:
       - DPM Advice: dpm-advice
       - Upgrade Paths: upgrading-info

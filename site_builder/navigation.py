@@ -27,6 +27,10 @@ class NavInterface:
         self.__name_converter = name_converter
         self.__structure = defaultdict(lambda: defaultdict(list))
 
+    def get_nav_structure(self):
+        """Returns the internal navigation structure."""
+        return self.__nav
+
     def add_item(self, category_name: str, forum_name: str, channel_name: str, output_file: str):
         """Ensures Level 2 appears first, then nests Level 3 pages under it properly."""
         if forum_name:
@@ -34,76 +38,56 @@ class NavInterface:
         else:
             self.__structure[category_name][channel_name] = output_file
 
-    def find_first_guide(self, category_folder, mkdocs_files):
-        """Finds the first available markdown file inside a given category."""
-        logger.debug(f"🔍 Searching for guides in category: {category_folder}")
-
-        # Normalize category path for comparison
-        expected_prefix = f"pvme-guides/{category_folder}/"
-
-        # Retrieve and sort relevant markdown files
-        md_files = sorted(
-            [file.src_path for file in mkdocs_files if file.src_path.startswith(expected_prefix) and file.src_path.endswith(".md")]
-        )
-
-        logger.debug(f"📄 Found {len(md_files)} markdown files for {category_folder}: {md_files}")
-
-        return md_files[0] if md_files else None  # Return first guide if found
-
     def rebuild_nav(self, mkdocs_files):
-        """Ensures 'Boss Guides' appears with its subcategories and actual guides."""
+        """Ensures that sub-pages are correctly collected and nested under their respective sections."""
         logger.debug("🔍 Rebuilding MkDocs Navigation")
 
         nav = []
 
         # Force all paths to use forward slashes to avoid Windows path issues
-        all_md_files = [file.src_path.replace("\\", "/") for file in mkdocs_files if file.src_path.endswith(".md")]
+        all_md_files = [
+            Path(file.src_path).as_posix() for file in mkdocs_files if Path(file.src_path).suffix == ".md"
+        ]
         logger.debug(f"📄 ALL MkDocs Markdown Files: {all_md_files}")
 
-        # Load Boss Guides categories from HARDCODED_NAV
-        boss_guides_section = None
+        # Iterate through all sections in HARDCODED_NAV
         for section in HARDCODED_NAV:
-            if isinstance(section, dict) and "Boss Guides" in section:
-                category_entries = section["Boss Guides"]
-                logger.debug(f"📂 Found Boss Guides Categories: {category_entries}")
+            if isinstance(section, dict):
+                # Look for the "Boss & Slayer Guides" section and process it
+                if "Boss & Slayer Guides" in section:
+                    category_entries = section["Boss & Slayer Guides"]
+                    logger.debug(f"📂 Found Boss & Slayer Guides Categories: {category_entries}")
 
-                # Initialize Boss Guides with its landing page
-                boss_guides_section = {"Boss Guides": []}
+                    boss_guides_section = {"Boss & Slayer Guides": []}
 
-                for entry in category_entries:
-                    if isinstance(entry, dict):
-                        for category, folder in entry.items():
-                            # Find all markdown files within the category (recursive scan)
-                            category_guides = sorted(
-                                [file for file in all_md_files if file.startswith(f"pvme-guides/{folder}/")]
-                            )
+                    for entry in category_entries:
+                        if isinstance(entry, dict):
+                            for category, folder in entry.items():
+                                # Convert section name to lowercase and replace spaces with hyphens for folder path
+                                category_folder = category.lower().replace(" ", "-")
 
-                            if category_guides:
-                                # Append actual guides under each category
-                                boss_guides_section["Boss Guides"].append({category: category_guides})
-                                logger.debug(f"📌 Added {len(category_guides)} guides under '{category}'.")
-                            else:
-                                # Ensure empty categories still exist as placeholders
-                                boss_guides_section["Boss Guides"].append({category: folder})
-                                logger.warning(f"⚠️ No guides found for '{category}', keeping as placeholder.")
+                                # Find all markdown files for this category and subfolders (excluding 'index.md' for redirects)
+                                category_guides = sorted(
+                                    [file for file in all_md_files if f"pvme-guides/{category_folder}/" in file and "index.md" not in file]
+                                )
 
-                    elif isinstance(entry, str):
-                        # Ensure the landing page is added first
-                        boss_guides_section["Boss Guides"].insert(0, entry)
-                        logger.debug(f"📌 Added Boss Guides Landing Page: {entry}")
+                                # Check if category guides are found, if so, add them
+                                if category_guides:
+                                    boss_guides_section["Boss & Slayer Guides"].append({category: category_guides})
+                                    logger.debug(f"📌 Added {len(category_guides)} guides under '{category}'.")
+                                else:
+                                    # Ensure empty categories still appear as placeholders
+                                    boss_guides_section["Boss & Slayer Guides"].append({category: folder})
+                                    logger.warning(f"⚠️ No guides found for '{category}', keeping as placeholder.")
 
-                break  # We only need to process Boss Guides once
+                    # Add the Boss & Slayer Guides section to the nav
+                    nav.append(boss_guides_section)
 
-        if boss_guides_section:
-            nav.append(boss_guides_section)
-        else:
-            logger.warning("⚠️ Boss Guides structure not found, skipping.")
+                # For all other sections (excluding "Boss & Slayer Guides"), just add them to the nav
+                else:
+                    nav.append(section)
 
-        # Preserve other sections
-        for section in HARDCODED_NAV:
-            if isinstance(section, dict) and "Boss Guides" not in section:
-                nav.append(section)
-
+        # Rebuild the final nav structure, preserving the order defined in mkdocs.yml
         self.__nav.clear()
         self.__nav.extend(nav)
         logger.debug(f"✅ Final Navigation Structure:\n{self.__nav}")

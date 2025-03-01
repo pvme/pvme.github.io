@@ -33,7 +33,6 @@ class PageGenerator:
             output_file = source_file.with_suffix('.md')
 
             self.generate_page(source_file, output_file, channel_name)
-
             self.__update_nav(source_file.parent, output_file, channel_name)
 
         # Rebuild navigation after processing all pages
@@ -58,14 +57,90 @@ class PageGenerator:
 
     def __update_nav(self, category_forum_path: Path, output_file, channel_name):
         """Ensures correct Level 2 & 3 nesting in navigation."""
-        category, *forum = category_forum_path.parts
-        category_name = self.__name_converter.category(category)
-        forum_name = self.__name_converter.forum(forum[0]) if forum else None
+        # Strip 'pvme-guides' from the path to get the actual category
+        path_parts = category_forum_path.parts[1:]  # Skip the 'pvme-guides' part
+        category_name = path_parts[0].lower()  # This should be the category like 'afk'
+        forum_name = path_parts[1].lower() if len(path_parts) > 1 else None  # Get the forum if it exists
 
         corrected_path = output_file.as_posix()
 
-        # Update path logic for "Boss Guides" and renamed directories
-        if corrected_path.startswith("boss-guides/boss-guides"):
-            corrected_path = corrected_path.replace("boss-guides/boss-guides", "boss-guides", 1)
+        # Access the navigation structure
+        nav_structure = self.__nav.get_nav_structure()
 
-        self.__nav.add_item(category_name, forum_name, channel_name, corrected_path)
+        # Keep a reference to the original structure
+        original_nav_structure = self.__store_original_nav_structure(nav_structure)
+
+        # Preprocess nav structure to trim paths before "/" and remove ".md"
+        self.__preprocess_nav_structure(nav_structure)
+
+        # logger.debug(f"🔍 Preprocessed nav structure: {nav_structure}")
+
+        # Iterate over the nav structure and look for the correct category and subcategory
+        for section in nav_structure:
+            if isinstance(section, dict):
+                for section_name, subcategories in section.items():
+                    # Log each section and its subcategories for inspection
+                    # logger.debug(f"📂 Inspecting section: {section_name} with subcategories: {subcategories}")
+
+                    # Check if the category matches
+                    if category_name in [item.lower() if isinstance(item, str) else item.lower() for sub_category in subcategories for item in (sub_category.values() if isinstance(sub_category, dict) else [sub_category])]:
+                        logger.debug(f"✅ Found category: {category_name}")
+
+                        # Iterate through subcategories in this section (level 2)
+                        if isinstance(subcategories, list):
+                            for sub_category in subcategories:
+                                if isinstance(sub_category, dict):
+                                    for sub_category_name, sub_category_path in sub_category.items():
+                                        # Normalize subcategory name and path
+                                        sub_category_path_normalized = sub_category_path.lower().replace(" ", "-")
+
+                                        # Check if the path matches
+                                        if sub_category_path_normalized == category_name:
+                                            # Retrieve the original section name from the stored reference
+                                            original_section_name = original_nav_structure[section_name]
+                                            
+                                            # Add the page to this subcategory using the original structure
+                                            original_section_name.append({channel_name: corrected_path})
+                                            logger.debug(f"📌 Added page under subcategory: '{sub_category_name}'")
+                                            return
+                                        else:
+                                            logger.warning(f"⚠️ Subcategory '{forum_name}' not found in '{category_name}'")
+                                elif isinstance(sub_category, str):  # Handle case when sub_category is just a string (without being inside a dictionary)
+                                    if sub_category.lower() == category_name:
+                                        # Directly add to subcategory
+                                        sub_category.append({channel_name: corrected_path})
+                                        logger.debug(f"📌 Added page under subcategory: '{sub_category}'")
+                                        return
+
+                        else:
+                            logger.warning(f"⚠️ Subcategories for '{category_name}' are not in the expected format.")
+
+        # If no matching category was found
+        logger.warning(f"⚠️ No matching category found for '{category_name}' in the nav structure.")
+
+    def __store_original_nav_structure(self, nav_structure):
+        """Store the original structure for later reference."""
+        original_structure = {}
+        for section in nav_structure:
+            if isinstance(section, dict):
+                for section_name, subcategories in section.items():
+                    # Store original section names
+                    original_structure[section_name] = subcategories
+        return original_structure
+
+    def __preprocess_nav_structure(self, nav_structure):
+        """Preprocess nav structure to trim paths and remove extensions"""
+        for section in nav_structure:
+            if isinstance(section, dict):
+                for section_name, subcategories in section.items():
+                    # If section has subcategories (nested dictionaries)
+                    if isinstance(subcategories, list):
+                        for sub_category in subcategories:
+                            for sub_category_name, sub_category_path in sub_category.items():
+                                # If path contains "/", remove everything before it and also remove ".md"
+                                sub_category_path = sub_category_path.split('/')[1] if '/' in sub_category_path else sub_category_path
+                                sub_category_path = sub_category_path.replace(".md", "").lower()
+
+                                # Update subcategory path
+                                sub_category[sub_category_name] = sub_category_path
+
