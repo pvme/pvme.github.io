@@ -31,7 +31,9 @@ files = FileCollector(settings.files)
 #     'afk/**/*.txt'
 # ])
 
-name_converter = NameConverter(settings.name_convert, settings.files.source_dir)
+source_dir = Path(settings.files.source_dir).resolve() if settings.files.source_dir else Path("docs").resolve()
 
-page_generator = PageGenerator(files, name_converter, settings.files.source_dir)
+name_converter = NameConverter(settings.name_convert, source_dir)
+page_generator = PageGenerator(files, name_converter, source_dir)
+
 page_generator.generate_pages()

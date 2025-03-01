@@ -1,45 +1,29 @@
 files:
   includes:
-    - getting-started/quick-start.txt
-    - getting-started/how-to-use-pvme.txt
-    - getting-started/interface-guide.txt
-    - getting-started/early-moneymaking-ideas.txt
-    - getting-started/noncombat-skilling-guides.txt
-
+    # Getting Started
+    - getting-started/**/*.txt
     - new-to-pvm/**/*.txt
-
     - new-to-bossing/**/*.txt
 
+    # Invention & Perks
     - invention-and-perks/**/*.txt
-    
-    - miscellaneous-information/**/*.txt
 
-    - upgrading-info/upgrade-order/*.txt
-    - upgrading-info/**/*.txt
+    # Guides
+    - basic-guides/**/*.{txt,md}
+    - rs3-full-boss-guides/**/*.{txt,md}
+    - afk/**/*.{txt,md}
+    - combat-achievements/**/*.{txt,md}
+    - slayer/**/*.{txt,md}
+    - one-tick-guides/**/*.{txt,md}
 
-    - dpm-advice/**/*.txt
-    
-    - afk/afk-overview.txt
-    - afk/**/*.txt
-    
-    - basic-guides/**/*.txt
-    
-    - rs3-full-boss-guides/**/*.txt
+    # Strategy
+    - dpm-advice/**/*.{txt,md}
+    - upgrading-info/**/*.{txt,md}
 
-    - slayer/overview-of-slayer.txt
-    - slayer/block-prefer-list.txt
-    - slayer/ultimate-slayer.txt
-    - slayer/miscellaneous-slayer.txt
-    - slayer/**/*.txt
-
-    - get-involved/mastery-requirements.txt
-    - get-involved/feats-requirements.txt
-
-    - editor-resources/intro-to-editing.txt
-    - editor-resources/intro-to-editing-continued.txt
-    - editor-resources/editor-tools/*.txt
-    - editor-resources/editor-references/*.txt
-    - editor-resources/github-tutorials/*.txt
+    # Miscellaneous
+    - get-involved/**/*.{txt,md}
+    - editor-resources/**/*.{txt,md}
+    - miscellaneous-information/**/*.{txt,md}
 
   excludes:
     - navigation/**/*.txt
@@ -52,41 +36,35 @@ files:
     - get-involved/editor-entry.txt
     - .github/**/*
 
-#  uncategorized:
-#    - '**/*.txt'
-
 name_convert:
   category:
+    getting-started:
+      alias: Getting Started
+    new-to-pvm:
+      alias: New to PvM
+    new-to-bossing:
+      alias: New to Bossing
     invention-and-perks:
-      alias: perks
-      emoji: "689509250946695292"
-    miscellaneous-information:
-      alias: miscellaneous
-    upgrading-info:
-      alias: upgrades
-    slayer:
-      emoji: "797896049548066857"
+      alias: Invention & Perks
+    basic-guides:
+      alias: Basic Guides
     rs3-full-boss-guides:
-      alias: full boss guides
+      alias: RS3 Full Boss Guides
+    afk:
+      alias: AFK Methods
+    combat-achievements:
+      alias: Combat Achievements
+    slayer:
+      alias: Slayer Guides
+    one-tick-guides:
+      alias: One Tick Guides
+    dpm-advice:
+      alias: Strategy
+    upgrading-info:
+      alias: Strategy
     get-involved:
-      alias: mastery
+      alias: PVME Mastery Roles
     editor-resources:
-      alias: editor info
-
-  extra_channel:
-    AFK Commander Zilyana Hard Mode: afk commander zilyana hm
-    AFK General Graardor Hard Mode: afk general graardor hm
-    AFK Kree-arra Hard Mode: afk kree'arra hm
-    AFK K'ril Tsutsaroth Hard Mode: afk k'ril tsutsaroth hm
-
-  word:
-    osrs: OSRS
-    gwd1: GWD1
-    gwd2: GWD2
-    pvm: PvM
-    afk: AFK
-    ed1: ED1
-    ed2: ED2
-    ed3: ED3
-    dpm: DPM
-    hm: HM
+      alias: Editor Resources
+    miscellaneous-information:
+      alias: Miscellaneous
