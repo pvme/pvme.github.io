@@ -66,3 +66,8 @@ p {
 .md-nav__link .nav-emoji {
     display: none;
 }
+
+/* show navigation tabs on new row when they exceed the max width */
+.md-tabs__list {
+    flex-wrap: wrap;
+}
