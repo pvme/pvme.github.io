@@ -16,7 +16,7 @@ class FileCollector(list):
 
     @classmethod
     def from_modified_settings(cls, base_settings: FileSettings, **kwargs):
-        base_settings_dict = base_settings.dict()
+        base_settings_dict = base_settings.model_dump()
         base_settings_dict.update(kwargs)
         return cls(FileSettings(**base_settings_dict))
 

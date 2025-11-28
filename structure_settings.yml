@@ -50,6 +50,7 @@ files:
     - miscellaneous-information/command-info.txt
     - get-involved/applications.txt
     - get-involved/editor-entry.txt
+    - testing/**/*.txt
     - .github/**/*
 
 #  uncategorized:
