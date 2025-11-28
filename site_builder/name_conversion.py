@@ -32,7 +32,7 @@ class NameConverter:
         self.__forum_alias = AliasStore('forum', settings.forum)
         self.__word_alias = AliasStore('word', settings.word)
         self.__channel_alias = {source_dir / channel['path']: channel['name'] for channel in
-                                DiscordChannelID.CHANNEL_LOOKUP.values() if channel['path'] is not None}
+                                DiscordChannelID.CHANNEL_LOOKUP.values() if channel['path'] not in (None, ' ')}
         self.__extra_channel_alias = AliasStore('extra-channel-alias', settings.extra_channel)
 
     def channel(self, source_file: Path):

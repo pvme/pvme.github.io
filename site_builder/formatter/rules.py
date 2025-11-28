@@ -213,9 +213,9 @@ class DiscordChannelID(AbsFormattingRule):
             channel = DiscordChannelID.CHANNEL_LOOKUP.get(match.group(1))
             if channel:
                 name = channel['name']
-
                 path_ = channel['path']
-                if path_:
+
+                if path_ and path_ != ' ':
                     # todo: work-around relative links, check if absolute links work
                     # link = f"[#{name}](../../{path})"
                     relative_path = '../' * (len(DiscordChannelID.CUR_FILE.parts) - 1) + Path(path_).with_suffix('').as_posix()
