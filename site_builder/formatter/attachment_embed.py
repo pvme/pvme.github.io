@@ -44,6 +44,9 @@ def get_attachment_from_url(url: str) -> str:
 
     elif re.match(r"https?://img\.pvme\.io/images/([a-zA-Z0-9]+)\.mp4", url):
         embed = "<video class=\"media\" loop muted controls><source src=\"{}\"></video>".format(url)
+    
+    elif match := re.match(r"https?://presets\.pvme\.io/?\?id=([a-zA-Z0-9\-]+)", url):
+        embed = "<img class=\"media\" src=\"https://firebasestorage.googleapis.com/v0/b/preset-images/o/images%2F{}.png?alt=media\">".format(match.group(1))
 
     elif re.match(r"https?://i?\.?imgur\.com/([a-zA-Z0-9]+)\.mp4", url):
         embed = "<video class=\"media\" loop muted controls><source src=\"{}\" type=\"video/mp4\"></video>".format(url)

@@ -7,6 +7,12 @@ Updates for the website.
 
 For bugs or feature requests, message me on Discord (Pleb#0025) or create an issue on [Github](https://github.com/pvme/pvme.github.io).
 
+## November 28, 2025
+- Support rendering preset maker embed urls
+- Updated depedencies
+- Bugfix: empty ` ` for `#pvme-help`
+- Removed "Testing" guide
+
 ## November 30, 2024
 - unlinked social channel and forum names now always up to date (support new channels.json format)
 
