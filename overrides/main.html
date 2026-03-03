@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-
+{% block announce %}
+  <p> With the release of the Combat Modernization (<a href="https://secure.runescape.com/m=news/marchs-month-ahead--combat-style-modernisation">news post</a>), on March 2nd, 2026 the vast majority of PvME's content is outdated. Please be patient as we rebuild, and (<a href="https://discordapp.com/invite/pvme">join our discord</a>) for the latest updated and to help contribute.</p>
+{% endblock %}
 {% block extrahead %}
   {% set title = config.site_name %}
   {% if page and page.meta and page.meta.title %}
