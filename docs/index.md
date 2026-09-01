@@ -8,7 +8,7 @@ hide_actions: true
 # Home
 
 
-PvM Encyclopedia (PvME) is a [Discord server](https://discord.gg/pvme) with the largest collection of RS3 (and some OSRS) PvM guides.
+PvM Encyclopedia (PvME) is a [Discord server](https://discord.gg/pvme) with the largest collection of RS3 PvM guides.
 
 <script src="javascripts/discordInvite.js"></script>
 <script>
